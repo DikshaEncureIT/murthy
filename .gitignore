@@ -30,6 +30,10 @@ wheels/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Node.js
+node_modules/
+frontend/node_modules/
+
 # IDEs
 .vscode/
 .idea/
