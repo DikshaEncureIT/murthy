@@ -1,17 +1,36 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pathlib import Path
 import shutil
 from datetime import datetime
 import json
 from typing import Dict, Any
+from dotenv import load_dotenv
 
 from converter import process_excel_to_json
+
+# Load environment variables
+load_dotenv(".env")
 
 app = FastAPI(
     title="Excel to JSON Converter API",
     description="API for uploading Excel files and converting them to JSON format",
     version="1.0.0"
+)
+
+# Configure CORS to allow frontend to connect
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+        "http://localhost:5173",  # Vite default dev server
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Define folders
