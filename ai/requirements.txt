@@ -1,0 +1,6 @@
+landingai-ade
+cohere
+python-dotenv
+pandas
+openpyxl
+openai
