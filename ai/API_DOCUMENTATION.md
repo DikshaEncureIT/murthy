@@ -207,7 +207,115 @@ curl http://localhost:8000/files
 
 ---
 
-### 5. Root
+### 5. List Available Downloads
+
+**Endpoint:** `GET /available-downloads`
+
+**Description:** List all available JSON files for download (per-Excel files and consolidated file).
+
+**Response:**
+
+```json
+{
+  "per_excel_files": [
+    {
+      "filename": "example_complete.json",
+      "excel_name": "example",
+      "size": 12345,
+      "modified": "2025-12-15T10:35:00",
+      "download_url": "/download/excel/example_complete.json"
+    }
+  ],
+  "total_per_excel_files": 1,
+  "consolidated_file": {
+    "available": true,
+    "download_url": "/download/all"
+  }
+}
+```
+
+**cURL Example:**
+
+```bash
+curl http://localhost:8000/available-downloads
+```
+
+---
+
+### 6. Download Excel JSON
+
+**Endpoint:** `GET /download/excel/{filename}`
+
+**Description:** Download the JSON file for a specific Excel file.
+
+**Parameters:**
+
+- `filename` (required): Name of the Excel file (with or without extension) or the complete JSON filename
+
+**Response:**
+
+Returns the JSON file for download.
+
+**cURL Examples:**
+
+```bash
+# Using Excel filename with extension
+curl http://localhost:8000/download/excel/example.xlsx -O
+
+# Using Excel filename without extension
+curl http://localhost:8000/download/excel/example -O
+
+# Using complete JSON filename
+curl http://localhost:8000/download/excel/example_complete.json -O
+```
+
+**Python Example:**
+
+```python
+import requests
+
+url = "http://localhost:8000/download/excel/example.xlsx"
+response = requests.get(url)
+
+# Save to file
+with open("downloaded_data.json", "wb") as f:
+    f.write(response.content)
+```
+
+---
+
+### 7. Download All (Consolidated)
+
+**Endpoint:** `GET /download/all`
+
+**Description:** Download the consolidated JSON file with all tables from all Excel files.
+
+**Response:**
+
+Returns the consolidated JSON file for download.
+
+**cURL Example:**
+
+```bash
+curl http://localhost:8000/download/all -O
+```
+
+**Python Example:**
+
+```python
+import requests
+
+url = "http://localhost:8000/download/all"
+response = requests.get(url)
+
+# Save to file
+with open("all_tables.json", "wb") as f:
+    f.write(response.content)
+```
+
+---
+
+### 8. Root
 
 **Endpoint:** `GET /`
 
@@ -222,7 +330,10 @@ curl http://localhost:8000/files
   "endpoints": {
     "upload": "/upload",
     "convert": "/convert",
-    "health": "/health"
+    "health": "/health",
+    "available_downloads": "/available-downloads",
+    "download_excel": "/download/excel/{filename}",
+    "download_all": "/download/all"
   }
 }
 ```
@@ -249,7 +360,16 @@ curl -X POST http://localhost:8000/upload \
 # 3. Convert to JSON
 curl -X POST http://localhost:8000/convert
 
-# 4. List all files
+# 4. List available downloads
+curl http://localhost:8000/available-downloads
+
+# 5. Download specific Excel JSON file
+curl http://localhost:8000/download/excel/example.xlsx -O
+
+# 6. Download all consolidated JSON
+curl http://localhost:8000/download/all -O
+
+# 7. List all files
 curl http://localhost:8000/files
 ```
 
@@ -274,7 +394,23 @@ with open("example.xlsx", "rb") as f:
 convert_response = requests.post(f"{BASE_URL}/convert")
 print("Convert:", convert_response.json())
 
-# 4. List files
+# 4. List available downloads
+downloads_response = requests.get(f"{BASE_URL}/available-downloads")
+print("Available Downloads:", downloads_response.json())
+
+# 5. Download specific Excel JSON file
+excel_json = requests.get(f"{BASE_URL}/download/excel/example.xlsx")
+with open("example_complete.json", "wb") as f:
+    f.write(excel_json.content)
+print("Downloaded: example_complete.json")
+
+# 6. Download consolidated JSON
+all_json = requests.get(f"{BASE_URL}/download/all")
+with open("all_tables_consolidated.json", "wb") as f:
+    f.write(all_json.content)
+print("Downloaded: all_tables_consolidated.json")
+
+# 7. List files
 files_response = requests.get(f"{BASE_URL}/files")
 print("Files:", files_response.json())
 ```
@@ -284,8 +420,9 @@ print("Files:", files_response.json())
 After conversion, the following files are generated in the `markdown` folder:
 
 1. **Individual table JSON files:** `{excel_name}_{sheet_name}_table_{index}.json`
-2. **Markdown files:** `{excel_name}_{sheet_name}.md`
-3. **Consolidated JSON:** `all_tables_consolidated.json`
+2. **Per-Excel JSON files:** `{excel_name}_complete.json` (all tables from one Excel file)
+3. **Markdown files:** `{excel_name}_{sheet_name}.md`
+4. **Consolidated JSON:** `all_tables_consolidated.json` (all tables from all Excel files)
 
 ## Error Handling
 

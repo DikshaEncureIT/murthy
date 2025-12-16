@@ -237,12 +237,16 @@ def process_excel_to_json() -> Dict[str, Any]:
     try:
         all_results = []
         total_files = len(excel_files)
+        per_excel_results = {}  # Dictionary to store results per Excel file
 
         # Process each Excel file
         for file_idx, input_excel in enumerate(excel_files, 1):
             print(f"\n{'#'*70}")
             print(f"# Processing Excel File {file_idx}/{total_files}: {input_excel.name}")
             print(f"{'#'*70}")
+
+            # Initialize results list for this Excel file
+            per_excel_results[input_excel.name] = []
 
             try:
                 # Get all sheet names from the Excel file
@@ -312,6 +316,8 @@ def process_excel_to_json() -> Dict[str, Any]:
 
                                         # Add to consolidated results
                                         all_results.append(table_json)
+                                        # Add to per-Excel results
+                                        per_excel_results[input_excel.name].append(table_json)
 
                                     except Exception as e:
                                         print(f"       ERROR processing table {table_idx}: {e}")
@@ -341,6 +347,24 @@ def process_excel_to_json() -> Dict[str, Any]:
             print(f"* Total tables extracted: {len(all_results)}")
             print(f"{'*'*70}")
 
+        # Save per-Excel JSON files
+        per_excel_files = []
+        for excel_name, tables in per_excel_results.items():
+            if tables:
+                # Create safe filename from Excel name
+                safe_excel_name = sanitize_filename(Path(excel_name).stem)
+                per_excel_json_file = output_folder / f"{safe_excel_name}_complete.json"
+
+                with open(per_excel_json_file, "w", encoding="utf-8") as f:
+                    json.dump(tables, f, indent=2, ensure_ascii=False)
+
+                per_excel_files.append(per_excel_json_file.name)
+                print(f"\n{'*'*70}")
+                print(f"* PER-EXCEL JSON SAVED: {per_excel_json_file.name}")
+                print(f"* Excel file: {excel_name}")
+                print(f"* Tables in this file: {len(tables)}")
+                print(f"{'*'*70}")
+
         print(f"\n{'='*60}")
         print(f"Processing Complete!")
         print(f"{'='*60}")
@@ -353,7 +377,8 @@ def process_excel_to_json() -> Dict[str, Any]:
             "files_processed": total_files,
             "tables_extracted": len(all_results),
             "output_folder": str(output_folder.absolute()),
-            "results": all_results
+            "results": all_results,
+            "per_excel_files": per_excel_files if 'per_excel_files' in locals() else []
         }
 
     finally:

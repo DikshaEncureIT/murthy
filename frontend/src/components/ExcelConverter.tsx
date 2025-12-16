@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Upload, FileSpreadsheet, Download, X, CheckCircle2, Loader2, Sparkles, AlertCircle } from "lucide-react";
+import { Upload, FileSpreadsheet, Download, X, CheckCircle2, Loader2, Sparkles, AlertCircle, Files } from "lucide-react";
 import { api, ApiError, type ConversionResponse } from "@/lib/api";
 import { useToast } from "@/hooks/use-toast";
 
@@ -40,11 +40,51 @@ const ExcelConverter = () => {
       return;
     }
 
+    // Check for duplicate files
+    const existingFileNames = new Set(files.map(f => f.name));
+    const duplicateFiles: string[] = [];
+    const newFiles: File[] = [];
+
+    excelFiles.forEach(file => {
+      if (existingFileNames.has(file.name)) {
+        duplicateFiles.push(file.name);
+      } else {
+        newFiles.push(file);
+      }
+    });
+
+    // Show warning for duplicates
+    if (duplicateFiles.length > 0) {
+      toast({
+        title: "Duplicate files detected",
+        description: `${duplicateFiles.length} file${duplicateFiles.length > 1 ? "s already exist" : " already exists"}: ${duplicateFiles.slice(0, 2).join(", ")}${duplicateFiles.length > 2 ? "..." : ""}`,
+        variant: "destructive",
+      });
+
+      // If all files are duplicates, return early
+      if (newFiles.length === 0) {
+        return;
+      }
+    }
+
+    // Check if adding these files would exceed the limit
+    const totalFiles = files.length + newFiles.length;
+    const MAX_FILES = 5;
+
+    if (totalFiles > MAX_FILES) {
+      toast({
+        title: "Too many files",
+        description: `You can only upload up to ${MAX_FILES} Excel files at a time. Currently selected: ${files.length}, trying to add: ${newFiles.length}`,
+        variant: "destructive",
+      });
+      return;
+    }
+
     setStatus("idle");
     setConversionData(null);
     setErrorMessage("");
 
-    const processedFiles: UploadedFile[] = excelFiles.map((file) => ({
+    const processedFiles: UploadedFile[] = newFiles.map((file) => ({
       name: file.name,
       size: file.size,
       file: file,
@@ -55,7 +95,7 @@ const ExcelConverter = () => {
 
     toast({
       title: "Files added",
-      description: `${excelFiles.length} file${excelFiles.length > 1 ? "s" : ""} ready to upload`,
+      description: `${newFiles.length} file${newFiles.length > 1 ? "s" : ""} ready to upload (${totalFiles}/${MAX_FILES})${duplicateFiles.length > 0 ? `. Skipped ${duplicateFiles.length} duplicate${duplicateFiles.length > 1 ? "s" : ""}` : ""}`,
     });
   };
 
@@ -145,26 +185,57 @@ const ExcelConverter = () => {
     }
   };
 
-  const downloadJson = () => {
-    if (!conversionData?.consolidated_results) return;
+  const downloadPerExcelJson = async (filename: string) => {
+    try {
+      const blob = await api.downloadExcelJson(filename);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename.endsWith('.json') ? filename : `${filename}_complete.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
 
-    const jsonString = JSON.stringify(conversionData.consolidated_results, null, 2);
-    const blob = new Blob([jsonString], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "converted-data.json";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+      toast({
+        title: "Download started",
+        description: `Downloading ${filename}`,
+      });
+    } catch (error) {
+      toast({
+        title: "Download failed",
+        description: error instanceof Error ? error.message : "Failed to download file",
+        variant: "destructive",
+      });
+    }
+  };
 
-    toast({
-      title: "Download started",
-      description: "Your JSON file is being downloaded",
-    });
+  const downloadConsolidatedJson = async () => {
+    try {
+      const blob = await api.downloadConsolidatedJson();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "all_tables_consolidated.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
 
-    // Reset UI to initial state after download
+      toast({
+        title: "Download started",
+        description: "Downloading all tables (consolidated)",
+      });
+    } catch (error) {
+      toast({
+        title: "Download failed",
+        description: error instanceof Error ? error.message : "Failed to download file",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const resetAfterDownload = () => {
     setTimeout(() => {
       setFiles([]);
       setStatus("idle");
@@ -199,20 +270,22 @@ const ExcelConverter = () => {
               </div>
               <div>
                 <h2 className="font-display font-semibold text-lg text-card-foreground">Upload Files</h2>
-                <p className="text-sm text-muted-foreground">Excel files only (.xlsx, .xls)</p>
+                <p className="text-sm text-muted-foreground">Excel files only (.xlsx, .xls) • Max 5 files</p>
               </div>
             </div>
 
             <div
-              className={`relative border-2 border-dashed rounded-xl p-6 text-center transition-all duration-300 cursor-pointer ${
-                isDragging
-                  ? "border-primary bg-primary/5 scale-[1.02]"
-                  : "border-border hover:border-primary/50 hover:bg-accent/30"
+              className={`relative border-2 border-dashed rounded-xl p-6 text-center transition-all duration-300 ${
+                files.length >= 5
+                  ? "border-muted bg-muted/20 cursor-not-allowed opacity-60"
+                  : isDragging
+                  ? "border-primary bg-primary/5 scale-[1.02] cursor-pointer"
+                  : "border-border hover:border-primary/50 hover:bg-accent/30 cursor-pointer"
               }`}
-              onDrop={handleDrop}
-              onDragOver={handleDragOver}
-              onDragLeave={handleDragLeave}
-              onClick={() => fileInputRef.current?.click()}
+              onDrop={files.length < 5 ? handleDrop : undefined}
+              onDragOver={files.length < 5 ? handleDragOver : undefined}
+              onDragLeave={files.length < 5 ? handleDragLeave : undefined}
+              onClick={() => files.length < 5 && fileInputRef.current?.click()}
             >
               <input
                 ref={fileInputRef}
@@ -227,17 +300,17 @@ const ExcelConverter = () => {
                   <FileSpreadsheet className="w-6 h-6 text-primary" />
                 </div>
                 <p className="text-base font-medium text-card-foreground mb-1">
-                  Drop files here or click to browse
+                  {files.length >= 5 ? "Maximum files reached" : "Drop files here or click to browse"}
                 </p>
-                <p className="text-sm text-muted-foreground">
-                  Supports Excel files (.xlsx, .xls)
+                <p className={`text-sm ${files.length >= 5 ? 'text-destructive' : 'text-muted-foreground'}`}>
+                  {files.length > 0 ? `${files.length}/5 files selected` : "Max 5 Excel files (.xlsx, .xls)"}
                 </p>
               </div>
             </div>
 
             {/* File List */}
             {files.length > 0 && (
-              <div className="mt-4 space-y-2 animate-slide-up max-h-32 overflow-y-auto">
+              <div className="mt-4 space-y-2 animate-slide-up max-h-48 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40">
                 {files.map((file, index) => (
                   <div
                     key={index}
@@ -247,8 +320,8 @@ const ExcelConverter = () => {
                         : "bg-muted/50 border-border"
                     }`}
                   >
-                    <div className="flex items-center gap-2">
-                      <div className={`w-6 h-6 rounded-md flex items-center justify-center ${
+                    <div className="flex items-center gap-2 min-w-0 flex-1">
+                      <div className={`w-6 h-6 rounded-md flex items-center justify-center shrink-0 ${
                         file.uploaded ? "bg-success/20" : "bg-primary/20"
                       }`}>
                         {file.uploaded ? (
@@ -257,8 +330,8 @@ const ExcelConverter = () => {
                           <FileSpreadsheet className="w-4 h-4 text-primary" />
                         )}
                       </div>
-                      <div>
-                        <p className="text-sm font-medium text-card-foreground truncate max-w-[160px]">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-medium text-card-foreground truncate" title={file.name}>
                           {file.name}
                         </p>
                         <p className="text-xs text-muted-foreground">
@@ -271,8 +344,9 @@ const ExcelConverter = () => {
                         e.stopPropagation();
                         removeFile(index);
                       }}
-                      className="p-1.5 rounded-md hover:bg-destructive/10 transition-colors"
+                      className="p-1.5 rounded-md hover:bg-destructive/10 transition-colors shrink-0 ml-2"
                       disabled={status === "uploading" || status === "converting"}
+                      title="Remove file"
                     >
                       <X className="w-3.5 h-3.5 text-muted-foreground hover:text-destructive" />
                     </button>
@@ -336,15 +410,7 @@ const ExcelConverter = () => {
 
               {status === "completed" && conversionData && (
                 <div className="animate-slide-up space-y-3">
-                  <Button
-                    onClick={downloadJson}
-                    className="w-full h-12 text-base font-medium rounded-xl btn-success-gradient text-success-foreground"
-                    size="lg"
-                  >
-                    <Download className="w-5 h-5" />
-                    Download JSON File
-                  </Button>
-
+                  {/* Success Message */}
                   <div className="bg-success/10 border border-success/20 rounded-xl p-3">
                     <div className="flex items-center justify-center gap-2 text-sm text-success mb-2">
                       <CheckCircle2 className="w-4 h-4" />
@@ -354,6 +420,60 @@ const ExcelConverter = () => {
                       Extracted {conversionData.tables_extracted} table{conversionData.tables_extracted !== 1 ? "s" : ""} from {conversionData.files_processed} file{conversionData.files_processed !== 1 ? "s" : ""}
                     </div>
                   </div>
+
+                  {/* Download Options Header */}
+                  <div className="text-center">
+                    <p className="text-sm font-medium text-card-foreground mb-2">Download Options</p>
+                  </div>
+
+                  {/* Per-Excel File Downloads */}
+                  {conversionData.per_excel_files && conversionData.per_excel_files.length > 0 && (
+                    <div className="space-y-2">
+                      <p className="text-xs text-muted-foreground flex items-center gap-1.5">
+                        <FileSpreadsheet className="w-3.5 h-3.5" />
+                        Individual Excel Files ({conversionData.per_excel_files.length}):
+                      </p>
+                      <div className="space-y-2 max-h-40 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40">
+                        {conversionData.per_excel_files.map((filename, index) => (
+                          <Button
+                            key={index}
+                            onClick={() => downloadPerExcelJson(filename)}
+                            className="w-full h-10 text-sm font-medium rounded-lg bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20"
+                            variant="outline"
+                            title={filename}
+                          >
+                            <Download className="w-4 h-4 shrink-0" />
+                            <span className="truncate">{filename.replace('_complete.json', '')}</span>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Consolidated Download */}
+                  <div className="space-y-2">
+                    <p className="text-xs text-muted-foreground flex items-center gap-1.5">
+                      <Files className="w-3.5 h-3.5" />
+                      All Files Combined:
+                    </p>
+                    <Button
+                      onClick={downloadConsolidatedJson}
+                      className="w-full h-12 text-base font-medium rounded-xl btn-success-gradient text-success-foreground"
+                      size="lg"
+                    >
+                      <Download className="w-5 h-5" />
+                      Download All Tables
+                    </Button>
+                  </div>
+
+                  {/* Reset Button */}
+                  <Button
+                    onClick={resetAfterDownload}
+                    variant="outline"
+                    className="w-full h-9 text-sm rounded-lg"
+                  >
+                    Start New Conversion
+                  </Button>
                 </div>
               )}
 
@@ -406,3 +526,5 @@ const ExcelConverter = () => {
 };
 
 export default ExcelConverter;
+
+

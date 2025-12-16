@@ -91,13 +91,31 @@ Convert all Excel files in the input folder to JSON.
 curl -X POST http://localhost:8000/convert
 ```
 
-### 4. List Files
+### 4. List Available Downloads
+```bash
+GET /available-downloads
+```
+List all available JSON files for download.
+
+### 5. Download Excel JSON
+```bash
+GET /download/excel/{filename}
+```
+Download the JSON file for a specific Excel file.
+
+### 6. Download All (Consolidated)
+```bash
+GET /download/all
+```
+Download the consolidated JSON file with all tables.
+
+### 7. List Files
 ```bash
 GET /files
 ```
 List all files in input and output folders.
 
-### 5. Root
+### 8. Root
 ```bash
 GET /
 ```
@@ -113,6 +131,15 @@ curl -X POST http://localhost:8000/upload -F "file=@data.xlsx"
 
 # Convert to JSON
 curl -X POST http://localhost:8000/convert
+
+# List available downloads
+curl http://localhost:8000/available-downloads
+
+# Download specific Excel JSON
+curl http://localhost:8000/download/excel/data.xlsx -O
+
+# Download consolidated JSON
+curl http://localhost:8000/download/all -O
 
 # Check health
 curl http://localhost:8000/health
@@ -176,6 +203,20 @@ Each table is converted to JSON with this structure:
   "file_index": 1
 }
 ```
+
+## Download Options
+
+After conversion, you can download:
+
+1. **Per-Excel JSON files** (`{excel_name}_complete.json`):
+   - Contains all tables from a single Excel file
+   - Use `/download/excel/{filename}` endpoint
+   - Example: `example_complete.json` contains all tables from `example.xlsx`
+
+2. **Consolidated JSON file** (`all_tables_consolidated.json`):
+   - Contains all tables from all Excel files
+   - Use `/download/all` endpoint
+   - Useful when processing multiple Excel files at once
 
 ## Running with Uvicorn Directly
 

@@ -1,11 +1,11 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from pathlib import Path
 import shutil
 from datetime import datetime
 import json
-from typing import Dict, Any
+from typing import Dict, Any, List
 from dotenv import load_dotenv
 
 from converter import process_excel_to_json
@@ -51,7 +51,10 @@ async def root():
         "endpoints": {
             "upload": "/upload",
             "convert": "/convert",
-            "health": "/health"
+            "health": "/health",
+            "available_downloads": "/available-downloads",
+            "download_excel": "/download/excel/{filename}",
+            "download_all": "/download/all"
         }
     }
 
@@ -152,7 +155,8 @@ async def convert_to_json():
             "files_processed": result["files_processed"],
             "tables_extracted": result["tables_extracted"],
             "output_folder": str(OUTPUT_FOLDER.absolute()),
-            "timestamp": datetime.now().isoformat()
+            "timestamp": datetime.now().isoformat(),
+            "per_excel_files": result.get("per_excel_files", [])
         }
 
         # Include consolidated results if available
@@ -171,6 +175,127 @@ async def convert_to_json():
         raise HTTPException(
             status_code=500,
             detail=f"Error during conversion: {str(e)}"
+        )
+
+
+@app.get("/download/excel/{filename}", tags=["File Operations"])
+async def download_excel_json(filename: str):
+    """
+    Download the JSON file for a specific Excel file.
+
+    Args:
+        filename: Name of the Excel file (without extension) or the complete JSON filename
+
+    Returns:
+        JSON file for download
+    """
+    try:
+        # Handle both formats: "example.xlsx" or "example" or "example_complete.json"
+        if filename.endswith("_complete.json"):
+            json_filename = filename
+        elif filename.endswith(".xlsx") or filename.endswith(".xls"):
+            # Remove extension and add _complete.json
+            base_name = filename.rsplit(".", 1)[0]
+            json_filename = f"{base_name}_complete.json"
+        else:
+            json_filename = f"{filename}_complete.json"
+
+        file_path = OUTPUT_FOLDER / json_filename
+
+        if not file_path.exists():
+            raise HTTPException(
+                status_code=404,
+                detail=f"JSON file not found: {json_filename}. Make sure the Excel file has been processed."
+            )
+
+        return FileResponse(
+            path=file_path,
+            media_type="application/json",
+            filename=json_filename
+        )
+
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error downloading file: {str(e)}"
+        )
+
+
+@app.get("/download/all", tags=["File Operations"])
+async def download_all_json():
+    """
+    Download the consolidated JSON file with all tables from all Excel files.
+
+    Returns:
+        Consolidated JSON file for download
+    """
+    try:
+        file_path = OUTPUT_FOLDER / "all_tables_consolidated.json"
+
+        if not file_path.exists():
+            raise HTTPException(
+                status_code=404,
+                detail="Consolidated JSON file not found. Please run conversion first."
+            )
+
+        return FileResponse(
+            path=file_path,
+            media_type="application/json",
+            filename="all_tables_consolidated.json"
+        )
+
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error downloading file: {str(e)}"
+        )
+
+
+@app.get("/available-downloads", tags=["File Operations"])
+async def list_available_downloads():
+    """
+    List all available JSON files for download.
+
+    Returns:
+        JSON response with lists of per-Excel JSON files and consolidated file
+    """
+    try:
+        per_excel_files = []
+        consolidated_available = False
+
+        # List per-Excel JSON files
+        if OUTPUT_FOLDER.exists():
+            for file in OUTPUT_FOLDER.glob("*_complete.json"):
+                per_excel_files.append({
+                    "filename": file.name,
+                    "excel_name": file.name.replace("_complete.json", ""),
+                    "size": file.stat().st_size,
+                    "modified": datetime.fromtimestamp(file.stat().st_mtime).isoformat(),
+                    "download_url": f"/download/excel/{file.name}"
+                })
+
+            # Check if consolidated file exists
+            consolidated_file = OUTPUT_FOLDER / "all_tables_consolidated.json"
+            if consolidated_file.exists():
+                consolidated_available = True
+
+        return {
+            "per_excel_files": per_excel_files,
+            "total_per_excel_files": len(per_excel_files),
+            "consolidated_file": {
+                "available": consolidated_available,
+                "download_url": "/download/all" if consolidated_available else None
+            }
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error listing downloads: {str(e)}"
         )
 
 

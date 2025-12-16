@@ -21,14 +21,14 @@ const Index = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity" />
                 <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-primary/90 to-accent flex items-center justify-center shadow-lg shadow-primary/30 group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-105">
-                  <span className="text-primary-foreground font-display font-bold text-2xl">M</span>
+                  <span className="text-primary-foreground font-display font-bold text-2xl">E</span>
                 </div>
               </div>
 
               {/* Title and tagline */}
               <div>
                 <h1 className="text-2xl font-display font-bold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent tracking-tight">
-                  Murthy
+                  Excel to JSON
                 </h1>
                 <p className="text-xs text-muted-foreground -mt-1 font-medium">
                   Excel to JSON Converter · AI-Powered Table Extraction
