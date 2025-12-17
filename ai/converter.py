@@ -1,8 +1,9 @@
 import os
 import json
 import shutil
+import asyncio
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Tuple
 
 from dotenv import load_dotenv
 from landingai_ade import LandingAIADE
@@ -106,6 +107,31 @@ def extract_markdown_with_landingai(excel_file: Path, api_key: str = None) -> st
             return str(parse_response)
     except Exception as e:
         raise RuntimeError(f"Error parsing with Landing AI ADE: {e}")
+
+
+async def extract_markdown_with_landingai_async(
+    excel_file: Path,
+    file_index: int,
+    total_files: int,
+    api_key: str = None
+) -> Tuple[Path, str, int]:
+    """
+    Async wrapper for Landing AI extraction.
+    Returns tuple of (excel_file, markdown_content, file_index).
+    """
+    print(f"  [{file_index}/{total_files}] Sending {excel_file.name} to Landing AI ADE...")
+
+    # Run the synchronous Landing AI call in a thread pool
+    loop = asyncio.get_event_loop()
+    markdown_content = await loop.run_in_executor(
+        None,
+        extract_markdown_with_landingai,
+        excel_file,
+        api_key
+    )
+
+    print(f"  [{file_index}/{total_files}] Received markdown for {excel_file.name} ({len(markdown_content)} chars)")
+    return (excel_file, markdown_content, file_index)
 
 
 def split_markdown_tables(markdown_text: str) -> List[str]:
@@ -256,13 +282,15 @@ Table markdown:
     return table_json
 
 
-def process_excel_to_json() -> Dict[str, Any]:
+async def process_excel_to_json_async() -> Dict[str, Any]:
     """
-    Main function to process all Excel files in the input folder and convert them to JSON.
+    Async main function to process all Excel files in the input folder and convert them to JSON.
 
     Processing flow:
     1. First, split all Excel files with multiple sheets into separate .xlsx files (synchronous)
-    2. Then, process each .xlsx file from the temp folder in a for loop
+    2. Make asynchronous calls to Landing AI for all sheets
+    3. Await all Landing AI responses before proceeding
+    4. Process results with OpenAI
 
     Returns:
         Dictionary containing processing results
@@ -319,26 +347,63 @@ def process_excel_to_json() -> Dict[str, Any]:
                 continue
 
         # ============================================================
-        # STEP 2: Process all .xlsx files from temp folder (FOR LOOP)
+        # STEP 2: Make async calls to Landing AI for all sheets
         # ============================================================
         print(f"\n{'#'*70}")
-        print(f"# STEP 2: Processing all split Excel files from temp folder")
+        print(f"# STEP 2: Sending all sheets to Landing AI asynchronously")
         print(f"{'#'*70}\n")
 
         # Get all Excel files from temp folder
         temp_excel_files = list(temp_folder.glob("*.xlsx"))
-        print(f"Found {len(temp_excel_files)} file(s) in temp folder to process\n")
+        print(f"Found {len(temp_excel_files)} file(s) in temp folder to process")
+        print(f"Making asynchronous calls to Landing AI for all sheets...\n")
 
-        # Process each temp Excel file
+        # Create async tasks for all Landing AI calls
+        landing_ai_tasks = []
         for idx, temp_excel in enumerate(temp_excel_files, 1):
+            task = extract_markdown_with_landingai_async(
+                temp_excel,
+                idx,
+                len(temp_excel_files)
+            )
+            landing_ai_tasks.append(task)
+
+        # Await all Landing AI responses
+        print(f"Awaiting {len(landing_ai_tasks)} Landing AI responses...\n")
+        landing_ai_results = await asyncio.gather(*landing_ai_tasks, return_exceptions=True)
+
+        print(f"\n{'='*70}")
+        print(f"All Landing AI responses received!")
+        print(f"{'='*70}\n")
+
+        # ============================================================
+        # STEP 3: Process Landing AI results and extract with OpenAI
+        # ============================================================
+        print(f"\n{'#'*70}")
+        print(f"# STEP 3: Processing Landing AI results and extracting tables")
+        print(f"{'#'*70}\n")
+
+        # Process each result
+        for idx, result in enumerate(landing_ai_results, 1):
+            # Check if the result is an exception
+            if isinstance(result, Exception):
+                print(f"\n{'='*60}")
+                print(f"Processing File {idx}/{len(landing_ai_results)}: ERROR")
+                print(f"{'='*60}")
+                print(f"  ERROR: {result}")
+                continue
+
+            # Unpack the result
+            temp_excel, markdown_content, file_idx = result
+
             print(f"\n{'='*60}")
-            print(f"Processing File {idx}/{len(temp_excel_files)}: {temp_excel.name}")
+            print(f"Processing File {idx}/{len(landing_ai_results)}: {temp_excel.name}")
             print(f"{'='*60}")
 
             # Get metadata about the original Excel file
             original_info = split_file_mapping.get(temp_excel, {})
             original_file = original_info.get("original_file", "unknown")
-            file_idx = original_info.get("file_index", 0)
+            original_file_idx = original_info.get("file_index", 0)
 
             try:
                 # Extract the sheet name from the temp file name
@@ -346,24 +411,19 @@ def process_excel_to_json() -> Dict[str, Any]:
                 safe_name = temp_excel.stem
                 sheet_name = safe_name.split('_', 1)[-1] if '_' in safe_name else safe_name
 
-                # Step 2.1: Extract markdown with Landing AI
-                print(f"  -> Sending to Landing AI ADE...")
-                markdown_content = extract_markdown_with_landingai(temp_excel)
-                print(f"     Received markdown ({len(markdown_content)} chars)")
-
-                # Step 2.2: Save markdown to markdown folder
+                # Step 3.1: Save markdown to markdown folder
                 markdown_file = output_folder / f"{safe_name}.md"
                 with open(markdown_file, "w", encoding="utf-8") as f:
                     f.write(markdown_content)
-                print(f"     Markdown saved to: {markdown_file}")
+                print(f"  -> Markdown saved to: {markdown_file}")
 
-                # Step 2.3: Split markdown into individual tables
+                # Step 3.2: Split markdown into individual tables
                 if markdown_content.strip():
                     print(f"  -> Splitting markdown into individual tables...")
                     tables = split_markdown_tables(markdown_content)
                     print(f"     Found {len(tables)} table(s)")
 
-                    # Step 2.4: Extract each table separately with OpenAI
+                    # Step 3.3: Extract each table separately with OpenAI
                     if tables:
                         print(f"  -> Extracting tables with OpenAI...")
                         for table_idx, table_markdown in enumerate(tables, start=1):
@@ -379,7 +439,7 @@ def process_excel_to_json() -> Dict[str, Any]:
 
                                 # Add metadata about the source Excel file
                                 table_json["excel_file"] = original_file
-                                table_json["file_index"] = file_idx
+                                table_json["file_index"] = original_file_idx
 
                                 # Save each table as a separate JSON file
                                 json_file = output_folder / f"{safe_name}_table_{table_idx}.json"
@@ -459,3 +519,14 @@ def process_excel_to_json() -> Dict[str, Any]:
                 print(f"Cleaned up temporary files")
             except Exception as e:
                 print(f"Warning: Could not clean up temp folder: {e}")
+
+
+def process_excel_to_json() -> Dict[str, Any]:
+    """
+    Synchronous wrapper for the async process_excel_to_json_async function.
+    Maintains backward compatibility with existing code.
+
+    Returns:
+        Dictionary containing processing results
+    """
+    return asyncio.run(process_excel_to_json_async())

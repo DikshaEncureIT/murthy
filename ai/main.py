@@ -8,7 +8,7 @@ import json
 from typing import Dict, Any, List
 from dotenv import load_dotenv
 
-from converter import process_excel_to_json
+from converter import process_excel_to_json_async
 
 # Load environment variables
 load_dotenv(".env")
@@ -146,7 +146,7 @@ async def convert_to_json():
             )
 
         # Run the conversion process
-        result = process_excel_to_json()
+        result = await process_excel_to_json_async()
 
         # Check if consolidated JSON file exists
         consolidated_file = OUTPUT_FOLDER / "all_tables_consolidated.json"
