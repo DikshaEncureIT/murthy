@@ -461,7 +461,7 @@ const ExcelConverter = () => {
                     <div className="space-y-2">
                       <p className="text-xs text-muted-foreground flex items-center gap-1.5">
                         <FileSpreadsheet className="w-3.5 h-3.5" />
-                        Individual Excel Files ({conversionData.per_excel_files.length}):
+                        Individual JSON Files ({conversionData.per_excel_files.length}):
                       </p>
                       <div className="space-y-2 max-h-40 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40">
                         {conversionData.per_excel_files.map((filename, index) => (
@@ -492,7 +492,7 @@ const ExcelConverter = () => {
                       size="lg"
                     >
                       <Download className="w-5 h-5" />
-                      Download All Tables
+                      Download All JSON
                     </Button>
                   </div>
 

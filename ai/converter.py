@@ -40,6 +40,51 @@ def export_sheet_to_single_excel(excel_path: Path, sheet_name: str, output_path:
         raise RuntimeError(f"Error exporting sheet '{sheet_name}': {e}")
 
 
+def split_excel_into_sheets(excel_path: Path, temp_folder: Path) -> List[Path]:
+    """
+    Split an Excel file with multiple sheets into separate Excel files.
+    Each sheet becomes its own .xlsx file stored in the temp folder.
+    This is a synchronous function.
+
+    Args:
+        excel_path: Path to the source Excel file
+        temp_folder: Path to the temporary folder where split files will be stored
+
+    Returns:
+        List of paths to the created Excel files
+    """
+    split_files = []
+
+    try:
+        # Get all sheet names from the Excel file
+        with pd.ExcelFile(excel_path) as xls:
+            sheet_names = xls.sheet_names
+
+        print(f"  Splitting '{excel_path.name}' - Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}")
+
+        # Export each sheet to a separate Excel file
+        excel_basename = excel_path.stem
+        safe_excel_name = sanitize_filename(excel_basename)
+
+        for idx, sheet_name in enumerate(sheet_names, 1):
+            safe_sheet_name = sanitize_filename(sheet_name, f"sheet_{idx}")
+            safe_name = f"{safe_excel_name}_{safe_sheet_name}"
+            temp_excel = temp_folder / f"{safe_name}.xlsx"
+
+            # Export the sheet to a new Excel file
+            export_sheet_to_single_excel(excel_path, sheet_name, temp_excel)
+            split_files.append(temp_excel)
+            print(f"    -> Created: {temp_excel.name}")
+
+        print(f"  Successfully split into {len(split_files)} file(s)\n")
+
+    except Exception as e:
+        print(f"  ERROR splitting Excel file '{excel_path.name}': {e}")
+        raise
+
+    return split_files
+
+
 def extract_markdown_with_landingai(excel_file: Path, api_key: str = None) -> str:
     """Extract markdown content from Excel file using Landing AI ADE."""
     client = LandingAIADE(apikey=api_key or LANDINGAI_API_KEY)
@@ -215,6 +260,10 @@ def process_excel_to_json() -> Dict[str, Any]:
     """
     Main function to process all Excel files in the input folder and convert them to JSON.
 
+    Processing flow:
+    1. First, split all Excel files with multiple sheets into separate .xlsx files (synchronous)
+    2. Then, process each .xlsx file from the temp folder in a for loop
+
     Returns:
         Dictionary containing processing results
     """
@@ -232,109 +281,130 @@ def process_excel_to_json() -> Dict[str, Any]:
     if not excel_files:
         raise FileNotFoundError(f"No Excel file found in {input_folder}")
 
-    print(f"Found {len(excel_files)} Excel file(s) in {input_folder}")
+    total_files = len(excel_files)
+    print(f"Found {total_files} Excel file(s) in {input_folder}")
 
     try:
         all_results = []
-        total_files = len(excel_files)
         per_excel_results = {}  # Dictionary to store results per Excel file
 
-        # Process each Excel file
+        # ============================================================
+        # STEP 1: Split all Excel files into separate sheet files (SYNCHRONOUS)
+        # ============================================================
+        print(f"\n{'#'*70}")
+        print(f"# STEP 1: Splitting Excel files into separate sheets")
+        print(f"{'#'*70}\n")
+
+        split_file_mapping = {}  # Map temp file to original Excel file
+
         for file_idx, input_excel in enumerate(excel_files, 1):
-            print(f"\n{'#'*70}")
-            print(f"# Processing Excel File {file_idx}/{total_files}: {input_excel.name}")
-            print(f"{'#'*70}")
+            print(f"Processing {file_idx}/{len(excel_files)}: {input_excel.name}")
 
             # Initialize results list for this Excel file
             per_excel_results[input_excel.name] = []
 
             try:
-                # Get all sheet names from the Excel file
-                with pd.ExcelFile(input_excel) as xls:
-                    sheet_names = xls.sheet_names
+                # Split the Excel file into separate sheet files
+                split_files = split_excel_into_sheets(input_excel, temp_folder)
 
-                print(f"Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}\n")
-
-                # Process each sheet in the Excel file
-                for idx, sheet_name in enumerate(sheet_names, 1):
-                    print(f"\n{'='*60}")
-                    print(f"Processing Sheet {idx}/{len(sheet_names)}: {sheet_name}")
-                    print(f"{'='*60}")
-
-                    try:
-                        # Step 1: Export sheet to single Excel file
-                        excel_basename = input_excel.stem
-                        safe_excel_name = sanitize_filename(excel_basename)
-                        safe_sheet_name = sanitize_filename(sheet_name, f"sheet_{idx}")
-                        safe_name = f"{safe_excel_name}_{safe_sheet_name}"
-                        temp_excel = temp_folder / f"{safe_name}.xlsx"
-
-                        print(f"  -> Exporting sheet to temporary Excel file...")
-                        export_sheet_to_single_excel(input_excel, sheet_name, temp_excel)
-                        print(f"     Created: {temp_excel.name}")
-
-                        # Step 2: Extract markdown with Landing AI
-                        print(f"  -> Sending to Landing AI ADE...")
-                        markdown_content = extract_markdown_with_landingai(temp_excel)
-                        print(f"     Received markdown ({len(markdown_content)} chars)")
-
-                        # Step 3: Save markdown to markdown folder
-                        markdown_file = output_folder / f"{safe_name}.md"
-                        with open(markdown_file, "w", encoding="utf-8") as f:
-                            f.write(markdown_content)
-                        print(f"     Markdown saved to: {markdown_file}")
-
-                        # Step 4: Split markdown into individual tables
-                        if markdown_content.strip():
-                            print(f"  -> Splitting markdown into individual tables...")
-                            tables = split_markdown_tables(markdown_content)
-                            print(f"     Found {len(tables)} table(s)")
-
-                            # Step 5: Extract each table separately with OpenAI
-                            if tables:
-                                print(f"  -> Extracting tables with OpenAI...")
-                                for table_idx, table_markdown in enumerate(tables, start=1):
-                                    try:
-                                        print(f"     Processing table {table_idx}/{len(tables)}...")
-
-                                        # Extract table with LLM
-                                        table_json = extract_single_table_with_openai(
-                                            table_markdown,
-                                            sheet_name,
-                                            table_idx
-                                        )
-
-                                        # Add metadata about the source Excel file
-                                        table_json["excel_file"] = input_excel.name
-                                        table_json["file_index"] = file_idx
-
-                                        # Save each table as a separate JSON file
-                                        json_file = output_folder / f"{safe_name}_table_{table_idx}.json"
-                                        with open(json_file, "w", encoding="utf-8") as f:
-                                            json.dump(table_json, f, indent=2, ensure_ascii=False)
-                                        print(f"       JSON saved to: {json_file.name}")
-
-                                        # Add to consolidated results
-                                        all_results.append(table_json)
-                                        # Add to per-Excel results
-                                        per_excel_results[input_excel.name].append(table_json)
-
-                                    except Exception as e:
-                                        print(f"       ERROR processing table {table_idx}: {e}")
-                                        continue
-
-                                print(f"     Successfully extracted {len(tables)} table(s)")
-                            else:
-                                print(f"     No tables found in markdown")
-                        else:
-                            print(f"     No content to process for this sheet")
-
-                    except Exception as e:
-                        print(f"  ERROR processing sheet '{sheet_name}': {e}")
-                        continue
+                # Store mapping of temp files to original Excel file
+                for temp_file in split_files:
+                    split_file_mapping[temp_file] = {
+                        "original_file": input_excel.name,
+                        "file_index": file_idx
+                    }
 
             except Exception as e:
-                print(f"ERROR processing Excel file '{input_excel.name}': {e}")
+                print(f"ERROR splitting Excel file '{input_excel.name}': {e}")
+                continue
+
+        # ============================================================
+        # STEP 2: Process all .xlsx files from temp folder (FOR LOOP)
+        # ============================================================
+        print(f"\n{'#'*70}")
+        print(f"# STEP 2: Processing all split Excel files from temp folder")
+        print(f"{'#'*70}\n")
+
+        # Get all Excel files from temp folder
+        temp_excel_files = list(temp_folder.glob("*.xlsx"))
+        print(f"Found {len(temp_excel_files)} file(s) in temp folder to process\n")
+
+        # Process each temp Excel file
+        for idx, temp_excel in enumerate(temp_excel_files, 1):
+            print(f"\n{'='*60}")
+            print(f"Processing File {idx}/{len(temp_excel_files)}: {temp_excel.name}")
+            print(f"{'='*60}")
+
+            # Get metadata about the original Excel file
+            original_info = split_file_mapping.get(temp_excel, {})
+            original_file = original_info.get("original_file", "unknown")
+            file_idx = original_info.get("file_index", 0)
+
+            try:
+                # Extract the sheet name from the temp file name
+                # Format: {excel_name}_{sheet_name}.xlsx
+                safe_name = temp_excel.stem
+                sheet_name = safe_name.split('_', 1)[-1] if '_' in safe_name else safe_name
+
+                # Step 2.1: Extract markdown with Landing AI
+                print(f"  -> Sending to Landing AI ADE...")
+                markdown_content = extract_markdown_with_landingai(temp_excel)
+                print(f"     Received markdown ({len(markdown_content)} chars)")
+
+                # Step 2.2: Save markdown to markdown folder
+                markdown_file = output_folder / f"{safe_name}.md"
+                with open(markdown_file, "w", encoding="utf-8") as f:
+                    f.write(markdown_content)
+                print(f"     Markdown saved to: {markdown_file}")
+
+                # Step 2.3: Split markdown into individual tables
+                if markdown_content.strip():
+                    print(f"  -> Splitting markdown into individual tables...")
+                    tables = split_markdown_tables(markdown_content)
+                    print(f"     Found {len(tables)} table(s)")
+
+                    # Step 2.4: Extract each table separately with OpenAI
+                    if tables:
+                        print(f"  -> Extracting tables with OpenAI...")
+                        for table_idx, table_markdown in enumerate(tables, start=1):
+                            try:
+                                print(f"     Processing table {table_idx}/{len(tables)}...")
+
+                                # Extract table with LLM
+                                table_json = extract_single_table_with_openai(
+                                    table_markdown,
+                                    sheet_name,
+                                    table_idx
+                                )
+
+                                # Add metadata about the source Excel file
+                                table_json["excel_file"] = original_file
+                                table_json["file_index"] = file_idx
+
+                                # Save each table as a separate JSON file
+                                json_file = output_folder / f"{safe_name}_table_{table_idx}.json"
+                                with open(json_file, "w", encoding="utf-8") as f:
+                                    json.dump(table_json, f, indent=2, ensure_ascii=False)
+                                print(f"       JSON saved to: {json_file.name}")
+
+                                # Add to consolidated results
+                                all_results.append(table_json)
+                                # Add to per-Excel results
+                                if original_file in per_excel_results:
+                                    per_excel_results[original_file].append(table_json)
+
+                            except Exception as e:
+                                print(f"       ERROR processing table {table_idx}: {e}")
+                                continue
+
+                        print(f"     Successfully extracted {len(tables)} table(s)")
+                    else:
+                        print(f"     No tables found in markdown")
+                else:
+                    print(f"     No content to process for this file")
+
+            except Exception as e:
+                print(f"  ERROR processing temp file '{temp_excel.name}': {e}")
                 continue
 
         # Save consolidated JSON file with all tables from all sheets from all Excel files
