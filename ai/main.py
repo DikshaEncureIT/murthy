@@ -54,7 +54,8 @@ async def root():
             "health": "/health",
             "available_downloads": "/available-downloads",
             "download_excel": "/download/excel/{filename}",
-            "download_all": "/download/all"
+            "download_all": "/download/all",
+            "cleanup": "/cleanup"
         }
     }
 
@@ -348,6 +349,51 @@ async def list_files():
         raise HTTPException(
             status_code=500,
             detail=f"Error listing files: {str(e)}"
+        )
+
+
+@app.post("/cleanup", tags=["File Operations"])
+async def cleanup_folders():
+    """
+    Clean up input and output folders by removing all files.
+    This endpoint is called when starting a new conversion to ensure
+    a fresh start without old files.
+
+    Returns:
+        JSON response with cleanup status
+    """
+    try:
+        input_files_removed = 0
+        output_files_removed = 0
+
+        # Clean input folder
+        if INPUT_FOLDER.exists():
+            for file in INPUT_FOLDER.glob("*"):
+                if file.is_file():
+                    file.unlink()
+                    input_files_removed += 1
+
+        # Clean output folder (markdown)
+        if OUTPUT_FOLDER.exists():
+            for file in OUTPUT_FOLDER.glob("*"):
+                if file.is_file():
+                    file.unlink()
+                    output_files_removed += 1
+
+        return JSONResponse(
+            status_code=200,
+            content={
+                "message": "Folders cleaned successfully",
+                "input_files_removed": input_files_removed,
+                "output_files_removed": output_files_removed,
+                "timestamp": datetime.now().isoformat()
+            }
+        )
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error cleaning folders: {str(e)}"
         )
 
 

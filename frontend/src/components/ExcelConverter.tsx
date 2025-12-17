@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Upload, FileSpreadsheet, Download, X, CheckCircle2, Loader2, Sparkles, AlertCircle, Files } from "lucide-react";
 import { api, ApiError, type ConversionResponse } from "@/lib/api";
@@ -21,6 +21,20 @@ const ExcelConverter = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
+
+  // Cleanup folders on component mount (page load/refresh)
+  useEffect(() => {
+    const cleanupOnLoad = async () => {
+      try {
+        await api.cleanup();
+        console.log("Folders cleaned on page load");
+      } catch (error) {
+        console.error("Failed to cleanup on load:", error);
+      }
+    };
+
+    cleanupOnLoad();
+  }, []);
 
   const handleFileSelect = async (selectedFiles: FileList | null) => {
     if (!selectedFiles) return;
@@ -235,17 +249,33 @@ const ExcelConverter = () => {
     }
   };
 
-  const resetAfterDownload = () => {
-    setTimeout(() => {
+  const resetAfterDownload = async () => {
+    try {
+      // Call cleanup API to remove files from input and markdown folders
+      const cleanupResult = await api.cleanup();
+
       setFiles([]);
       setStatus("idle");
       setConversionData(null);
       setErrorMessage("");
+
       toast({
-        title: "Ready for next conversion",
-        description: "Upload new files to begin",
+        title: "Folders cleaned successfully",
+        description: `Removed ${cleanupResult.input_files_removed} input file(s) and ${cleanupResult.output_files_removed} output file(s)`,
       });
-    }, 1500);
+    } catch (error) {
+      // Even if cleanup fails, reset the frontend state
+      setFiles([]);
+      setStatus("idle");
+      setConversionData(null);
+      setErrorMessage("");
+
+      toast({
+        title: "Cleanup warning",
+        description: error instanceof Error ? error.message : "Could not clean folders, but reset is complete",
+        variant: "destructive",
+      });
+    }
   };
 
   const formatFileSize = (bytes: number) => {
