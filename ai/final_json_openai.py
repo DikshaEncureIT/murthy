@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from landingai_ade import LandingAIADE
 from openai import OpenAI
 import pandas as pd
+from logger import AppLogger
 
 # ----------------- Load secrets from .env -----------------
 # .env example:
@@ -18,6 +19,9 @@ import pandas as pd
 INPUT_FOLDER = Path("input")
 
 load_dotenv(".env")
+
+# Initialize logger
+logger = AppLogger.get_logger(__file__)
 
 LANDINGAI_API_KEY = os.getenv("LANDINGAI_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -45,7 +49,7 @@ excel_files = list(input_folder.glob("*.xlsx")) + list(input_folder.glob("*.xls"
 if not excel_files:
     raise FileNotFoundError(f"No Excel file found in {input_folder}")
 
-print(f"Found {len(excel_files)} Excel file(s) in {input_folder}")
+logger.info(f"Found {len(excel_files)} Excel file(s) in {input_folder}")
 
 # ----------------- Helper Functions -----------------
 
@@ -207,7 +211,7 @@ Table markdown:
         table_json = json.loads(llm_output)
     except json.JSONDecodeError as e:
         # If model adds extra text after JSON, try to extract just the JSON part
-        print(f"Warning: JSON parsing failed at position {e.pos}. Attempting to extract valid JSON...")
+        logger.warning(f"JSON parsing failed at position {e.pos}. Attempting to extract valid JSON...")
 
         try:
             # Try to find the JSON object by looking for matching braces
@@ -230,14 +234,11 @@ Table markdown:
 
             json_str = llm_output[start_idx:end_idx]
             table_json = json.loads(json_str)
-            print(f"Successfully extracted JSON from position {start_idx} to {end_idx}")
+            logger.info(f"Successfully extracted JSON from position {start_idx} to {end_idx}")
 
         except (ValueError, json.JSONDecodeError) as extraction_error:
             # If extraction also fails, show the error and output
-            print("LLM output is not pure JSON and extraction failed:")
-            print(f"Original error: {e}")
-            print(f"Extraction error: {extraction_error}")
-            print(f"Output (first 1000 chars):\n{llm_output[:1000]}")
+            logger.error(f"LLM output is not pure JSON and extraction failed. Original error: {e}, Extraction error: {extraction_error}. Output (first 1000 chars): {llm_output[:1000]}", exc_info=True)
             raise
 
     return table_json
@@ -251,22 +252,18 @@ try:
 
     # Process each Excel file
     for file_idx, input_excel in enumerate(excel_files, 1):
-        print(f"\n{'#'*70}")
-        print(f"# Processing Excel File {file_idx}/{total_files}: {input_excel.name}")
-        print(f"{'#'*70}")
+        logger.info(f"\n{'#'*70}\n# Processing Excel File {file_idx}/{total_files}: {input_excel.name}\n{'#'*70}")
 
         try:
             # Get all sheet names from the Excel file
             with pd.ExcelFile(input_excel) as xls:
                 sheet_names = xls.sheet_names
 
-            print(f"Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}\n")
+            logger.info(f"Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}\n")
 
             # Process each sheet in the Excel file
             for idx, sheet_name in enumerate(sheet_names, 1):
-                print(f"\n{'='*60}")
-                print(f"Processing Sheet {idx}/{len(sheet_names)}: {sheet_name}")
-                print(f"{'='*60}")
+                logger.info(f"\n{'='*60}\nProcessing Sheet {idx}/{len(sheet_names)}: {sheet_name}\n{'='*60}")
 
                 try:
                     # Step 1: Export sheet to single Excel file
@@ -276,33 +273,33 @@ try:
                     safe_name = f"{safe_excel_name}_{safe_sheet_name}"
                     temp_excel = temp_folder / f"{safe_name}.xlsx"
 
-                    print(f"  -> Exporting sheet to temporary Excel file...")
+                    logger.debug(f"  -> Exporting sheet to temporary Excel file...")
                     export_sheet_to_single_excel(input_excel, sheet_name, temp_excel)
-                    print(f"     Created: {temp_excel.name}")
+                    logger.debug(f"     Created: {temp_excel.name}")
 
                     # Step 2: Extract markdown with Landing AI
-                    print(f"  -> Sending to Landing AI ADE...")
+                    logger.info(f"  -> Sending to Landing AI ADE...")
                     markdown_content = extract_markdown_with_landingai(temp_excel)
-                    print(f"     Received markdown ({len(markdown_content)} chars)")
+                    logger.info(f"     Received markdown ({len(markdown_content)} chars)")
 
                     # Step 3: Save markdown to markdown_json folder
                     markdown_file = output_folder / f"{safe_name}.md"
                     with open(markdown_file, "w", encoding="utf-8") as f:
                         f.write(markdown_content)
-                    print(f"     Markdown saved to: {markdown_file}")
+                    logger.debug(f"     Markdown saved to: {markdown_file}")
 
                     # Step 4: Split markdown into individual tables
                     if markdown_content.strip():
-                        print(f"  -> Splitting markdown into individual tables...")
+                        logger.info(f"  -> Splitting markdown into individual tables...")
                         tables = split_markdown_tables(markdown_content)
-                        print(f"     Found {len(tables)} table(s)")
+                        logger.info(f"     Found {len(tables)} table(s)")
 
                         # Step 5: Extract each table separately with OpenAI
                         if tables:
-                            print(f"  -> Extracting tables with OpenAI...")
+                            logger.info(f"  -> Extracting tables with OpenAI...")
                             for table_idx, table_markdown in enumerate(tables, start=1):
                                 try:
-                                    print(f"     Processing table {table_idx}/{len(tables)}...")
+                                    logger.info(f"     Processing table {table_idx}/{len(tables)}...")
 
                                     # Extract table with LLM
                                     table_json = extract_single_table_with_openai(
@@ -319,27 +316,27 @@ try:
                                     json_file = output_folder / f"{safe_name}_table_{table_idx}.json"
                                     with open(json_file, "w", encoding="utf-8") as f:
                                         json.dump(table_json, f, indent=2, ensure_ascii=False)
-                                    print(f"       JSON saved to: {json_file.name}")
+                                    logger.debug(f"       JSON saved to: {json_file.name}")
 
                                     # Add to consolidated results
                                     all_results.append(table_json)
 
                                 except Exception as e:
-                                    print(f"       ERROR processing table {table_idx}: {e}")
+                                    logger.error(f"       ERROR processing table {table_idx}: {e}", exc_info=True)
                                     continue
 
-                            print(f"     Successfully extracted {len(tables)} table(s)")
+                            logger.info(f"     Successfully extracted {len(tables)} table(s)")
                         else:
-                            print(f"     No tables found in markdown")
+                            logger.info(f"     No tables found in markdown")
                     else:
-                        print(f"     No content to process for this sheet")
+                        logger.info(f"     No content to process for this sheet")
 
                 except Exception as e:
-                    print(f"  ERROR processing sheet '{sheet_name}': {e}")
+                    logger.error(f"  ERROR processing sheet '{sheet_name}': {e}", exc_info=True)
                     continue
 
         except Exception as e:
-            print(f"ERROR processing Excel file '{input_excel.name}': {e}")
+            logger.error(f"ERROR processing Excel file '{input_excel.name}': {e}", exc_info=True)
             continue
 
     # Save consolidated JSON file with all tables from all sheets from all Excel files
@@ -347,24 +344,19 @@ try:
         consolidated_json_file = output_folder / "all_tables_consolidated.json"
         with open(consolidated_json_file, "w", encoding="utf-8") as f:
             json.dump(all_results, f, indent=2, ensure_ascii=False)
-        print(f"\n{'*'*70}")
-        print(f"* CONSOLIDATED JSON SAVED: {consolidated_json_file.name}")
-        print(f"* Total tables extracted: {len(all_results)}")
-        print(f"{'*'*70}")
+        logger.info(f"\n{'*'*70}\n* CONSOLIDATED JSON SAVED: {consolidated_json_file.name}\n* Total tables extracted: {len(all_results)}\n{'*'*70}")
 
-    print(f"\n{'='*60}")
-    print(f"Processing Complete!")
-    print(f"{'='*60}")
-    print(f"Total Excel files processed: {total_files}")
-    print(f"Total tables extracted: {len(all_results)}")
-    print(f"Output folder: {output_folder.absolute()}")
-    print(f"{'='*60}\n")
+    logger.info(f"\n{'='*60}\nProcessing Complete!\n{'='*60}")
+    logger.info(f"Total Excel files processed: {total_files}")
+    logger.info(f"Total tables extracted: {len(all_results)}")
+    logger.info(f"Output folder: {output_folder.absolute()}")
+    logger.info(f"{'='*60}\n")
 
 finally:
     # Cleanup temporary files
     if temp_folder.exists():
         try:
             shutil.rmtree(temp_folder)
-            print(f"Cleaned up temporary files")
+            logger.info(f"Cleaned up temporary files")
         except Exception as e:
-            print(f"Warning: Could not clean up temp folder: {e}")
+            logger.warning(f"Could not clean up temp folder: {e}")

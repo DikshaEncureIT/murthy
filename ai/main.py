@@ -9,8 +9,7 @@ from typing import Dict, Any, List
 from dotenv import load_dotenv
 
 from converter import process_excel_to_json
-import logging
-from logging.handlers import RotatingFileHandler
+from logger import AppLogger
 import os
 import time
 from starlette.middleware.base import BaseHTTPMiddleware
@@ -19,47 +18,9 @@ from starlette.requests import Request
 # Load environment variables
 load_dotenv(".env")
 
-# Configure logging
-def setup_logging():
-    log_file = os.getenv("LOG_FILE", "/logs/backend.log")
-    log_level = os.getenv("LOG_LEVEL", "INFO").upper()
-
-    # Create logs directory if it doesn't exist
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
-
-    # Create formatter
-    detailed_formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S'
-    )
-
-    # Root logger
-    logger = logging.getLogger()
-    logger.setLevel(getattr(logging, log_level))
-
-    # Console handler
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
-    console_handler.setFormatter(detailed_formatter)
-
-    # File handler with rotation (10MB per file, keep 5 backups)
-    file_handler = RotatingFileHandler(
-        log_file,
-        maxBytes=10*1024*1024,
-        backupCount=5,
-        encoding='utf-8'
-    )
-    file_handler.setLevel(logging.DEBUG)
-    file_handler.setFormatter(detailed_formatter)
-
-    # Add handlers
-    logger.addHandler(console_handler)
-    logger.addHandler(file_handler)
-
-    return logger
-
-# Initialize logging
-logger = setup_logging()
+# Initialize logging with AppLogger
+AppLogger.configure()
+logger = AppLogger.get_logger(__file__)
 logger.info("Backend service starting...")
 
 app = FastAPI(

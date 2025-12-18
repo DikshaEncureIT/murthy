@@ -10,9 +10,13 @@ from dotenv import load_dotenv
 from landingai_ade import LandingAIADE
 from openai import OpenAI
 import pandas as pd
+from logger import AppLogger
 
 # Load environment variables
 load_dotenv(".env")
+
+# Initialize logger
+logger = AppLogger.get_logger(__file__)
 
 LANDINGAI_API_KEY = os.getenv("LANDINGAI_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -179,7 +183,7 @@ Table markdown:
         table_json = json.loads(llm_output)
     except json.JSONDecodeError as e:
         # If model adds extra text after JSON, try to extract just the JSON part
-        print(f"Warning: JSON parsing failed at position {e.pos}. Attempting to extract valid JSON...")
+        logger.warning(f"JSON parsing failed at position {e.pos}. Attempting to extract valid JSON...")
 
         try:
             # Try to find the JSON object by looking for matching braces
@@ -201,13 +205,10 @@ Table markdown:
 
             json_str = llm_output[start_idx:end_idx]
             table_json = json.loads(json_str)
-            print(f"Successfully extracted JSON from position {start_idx} to {end_idx}")
+            logger.info(f"Successfully extracted JSON from position {start_idx} to {end_idx}")
 
         except (ValueError, json.JSONDecodeError) as extraction_error:
-            print("LLM output is not pure JSON and extraction failed:")
-            print(f"Original error: {e}")
-            print(f"Extraction error: {extraction_error}")
-            print(f"Output (first 1000 chars):\n{llm_output[:1000]}")
+            logger.error(f"LLM output is not pure JSON and extraction failed. Original error: {e}, Extraction error: {extraction_error}. Output (first 1000 chars): {llm_output[:1000]}", exc_info=True)
             raise
 
     return table_json
@@ -296,27 +297,25 @@ async def process_excel_to_json() -> Dict[str, Any]:
     if not excel_files:
         raise FileNotFoundError(f"No Excel file found in {input_folder}")
 
-    print(f"Found {len(excel_files)} Excel file(s) in {input_folder}")
+    logger.info(f"Found {len(excel_files)} Excel file(s) in {input_folder}")
 
     try:
         # =================================================================
         # PHASE 1: SYNC SHEET SPLITTING - Create ALL temp files at once
         # =================================================================
-        print(f"\n{'='*70}")
-        print(f"PHASE 1: CREATING ALL TEMP SHEET FILES")
-        print(f"{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 1: CREATING ALL TEMP SHEET FILES\n{'='*70}\n")
 
         sheet_metadata = []  # List of (temp_excel, safe_name, sheet_name, excel_file_name, file_index)
 
         for file_idx, input_excel in enumerate(excel_files, 1):
-            print(f"Processing Excel file {file_idx}/{len(excel_files)}: {input_excel.name}")
+            logger.info(f"Processing Excel file {file_idx}/{len(excel_files)}: {input_excel.name}")
 
             try:
                 # Get all sheet names from the Excel file
                 with pd.ExcelFile(input_excel) as xls:
                     sheet_names = xls.sheet_names
 
-                print(f"  Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}")
+                logger.info(f"  Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}")
 
                 # Create temp file for each sheet
                 for idx, sheet_name in enumerate(sheet_names, 1):
@@ -328,7 +327,7 @@ async def process_excel_to_json() -> Dict[str, Any]:
 
                     # Export sheet to temp Excel file
                     export_sheet_to_single_excel(input_excel, sheet_name, temp_excel)
-                    print(f"    Created: {temp_excel.name}")
+                    logger.debug(f"    Created: {temp_excel.name}")
 
                     # Store metadata for Phase 2
                     sheet_metadata.append({
@@ -340,18 +339,16 @@ async def process_excel_to_json() -> Dict[str, Any]:
                     })
 
             except Exception as e:
-                print(f"  ERROR processing Excel file '{input_excel.name}': {e}")
+                logger.error(f"  ERROR processing Excel file '{input_excel.name}': {e}", exc_info=True)
                 continue
 
-        print(f"\nPhase 1 Complete: Created {len(sheet_metadata)} temp sheet files")
+        logger.info(f"\nPhase 1 Complete: Created {len(sheet_metadata)} temp sheet files")
 
         # =================================================================
         # PHASE 2: PARALLEL LANDING AI - Process ALL sheets at once
         # =================================================================
-        print(f"\n{'='*70}")
-        print(f"PHASE 2: PARALLEL LANDING AI PROCESSING")
-        print(f"{'='*70}\n")
-        print(f"Processing {len(sheet_metadata)} sheets in parallel...")
+        logger.info(f"\n{'='*70}\nPHASE 2: PARALLEL LANDING AI PROCESSING\n{'='*70}\n")
+        logger.info(f"Processing {len(sheet_metadata)} sheets in parallel...")
 
         # Create all Landing AI tasks
         tasks = []
@@ -373,13 +370,13 @@ async def process_excel_to_json() -> Dict[str, Any]:
         for idx, result in enumerate(landingai_results):
             if isinstance(result, Exception):
                 phase2_errors += 1
-                print(f"  [ERROR] Sheet {sheet_metadata[idx]['safe_name']}: {result}")
+                logger.error(f"  [ERROR] Sheet {sheet_metadata[idx]['safe_name']}: {result}")
                 continue
 
             safe_name, markdown_content, markdown_file = result
             metadata = sheet_metadata[idx]
 
-            print(f"  [SUCCESS] {safe_name} ({len(markdown_content)} chars)")
+            logger.info(f"  [SUCCESS] {safe_name} ({len(markdown_content)} chars)")
 
             markdown_data.append({
                 'safe_name': safe_name,
@@ -389,16 +386,14 @@ async def process_excel_to_json() -> Dict[str, Any]:
                 'file_index': metadata['file_index']
             })
 
-        print(f"\nPhase 2 Complete:")
-        print(f"  Success: {len(markdown_data)} markdown files")
-        print(f"  Errors: {phase2_errors}")
+        logger.info(f"\nPhase 2 Complete:")
+        logger.info(f"  Success: {len(markdown_data)} markdown files")
+        logger.info(f"  Errors: {phase2_errors}")
 
         # =================================================================
         # PHASE 3.1: SPLIT ALL MARKDOWN INTO TABLES
         # =================================================================
-        print(f"\n{'='*70}")
-        print(f"PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES")
-        print(f"{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES\n{'='*70}\n")
 
         table_tasks = []  # List of table processing tasks
 
@@ -407,7 +402,7 @@ async def process_excel_to_json() -> Dict[str, Any]:
 
             if markdown_content.strip():
                 tables = split_markdown_tables(markdown_content)
-                print(f"  {md_data['safe_name']}: Found {len(tables)} table(s)")
+                logger.info(f"  {md_data['safe_name']}: Found {len(tables)} table(s)")
 
                 for table_idx, table_markdown in enumerate(tables, start=1):
                     table_tasks.append({
@@ -419,15 +414,13 @@ async def process_excel_to_json() -> Dict[str, Any]:
                         'safe_name': md_data['safe_name']
                     })
 
-        print(f"\nPhase 3.1 Complete: Found {len(table_tasks)} tables total")
+        logger.info(f"\nPhase 3.1 Complete: Found {len(table_tasks)} tables total")
 
         # =================================================================
         # PHASE 3.2: PARALLEL OPENAI - Process ALL tables at once
         # =================================================================
-        print(f"\n{'='*70}")
-        print(f"PHASE 3.2: PARALLEL OPENAI PROCESSING")
-        print(f"{'='*70}\n")
-        print(f"Processing {len(table_tasks)} tables in parallel...")
+        logger.info(f"\n{'='*70}\nPHASE 3.2: PARALLEL OPENAI PROCESSING\n{'='*70}\n")
+        logger.info(f"Processing {len(table_tasks)} tables in parallel...")
 
         # Run Phase 3.2
         all_results = []
@@ -454,31 +447,29 @@ async def process_excel_to_json() -> Dict[str, Any]:
             for idx, result in enumerate(openai_results):
                 if isinstance(result, Exception):
                     phase3_errors += 1
-                    print(f"  [ERROR] Table {idx+1}/{len(table_tasks)}: {result}")
+                    logger.error(f"  [ERROR] Table {idx+1}/{len(table_tasks)}: {result}")
                     continue
 
                 all_results.append(result)
                 if (idx + 1) % 10 == 0 or (idx + 1) == len(openai_results):
-                    print(f"  [PROGRESS] Processed {idx+1}/{len(table_tasks)} tables")
+                    logger.info(f"  [PROGRESS] Processed {idx+1}/{len(table_tasks)} tables")
 
-        print(f"\nPhase 3.2 Complete:")
-        print(f"  Success: {len(all_results)} tables")
-        print(f"  Errors: {phase3_errors}")
+        logger.info(f"\nPhase 3.2 Complete:")
+        logger.info(f"  Success: {len(all_results)} tables")
+        logger.info(f"  Errors: {phase3_errors}")
 
         # =================================================================
         # SAVE CONSOLIDATED RESULTS
         # =================================================================
-        print(f"\n{'='*70}")
-        print(f"SAVING CONSOLIDATED RESULTS")
-        print(f"{'='*70}\n")
+        logger.info(f"\n{'='*70}\nSAVING CONSOLIDATED RESULTS\n{'='*70}\n")
 
         # Save consolidated JSON file
         if all_results:
             consolidated_json_file = output_folder / "all_tables_consolidated.json"
             with open(consolidated_json_file, "w", encoding="utf-8") as f:
                 json.dump(all_results, f, indent=2, ensure_ascii=False)
-            print(f"* CONSOLIDATED JSON SAVED: {consolidated_json_file.name}")
-            print(f"* Total tables extracted: {len(all_results)}")
+            logger.info(f"* CONSOLIDATED JSON SAVED: {consolidated_json_file.name}")
+            logger.info(f"* Total tables extracted: {len(all_results)}")
 
         # Group results by Excel file for per-file JSON
         per_excel_results = {}
@@ -499,18 +490,16 @@ async def process_excel_to_json() -> Dict[str, Any]:
                     json.dump(tables, f, indent=2, ensure_ascii=False)
 
                 per_excel_files.append(per_excel_json_file.name)
-                print(f"\n* PER-EXCEL JSON SAVED: {per_excel_json_file.name}")
-                print(f"  Excel file: {excel_name}")
-                print(f"  Tables: {len(tables)}")
+                logger.info(f"\n* PER-EXCEL JSON SAVED: {per_excel_json_file.name}")
+                logger.info(f"  Excel file: {excel_name}")
+                logger.info(f"  Tables: {len(tables)}")
 
-        print(f"\n{'='*70}")
-        print(f"PROCESSING COMPLETE!")
-        print(f"{'='*70}")
-        print(f"Total Excel files processed: {len(excel_files)}")
-        print(f"Total sheets processed: {len(sheet_metadata)}")
-        print(f"Total tables extracted: {len(all_results)}")
-        print(f"Output folder: {output_folder.absolute()}")
-        print(f"{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPROCESSING COMPLETE!\n{'='*70}")
+        logger.info(f"Total Excel files processed: {len(excel_files)}")
+        logger.info(f"Total sheets processed: {len(sheet_metadata)}")
+        logger.info(f"Total tables extracted: {len(all_results)}")
+        logger.info(f"Output folder: {output_folder.absolute()}")
+        logger.info(f"{'='*70}\n")
 
         return {
             "files_processed": len(excel_files),
@@ -526,6 +515,6 @@ async def process_excel_to_json() -> Dict[str, Any]:
         if temp_folder.exists():
             try:
                 shutil.rmtree(temp_folder)
-                print(f"Cleaned up temporary files")
+                logger.info(f"Cleaned up temporary files")
             except Exception as e:
-                print(f"Warning: Could not clean up temp folder: {e}")
+                logger.warning(f"Could not clean up temp folder: {e}")

@@ -2239,3 +2239,882 @@
 2025-12-18 11:10:34 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
 2025-12-18 11:11:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
 2025-12-18 11:11:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.97ms
+2025-12-18 11:11:35 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:11:35 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.55ms
+2025-12-18 11:12:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:12:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.78ms
+2025-12-18 11:12:35 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:12:35 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-18 11:13:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:13:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-18 11:13:35 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:13:35 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-18 11:14:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:14:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.0ms
+2025-12-18 11:14:35 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:14:35 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-18 11:15:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:15:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-18 11:15:35 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:15:35 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-18 11:16:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:16:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.53ms
+2025-12-18 11:16:35 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:16:35 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.0ms
+2025-12-18 11:17:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:17:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-18 11:17:35 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:17:35 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-18 11:18:05 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:18:05 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-18 11:18:36 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:18:36 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.83ms
+2025-12-18 11:19:06 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:19:06 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.8ms
+2025-12-18 11:19:36 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:19:36 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2025-12-18 11:20:06 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:20:06 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-18 11:20:36 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:20:36 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-18 11:21:06 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:21:06 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.02ms
+2025-12-18 11:21:36 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:21:36 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.31ms
+2025-12-18 11:22:06 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:22:06 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-18 11:22:36 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:22:36 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.44ms
+2025-12-18 11:23:06 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:23:06 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.1ms
+2025-12-18 11:23:36 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:23:36 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 42.71ms
+2025-12-18 11:24:06 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:24:06 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.15ms
+2025-12-18 11:24:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:24:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.24ms
+2025-12-18 11:25:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:25:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.04ms
+2025-12-18 11:25:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:25:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.86ms
+2025-12-18 11:26:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:26:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
+2025-12-18 11:26:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:26:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.99ms
+2025-12-18 11:27:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:27:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-18 11:27:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:27:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.72ms
+2025-12-18 11:28:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:28:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.84ms
+2025-12-18 11:28:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:28:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.61ms
+2025-12-18 11:29:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:29:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.7ms
+2025-12-18 11:29:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:29:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.7ms
+2025-12-18 11:30:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:30:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-18 11:30:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:30:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.56ms
+2025-12-18 11:31:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:31:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.24ms
+2025-12-18 11:31:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:31:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2025-12-18 11:32:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:32:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.77ms
+2025-12-18 11:32:37 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:32:37 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.84ms
+2025-12-18 11:33:07 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:33:07 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.94ms
+2025-12-18 11:33:38 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:33:38 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 11.6ms
+2025-12-18 11:34:08 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:34:08 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.98ms
+2025-12-18 11:34:38 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:34:38 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.65ms
+2025-12-18 11:35:08 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:35:08 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-18 11:35:38 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:35:38 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.63ms
+2025-12-18 11:36:08 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:36:08 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
+2025-12-18 11:36:38 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:36:38 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-18 11:37:08 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:37:08 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.4ms
+2025-12-18 11:37:38 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:37:38 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.42ms
+2025-12-18 11:38:08 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:38:08 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-18 11:38:38 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:38:38 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2025-12-18 11:39:08 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:39:08 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.42ms
+2025-12-18 11:39:38 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:39:38 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.42ms
+2025-12-18 11:40:08 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:40:08 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2025-12-18 11:40:39 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:40:39 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.53ms
+2025-12-18 11:41:09 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:41:09 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.41ms
+2025-12-18 11:41:39 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:41:39 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.42ms
+2025-12-18 11:42:10 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:42:10 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-18 11:42:40 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:42:40 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2025-12-18 11:43:10 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:43:10 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
+2025-12-18 11:43:41 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:43:41 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-18 11:44:11 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:44:11 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-18 11:44:41 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:44:41 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.53ms
+2025-12-18 11:45:12 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:45:12 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.64ms
+2025-12-18 11:45:42 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:45:42 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.84ms
+2025-12-18 11:46:13 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:46:13 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.42ms
+2025-12-18 11:46:43 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:46:43 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-18 11:47:13 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:47:13 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-18 11:47:44 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:47:44 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
+2025-12-18 11:48:03 - root - INFO - <module>:63 - Backend service starting...
+2025-12-18 11:48:14 - root - INFO - dispatch:92 - Request started: GET http://localhost:8000/health
+2025-12-18 11:48:14 - root - INFO - dispatch:99 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.43ms
+2025-12-18 11:48:26 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:48:44 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:48:44 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.54ms
+2025-12-18 11:49:15 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:49:15 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.5ms
+2025-12-18 11:49:29 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 17:19:45 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:49:45 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:49:45 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 3.24ms
+2025-12-18 11:50:04 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:50:15 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:50:15 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.48ms
+2025-12-18 11:50:23 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:50:38 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:50:40 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:50:41 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:50:46 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:50:46 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.53ms
+2025-12-18 11:50:50 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:07 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:09 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:16 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:51:16 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 4.21ms
+2025-12-18 11:51:19 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:20 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:33 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:34 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:43 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:51:46 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:51:46 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 5.81ms
+2025-12-18 11:51:50 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:52:14 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:52:17 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:52:17 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 3.14ms
+2025-12-18 11:52:23 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:52:37 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:52:47 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:52:47 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 5.84ms
+2025-12-18 11:52:54 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:52:56 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:09 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:11 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:12 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:18 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:53:18 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 4.97ms
+2025-12-18 11:53:19 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:30 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:40 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:42 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 11:53:48 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:53:48 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 5.81ms
+2025-12-18 11:54:18 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:54:18 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.64ms
+2025-12-18 17:24:19 - final_json_openai - INFO - <module>:52 - Found 1 Excel file(s) in input
+2025-12-18 17:24:19 - final_json_openai - INFO - <module>:255 - 
+######################################################################
+# Processing Excel File 1/1: PR-38067-YEAR Updates.xlsx
+######################################################################
+2025-12-18 17:24:20 - final_json_openai - INFO - <module>:262 - Found 21 sheet(s): Control, Mail Merge Fields, Notes Pro, Confirm Letter Piggy, Send Records Confirm Letter , Send Records Confirm Letter Pig, Rescheduled Letter, Rescheduled Letter Piggy, Payroll Rec, EE Identify, General Ledger Test, 1099 List, Hire & Term , 5-Day Draft Letter,  No Discrepancy,  No Discrep Limited Scope, 5-Day Draft Letter Limited, Discrepancy, Discrep Only Overpayments, Discrep Limited Scope, Discrep Only Overpayments Limit
+
+2025-12-18 17:24:20 - final_json_openai - INFO - <module>:266 - 
+============================================================
+Processing Sheet 1/21: Control
+============================================================
+2025-12-18 17:24:20 - final_json_openai - INFO - <module>:281 -   -> Sending to Landing AI ADE...
+2025-12-18 17:24:21 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-18 17:24:21 - final_json_openai - INFO - <module>:283 -      Received markdown (11464 chars)
+2025-12-18 17:24:21 - final_json_openai - INFO - <module>:293 -   -> Splitting markdown into individual tables...
+2025-12-18 17:24:21 - final_json_openai - INFO - <module>:295 -      Found 24 table(s)
+2025-12-18 17:24:21 - final_json_openai - INFO - <module>:299 -   -> Extracting tables with OpenAI...
+2025-12-18 17:24:21 - final_json_openai - INFO - <module>:302 -      Processing table 1/24...
+2025-12-18 17:24:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:24:47 - final_json_openai - INFO - <module>:302 -      Processing table 2/24...
+2025-12-18 11:54:49 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:54:49 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-18 17:24:53 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:24:53 - final_json_openai - INFO - <module>:302 -      Processing table 3/24...
+2025-12-18 17:25:00 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:00 - final_json_openai - INFO - <module>:302 -      Processing table 4/24...
+2025-12-18 17:25:07 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:07 - final_json_openai - INFO - <module>:302 -      Processing table 5/24...
+2025-12-18 17:25:13 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:13 - final_json_openai - INFO - <module>:302 -      Processing table 6/24...
+2025-12-18 11:55:19 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:55:19 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.09ms
+2025-12-18 17:25:23 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:23 - final_json_openai - INFO - <module>:302 -      Processing table 7/24...
+2025-12-18 17:25:30 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:30 - final_json_openai - INFO - <module>:302 -      Processing table 8/24...
+2025-12-18 17:25:37 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:37 - final_json_openai - INFO - <module>:302 -      Processing table 9/24...
+2025-12-18 17:25:44 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:44 - final_json_openai - INFO - <module>:302 -      Processing table 10/24...
+2025-12-18 11:55:49 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:55:49 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-18 17:25:51 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:51 - final_json_openai - INFO - <module>:302 -      Processing table 11/24...
+2025-12-18 17:25:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:25:57 - final_json_openai - INFO - <module>:302 -      Processing table 12/24...
+2025-12-18 17:26:04 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:26:04 - final_json_openai - INFO - <module>:302 -      Processing table 13/24...
+2025-12-18 17:26:12 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:26:12 - final_json_openai - INFO - <module>:302 -      Processing table 14/24...
+2025-12-18 17:26:19 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:26:19 - final_json_openai - INFO - <module>:302 -      Processing table 15/24...
+2025-12-18 11:56:20 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:56:20 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.73ms
+2025-12-18 17:26:26 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:26:26 - final_json_openai - INFO - <module>:302 -      Processing table 16/24...
+2025-12-18 17:26:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:26:33 - final_json_openai - INFO - <module>:302 -      Processing table 17/24...
+2025-12-18 17:26:39 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:26:39 - final_json_openai - INFO - <module>:302 -      Processing table 18/24...
+2025-12-18 11:56:50 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:56:50 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.01ms
+2025-12-18 17:26:51 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:26:51 - final_json_openai - INFO - <module>:302 -      Processing table 19/24...
+2025-12-18 17:27:01 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 17:27:01 - final_json_openai - INFO - <module>:302 -      Processing table 20/24...
+2025-12-18 11:57:21 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:57:21 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.12ms
+2025-12-18 11:57:51 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:57:51 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.84ms
+2025-12-18 11:58:21 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:58:21 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-18 11:58:52 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:58:52 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.78ms
+2025-12-18 11:59:22 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:59:22 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-18 11:59:52 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 11:59:52 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.5ms
+2025-12-18 12:00:23 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:00:23 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-18 12:00:53 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:00:53 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-18 12:01:24 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:01:24 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.58ms
+2025-12-18 12:01:54 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:01:54 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.79ms
+2025-12-18 12:02:24 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:02:24 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.76ms
+2025-12-18 12:02:55 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:02:55 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2025-12-18 12:03:25 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:03:25 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-18 12:03:55 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:03:55 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-18 12:04:26 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:04:26 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.74ms
+2025-12-18 12:04:56 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:04:56 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2025-12-18 12:05:27 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:05:27 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.83ms
+2025-12-18 12:05:57 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:05:57 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.17ms
+2025-12-18 12:06:27 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:06:27 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-18 12:06:58 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:06:58 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.79ms
+2025-12-18 12:07:28 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:07:28 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-18 12:07:58 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:07:58 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-18 12:08:29 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:08:29 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.79ms
+2025-12-18 12:08:59 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:08:59 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2025-12-18 12:09:30 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:09:30 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-18 12:10:00 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:10:00 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-18 12:10:30 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:10:30 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.84ms
+2025-12-18 12:11:01 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:11:01 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.86ms
+2025-12-18 12:11:31 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:11:31 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-18 12:12:01 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:12:01 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.74ms
+2025-12-18 12:12:32 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:12:32 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.83ms
+2025-12-18 12:13:02 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:13:02 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.99ms
+2025-12-18 12:13:31 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/cleanup
+2025-12-18 12:13:31 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 57.97ms
+2025-12-18 12:13:33 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:13:33 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2025-12-18 12:13:38 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/upload
+2025-12-18 12:13:38 - main - INFO - upload_file:141 - File uploaded successfully: ocr1.xlsx (6013 bytes)
+2025-12-18 12:13:38 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 6.52ms
+2025-12-18 12:13:38 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/convert
+2025-12-18 12:13:38 - main - INFO - convert_to_json:186 - Starting conversion process. Found 1 Excel files
+2025-12-18 12:13:38 - converter - INFO - process_excel_to_json:300 - Found 1 Excel file(s) in input
+2025-12-18 12:13:38 - converter - INFO - process_excel_to_json:306 - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2025-12-18 12:13:38 - converter - INFO - process_excel_to_json:311 - Processing Excel file 1/1: ocr1.xlsx
+2025-12-18 12:13:39 - converter - INFO - process_excel_to_json:318 -   Found 1 sheet(s): Sheet1
+2025-12-18 12:13:39 - converter - INFO - process_excel_to_json:345 - 
+Phase 1 Complete: Created 1 temp sheet files
+2025-12-18 12:13:39 - converter - INFO - process_excel_to_json:350 - 
+======================================================================
+PHASE 2: PARALLEL LANDING AI PROCESSING
+======================================================================
+
+2025-12-18 12:13:39 - converter - INFO - process_excel_to_json:351 - Processing 1 sheets in parallel...
+2025-12-18 12:13:40 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:379 -   [SUCCESS] ocr1_Sheet1 (6676 chars)
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:389 - 
+Phase 2 Complete:
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:390 -   Success: 1 markdown files
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:391 -   Errors: 0
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:396 - 
+======================================================================
+PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:405 -   ocr1_Sheet1: Found 4 table(s)
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:417 - 
+Phase 3.1 Complete: Found 4 tables total
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:422 - 
+======================================================================
+PHASE 3.2: PARALLEL OPENAI PROCESSING
+======================================================================
+
+2025-12-18 12:13:40 - converter - INFO - process_excel_to_json:423 - Processing 4 tables in parallel...
+2025-12-18 12:13:49 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:13:49 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:13:50 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:13:51 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:455 -   [PROGRESS] Processed 4/4 tables
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:457 - 
+Phase 3.2 Complete:
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:458 -   Success: 4 tables
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:459 -   Errors: 0
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:464 - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:471 - * CONSOLIDATED JSON SAVED: all_tables_consolidated.json
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:472 - * Total tables extracted: 4
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:493 - 
+* PER-EXCEL JSON SAVED: ocr1_complete.json
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:494 -   Excel file: ocr1.xlsx
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:495 -   Tables: 4
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:497 - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:498 - Total Excel files processed: 1
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:499 - Total sheets processed: 1
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:500 - Total tables extracted: 4
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:501 - Output folder: /app/markdown
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:502 - ======================================================================
+
+2025-12-18 12:13:51 - converter - INFO - process_excel_to_json:518 - Cleaned up temporary files
+2025-12-18 12:13:51 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 12853.05ms
+2025-12-18 12:13:57 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/cleanup
+2025-12-18 12:13:57 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 2.08ms
+2025-12-18 12:14:02 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/upload
+2025-12-18 12:14:02 - main - INFO - upload_file:141 - File uploaded successfully: date (1).xlsx (5186 bytes)
+2025-12-18 12:14:02 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 3.66ms
+2025-12-18 12:14:02 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/convert
+2025-12-18 12:14:02 - main - INFO - convert_to_json:186 - Starting conversion process. Found 1 Excel files
+2025-12-18 12:14:02 - converter - INFO - process_excel_to_json:300 - Found 1 Excel file(s) in input
+2025-12-18 12:14:02 - converter - INFO - process_excel_to_json:306 - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2025-12-18 12:14:02 - converter - INFO - process_excel_to_json:311 - Processing Excel file 1/1: date (1).xlsx
+2025-12-18 12:14:02 - converter - INFO - process_excel_to_json:318 -   Found 1 sheet(s): Sheet1
+2025-12-18 12:14:02 - converter - INFO - process_excel_to_json:345 - 
+Phase 1 Complete: Created 1 temp sheet files
+2025-12-18 12:14:02 - converter - INFO - process_excel_to_json:350 - 
+======================================================================
+PHASE 2: PARALLEL LANDING AI PROCESSING
+======================================================================
+
+2025-12-18 12:14:02 - converter - INFO - process_excel_to_json:351 - Processing 1 sheets in parallel...
+2025-12-18 12:14:03 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:14:03 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-18 12:14:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:379 -   [SUCCESS] date_1_Sheet1 (1743 chars)
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:389 - 
+Phase 2 Complete:
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:390 -   Success: 1 markdown files
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:391 -   Errors: 0
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:396 - 
+======================================================================
+PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:405 -   date_1_Sheet1: Found 8 table(s)
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:417 - 
+Phase 3.1 Complete: Found 8 tables total
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:422 - 
+======================================================================
+PHASE 3.2: PARALLEL OPENAI PROCESSING
+======================================================================
+
+2025-12-18 12:14:08 - converter - INFO - process_excel_to_json:423 - Processing 8 tables in parallel...
+2025-12-18 12:14:13 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:14 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:14 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:14 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:14 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:14 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:15 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:16 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:455 -   [PROGRESS] Processed 8/8 tables
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:457 - 
+Phase 3.2 Complete:
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:458 -   Success: 8 tables
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:459 -   Errors: 0
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:464 - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:471 - * CONSOLIDATED JSON SAVED: all_tables_consolidated.json
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:472 - * Total tables extracted: 8
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:493 - 
+* PER-EXCEL JSON SAVED: date_1_complete.json
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:494 -   Excel file: date (1).xlsx
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:495 -   Tables: 8
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:497 - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:498 - Total Excel files processed: 1
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:499 - Total sheets processed: 1
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:500 - Total tables extracted: 8
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:501 - Output folder: /app/markdown
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:502 - ======================================================================
+
+2025-12-18 12:14:16 - converter - INFO - process_excel_to_json:518 - Cleaned up temporary files
+2025-12-18 12:14:16 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 13959.75ms
+2025-12-18 12:14:33 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:14:33 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.62ms
+2025-12-18 12:14:46 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/cleanup
+2025-12-18 12:14:46 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 2.84ms
+2025-12-18 12:15:04 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:15:04 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.03ms
+2025-12-18 12:15:34 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:15:34 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.61ms
+2025-12-18 12:16:04 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:16:04 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.97ms
+2025-12-18 12:16:35 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:16:35 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.69ms
+2025-12-18 12:17:05 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:17:05 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-18 12:17:36 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:17:36 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.59ms
+2025-12-18 12:18:06 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:18:06 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.71ms
+2025-12-18 12:18:50 - main - INFO - <module>:24 - Backend service starting...
+2025-12-18 12:18:53 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:18:53 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 5.6ms
+2025-12-18 12:19:23 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:19:23 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.75ms
+2025-12-18 12:19:41 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/cleanup
+2025-12-18 12:19:41 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 2.78ms
+2025-12-18 12:19:52 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/upload
+2025-12-18 12:19:52 - main - INFO - upload_file:141 - File uploaded successfully: ocr_dummy_excel.xlsx (9927 bytes)
+2025-12-18 12:19:52 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 9.55ms
+2025-12-18 12:19:52 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/convert
+2025-12-18 12:19:52 - main - INFO - convert_to_json:186 - Starting conversion process. Found 1 Excel files
+2025-12-18 12:19:52 - converter - INFO - process_excel_to_json:300 - Found 1 Excel file(s) in input
+2025-12-18 12:19:52 - converter - INFO - process_excel_to_json:306 - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2025-12-18 12:19:52 - converter - INFO - process_excel_to_json:311 - Processing Excel file 1/1: ocr_dummy_excel.xlsx
+2025-12-18 12:19:52 - converter - INFO - process_excel_to_json:318 -   Found 1 sheet(s): Sheet1
+2025-12-18 12:19:52 - converter - INFO - process_excel_to_json:345 - 
+Phase 1 Complete: Created 1 temp sheet files
+2025-12-18 12:19:52 - converter - INFO - process_excel_to_json:350 - 
+======================================================================
+PHASE 2: PARALLEL LANDING AI PROCESSING
+======================================================================
+
+2025-12-18 12:19:52 - converter - INFO - process_excel_to_json:351 - Processing 1 sheets in parallel...
+2025-12-18 12:19:53 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:19:53 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.41ms
+2025-12-18 12:19:54 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:379 -   [SUCCESS] ocr_dummy_excel_Sheet1 (15594 chars)
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:389 - 
+Phase 2 Complete:
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:390 -   Success: 1 markdown files
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:391 -   Errors: 0
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:396 - 
+======================================================================
+PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:405 -   ocr_dummy_excel_Sheet1: Found 17 table(s)
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:417 - 
+Phase 3.1 Complete: Found 17 tables total
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:422 - 
+======================================================================
+PHASE 3.2: PARALLEL OPENAI PROCESSING
+======================================================================
+
+2025-12-18 12:19:55 - converter - INFO - process_excel_to_json:423 - Processing 17 tables in parallel...
+2025-12-18 12:20:00 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:01 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:01 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:01 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:01 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:04 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:06 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:07 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:07 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:09 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:09 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:455 -   [PROGRESS] Processed 10/17 tables
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:455 -   [PROGRESS] Processed 17/17 tables
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:457 - 
+Phase 3.2 Complete:
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:458 -   Success: 17 tables
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:459 -   Errors: 0
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:464 - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:471 - * CONSOLIDATED JSON SAVED: all_tables_consolidated.json
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:472 - * Total tables extracted: 17
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:493 - 
+* PER-EXCEL JSON SAVED: ocr_dummy_excel_complete.json
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:494 -   Excel file: ocr_dummy_excel.xlsx
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:495 -   Tables: 17
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:497 - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:498 - Total Excel files processed: 1
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:499 - Total sheets processed: 1
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:500 - Total tables extracted: 17
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:501 - Output folder: /app/markdown
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:502 - ======================================================================
+
+2025-12-18 12:20:09 - converter - INFO - process_excel_to_json:518 - Cleaned up temporary files
+2025-12-18 12:20:09 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 17264.89ms
+2025-12-18 12:20:24 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:20:24 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.02ms
+2025-12-18 12:20:54 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:20:54 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2025-12-18 12:21:24 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:21:24 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-18 12:21:55 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:21:55 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.04ms
+2025-12-18 12:22:25 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:22:25 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.6ms
+2025-12-18 12:22:56 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:22:56 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-18 12:23:26 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:23:26 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-18 12:23:56 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:23:56 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2025-12-18 12:24:16 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/cleanup
+2025-12-18 12:24:16 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 2.11ms
+2025-12-18 12:24:27 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:24:27 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.97ms
+2025-12-18 12:24:30 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/upload
+2025-12-18 12:24:30 - main - INFO - upload_file:141 - File uploaded successfully: date.xlsx (5077 bytes)
+2025-12-18 12:24:30 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 8.34ms
+2025-12-18 12:24:30 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/convert
+2025-12-18 12:24:30 - main - INFO - convert_to_json:186 - Starting conversion process. Found 1 Excel files
+2025-12-18 12:24:30 - converter - INFO - process_excel_to_json:300 - Found 1 Excel file(s) in input
+2025-12-18 12:24:30 - converter - INFO - process_excel_to_json:306 - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2025-12-18 12:24:30 - converter - INFO - process_excel_to_json:311 - Processing Excel file 1/1: date.xlsx
+2025-12-18 12:24:30 - converter - INFO - process_excel_to_json:318 -   Found 1 sheet(s): Sheet1
+2025-12-18 12:24:30 - converter - INFO - process_excel_to_json:345 - 
+Phase 1 Complete: Created 1 temp sheet files
+2025-12-18 12:24:30 - converter - INFO - process_excel_to_json:350 - 
+======================================================================
+PHASE 2: PARALLEL LANDING AI PROCESSING
+======================================================================
+
+2025-12-18 12:24:30 - converter - INFO - process_excel_to_json:351 - Processing 1 sheets in parallel...
+2025-12-18 12:24:32 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:379 -   [SUCCESS] date_Sheet1 (1537 chars)
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:389 - 
+Phase 2 Complete:
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:390 -   Success: 1 markdown files
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:391 -   Errors: 0
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:396 - 
+======================================================================
+PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:405 -   date_Sheet1: Found 8 table(s)
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:417 - 
+Phase 3.1 Complete: Found 8 tables total
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:422 - 
+======================================================================
+PHASE 3.2: PARALLEL OPENAI PROCESSING
+======================================================================
+
+2025-12-18 12:24:32 - converter - INFO - process_excel_to_json:423 - Processing 8 tables in parallel...
+2025-12-18 12:24:37 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:37 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:37 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:37 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:38 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:38 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:38 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:38 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:455 -   [PROGRESS] Processed 8/8 tables
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:457 - 
+Phase 3.2 Complete:
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:458 -   Success: 8 tables
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:459 -   Errors: 0
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:464 - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:471 - * CONSOLIDATED JSON SAVED: all_tables_consolidated.json
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:472 - * Total tables extracted: 8
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:493 - 
+* PER-EXCEL JSON SAVED: date_complete.json
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:494 -   Excel file: date.xlsx
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:495 -   Tables: 8
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:497 - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:498 - Total Excel files processed: 1
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:499 - Total sheets processed: 1
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:500 - Total tables extracted: 8
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:501 - Output folder: /app/markdown
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:502 - ======================================================================
+
+2025-12-18 12:24:38 - converter - INFO - process_excel_to_json:518 - Cleaned up temporary files
+2025-12-18 12:24:38 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 7835.86ms
+2025-12-18 12:24:57 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:24:57 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 59.65ms
+2025-12-18 12:25:28 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:25:28 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 3.5ms
+2025-12-18 12:25:52 - main - INFO - dispatch:53 - Request started: POST http://localhost:8000/cleanup
+2025-12-18 12:25:52 - main - INFO - dispatch:60 - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 9.35ms
+2025-12-18 12:25:58 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:25:58 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.48ms
+2025-12-18 12:26:29 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:26:29 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.26ms
+2025-12-18 12:26:59 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:26:59 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.61ms
+2025-12-18 12:27:29 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:27:29 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.97ms
+2025-12-18 12:28:00 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:28:00 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.3ms
+2025-12-18 12:28:30 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:28:30 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.56ms
+2025-12-18 12:29:00 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:29:00 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-18 12:29:31 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:29:31 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.69ms
+2025-12-18 12:30:01 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:30:01 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.48ms
+2025-12-18 12:30:31 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:30:31 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2025-12-18 12:31:02 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:31:02 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.38ms
+2025-12-18 12:31:32 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:31:32 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.62ms
+2025-12-18 12:32:03 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:32:03 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.35ms
+2025-12-18 12:32:33 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:32:33 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.64ms
+2025-12-18 12:33:03 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:33:03 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.51ms
+2025-12-18 12:33:34 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:33:34 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.81ms
+2025-12-18 12:34:04 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:34:04 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.21ms
+2025-12-18 12:34:34 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:34:34 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.05ms
+2025-12-18 12:35:05 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:35:05 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 26.05ms
+2025-12-18 12:35:35 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:35:35 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-18 12:36:05 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:36:05 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-18 12:36:36 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:36:36 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-18 12:37:06 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:37:06 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-18 12:37:37 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:37:37 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.09ms
+2025-12-18 12:38:07 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:38:07 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.8ms
+2025-12-18 12:38:37 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:38:37 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.75ms
+2025-12-18 12:39:08 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:39:08 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-18 12:39:38 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:39:38 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.7ms
+2025-12-18 12:40:08 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:40:08 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-18 12:40:39 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:40:39 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2025-12-18 12:41:09 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:41:09 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-18 12:41:39 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:41:39 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-18 12:42:10 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:42:10 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.65ms
+2025-12-18 12:42:40 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:42:40 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
+2025-12-18 12:43:11 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:43:11 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-18 12:43:41 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:43:41 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.02ms
+2025-12-18 12:44:11 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:44:11 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.72ms
+2025-12-18 12:44:42 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:44:42 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.63ms
+2025-12-18 12:45:12 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:45:12 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.72ms
+2025-12-18 12:45:42 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:45:42 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.01ms
+2025-12-18 12:46:13 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:46:13 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-18 12:46:43 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:46:43 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-18 12:47:13 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:47:13 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2025-12-18 12:47:44 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:47:44 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2025-12-18 12:48:14 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:48:14 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.7ms
+2025-12-18 12:48:45 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:48:45 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.97ms
+2025-12-18 12:49:15 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:49:15 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2025-12-18 12:49:45 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:49:45 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.38ms
+2025-12-18 12:50:16 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:50:16 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-18 12:50:46 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:50:46 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.59ms
+2025-12-18 12:51:16 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:51:16 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.1ms
+2025-12-18 12:51:47 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:51:47 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-18 12:52:17 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:52:17 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.41ms
+2025-12-18 12:52:47 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:52:47 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.82ms
+2025-12-18 12:53:18 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:53:18 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.43ms
+2025-12-18 12:53:48 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:53:48 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.34ms
+2025-12-18 12:54:19 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:54:19 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.64ms
+2025-12-18 12:54:49 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:54:49 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.74ms
+2025-12-18 12:55:19 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:55:19 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2025-12-18 12:55:50 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:55:50 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.21ms
+2025-12-18 12:56:20 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:56:20 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-18 12:56:50 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:56:50 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-18 12:57:21 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:57:21 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.73ms
+2025-12-18 12:57:51 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:57:51 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-18 12:58:21 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:58:21 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.06ms
+2025-12-18 12:58:52 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:58:52 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.99ms
+2025-12-18 12:59:22 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:59:22 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.72ms
+2025-12-18 12:59:53 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 12:59:53 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2025-12-18 13:00:23 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:00:23 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-18 13:00:53 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:00:53 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2025-12-18 13:01:24 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:01:24 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2025-12-18 13:01:54 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:01:54 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-18 13:02:24 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:02:24 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.46ms
+2025-12-18 13:02:55 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:02:55 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-18 13:03:25 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:03:25 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-18 13:03:55 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:03:55 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
+2025-12-18 13:04:26 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:04:26 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.6ms
+2025-12-18 13:04:56 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:04:56 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-18 13:05:26 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:05:26 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-18 13:05:57 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:05:57 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2025-12-18 13:06:27 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:06:27 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
+2025-12-18 13:06:57 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:06:57 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-18 13:07:28 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:07:28 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-18 13:07:58 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:07:58 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.42ms
+2025-12-18 13:08:29 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:08:29 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-18 13:08:59 - main - INFO - dispatch:53 - Request started: GET http://localhost:8000/health
+2025-12-18 13:08:59 - main - INFO - dispatch:60 - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
