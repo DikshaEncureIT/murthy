@@ -1,0 +1,90 @@
+services:
+  backend:
+    build:
+      context: ./ai
+      dockerfile: Dockerfile
+    container_name: murthy_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Code volume for hot reload
+      - ./ai:/app:delegated
+      # Preserve Python cache
+      - backend_pycache:/app/__pycache__
+      # Logs volume
+      - ./logs:/logs:rw
+      # Data persistence
+      - ./ai/input:/app/input:rw
+      - ./ai/markdown:/app/markdown:rw
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_FILE=/logs/backend.log
+      - LOG_LEVEL=INFO
+    env_file:
+      - ./ai/.env
+    networks:
+      - murthy_network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload --log-level info
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: murthy_frontend
+    ports:
+      - "8080:8080"
+    volumes:
+      # Code volume for hot reload
+      - ./frontend:/app:delegated
+      # Exclude node_modules (use container's version)
+      - /app/node_modules
+      # Logs volume
+      - ./logs:/logs:rw
+    environment:
+      - NODE_ENV=development
+      # VITE_API_BASE_URL is set in Dockerfile
+    networks:
+      - murthy_network
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    command: sh -c "npm run dev -- --host 0.0.0.0 2>&1 | tee -a /logs/frontend.log"
+
+networks:
+  murthy_network:
+    driver: bridge
+    name: murthy_network
+
+volumes:
+  backend_pycache:
+    name: murthy_backend_pycache

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+ENV/
+.pytest_cache/
+.coverage
+*.log
+input/*
+!input/.gitkeep
+markdown/*
+!markdown/.gitkeep
+.env
+!.env.example

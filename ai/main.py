@@ -9,9 +9,58 @@ from typing import Dict, Any, List
 from dotenv import load_dotenv
 
 from converter import process_excel_to_json
+import logging
+from logging.handlers import RotatingFileHandler
+import os
+import time
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.requests import Request
 
 # Load environment variables
 load_dotenv(".env")
+
+# Configure logging
+def setup_logging():
+    log_file = os.getenv("LOG_FILE", "/logs/backend.log")
+    log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+
+    # Create logs directory if it doesn't exist
+    os.makedirs(os.path.dirname(log_file), exist_ok=True)
+
+    # Create formatter
+    detailed_formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+
+    # Root logger
+    logger = logging.getLogger()
+    logger.setLevel(getattr(logging, log_level))
+
+    # Console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(detailed_formatter)
+
+    # File handler with rotation (10MB per file, keep 5 backups)
+    file_handler = RotatingFileHandler(
+        log_file,
+        maxBytes=10*1024*1024,
+        backupCount=5,
+        encoding='utf-8'
+    )
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(detailed_formatter)
+
+    # Add handlers
+    logger.addHandler(console_handler)
+    logger.addHandler(file_handler)
+
+    return logger
+
+# Initialize logging
+logger = setup_logging()
+logger.info("Backend service starting...")
 
 app = FastAPI(
     title="Excel to JSON Converter API",
@@ -27,11 +76,35 @@ app.add_middleware(
         "http://127.0.0.1:8080",
         "http://localhost:5173",  # Vite default dev server
         "http://127.0.0.1:5173",
+        "http://frontend:8080",  # Docker container networking
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Request logging middleware
+class RequestLoggingMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        start_time = time.time()
+
+        # Log request
+        logger.info(f"Request started: {request.method} {request.url}")
+
+        # Process request
+        response = await call_next(request)
+
+        # Log response
+        duration = time.time() - start_time
+        logger.info(
+            f"Request completed: {request.method} {request.url} - "
+            f"Status: {response.status_code} - Duration: {round(duration * 1000, 2)}ms"
+        )
+
+        return response
+
+# Add middleware
+app.add_middleware(RequestLoggingMiddleware)
 
 # Define folders
 INPUT_FOLDER = Path("input")
@@ -103,6 +176,9 @@ async def upload_file(file: UploadFile = File(...)):
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
+        file_size = file_path.stat().st_size
+        logger.info(f"File uploaded successfully: {file.filename} ({file_size} bytes)")
+
         return JSONResponse(
             status_code=200,
             content={
@@ -115,6 +191,7 @@ async def upload_file(file: UploadFile = File(...)):
         )
 
     except Exception as e:
+        logger.error(f"Error uploading file: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500,
             detail=f"Error uploading file: {str(e)}"
@@ -145,6 +222,8 @@ async def convert_to_json():
                 detail=f"No Excel files found in {INPUT_FOLDER}"
             )
 
+        logger.info(f"Starting conversion process. Found {len(excel_files)} Excel files")
+
         # Run the conversion process
         result = await process_excel_to_json()
 
@@ -173,6 +252,7 @@ async def convert_to_json():
     except HTTPException as he:
         raise he
     except Exception as e:
+        logger.error(f"Error during conversion: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500,
             detail=f"Error during conversion: {str(e)}"
