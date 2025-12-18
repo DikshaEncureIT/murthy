@@ -146,7 +146,7 @@ async def convert_to_json():
             )
 
         # Run the conversion process
-        result = process_excel_to_json()
+        result = await process_excel_to_json()
 
         # Check if consolidated JSON file exists
         consolidated_file = OUTPUT_FOLDER / "all_tables_consolidated.json"

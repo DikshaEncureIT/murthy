@@ -1,8 +1,10 @@
 import os
 import json
 import shutil
+import asyncio
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Tuple
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from dotenv import load_dotenv
 from landingai_ade import LandingAIADE
@@ -211,9 +213,71 @@ Table markdown:
     return table_json
 
 
-def process_excel_to_json() -> Dict[str, Any]:
+async def process_landingai_async(temp_excel: Path, safe_name: str, output_folder: Path) -> Tuple[str, str, Path]:
     """
-    Main function to process all Excel files in the input folder and convert them to JSON.
+    Async wrapper for Landing AI processing.
+    Returns: (safe_name, markdown_content, markdown_file_path)
+    """
+    loop = asyncio.get_event_loop()
+
+    # Run Landing AI in thread pool to avoid blocking
+    markdown_content = await loop.run_in_executor(
+        None,
+        extract_markdown_with_landingai,
+        temp_excel
+    )
+
+    # Save markdown file
+    markdown_file = output_folder / f"{safe_name}.md"
+    with open(markdown_file, "w", encoding="utf-8") as f:
+        f.write(markdown_content)
+
+    return safe_name, markdown_content, markdown_file
+
+
+async def process_openai_async(
+    table_markdown: str,
+    sheet_name: str,
+    table_index: int,
+    excel_file_name: str,
+    file_index: int,
+    safe_name: str,
+    output_folder: Path
+) -> Dict[str, Any]:
+    """
+    Async wrapper for OpenAI table processing.
+    Returns: table_json
+    """
+    loop = asyncio.get_event_loop()
+
+    # Run OpenAI in thread pool to avoid blocking
+    table_json = await loop.run_in_executor(
+        None,
+        extract_single_table_with_openai,
+        table_markdown,
+        sheet_name,
+        table_index
+    )
+
+    # Add metadata
+    table_json["excel_file"] = excel_file_name
+    table_json["file_index"] = file_index
+
+    # Save JSON file
+    json_file = output_folder / f"{safe_name}_table_{table_index}.json"
+    with open(json_file, "w", encoding="utf-8") as f:
+        json.dump(table_json, f, indent=2, ensure_ascii=False)
+
+    return table_json
+
+
+async def process_excel_to_json() -> Dict[str, Any]:
+    """
+    Main async function to process all Excel files in the input folder and convert them to JSON.
+    Uses 3-phase parallel processing:
+    - Phase 1: Sync sheet splitting (create all temp files)
+    - Phase 2: Parallel Landing AI processing (all sheets at once)
+    - Phase 3: Parallel OpenAI processing (all tables at once)
 
     Returns:
         Dictionary containing processing results
@@ -235,123 +299,199 @@ def process_excel_to_json() -> Dict[str, Any]:
     print(f"Found {len(excel_files)} Excel file(s) in {input_folder}")
 
     try:
-        all_results = []
-        total_files = len(excel_files)
-        per_excel_results = {}  # Dictionary to store results per Excel file
+        # =================================================================
+        # PHASE 1: SYNC SHEET SPLITTING - Create ALL temp files at once
+        # =================================================================
+        print(f"\n{'='*70}")
+        print(f"PHASE 1: CREATING ALL TEMP SHEET FILES")
+        print(f"{'='*70}\n")
 
-        # Process each Excel file
+        sheet_metadata = []  # List of (temp_excel, safe_name, sheet_name, excel_file_name, file_index)
+
         for file_idx, input_excel in enumerate(excel_files, 1):
-            print(f"\n{'#'*70}")
-            print(f"# Processing Excel File {file_idx}/{total_files}: {input_excel.name}")
-            print(f"{'#'*70}")
-
-            # Initialize results list for this Excel file
-            per_excel_results[input_excel.name] = []
+            print(f"Processing Excel file {file_idx}/{len(excel_files)}: {input_excel.name}")
 
             try:
                 # Get all sheet names from the Excel file
                 with pd.ExcelFile(input_excel) as xls:
                     sheet_names = xls.sheet_names
 
-                print(f"Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}\n")
+                print(f"  Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}")
 
-                # Process each sheet in the Excel file
+                # Create temp file for each sheet
                 for idx, sheet_name in enumerate(sheet_names, 1):
-                    print(f"\n{'='*60}")
-                    print(f"Processing Sheet {idx}/{len(sheet_names)}: {sheet_name}")
-                    print(f"{'='*60}")
+                    excel_basename = input_excel.stem
+                    safe_excel_name = sanitize_filename(excel_basename)
+                    safe_sheet_name = sanitize_filename(sheet_name, f"sheet_{idx}")
+                    safe_name = f"{safe_excel_name}_{safe_sheet_name}"
+                    temp_excel = temp_folder / f"{safe_name}.xlsx"
 
-                    try:
-                        # Step 1: Export sheet to single Excel file
-                        excel_basename = input_excel.stem
-                        safe_excel_name = sanitize_filename(excel_basename)
-                        safe_sheet_name = sanitize_filename(sheet_name, f"sheet_{idx}")
-                        safe_name = f"{safe_excel_name}_{safe_sheet_name}"
-                        temp_excel = temp_folder / f"{safe_name}.xlsx"
+                    # Export sheet to temp Excel file
+                    export_sheet_to_single_excel(input_excel, sheet_name, temp_excel)
+                    print(f"    Created: {temp_excel.name}")
 
-                        print(f"  -> Exporting sheet to temporary Excel file...")
-                        export_sheet_to_single_excel(input_excel, sheet_name, temp_excel)
-                        print(f"     Created: {temp_excel.name}")
-
-                        # Step 2: Extract markdown with Landing AI
-                        print(f"  -> Sending to Landing AI ADE...")
-                        markdown_content = extract_markdown_with_landingai(temp_excel)
-                        print(f"     Received markdown ({len(markdown_content)} chars)")
-
-                        # Step 3: Save markdown to markdown folder
-                        markdown_file = output_folder / f"{safe_name}.md"
-                        with open(markdown_file, "w", encoding="utf-8") as f:
-                            f.write(markdown_content)
-                        print(f"     Markdown saved to: {markdown_file}")
-
-                        # Step 4: Split markdown into individual tables
-                        if markdown_content.strip():
-                            print(f"  -> Splitting markdown into individual tables...")
-                            tables = split_markdown_tables(markdown_content)
-                            print(f"     Found {len(tables)} table(s)")
-
-                            # Step 5: Extract each table separately with OpenAI
-                            if tables:
-                                print(f"  -> Extracting tables with OpenAI...")
-                                for table_idx, table_markdown in enumerate(tables, start=1):
-                                    try:
-                                        print(f"     Processing table {table_idx}/{len(tables)}...")
-
-                                        # Extract table with LLM
-                                        table_json = extract_single_table_with_openai(
-                                            table_markdown,
-                                            sheet_name,
-                                            table_idx
-                                        )
-
-                                        # Add metadata about the source Excel file
-                                        table_json["excel_file"] = input_excel.name
-                                        table_json["file_index"] = file_idx
-
-                                        # Save each table as a separate JSON file
-                                        json_file = output_folder / f"{safe_name}_table_{table_idx}.json"
-                                        with open(json_file, "w", encoding="utf-8") as f:
-                                            json.dump(table_json, f, indent=2, ensure_ascii=False)
-                                        print(f"       JSON saved to: {json_file.name}")
-
-                                        # Add to consolidated results
-                                        all_results.append(table_json)
-                                        # Add to per-Excel results
-                                        per_excel_results[input_excel.name].append(table_json)
-
-                                    except Exception as e:
-                                        print(f"       ERROR processing table {table_idx}: {e}")
-                                        continue
-
-                                print(f"     Successfully extracted {len(tables)} table(s)")
-                            else:
-                                print(f"     No tables found in markdown")
-                        else:
-                            print(f"     No content to process for this sheet")
-
-                    except Exception as e:
-                        print(f"  ERROR processing sheet '{sheet_name}': {e}")
-                        continue
+                    # Store metadata for Phase 2
+                    sheet_metadata.append({
+                        'temp_excel': temp_excel,
+                        'safe_name': safe_name,
+                        'sheet_name': sheet_name,
+                        'excel_file_name': input_excel.name,
+                        'file_index': file_idx
+                    })
 
             except Exception as e:
-                print(f"ERROR processing Excel file '{input_excel.name}': {e}")
+                print(f"  ERROR processing Excel file '{input_excel.name}': {e}")
                 continue
 
-        # Save consolidated JSON file with all tables from all sheets from all Excel files
+        print(f"\nPhase 1 Complete: Created {len(sheet_metadata)} temp sheet files")
+
+        # =================================================================
+        # PHASE 2: PARALLEL LANDING AI - Process ALL sheets at once
+        # =================================================================
+        print(f"\n{'='*70}")
+        print(f"PHASE 2: PARALLEL LANDING AI PROCESSING")
+        print(f"{'='*70}\n")
+        print(f"Processing {len(sheet_metadata)} sheets in parallel...")
+
+        # Create all Landing AI tasks
+        tasks = []
+        for metadata in sheet_metadata:
+            task = process_landingai_async(
+                metadata['temp_excel'],
+                metadata['safe_name'],
+                output_folder
+            )
+            tasks.append(task)
+
+        # Run Phase 2 - Wait for all Landing AI tasks to complete
+        landingai_results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        # Process results and prepare for Phase 3
+        markdown_data = []  # List of (safe_name, markdown_content, sheet_name, excel_file_name, file_index)
+        phase2_errors = 0
+
+        for idx, result in enumerate(landingai_results):
+            if isinstance(result, Exception):
+                phase2_errors += 1
+                print(f"  [ERROR] Sheet {sheet_metadata[idx]['safe_name']}: {result}")
+                continue
+
+            safe_name, markdown_content, markdown_file = result
+            metadata = sheet_metadata[idx]
+
+            print(f"  [SUCCESS] {safe_name} ({len(markdown_content)} chars)")
+
+            markdown_data.append({
+                'safe_name': safe_name,
+                'markdown_content': markdown_content,
+                'sheet_name': metadata['sheet_name'],
+                'excel_file_name': metadata['excel_file_name'],
+                'file_index': metadata['file_index']
+            })
+
+        print(f"\nPhase 2 Complete:")
+        print(f"  Success: {len(markdown_data)} markdown files")
+        print(f"  Errors: {phase2_errors}")
+
+        # =================================================================
+        # PHASE 3.1: SPLIT ALL MARKDOWN INTO TABLES
+        # =================================================================
+        print(f"\n{'='*70}")
+        print(f"PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES")
+        print(f"{'='*70}\n")
+
+        table_tasks = []  # List of table processing tasks
+
+        for md_data in markdown_data:
+            markdown_content = md_data['markdown_content']
+
+            if markdown_content.strip():
+                tables = split_markdown_tables(markdown_content)
+                print(f"  {md_data['safe_name']}: Found {len(tables)} table(s)")
+
+                for table_idx, table_markdown in enumerate(tables, start=1):
+                    table_tasks.append({
+                        'table_markdown': table_markdown,
+                        'sheet_name': md_data['sheet_name'],
+                        'table_index': table_idx,
+                        'excel_file_name': md_data['excel_file_name'],
+                        'file_index': md_data['file_index'],
+                        'safe_name': md_data['safe_name']
+                    })
+
+        print(f"\nPhase 3.1 Complete: Found {len(table_tasks)} tables total")
+
+        # =================================================================
+        # PHASE 3.2: PARALLEL OPENAI - Process ALL tables at once
+        # =================================================================
+        print(f"\n{'='*70}")
+        print(f"PHASE 3.2: PARALLEL OPENAI PROCESSING")
+        print(f"{'='*70}\n")
+        print(f"Processing {len(table_tasks)} tables in parallel...")
+
+        # Run Phase 3.2
+        all_results = []
+        phase3_errors = 0
+
+        if table_tasks:
+            # Create all OpenAI tasks
+            tasks = []
+            for task_data in table_tasks:
+                task = process_openai_async(
+                    task_data['table_markdown'],
+                    task_data['sheet_name'],
+                    task_data['table_index'],
+                    task_data['excel_file_name'],
+                    task_data['file_index'],
+                    task_data['safe_name'],
+                    output_folder
+                )
+                tasks.append(task)
+
+            # Wait for all OpenAI tasks to complete
+            openai_results = await asyncio.gather(*tasks, return_exceptions=True)
+
+            for idx, result in enumerate(openai_results):
+                if isinstance(result, Exception):
+                    phase3_errors += 1
+                    print(f"  [ERROR] Table {idx+1}/{len(table_tasks)}: {result}")
+                    continue
+
+                all_results.append(result)
+                if (idx + 1) % 10 == 0 or (idx + 1) == len(openai_results):
+                    print(f"  [PROGRESS] Processed {idx+1}/{len(table_tasks)} tables")
+
+        print(f"\nPhase 3.2 Complete:")
+        print(f"  Success: {len(all_results)} tables")
+        print(f"  Errors: {phase3_errors}")
+
+        # =================================================================
+        # SAVE CONSOLIDATED RESULTS
+        # =================================================================
+        print(f"\n{'='*70}")
+        print(f"SAVING CONSOLIDATED RESULTS")
+        print(f"{'='*70}\n")
+
+        # Save consolidated JSON file
         if all_results:
             consolidated_json_file = output_folder / "all_tables_consolidated.json"
             with open(consolidated_json_file, "w", encoding="utf-8") as f:
                 json.dump(all_results, f, indent=2, ensure_ascii=False)
-            print(f"\n{'*'*70}")
             print(f"* CONSOLIDATED JSON SAVED: {consolidated_json_file.name}")
             print(f"* Total tables extracted: {len(all_results)}")
-            print(f"{'*'*70}")
+
+        # Group results by Excel file for per-file JSON
+        per_excel_results = {}
+        for result in all_results:
+            excel_name = result.get('excel_file', 'unknown')
+            if excel_name not in per_excel_results:
+                per_excel_results[excel_name] = []
+            per_excel_results[excel_name].append(result)
 
         # Save per-Excel JSON files
         per_excel_files = []
         for excel_name, tables in per_excel_results.items():
             if tables:
-                # Create safe filename from Excel name
                 safe_excel_name = sanitize_filename(Path(excel_name).stem)
                 per_excel_json_file = output_folder / f"{safe_excel_name}_complete.json"
 
@@ -359,26 +499,26 @@ def process_excel_to_json() -> Dict[str, Any]:
                     json.dump(tables, f, indent=2, ensure_ascii=False)
 
                 per_excel_files.append(per_excel_json_file.name)
-                print(f"\n{'*'*70}")
-                print(f"* PER-EXCEL JSON SAVED: {per_excel_json_file.name}")
-                print(f"* Excel file: {excel_name}")
-                print(f"* Tables in this file: {len(tables)}")
-                print(f"{'*'*70}")
+                print(f"\n* PER-EXCEL JSON SAVED: {per_excel_json_file.name}")
+                print(f"  Excel file: {excel_name}")
+                print(f"  Tables: {len(tables)}")
 
-        print(f"\n{'='*60}")
-        print(f"Processing Complete!")
-        print(f"{'='*60}")
-        print(f"Total Excel files processed: {total_files}")
+        print(f"\n{'='*70}")
+        print(f"PROCESSING COMPLETE!")
+        print(f"{'='*70}")
+        print(f"Total Excel files processed: {len(excel_files)}")
+        print(f"Total sheets processed: {len(sheet_metadata)}")
         print(f"Total tables extracted: {len(all_results)}")
         print(f"Output folder: {output_folder.absolute()}")
-        print(f"{'='*60}\n")
+        print(f"{'='*70}\n")
 
         return {
-            "files_processed": total_files,
+            "files_processed": len(excel_files),
+            "sheets_processed": len(sheet_metadata),
             "tables_extracted": len(all_results),
             "output_folder": str(output_folder.absolute()),
             "results": all_results,
-            "per_excel_files": per_excel_files if 'per_excel_files' in locals() else []
+            "per_excel_files": per_excel_files
         }
 
     finally:
