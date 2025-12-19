@@ -8,7 +8,9 @@ import logging
 import os
 from pathlib import Path
 from logging.handlers import RotatingFileHandler
-from typing import Optional
+from typing import Optional, Any, MutableMapping
+
+from request_context import get_request_id
 
 
 class AppLogger:
@@ -81,15 +83,16 @@ class AppLogger:
         cls._configured = True
 
     @classmethod
-    def get_logger(cls, file_path: str) -> logging.Logger:
+    def get_logger(cls, file_path: str) -> logging.LoggerAdapter:
         """
-        Get a logger for a specific module.
+        Get a context-aware logger for a specific module.
 
         Args:
             file_path (str): Module file path (use __file__)
 
         Returns:
-            logging.Logger: Configured logger instance with module name
+            logging.LoggerAdapter: Configured logger adapter that automatically
+                                   includes request context (request_id)
         """
         # Ensure logging is configured
         if not cls._configured:
@@ -97,4 +100,36 @@ class AppLogger:
 
         # Extract module name from file path
         module_name = Path(file_path).stem
-        return logging.getLogger(module_name)
+        base_logger = logging.getLogger(module_name)
+        return RequestContextLoggerAdapter(base_logger, {})
+
+
+class RequestContextLoggerAdapter(logging.LoggerAdapter):
+    """
+    Logger adapter that automatically injects request_id
+    into all log messages from context variables.
+
+    This adapter wraps the standard logger and prepends context information
+    to every log message, enabling request tracing throughout the application.
+    """
+
+    def process(self, msg: str, kwargs: MutableMapping[str, Any]) -> tuple[str, MutableMapping[str, Any]]:
+        """
+        Process log message by injecting context IDs.
+
+        Args:
+            msg: The original log message
+            kwargs: Additional keyword arguments for the log call
+
+        Returns:
+            Tuple of (modified_message, kwargs)
+        """
+        request_id = get_request_id()
+
+        # Format ID for logging (truncated to 12 chars for readability)
+        request_str = f"[req:{request_id[:12]}]" if request_id else "[req:none]"
+
+        # Prepend ID to message
+        modified_msg = f"{request_str} - {msg}"
+
+        return modified_msg, kwargs

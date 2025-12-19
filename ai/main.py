@@ -10,6 +10,11 @@ from dotenv import load_dotenv
 
 from converter import process_excel_to_json
 from logger import AppLogger
+from request_context import (
+    set_request_context,
+    clear_request_context,
+    generate_request_id,
+)
 import os
 import time
 from starlette.middleware.base import BaseHTTPMiddleware
@@ -47,22 +52,45 @@ app.add_middleware(
 # Request logging middleware
 class RequestLoggingMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
+        # Extract request ID from headers (case-insensitive)
+        request_id = request.headers.get("X-Request-ID") or request.headers.get("x-request-id")
+
+        # Generate request ID if not provided
+        if not request_id:
+            request_id = generate_request_id()
+
+        # Set context for this request
+        set_request_context(request_id)
+
         start_time = time.time()
 
-        # Log request
-        logger.info(f"Request started: {request.method} {request.url}")
+        try:
+            # Log request (will now include context ID)
+            logger.info(f"Request started: {request.method} {request.url}")
 
-        # Process request
-        response = await call_next(request)
+            # Process request
+            response = await call_next(request)
 
-        # Log response
-        duration = time.time() - start_time
-        logger.info(
-            f"Request completed: {request.method} {request.url} - "
-            f"Status: {response.status_code} - Duration: {round(duration * 1000, 2)}ms"
-        )
+            # Add request ID to response headers for client-side debugging
+            response.headers["X-Request-ID"] = request_id
 
-        return response
+            # Log response
+            duration = time.time() - start_time
+            logger.info(
+                f"Request completed: {request.method} {request.url} - "
+                f"Status: {response.status_code} - Duration: {round(duration * 1000, 2)}ms"
+            )
+
+            return response
+
+        except Exception as e:
+            # Log error with context
+            logger.error(f"Request failed: {request.method} {request.url} - Error: {str(e)}", exc_info=True)
+            raise
+
+        finally:
+            # Clean up context after request
+            clear_request_context()
 
 # Add middleware
 app.add_middleware(RequestLoggingMiddleware)

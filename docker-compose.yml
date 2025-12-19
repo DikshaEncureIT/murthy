@@ -3,7 +3,7 @@ services:
     build:
       context: ./ai
       dockerfile: Dockerfile
-    container_name: murthy_backend
+    container_name: excel_backend
     ports:
       - "8000:8000"
     volumes:
@@ -23,7 +23,7 @@ services:
     env_file:
       - ./ai/.env
     networks:
-      - murthy_network
+      - excel_network
     restart: unless-stopped
     deploy:
       resources:
@@ -45,7 +45,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: murthy_frontend
+    container_name: excel_frontend
     ports:
       - "8080:8080"
     volumes:
@@ -59,7 +59,7 @@ services:
       - NODE_ENV=development
       # VITE_API_BASE_URL is set in Dockerfile
     networks:
-      - murthy_network
+      - excel_network
     depends_on:
       backend:
         condition: service_healthy
@@ -81,10 +81,10 @@ services:
     command: sh -c "npm run dev -- --host 0.0.0.0 2>&1 | tee -a /logs/frontend.log"
 
 networks:
-  murthy_network:
+  excel_network:
     driver: bridge
-    name: murthy_network
+    name: excel_network
 
 volumes:
   backend_pycache:
-    name: murthy_backend_pycache
+    name: excel_backend_pycache
