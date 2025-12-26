@@ -167,6 +167,7 @@ Table markdown:
     )
 
     llm_output = response.choices[0].message.content
+    
 
     # Clean markdown code blocks if present
     llm_output = llm_output.strip()

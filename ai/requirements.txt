@@ -7,3 +7,4 @@ openai
 fastapi
 uvicorn[standard]
 python-multipart
+Pillow==10.1.0

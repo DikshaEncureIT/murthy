@@ -9,6 +9,7 @@ from typing import Dict, Any, List
 from dotenv import load_dotenv
 
 from converter import process_excel_to_json
+from vision_processor import process_excel_with_vision
 from logger import AppLogger
 from request_context import (
     set_request_context,
@@ -113,6 +114,7 @@ async def root():
         "endpoints": {
             "upload": "/upload",
             "convert": "/convert",
+            "analyze_with_vision": "/analyze-with-vision",
             "health": "/health",
             "available_downloads": "/available-downloads",
             "download_excel": "/download/excel/{filename}",
@@ -463,6 +465,88 @@ async def cleanup_folders():
         raise HTTPException(
             status_code=500,
             detail=f"Error cleaning folders: {str(e)}"
+        )
+
+
+@app.post("/analyze-with-vision", tags=["Vision Analysis"])
+async def analyze_with_vision(
+    file: UploadFile = File(...),
+    analyze_gaps: bool = True,
+    analyze_similarity: bool = True
+):
+    """
+    Lightweight vision-based Excel analysis.
+
+    Performs visual structure analysis WITHOUT data extraction:
+    - Column gap detection (identifies empty columns separating tables)
+    - Table relationship understanding (same table repeated vs different tables)
+
+    This is a LIGHTWEIGHT analysis focusing only on visual structure,
+    not data content or quality metrics.
+
+    Args:
+        file: Excel file to analyze (.xlsx or .xls)
+        analyze_gaps: Enable column gap detection (default: True)
+        analyze_similarity: Enable table relationship analysis (default: True)
+
+    Returns:
+        Simplified JSON response with 6 fields:
+        - sheet_name: Name of the analyzed sheet
+        - gap_summary: Human-readable summary of column gaps
+        - columns_with_data: List of column letters containing data
+        - columns_with_gap: List of column letters that are empty (gaps)
+        - classification: Table relationship classification
+        - reasoning: Explanation of the classification
+
+    Note: For multi-sheet files, only the first sheet is analyzed.
+    """
+    # Validate file
+    if not file.filename or not (file.filename.endswith('.xlsx') or file.filename.endswith('.xls')):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid file format. Only .xlsx and .xls files are allowed"
+        )
+
+    try:
+        logger.info(f"Starting lightweight vision analysis for {file.filename}")
+
+        # Save uploaded file temporarily
+        INPUT_FOLDER.mkdir(parents=True, exist_ok=True)
+        temp_path = INPUT_FOLDER / file.filename
+
+        with open(temp_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+
+        logger.info(f"File saved: {temp_path} ({temp_path.stat().st_size} bytes)")
+
+        # Get OpenAI API key from environment
+        openai_api_key = os.getenv("OPENAI_API_KEY")
+        if not openai_api_key:
+            raise HTTPException(
+                status_code=500,
+                detail="OpenAI API key not configured. Please set OPENAI_API_KEY in .env file"
+            )
+
+        # Process with lightweight vision analysis
+        #* 1) we are process the excel file with vision to get the images and analyze the structure
+        result = await process_excel_with_vision(
+            excel_path=temp_path,
+            analyze_gaps=analyze_gaps,
+            analyze_similarity=analyze_similarity,
+            openai_api_key=openai_api_key
+        )
+
+        logger.info(f"Lightweight vision analysis completed for {file.filename}")
+
+        return JSONResponse(status_code=200, content=result)
+
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        logger.error(f"Vision analysis failed for {file.filename}: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Vision analysis failed: {str(e)}"
         )
 
 
