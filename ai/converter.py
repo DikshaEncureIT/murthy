@@ -890,6 +890,9 @@ async def process_excel_to_json(
         # =================================================================
         logger.info(f"\n{'='*70}\nSAVING CONSOLIDATED RESULTS\n{'='*70}\n")
 
+        # Initialize list for per-Excel files
+        per_excel_files_saved = []
+
         # Save only one consolidated JSON file in key-value format
         if all_results:
             consolidated_json_file = output_folder / "all_tables_consolidated.json"
@@ -910,6 +913,36 @@ async def process_excel_to_json(
             for excel_name, count in per_excel_count.items():
                 logger.info(f"  - {excel_name}: {count} tables")
 
+            # =================================================================
+            # SAVE PER-EXCEL JSON FILES (Key-Value Format)
+            # =================================================================
+            logger.info(f"\n{'='*70}\nSAVING PER-EXCEL JSON FILES\n{'='*70}\n")
+
+            # Group results by Excel file
+            per_excel_data = {}
+            for result in all_results:
+                excel_name = result.get('excel_file', 'unknown')
+                if excel_name not in per_excel_data:
+                    per_excel_data[excel_name] = []
+                per_excel_data[excel_name].append(result)
+
+            # Save individual JSON file for each Excel file
+            for excel_name, excel_results in per_excel_data.items():
+                # Create sanitized filename
+                excel_basename = Path(excel_name).stem  # Remove extension
+                safe_excel_name = sanitize_filename(excel_basename)
+                per_excel_json_file = output_folder / f"{safe_excel_name}_complete.json"
+
+                # Save JSON file
+                with open(per_excel_json_file, "w", encoding="utf-8") as f:
+                    json.dump(excel_results, f, indent=2, ensure_ascii=False)
+
+                per_excel_files_saved.append(per_excel_json_file.name)
+                logger.info(f"  ✓ Saved: {per_excel_json_file.name} ({len(excel_results)} tables)")
+
+            logger.info(f"\n* Per-Excel JSON files saved: {len(per_excel_files_saved)}")
+            logger.info(f"* Format: Key-Value (same as consolidated)")
+
         logger.info(f"\n{'='*70}\nPROCESSING COMPLETE!\n{'='*70}")
         logger.info(f"Total Excel files processed: {len(excel_files)}")
         logger.info(f"Total sheets processed: {len(sheet_metadata)}")
@@ -925,6 +958,7 @@ async def process_excel_to_json(
             "vision_analyses": vision_analyses if enable_vision_analysis else [],
             "output_folder": str(output_folder.absolute()),
             "consolidated_file": "all_tables_consolidated.json",
+            "per_excel_files": per_excel_files_saved,
             "results": all_results
         }
 

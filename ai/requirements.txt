@@ -1,5 +1,4 @@
 landingai-ade
-cohere
 python-dotenv
 pandas
 openpyxl
@@ -8,3 +7,4 @@ fastapi
 uvicorn[standard]
 python-multipart
 Pillow==10.1.0
+requests
