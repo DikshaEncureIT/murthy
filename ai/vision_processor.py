@@ -29,7 +29,8 @@ async def process_excel_with_vision(
     excel_path: Path,
     analyze_gaps: bool = True,
     analyze_similarity: bool = True,
-    openai_api_key: str = None
+    openai_api_key: str = None,
+    save_to_file: bool = True
 ) -> Dict[str, Any]:
     """
     Lightweight vision-based Excel analysis pipeline.
@@ -50,6 +51,7 @@ async def process_excel_with_vision(
         analyze_gaps: Enable column gap detection (default: True)
         analyze_similarity: Enable table relationship analysis (default: True)
         openai_api_key: OpenAI API key
+        save_to_file: Save analysis to JSON file (default: True)
 
     Returns:
         Lightweight visual analysis results
@@ -270,12 +272,15 @@ async def process_excel_with_vision(
                 "reasoning": "No sheets were successfully analyzed"
             }
 
-        # Save simplified analysis to JSON file
-        analysis_file = gap_analysis_folder / f"{excel_path.stem}_lightweight_analysis.json"
-        with open(analysis_file, "w", encoding="utf-8") as f:
-            json.dump(response, f, indent=2, ensure_ascii=False)
+        # Save simplified analysis to JSON file (if enabled)
+        if save_to_file:
+            analysis_file = gap_analysis_folder / f"{excel_path.stem}_lightweight_analysis.json"
+            with open(analysis_file, "w", encoding="utf-8") as f:
+                json.dump(response, f, indent=2, ensure_ascii=False)
 
-        logger.info(f"Simplified analysis saved: {analysis_file.name}")
+            logger.info(f"Simplified analysis saved: {analysis_file.name}")
+        else:
+            logger.debug(f"File saving disabled, returning analysis in memory only")
         logger.info(f"Sheet: {response.get('sheet_name')}")
         logger.info(f"Columns with data: {len(response.get('columns_with_data', []))}")
         logger.info(f"Columns with gaps: {len(response.get('columns_with_gap', []))}")

@@ -113,11 +113,12 @@ async def root():
         "version": "1.0.0",
         "endpoints": {
             "upload": "/upload",
-            "convert": "/convert",
+            "convert": "/convert?enable_vision_analysis=true&max_sheets_for_vision=10",
             "analyze_with_vision": "/analyze-with-vision",
             "health": "/health",
             "available_downloads": "/available-downloads",
             "download_excel": "/download/excel/{filename}",
+            "download_vision": "/download/vision/{filename}",
             "download_all": "/download/all",
             "cleanup": "/cleanup"
         }
@@ -190,15 +191,27 @@ async def upload_file(file: UploadFile = File(...)):
 
 
 @app.post("/convert", tags=["File Operations"])
-async def convert_to_json():
+async def convert_to_json(
+    enable_vision_analysis: bool = True,
+    max_sheets_for_vision: int = 10,
+    analyze_gaps: bool = True,
+    analyze_similarity: bool = True
+):
     """
     Convert all Excel files in the input folder to JSON format.
 
-    This endpoint runs the final_json_openai.py logic to:
+    This endpoint runs the conversion pipeline with the following phases:
     1. Process all Excel files in the input folder
-    2. Extract tables using LandingAI ADE
-    3. Convert tables to JSON using OpenAI
-    4. Save results to the markdown/output folder
+    2. (Optional) Analyze sheets with GPT-4 Vision for gap detection
+    3. Extract tables using LandingAI ADE
+    4. Convert tables to JSON using OpenAI
+    5. Save results to the markdown/output folder
+
+    Args:
+        enable_vision_analysis: Enable vision-based gap analysis (default: True)
+        max_sheets_for_vision: Maximum sheets to analyze with vision (default: 10)
+        analyze_gaps: Enable column gap detection (default: True)
+        analyze_similarity: Enable table relationship analysis (default: True)
 
     Returns:
         JSON response with conversion results
@@ -216,15 +229,37 @@ async def convert_to_json():
         logger.info(f"Starting conversion process. Found {len(excel_files)} Excel files")
 
         # Run the conversion process
-        result = await process_excel_to_json()
+        result = await process_excel_to_json(
+            enable_vision_analysis=enable_vision_analysis,
+            max_sheets_for_vision=max_sheets_for_vision,
+            analyze_gaps=analyze_gaps,
+            analyze_similarity=analyze_similarity
+        )
 
         # Check if consolidated JSON file exists
         consolidated_file = OUTPUT_FOLDER / "all_tables_consolidated.json"
+
+        # Extract lightweight analysis (clean 6-field format) from first sheet
+        vision_analyses = result.get("vision_analyses", [])
+        lightweight_analysis = None
+        if vision_analyses:
+            first_analysis = vision_analyses[0]
+            lightweight_analysis = {
+                "sheet_name": first_analysis.get("sheet_name", "Unknown"),
+                "gap_summary": first_analysis.get("gap_summary", ""),
+                "columns_with_data": first_analysis.get("columns_with_data", []),
+                "columns_with_gap": first_analysis.get("columns_with_gap", []),
+                "classification": first_analysis.get("classification", "unknown"),
+                "reasoning": first_analysis.get("reasoning", "")
+            }
 
         response_data = {
             "message": "Conversion completed successfully",
             "files_processed": result["files_processed"],
             "tables_extracted": result["tables_extracted"],
+            "vision_analyses_count": result.get("vision_analyses_count", 0),
+            "lightweight_analysis": lightweight_analysis,  # Clean 6-field format (same as direct endpoint)
+            "vision_analyses": vision_analyses,  # Full analyses with metadata
             "output_folder": str(OUTPUT_FOLDER.absolute()),
             "timestamp": datetime.now().isoformat(),
             "per_excel_files": result.get("per_excel_files", [])
@@ -368,6 +403,53 @@ async def list_available_downloads():
         raise HTTPException(
             status_code=500,
             detail=f"Error listing downloads: {str(e)}"
+        )
+
+
+@app.get("/download/vision/{filename}", tags=["File Operations"])
+async def download_vision_analysis(filename: str):
+    """
+    Download the vision analysis JSON file for a specific Excel file.
+
+    Args:
+        filename: Name of the Excel file (without extension) or complete JSON filename
+
+    Returns:
+        Vision analysis JSON file for download
+    """
+    try:
+        gap_analysis_folder = Path("gap_analysis")
+
+        # Handle different filename formats
+        if filename.endswith("_all_vision.json"):
+            json_filename = filename
+        elif filename.endswith(".xlsx") or filename.endswith(".xls"):
+            base_name = filename.rsplit(".", 1)[0]
+            json_filename = f"{base_name}_all_vision.json"
+        else:
+            json_filename = f"{filename}_all_vision.json"
+
+        file_path = gap_analysis_folder / json_filename
+
+        if not file_path.exists():
+            raise HTTPException(
+                status_code=404,
+                detail=f"Vision analysis file not found: {json_filename}. "
+                       f"Make sure vision analysis was enabled during conversion."
+            )
+
+        return FileResponse(
+            path=file_path,
+            media_type="application/json",
+            filename=json_filename
+        )
+
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error downloading vision analysis: {str(e)}"
         )
 
 
