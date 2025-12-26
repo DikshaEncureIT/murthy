@@ -26,6 +26,42 @@ if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY is not set in .env")
 
 
+def cleanup_previous_data():
+    """
+    Clean up all previous conversion data before starting a new conversion.
+    Removes:
+    - markdown/ folder (output JSON files)
+    - temp_sheets/ folder (temporary Excel files)
+    - gap_analysis/ folder (vision analysis results)
+    - screenshots/ folder (vision screenshots)
+    """
+    import time
+
+    folders_to_clean = [
+        Path("markdown"),
+        Path("temp_sheets"),
+        Path("gap_analysis"),
+        Path("screenshots")
+    ]
+
+    for folder in folders_to_clean:
+        if folder.exists():
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    shutil.rmtree(folder)
+                    logger.info(f"Cleaned up previous data: {folder}/")
+                    break
+                except Exception as e:
+                    if attempt < max_retries - 1:
+                        logger.debug(f"Retry {attempt + 1}/{max_retries} cleaning {folder}/: {e}")
+                        time.sleep(1)  # Wait before retry
+                    else:
+                        logger.warning(f"Could not clean up {folder}/ after {max_retries} attempts: {e}")
+
+    logger.info("Previous conversion data cleanup completed")
+
+
 def sanitize_filename(name: str, fallback_prefix: str = "sheet") -> str:
     """Sanitize sheet name for use as filename."""
     safe_name = "".join(c for c in name if c.isalnum() or c in (' ', '-', '_')).strip()
@@ -176,6 +212,52 @@ def extract_markdown_with_landingai(excel_file: Path, api_key: str = None) -> st
             return str(parse_response)
     except Exception as e:
         raise RuntimeError(f"Error parsing with Landing AI ADE: {e}")
+
+
+def transform_table_to_key_value_format(table_json: Dict[str, Any]) -> List[Dict[str, str]]:
+    """
+    Transform table JSON from headers+rows format to key-value dictionary format.
+
+    Input format:
+    {
+        "headers": ["col1", "col2", "col3"],
+        "rows": [
+            ["val1", "val2", "val3"],
+            ["val4", "val5", "val6"]
+        ]
+    }
+
+    Output format:
+    [
+        {"col1": "val1", "col2": "val2", "col3": "val3"},
+        {"col1": "val4", "col2": "val5", "col3": "val6"}
+    ]
+
+    Args:
+        table_json: Table data in headers+rows format
+
+    Returns:
+        List of dictionaries with column names as keys
+    """
+    headers = table_json.get('headers', [])
+    rows = table_json.get('rows', [])
+
+    if not headers or not rows:
+        logger.warning("Empty headers or rows in table transformation")
+        return []
+
+    # Transform each row into a dictionary
+    transformed_data = []
+    for row in rows:
+        # Create dictionary mapping header to value
+        row_dict = {}
+        for idx, header in enumerate(headers):
+            # Handle cases where row might have fewer values than headers
+            value = row[idx] if idx < len(row) else ""
+            row_dict[header] = value
+        transformed_data.append(row_dict)
+
+    return transformed_data
 
 
 def split_markdown_tables(markdown_text: str) -> List[str]:
@@ -370,7 +452,7 @@ async def process_openai_async(
 ) -> Dict[str, Any]:
     """
     Async wrapper for OpenAI table processing.
-    Returns: table_json
+    Returns: table data in key-value format for consolidated output
     """
     loop = asyncio.get_event_loop()
 
@@ -383,16 +465,18 @@ async def process_openai_async(
         table_index
     )
 
-    # Add metadata
-    table_json["excel_file"] = excel_file_name
-    table_json["file_index"] = file_index
+    # Transform to key-value format
+    transformed_data = transform_table_to_key_value_format(table_json)
 
-    # Save JSON file
-    json_file = output_folder / f"{safe_name}_table_{table_index}.json"
-    with open(json_file, "w", encoding="utf-8") as f:
-        json.dump(table_json, f, indent=2, ensure_ascii=False)
-
-    return table_json
+    # Return only key-value format data
+    return {
+        "excel_file": excel_file_name,
+        "file_index": file_index,
+        "sheet_name": sheet_name,
+        "table_index": table_index,
+        "title": table_json.get("title", ""),
+        "data": transformed_data
+    }
 
 
 async def process_vision_analysis_async(
@@ -484,6 +568,10 @@ async def process_excel_to_json(
     Returns:
         Dictionary containing processing results
     """
+    # Clean up previous conversion data
+    logger.info("Starting new conversion - cleaning previous data...")
+    cleanup_previous_data()
+
     # Input and output directories
     input_folder = Path("input")
     output_folder = Path("markdown")
@@ -802,36 +890,25 @@ async def process_excel_to_json(
         # =================================================================
         logger.info(f"\n{'='*70}\nSAVING CONSOLIDATED RESULTS\n{'='*70}\n")
 
-        # Save consolidated JSON file
+        # Save only one consolidated JSON file in key-value format
         if all_results:
             consolidated_json_file = output_folder / "all_tables_consolidated.json"
             with open(consolidated_json_file, "w", encoding="utf-8") as f:
                 json.dump(all_results, f, indent=2, ensure_ascii=False)
+
             logger.info(f"* CONSOLIDATED JSON SAVED: {consolidated_json_file.name}")
             logger.info(f"* Total tables extracted: {len(all_results)}")
+            logger.info(f"* Format: Key-Value (each row is a dictionary)")
 
-        # Group results by Excel file for per-file JSON
-        per_excel_results = {}
-        for result in all_results:
-            excel_name = result.get('excel_file', 'unknown')
-            if excel_name not in per_excel_results:
-                per_excel_results[excel_name] = []
-            per_excel_results[excel_name].append(result)
+            # Log summary by Excel file
+            per_excel_count = {}
+            for result in all_results:
+                excel_name = result.get('excel_file', 'unknown')
+                per_excel_count[excel_name] = per_excel_count.get(excel_name, 0) + 1
 
-        # Save per-Excel JSON files
-        per_excel_files = []
-        for excel_name, tables in per_excel_results.items():
-            if tables:
-                safe_excel_name = sanitize_filename(Path(excel_name).stem)
-                per_excel_json_file = output_folder / f"{safe_excel_name}_complete.json"
-
-                with open(per_excel_json_file, "w", encoding="utf-8") as f:
-                    json.dump(tables, f, indent=2, ensure_ascii=False)
-
-                per_excel_files.append(per_excel_json_file.name)
-                logger.info(f"\n* PER-EXCEL JSON SAVED: {per_excel_json_file.name}")
-                logger.info(f"  Excel file: {excel_name}")
-                logger.info(f"  Tables: {len(tables)}")
+            logger.info(f"\n* Tables per Excel file:")
+            for excel_name, count in per_excel_count.items():
+                logger.info(f"  - {excel_name}: {count} tables")
 
         logger.info(f"\n{'='*70}\nPROCESSING COMPLETE!\n{'='*70}")
         logger.info(f"Total Excel files processed: {len(excel_files)}")
@@ -847,25 +924,33 @@ async def process_excel_to_json(
             "vision_analyses_count": len(vision_analyses) if enable_vision_analysis else 0,
             "vision_analyses": vision_analyses if enable_vision_analysis else [],
             "output_folder": str(output_folder.absolute()),
-            "results": all_results,
-            "per_excel_files": per_excel_files
+            "consolidated_file": "all_tables_consolidated.json",
+            "results": all_results
         }
 
     finally:
-        # Cleanup temporary files
-        #! remove this
-        # if temp_folder.exists():
-        #     try:
-        #         shutil.rmtree(temp_folder)
-        #         logger.info(f"Cleaned up temporary sheet files")
-        #     except Exception as e:
-        #         logger.warning(f"Could not clean up temp folder: {e}")
+        # Cleanup all temporary folders after processing
+        import time
+        folders_to_cleanup = [
+            Path("screenshots"),
+            Path("temp_sheets"),
+            Path("gap_analysis")
+        ]
 
-        # Cleanup screenshots folder (vision analysis artifacts)
-        screenshots_folder = Path("screenshots")
-        if screenshots_folder.exists():
-            try:
-                shutil.rmtree(screenshots_folder)
-                logger.info(f"Cleaned up screenshot files")
-            except Exception as e:
-                logger.warning(f"Could not clean up screenshots folder: {e}")
+        # Small delay to ensure all file handles are released
+        time.sleep(0.5)
+
+        for folder in folders_to_cleanup:
+            if folder.exists():
+                max_retries = 3
+                for attempt in range(max_retries):
+                    try:
+                        shutil.rmtree(folder)
+                        logger.info(f"Cleaned up temporary folder: {folder}/")
+                        break
+                    except Exception as e:
+                        if attempt < max_retries - 1:
+                            logger.debug(f"Retry {attempt + 1}/{max_retries} for {folder}/: {e}")
+                            time.sleep(1)  # Wait before retry
+                        else:
+                            logger.warning(f"Could not clean up {folder}/ after {max_retries} attempts: {e}")

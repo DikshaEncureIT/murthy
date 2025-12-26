@@ -508,42 +508,78 @@ async def list_files():
 @app.post("/cleanup", tags=["File Operations"])
 async def cleanup_folders():
     """
-    Clean up input and output folders by removing all files.
+    Clean up all folders by removing files and temporary directories.
     This endpoint is called when starting a new conversion to ensure
     a fresh start without old files.
+
+    Removes:
+    - input/ folder (Excel files)
+    - markdown/ folder (output JSON files)
+    - temp_sheets/ folder (temporary Excel files)
+    - gap_analysis/ folder (vision analysis results)
+    - screenshots/ folder (vision screenshots)
 
     Returns:
         JSON response with cleanup status
     """
     try:
+        import shutil
+        import time
+
         input_files_removed = 0
         output_files_removed = 0
+        temp_folders_removed = 0
 
-        # Clean input folder
+        # Clean input folder (files only)
         if INPUT_FOLDER.exists():
             for file in INPUT_FOLDER.glob("*"):
                 if file.is_file():
                     file.unlink()
                     input_files_removed += 1
 
-        # Clean output folder (markdown)
+        # Clean output folder (files only)
         if OUTPUT_FOLDER.exists():
             for file in OUTPUT_FOLDER.glob("*"):
                 if file.is_file():
                     file.unlink()
                     output_files_removed += 1
 
+        # Clean temporary folders (complete removal with retry logic)
+        temp_folders = [
+            Path("temp_sheets"),
+            Path("gap_analysis"),
+            Path("screenshots")
+        ]
+
+        for folder in temp_folders:
+            if folder.exists():
+                max_retries = 3
+                for attempt in range(max_retries):
+                    try:
+                        shutil.rmtree(folder)
+                        temp_folders_removed += 1
+                        logger.info(f"Cleaned up temporary folder: {folder}/")
+                        break
+                    except Exception as e:
+                        if attempt < max_retries - 1:
+                            logger.debug(f"Retry {attempt + 1}/{max_retries} cleaning {folder}/: {e}")
+                            time.sleep(1)  # Wait before retry
+                        else:
+                            logger.warning(f"Could not clean up {folder}/ after {max_retries} attempts: {e}")
+
         return JSONResponse(
             status_code=200,
             content={
-                "message": "Folders cleaned successfully",
+                "message": "All folders cleaned successfully",
                 "input_files_removed": input_files_removed,
                 "output_files_removed": output_files_removed,
+                "temp_folders_removed": temp_folders_removed,
                 "timestamp": datetime.now().isoformat()
             }
         )
 
     except Exception as e:
+        logger.error(f"Error cleaning folders: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500,
             detail=f"Error cleaning folders: {str(e)}"
