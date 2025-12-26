@@ -9760,3 +9760,959 @@ PROCESSING COMPLETE!
 2025-12-26 13:54:04 - main - INFO - dispatch:80 - [req:c94a7dfc-f4f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
 2025-12-26 13:54:34 - main - INFO - dispatch:70 - [req:16b1bfa2-b48] - Request started: GET http://localhost:8000/health
 2025-12-26 13:54:34 - main - INFO - dispatch:80 - [req:16b1bfa2-b48] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.67ms
+2025-12-26 15:59:19 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-26 15:59:27 - main - INFO - dispatch:70 - [req:aff8e782-1c3] - Request started: GET http://localhost:8000/health
+2025-12-26 15:59:27 - main - INFO - dispatch:80 - [req:aff8e782-1c3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.03ms
+2025-12-26 15:59:57 - main - INFO - dispatch:70 - [req:cfc552ed-9fa] - Request started: GET http://localhost:8000/health
+2025-12-26 15:59:57 - main - INFO - dispatch:80 - [req:cfc552ed-9fa] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-26 16:00:27 - main - INFO - dispatch:70 - [req:b3ff2f31-540] - Request started: GET http://localhost:8000/health
+2025-12-26 16:00:27 - main - INFO - dispatch:80 - [req:b3ff2f31-540] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2025-12-26 16:00:57 - main - INFO - dispatch:70 - [req:e1aa2065-dbc] - Request started: GET http://localhost:8000/health
+2025-12-26 16:00:57 - main - INFO - dispatch:80 - [req:e1aa2065-dbc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
+2025-12-26 16:01:27 - main - INFO - dispatch:70 - [req:95c85675-70d] - Request started: GET http://localhost:8000/health
+2025-12-26 16:01:27 - main - INFO - dispatch:80 - [req:95c85675-70d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.4ms
+2025-12-26 16:01:57 - main - INFO - dispatch:70 - [req:ab7c640a-6ec] - Request started: GET http://localhost:8000/health
+2025-12-26 16:01:57 - main - INFO - dispatch:80 - [req:ab7c640a-6ec] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.39ms
+2025-12-26 16:02:27 - main - INFO - dispatch:70 - [req:660e848d-70b] - Request started: GET http://localhost:8000/health
+2025-12-26 16:02:27 - main - INFO - dispatch:80 - [req:660e848d-70b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-26 16:02:57 - main - INFO - dispatch:70 - [req:43e02cd1-54a] - Request started: GET http://localhost:8000/health
+2025-12-26 16:02:57 - main - INFO - dispatch:80 - [req:43e02cd1-54a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 6.58ms
+2025-12-26 16:03:27 - main - INFO - dispatch:70 - [req:7a0b210a-545] - Request started: GET http://localhost:8000/health
+2025-12-26 16:03:27 - main - INFO - dispatch:80 - [req:7a0b210a-545] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-26 16:03:58 - main - INFO - dispatch:70 - [req:ba1014a9-b0b] - Request started: GET http://localhost:8000/health
+2025-12-26 16:03:58 - main - INFO - dispatch:80 - [req:ba1014a9-b0b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-26 16:04:28 - main - INFO - dispatch:70 - [req:2af7f4a4-e2d] - Request started: GET http://localhost:8000/health
+2025-12-26 16:04:28 - main - INFO - dispatch:80 - [req:2af7f4a4-e2d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.53ms
+2025-12-26 16:04:58 - main - INFO - dispatch:70 - [req:8316ca3c-047] - Request started: GET http://localhost:8000/health
+2025-12-26 16:04:58 - main - INFO - dispatch:80 - [req:8316ca3c-047] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.37ms
+2025-12-26 16:05:46 - main - INFO - dispatch:70 - [req:cd85a14a-fec] - Request started: GET http://localhost:8000/health
+2025-12-26 16:05:47 - main - INFO - dispatch:80 - [req:cd85a14a-fec] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1194.17ms
+2025-12-26 16:06:19 - main - INFO - dispatch:70 - [req:22adf7ba-279] - Request started: GET http://localhost:8000/health
+2025-12-26 16:06:19 - main - INFO - dispatch:80 - [req:22adf7ba-279] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.16ms
+2025-12-26 16:08:34 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-26 16:08:36 - main - INFO - dispatch:70 - [req:6727ad03-1df] - Request started: GET http://localhost:8000/health
+2025-12-26 16:08:36 - main - INFO - dispatch:80 - [req:6727ad03-1df] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.11ms
+2025-12-26 16:09:06 - main - INFO - dispatch:70 - [req:f88f202f-54b] - Request started: GET http://localhost:8000/health
+2025-12-26 16:09:06 - main - INFO - dispatch:80 - [req:f88f202f-54b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 3.31ms
+2025-12-26 16:09:36 - main - INFO - dispatch:70 - [req:2ba3aa84-538] - Request started: GET http://localhost:8000/health
+2025-12-26 16:09:36 - main - INFO - dispatch:80 - [req:2ba3aa84-538] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.55ms
+2025-12-26 16:10:06 - main - INFO - dispatch:70 - [req:dc9424d1-d18] - Request started: GET http://localhost:8000/health
+2025-12-26 16:10:06 - main - INFO - dispatch:80 - [req:dc9424d1-d18] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.69ms
+2025-12-26 16:10:36 - main - INFO - dispatch:70 - [req:a384e7a1-9d7] - Request started: GET http://localhost:8000/health
+2025-12-26 16:10:36 - main - INFO - dispatch:80 - [req:a384e7a1-9d7] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2025-12-26 16:11:06 - main - INFO - dispatch:70 - [req:58800b93-32f] - Request started: GET http://localhost:8000/health
+2025-12-26 16:11:06 - main - INFO - dispatch:80 - [req:58800b93-32f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-26 16:11:30 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-26 16:11:36 - main - INFO - dispatch:70 - [req:e5ec9990-d59] - Request started: GET http://localhost:8000/health
+2025-12-26 16:11:36 - main - INFO - dispatch:80 - [req:e5ec9990-d59] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.07ms
+2025-12-26 16:12:06 - main - INFO - dispatch:70 - [req:450a744b-647] - Request started: GET http://localhost:8000/health
+2025-12-26 16:12:06 - main - INFO - dispatch:80 - [req:450a744b-647] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-26 16:12:31 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-26 16:12:36 - main - INFO - dispatch:70 - [req:ba111321-ccc] - Request started: GET http://localhost:8000/health
+2025-12-26 16:12:36 - main - INFO - dispatch:80 - [req:ba111321-ccc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.06ms
+2025-12-26 16:12:55 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-26 16:13:06 - main - INFO - dispatch:70 - [req:0e4a944e-791] - Request started: GET http://localhost:8000/health
+2025-12-26 16:13:06 - main - INFO - dispatch:80 - [req:0e4a944e-791] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.05ms
+2025-12-26 16:13:19 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-26 16:13:36 - main - INFO - dispatch:70 - [req:fc245b1c-517] - Request started: GET http://localhost:8000/health
+2025-12-26 16:13:36 - main - INFO - dispatch:80 - [req:fc245b1c-517] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.11ms
+2025-12-26 16:14:07 - main - INFO - dispatch:70 - [req:d77736b9-0da] - Request started: GET http://localhost:8000/health
+2025-12-26 16:14:07 - main - INFO - dispatch:80 - [req:d77736b9-0da] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-26 16:14:14 - main - INFO - dispatch:70 - [req:bdacfbf4-29b] - Request started: OPTIONS http://localhost:8000/cleanup
+2025-12-26 16:14:14 - main - INFO - dispatch:80 - [req:bdacfbf4-29b] - Request completed: OPTIONS http://localhost:8000/cleanup - Status: 200 - Duration: 1.66ms
+2025-12-26 16:14:14 - main - INFO - dispatch:70 - [req:038ebba1-d6f] - Request started: POST http://localhost:8000/cleanup
+2025-12-26 16:14:15 - main - INFO - dispatch:80 - [req:038ebba1-d6f] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 8.87ms
+2025-12-26 16:14:25 - main - INFO - dispatch:70 - [req:5f2e2fb7-28e] - Request started: OPTIONS http://localhost:8000/upload
+2025-12-26 16:14:25 - main - INFO - dispatch:80 - [req:5f2e2fb7-28e] - Request completed: OPTIONS http://localhost:8000/upload - Status: 200 - Duration: 0.47ms
+2025-12-26 16:14:25 - main - INFO - dispatch:70 - [req:a4cbd681-a72] - Request started: POST http://localhost:8000/upload
+2025-12-26 16:14:25 - main - INFO - upload_file:172 - [req:a4cbd681-a72] - File uploaded successfully: Loan Summary - Eagleby Merge.xlsx (68416 bytes)
+2025-12-26 16:14:25 - main - INFO - dispatch:80 - [req:a4cbd681-a72] - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 6.79ms
+2025-12-26 16:14:25 - main - INFO - dispatch:70 - [req:cd315b55-8b3] - Request started: OPTIONS http://localhost:8000/convert
+2025-12-26 16:14:25 - main - INFO - dispatch:80 - [req:cd315b55-8b3] - Request completed: OPTIONS http://localhost:8000/convert - Status: 200 - Duration: 1.15ms
+2025-12-26 16:14:25 - main - INFO - dispatch:70 - [req:f7811907-5e0] - Request started: POST http://localhost:8000/convert
+2025-12-26 16:14:25 - main - INFO - convert_to_json:229 - [req:f7811907-5e0] - Starting conversion process. Found 1 Excel files
+2025-12-26 16:14:25 - converter - INFO - process_excel_to_json:508 - [req:f7811907-5e0] - Found 1 Excel file(s) in input
+2025-12-26 16:14:25 - converter - INFO - process_excel_to_json:514 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2025-12-26 16:14:25 - converter - INFO - process_excel_to_json:519 - [req:f7811907-5e0] - Processing Excel file 1/1: Loan Summary - Eagleby Merge.xlsx
+2025-12-26 16:14:25 - converter - INFO - process_excel_to_json:526 - [req:f7811907-5e0] -   Found 8 sheet(s): Key Statements, Borrower , A&L, Security , Feasibility, DocMerge, Document List, _SSC
+2025-12-26 16:14:29 - converter - INFO - process_excel_to_json:553 - [req:f7811907-5e0] - 
+Phase 1 Complete: Created 8 temp sheet files
+2025-12-26 16:14:29 - converter - INFO - process_excel_to_json:563 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: VISION PROCESSING (One-by-One with Async Vision)
+======================================================================
+
+2025-12-26 16:14:29 - converter - INFO - process_excel_to_json:573 - [req:f7811907-5e0] - Processing 8 files synchronously (one-by-one)...
+2025-12-26 16:14:29 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[1/8] Processing: Loan_Summary_-_Eagleby_Merge_Key_Statements
+2025-12-26 16:14:29 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_Key_Statements.xlsx
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:14:29 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_Key_Statements.xlsx
+2025-12-26 16:14:29 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:14:29 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Key Statements' to HIGH-QUALITY image
+2025-12-26 16:14:29 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 1351x1711 (38 rows x 9 cols)
+2025-12-26 16:14:29 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_Key_Statements_Key_Statements_20251226_161429.png (1351x1711)
+2025-12-26 16:14:29 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet 'Key Statements' converted successfully
+2025-12-26 16:14:29 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:14:29 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet 'Key Statements'
+2025-12-26 16:14:29 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 9 columns in sheet 'Key Statements'
+2025-12-26 16:14:29 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for 'Key Statements': 1 gaps, 8 columns with data
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet 'Key Statements': 1 column gap(s) detected
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:14:29 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:14:29 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: Key Statements
+2025-12-26 16:14:29 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet 'Key Statements' with vision model (lightweight analysis)
+2025-12-26 16:14:37 - main - INFO - dispatch:70 - [req:3dbb26a8-046] - Request started: GET http://localhost:8000/health
+2025-12-26 16:14:37 - main - INFO - dispatch:80 - [req:3dbb26a8-046] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.74ms
+2025-12-26 16:14:49 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:14:49 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 1495 characters
+2025-12-26 16:14:49 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet 'Key Statements'
+2025-12-26 16:14:49 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: Key Statements
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for Key Statements
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:14:49 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:14:49 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:14:49 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 1 deterministic gaps, 2 vision gaps
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:14:49 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:14:49 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: different_tables - 3 total tables
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: Key Statements
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 8
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 1
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: different_tables
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 20265ms (20.3s)
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:14:49 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (20268ms)
+2025-12-26 16:14:49 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: different_tables
+2025-12-26 16:14:49 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['A']
+2025-12-26 16:14:49 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge_Key_Statements_gap_analysis.json
+2025-12-26 16:14:49 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[2/8] Processing: Loan_Summary_-_Eagleby_Merge_Borrower
+2025-12-26 16:14:49 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_Borrower.xlsx
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:14:49 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_Borrower.xlsx
+2025-12-26 16:14:49 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:14:49 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Borrower ' to HIGH-QUALITY image
+2025-12-26 16:14:49 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 2101x2160 (118 rows x 14 cols)
+2025-12-26 16:14:49 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_Borrower_Borrower_20251226_161449.png (2101x2160)
+2025-12-26 16:14:49 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet 'Borrower ' converted successfully
+2025-12-26 16:14:49 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:14:49 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet 'Borrower '
+2025-12-26 16:14:49 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 14 columns in sheet 'Borrower '
+2025-12-26 16:14:49 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for 'Borrower ': 2 gaps, 3 columns with data
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet 'Borrower ': 2 column gap(s) detected
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:14:49 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:14:49 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: Borrower 
+2025-12-26 16:14:49 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet 'Borrower ' with vision model (lightweight analysis)
+2025-12-26 16:15:07 - main - INFO - dispatch:70 - [req:61713a72-d9f] - Request started: GET http://localhost:8000/health
+2025-12-26 16:15:07 - main - INFO - dispatch:80 - [req:61713a72-d9f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.62ms
+2025-12-26 16:15:10 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:15:10 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 1543 characters
+2025-12-26 16:15:10 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet 'Borrower '
+2025-12-26 16:15:10 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: Borrower 
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for Borrower 
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:15:10 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:15:10 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:15:10 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 2 deterministic gaps, 1 vision gaps
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:15:10 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:15:10 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: different_tables - 4 total tables
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: Borrower 
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 3
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 11
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: different_tables
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 20782ms (20.8s)
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:15:10 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (20785ms)
+2025-12-26 16:15:10 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: different_tables
+2025-12-26 16:15:10 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['A', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
+2025-12-26 16:15:10 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge_Borrower_gap_analysis.json
+2025-12-26 16:15:10 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[3/8] Processing: Loan_Summary_-_Eagleby_Merge_AL
+2025-12-26 16:15:10 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_AL.xlsx
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:15:10 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_AL.xlsx
+2025-12-26 16:15:10 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:15:10 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'A&L' to HIGH-QUALITY image
+2025-12-26 16:15:10 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 1351x2160 (92 rows x 9 cols)
+2025-12-26 16:15:10 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_AL_AL_20251226_161510.png (1351x2160)
+2025-12-26 16:15:10 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet 'A&L' converted successfully
+2025-12-26 16:15:10 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:15:10 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet 'A&L'
+2025-12-26 16:15:10 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 9 columns in sheet 'A&L'
+2025-12-26 16:15:10 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for 'A&L': 2 gaps, 7 columns with data
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet 'A&L': 2 column gap(s) detected
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:15:10 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:15:10 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: A&L
+2025-12-26 16:15:10 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet 'A&L' with vision model (lightweight analysis)
+2025-12-26 16:15:26 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:15:26 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 1098 characters
+2025-12-26 16:15:26 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet 'A&L'
+2025-12-26 16:15:26 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: A&L
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for A&L
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:15:26 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:15:26 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:15:26 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 2 deterministic gaps, 1 vision gaps
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:15:26 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:15:26 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: same_table_repeated - 2 total tables
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: A&L
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 7
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 2
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: single_table
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 16382ms (16.4s)
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:15:26 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (16385ms)
+2025-12-26 16:15:26 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: single_table
+2025-12-26 16:15:26 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['A', 'H']
+2025-12-26 16:15:26 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge_AL_gap_analysis.json
+2025-12-26 16:15:26 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[4/8] Processing: Loan_Summary_-_Eagleby_Merge_Security
+2025-12-26 16:15:26 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_Security.xlsx
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:15:26 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_Security.xlsx
+2025-12-26 16:15:26 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:15:26 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Security ' to HIGH-QUALITY image
+2025-12-26 16:15:26 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 901x2160 (75 rows x 6 cols)
+2025-12-26 16:15:26 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_Security_Security_20251226_161526.png (901x2160)
+2025-12-26 16:15:26 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet 'Security ' converted successfully
+2025-12-26 16:15:26 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:15:26 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet 'Security '
+2025-12-26 16:15:26 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 6 columns in sheet 'Security '
+2025-12-26 16:15:26 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for 'Security ': 2 gaps, 3 columns with data
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet 'Security ': 2 column gap(s) detected
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:15:26 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:15:26 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: Security 
+2025-12-26 16:15:26 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet 'Security ' with vision model (lightweight analysis)
+2025-12-26 16:15:37 - main - INFO - dispatch:70 - [req:1b275107-fec] - Request started: GET http://localhost:8000/health
+2025-12-26 16:15:37 - main - INFO - dispatch:80 - [req:1b275107-fec] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.69ms
+2025-12-26 16:15:47 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:15:47 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 1606 characters
+2025-12-26 16:15:47 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet 'Security '
+2025-12-26 16:15:47 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: Security 
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for Security 
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:15:47 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:15:47 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:15:47 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 2 deterministic gaps, 1 vision gaps
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:15:47 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:15:47 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: same_table_repeated - 4 total tables
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: Security 
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 3
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 3
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: single_table
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 20277ms (20.3s)
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:15:47 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (20280ms)
+2025-12-26 16:15:47 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: single_table
+2025-12-26 16:15:47 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['A', 'E', 'F']
+2025-12-26 16:15:47 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge_Security_gap_analysis.json
+2025-12-26 16:15:47 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[5/8] Processing: Loan_Summary_-_Eagleby_Merge_Feasibility
+2025-12-26 16:15:47 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_Feasibility.xlsx
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:15:47 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_Feasibility.xlsx
+2025-12-26 16:15:47 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:15:47 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Feasibility' to HIGH-QUALITY image
+2025-12-26 16:15:47 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 2401x2160 (108 rows x 16 cols)
+2025-12-26 16:15:47 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_Feasibility_Feasibility_20251226_161547.png (2401x2160)
+2025-12-26 16:15:47 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet 'Feasibility' converted successfully
+2025-12-26 16:15:47 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:15:47 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet 'Feasibility'
+2025-12-26 16:15:47 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 16 columns in sheet 'Feasibility'
+2025-12-26 16:15:47 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for 'Feasibility': 3 gaps, 10 columns with data
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet 'Feasibility': 3 column gap(s) detected
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:15:47 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:15:47 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: Feasibility
+2025-12-26 16:15:47 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet 'Feasibility' with vision model (lightweight analysis)
+2025-12-26 16:16:05 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:05 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 1501 characters
+2025-12-26 16:16:05 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet 'Feasibility'
+2025-12-26 16:16:05 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: Feasibility
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for Feasibility
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:16:05 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:16:05 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:16:05 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 3 deterministic gaps, 2 vision gaps
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:16:05 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:16:05 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: different_tables - 3 total tables
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: Feasibility
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 10
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 6
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: different_tables
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 18286ms (18.3s)
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:16:05 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (18287ms)
+2025-12-26 16:16:05 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: different_tables
+2025-12-26 16:16:05 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['A', 'G', 'M', 'N', 'O', 'P']
+2025-12-26 16:16:05 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge_Feasibility_gap_analysis.json
+2025-12-26 16:16:05 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[6/8] Processing: Loan_Summary_-_Eagleby_Merge_DocMerge
+2025-12-26 16:16:05 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_DocMerge.xlsx
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:16:05 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_DocMerge.xlsx
+2025-12-26 16:16:05 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:16:05 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'DocMerge' to HIGH-QUALITY image
+2025-12-26 16:16:05 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 2251x2160 (200 rows x 15 cols)
+2025-12-26 16:16:05 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_DocMerge_DocMerge_20251226_161605.png (2251x2160)
+2025-12-26 16:16:05 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet 'DocMerge' converted successfully
+2025-12-26 16:16:05 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:16:05 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet 'DocMerge'
+2025-12-26 16:16:05 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 15 columns in sheet 'DocMerge'
+2025-12-26 16:16:05 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for 'DocMerge': 1 gaps, 2 columns with data
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet 'DocMerge': 1 column gap(s) detected
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:16:05 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:16:05 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: DocMerge
+2025-12-26 16:16:05 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet 'DocMerge' with vision model (lightweight analysis)
+2025-12-26 16:16:07 - main - INFO - dispatch:70 - [req:143ecdd4-e7a] - Request started: GET http://localhost:8000/health
+2025-12-26 16:16:07 - main - INFO - dispatch:80 - [req:143ecdd4-e7a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.17ms
+2025-12-26 16:16:20 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:20 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 1001 characters
+2025-12-26 16:16:20 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet 'DocMerge'
+2025-12-26 16:16:20 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: DocMerge
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for DocMerge
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:16:20 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:16:20 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:16:20 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 1 deterministic gaps, 1 vision gaps
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:16:20 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:16:20 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: different_tables - 2 total tables
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: DocMerge
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 2
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 13
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: different_tables
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 14886ms (14.9s)
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:16:20 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (14889ms)
+2025-12-26 16:16:20 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: different_tables
+2025-12-26 16:16:20 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
+2025-12-26 16:16:20 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge_DocMerge_gap_analysis.json
+2025-12-26 16:16:20 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[7/8] Processing: Loan_Summary_-_Eagleby_Merge_Document_List
+2025-12-26 16:16:20 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_Document_List.xlsx
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:16:20 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_Document_List.xlsx
+2025-12-26 16:16:20 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:16:20 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Document List' to HIGH-QUALITY image
+2025-12-26 16:16:20 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 3001x2160 (53 rows x 20 cols)
+2025-12-26 16:16:20 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_Document_List_Document_List_20251226_161620.png (3001x2160)
+2025-12-26 16:16:20 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet 'Document List' converted successfully
+2025-12-26 16:16:20 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:16:20 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet 'Document List'
+2025-12-26 16:16:20 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 20 columns in sheet 'Document List'
+2025-12-26 16:16:20 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for 'Document List': 8 gaps, 12 columns with data
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet 'Document List': 8 column gap(s) detected
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:16:20 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:16:20 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: Document List
+2025-12-26 16:16:20 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet 'Document List' with vision model (lightweight analysis)
+2025-12-26 16:16:35 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:35 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 1046 characters
+2025-12-26 16:16:35 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet 'Document List'
+2025-12-26 16:16:35 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: Document List
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for Document List
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:16:35 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:16:35 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:16:35 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 8 deterministic gaps, 1 vision gaps
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:16:35 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:16:35 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: different_tables - 2 total tables
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: Document List
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 12
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 8
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: different_tables
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 15459ms (15.5s)
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:16:35 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (15460ms)
+2025-12-26 16:16:35 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: different_tables
+2025-12-26 16:16:35 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['A', 'C', 'F', 'I', 'L', 'O', 'R', 'T']
+2025-12-26 16:16:35 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge_Document_List_gap_analysis.json
+2025-12-26 16:16:35 - converter - INFO - process_excel_to_json:581 - [req:f7811907-5e0] - 
+[8/8] Processing: Loan_Summary_-_Eagleby_Merge__SSC
+2025-12-26 16:16:35 - converter - INFO - process_excel_to_json:586 - [req:f7811907-5e0] -   → Running Vision analysis asynchronously...
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:63 - [req:f7811907-5e0] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge__SSC.xlsx
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:88 - [req:f7811907-5e0] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:93 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-26 16:16:35 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:f7811907-5e0] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge__SSC.xlsx
+2025-12-26 16:16:35 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:f7811907-5e0] - Converting 1 sheets to images
+2025-12-26 16:16:35 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet '_SSC' to HIGH-QUALITY image
+2025-12-26 16:16:35 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 751x271 (6 rows x 5 cols)
+2025-12-26 16:16:35 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge__SSC__SSC_20251226_161635.png (751x271)
+2025-12-26 16:16:35 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:f7811907-5e0] - Sheet '_SSC' converted successfully
+2025-12-26 16:16:35 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:f7811907-5e0] - Image conversion complete: 1 sheets processed
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:108 - [req:f7811907-5e0] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:116 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:117 - [req:f7811907-5e0] - Analyzing column usage for 1 sheets...
+2025-12-26 16:16:35 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:f7811907-5e0] - Analyzing column usage for sheet '_SSC'
+2025-12-26 16:16:35 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:f7811907-5e0] - Analyzing 5 columns in sheet '_SSC'
+2025-12-26 16:16:35 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:f7811907-5e0] - Column analysis complete for '_SSC': 1 gaps, 3 columns with data
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:131 - [req:f7811907-5e0] - Sheet '_SSC': 1 column gap(s) detected
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:143 - [req:f7811907-5e0] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:148 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:149 - [req:f7811907-5e0] - Analyzing 1 sheets with controlled concurrency...
+2025-12-26 16:16:35 - vision_processor - INFO - process_excel_with_vision:182 - [req:f7811907-5e0] - Processing 1 sheets with max 3 concurrent requests
+2025-12-26 16:16:35 - vision_processor - INFO - analyze_with_semaphore:161 - [req:f7811907-5e0] - Starting vision analysis for sheet: _SSC
+2025-12-26 16:16:35 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:f7811907-5e0] - Analyzing sheet '_SSC' with vision model (lightweight analysis)
+2025-12-26 16:16:37 - main - INFO - dispatch:70 - [req:ed4a5168-4db] - Request started: GET http://localhost:8000/health
+2025-12-26 16:16:37 - main - INFO - dispatch:80 - [req:ed4a5168-4db] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.84ms
+2025-12-26 16:16:44 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:44 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:f7811907-5e0] - LLM output received: 526 characters
+2025-12-26 16:16:44 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:f7811907-5e0] - Vision analysis complete for sheet '_SSC'
+2025-12-26 16:16:44 - vision_processor - INFO - analyze_with_semaphore:169 - [req:f7811907-5e0] - Completed vision analysis for sheet: _SSC
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:198 - [req:f7811907-5e0] - Vision analysis complete for _SSC
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:200 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:201 - [req:f7811907-5e0] -   Success: 1 sheets analyzed
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:202 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:210 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:218 - [req:f7811907-5e0] - Aggregating column gap detection across sheets...
+2025-12-26 16:16:44 - vision_analyzer - INFO - generate_gap_report:382 - [req:f7811907-5e0] - Generating column gap detection report
+2025-12-26 16:16:44 - vision_analyzer - INFO - generate_gap_report:418 - [req:f7811907-5e0] - Processing deterministic Excel column usage analysis
+2025-12-26 16:16:44 - vision_analyzer - INFO - generate_gap_report:491 - [req:f7811907-5e0] - Column gap report generated: 1 deterministic gaps, 0 vision gaps
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:225 - [req:f7811907-5e0] - Aggregating table relationships across sheets...
+2025-12-26 16:16:44 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:f7811907-5e0] - Aggregating table relationships across sheets
+2025-12-26 16:16:44 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:f7811907-5e0] - Table relationship analysis complete: same_table_repeated - 1 total tables
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:228 - [req:f7811907-5e0] - Phase 3 Complete: Aggregation finished
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:233 - [req:f7811907-5e0] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:284 - [req:f7811907-5e0] - Sheet: _SSC
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:285 - [req:f7811907-5e0] - Columns with data: 3
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:286 - [req:f7811907-5e0] - Columns with gaps: 2
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:287 - [req:f7811907-5e0] - Classification: single_table
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:289 - [req:f7811907-5e0] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:290 - [req:f7811907-5e0] - Total sheets analyzed: 1
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:291 - [req:f7811907-5e0] - Processing time: 9238ms (9.2s)
+2025-12-26 16:16:44 - vision_processor - INFO - process_excel_with_vision:292 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:613 - [req:f7811907-5e0] -   ✓ Vision analysis complete (9240ms)
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:614 - [req:f7811907-5e0] -     - Classification: single_table
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:615 - [req:f7811907-5e0] -     - Gap columns: ['A', 'B']
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:616 - [req:f7811907-5e0] -     - Saved: Loan_Summary_-_Eagleby_Merge__SSC_gap_analysis.json
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:628 - [req:f7811907-5e0] - 
+Phase 2 Complete:
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:629 - [req:f7811907-5e0] -   Success: 8 files analyzed
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:630 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:631 - [req:f7811907-5e0] -   Total time: 135603ms (135.6s)
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:640 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 3: GAP COLUMN REMOVAL (Synchronous)
+======================================================================
+
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:652 - [req:f7811907-5e0] - Processing single table: Loan_Summary_-_Eagleby_Merge_AL
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:653 - [req:f7811907-5e0] -   Found 2 gap columns: ['A', 'H']
+2025-12-26 16:16:44 - converter - INFO - process_excel_to_json:658 - [req:f7811907-5e0] -   Removing gaps (keeping first): ['H']
+2025-12-26 16:16:44 - converter - INFO - remove_gap_columns_from_excel:127 - [req:f7811907-5e0] - Removing 1 gap columns from Loan_Summary_-_Eagleby_Merge_AL.xlsx: ['H']
+2025-12-26 16:16:45 - converter - INFO - remove_gap_columns_from_excel:149 - [req:f7811907-5e0] - Successfully removed gap columns from Loan_Summary_-_Eagleby_Merge_AL.xlsx
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:671 - [req:f7811907-5e0] -   ✓ Gaps removed successfully
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:652 - [req:f7811907-5e0] - Processing single table: Loan_Summary_-_Eagleby_Merge_Security
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:653 - [req:f7811907-5e0] -   Found 3 gap columns: ['A', 'E', 'F']
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:658 - [req:f7811907-5e0] -   Removing gaps (keeping first): ['E', 'F']
+2025-12-26 16:16:45 - converter - INFO - remove_gap_columns_from_excel:127 - [req:f7811907-5e0] - Removing 2 gap columns from Loan_Summary_-_Eagleby_Merge_Security.xlsx: ['E', 'F']
+2025-12-26 16:16:45 - converter - INFO - remove_gap_columns_from_excel:149 - [req:f7811907-5e0] - Successfully removed gap columns from Loan_Summary_-_Eagleby_Merge_Security.xlsx
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:671 - [req:f7811907-5e0] -   ✓ Gaps removed successfully
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:652 - [req:f7811907-5e0] - Processing single table: Loan_Summary_-_Eagleby_Merge__SSC
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:653 - [req:f7811907-5e0] -   Found 2 gap columns: ['A', 'B']
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:658 - [req:f7811907-5e0] -   Removing gaps (keeping first): ['B']
+2025-12-26 16:16:45 - converter - INFO - remove_gap_columns_from_excel:127 - [req:f7811907-5e0] - Removing 1 gap columns from Loan_Summary_-_Eagleby_Merge__SSC.xlsx: ['B']
+2025-12-26 16:16:45 - converter - INFO - remove_gap_columns_from_excel:149 - [req:f7811907-5e0] - Successfully removed gap columns from Loan_Summary_-_Eagleby_Merge__SSC.xlsx
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:671 - [req:f7811907-5e0] -   ✓ Gaps removed successfully
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:682 - [req:f7811907-5e0] - 
+Phase 3 Complete:
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:683 - [req:f7811907-5e0] -   Cleaned: 3 files
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:684 - [req:f7811907-5e0] -   Skipped: 5 files
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:689 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 4: LANDING AI PROCESSING (Async Batch)
+======================================================================
+
+2025-12-26 16:16:45 - converter - INFO - process_excel_to_json:690 - [req:f7811907-5e0] - Processing 8 sheets in parallel...
+2025-12-26 16:16:46 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:46 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_Key_Statements (5399 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_Borrower (12678 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_AL (15778 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_Security (7186 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_Feasibility (15990 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_DocMerge (31145 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_Document_List (15362 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:718 - [req:f7811907-5e0] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge__SSC (8712 chars)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:728 - [req:f7811907-5e0] - 
+Phase 4 Complete:
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:729 - [req:f7811907-5e0] -   Success: 8 markdown files
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:730 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:735 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 5.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge_Key_Statements: Found 4 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge_Borrower: Found 7 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge_AL: Found 24 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge_Security: Found 4 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge_Feasibility: Found 17 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge_DocMerge: Found 1 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge_Document_List: Found 10 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:744 - [req:f7811907-5e0] -   Loan_Summary_-_Eagleby_Merge__SSC: Found 1 table(s)
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:756 - [req:f7811907-5e0] - 
+Phase 5.1 Complete: Found 68 tables total
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:761 - [req:f7811907-5e0] - 
+======================================================================
+PHASE 5.2: OPENAI PROCESSING (Async Batch)
+======================================================================
+
+2025-12-26 16:16:48 - converter - INFO - process_excel_to_json:762 - [req:f7811907-5e0] - Processing 68 tables in parallel...
+2025-12-26 16:16:55 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:55 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:58 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:59 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:16:59 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:00 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:00 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:06 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:07 - main - INFO - dispatch:70 - [req:879ca0d3-b01] - Request started: GET http://localhost:8000/health
+2025-12-26 16:17:07 - main - INFO - dispatch:80 - [req:879ca0d3-b01] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.26ms
+2025-12-26 16:17:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:09 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:09 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:11 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:11 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:11 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:12 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:13 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:15 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:15 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:16 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:16 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:17 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:17 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:17 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:18 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:19 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:20 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:20 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:21 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:21 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:21 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:23 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:23 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:23 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:23 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:26 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:26 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:27 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:27 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:28 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:28 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:29 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:29 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:31 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:32 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:37 - main - INFO - dispatch:70 - [req:dd8d3bdb-e09] - Request started: GET http://localhost:8000/health
+2025-12-26 16:17:37 - main - INFO - dispatch:80 - [req:dd8d3bdb-e09] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.14ms
+2025-12-26 16:17:39 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:17:41 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:18:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:18:07 - main - INFO - dispatch:70 - [req:763bbfe1-08e] - Request started: GET http://localhost:8000/health
+2025-12-26 16:18:07 - main - INFO - dispatch:80 - [req:763bbfe1-08e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.6ms
+2025-12-26 16:18:27 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:794 - [req:f7811907-5e0] -   [PROGRESS] Processed 10/68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:794 - [req:f7811907-5e0] -   [PROGRESS] Processed 20/68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:794 - [req:f7811907-5e0] -   [PROGRESS] Processed 30/68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:794 - [req:f7811907-5e0] -   [PROGRESS] Processed 40/68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:794 - [req:f7811907-5e0] -   [PROGRESS] Processed 50/68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:794 - [req:f7811907-5e0] -   [PROGRESS] Processed 60/68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:794 - [req:f7811907-5e0] -   [PROGRESS] Processed 68/68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:796 - [req:f7811907-5e0] - 
+Phase 5.2 Complete:
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:797 - [req:f7811907-5e0] -   Success: 68 tables
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:798 - [req:f7811907-5e0] -   Errors: 0
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:803 - [req:f7811907-5e0] - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:810 - [req:f7811907-5e0] - * CONSOLIDATED JSON SAVED: all_tables_consolidated.json
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:811 - [req:f7811907-5e0] - * Total tables extracted: 68
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:832 - [req:f7811907-5e0] - 
+* PER-EXCEL JSON SAVED: Loan_Summary_-_Eagleby_Merge_complete.json
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:833 - [req:f7811907-5e0] -   Excel file: Loan Summary - Eagleby Merge.xlsx
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:834 - [req:f7811907-5e0] -   Tables: 68
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:836 - [req:f7811907-5e0] - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:837 - [req:f7811907-5e0] - Total Excel files processed: 1
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:838 - [req:f7811907-5e0] - Total sheets processed: 8
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:839 - [req:f7811907-5e0] - Total tables extracted: 68
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:840 - [req:f7811907-5e0] - Output folder: /app/markdown
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:841 - [req:f7811907-5e0] - ======================================================================
+
+2025-12-26 16:18:27 - converter - INFO - process_excel_to_json:869 - [req:f7811907-5e0] - Cleaned up screenshot files
+2025-12-26 16:18:27 - main - INFO - dispatch:80 - [req:f7811907-5e0] - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 241690.14ms
+2025-12-26 16:18:37 - main - INFO - dispatch:70 - [req:6717d3f6-163] - Request started: GET http://localhost:8000/health
+2025-12-26 16:18:37 - main - INFO - dispatch:80 - [req:6717d3f6-163] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-26 16:19:07 - main - INFO - dispatch:70 - [req:0dcd0f2a-3dd] - Request started: GET http://localhost:8000/health
+2025-12-26 16:19:07 - main - INFO - dispatch:80 - [req:0dcd0f2a-3dd] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.61ms
+2025-12-26 16:19:37 - main - INFO - dispatch:70 - [req:169769b3-ba8] - Request started: GET http://localhost:8000/health
+2025-12-26 16:19:37 - main - INFO - dispatch:80 - [req:169769b3-ba8] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.64ms
+2025-12-26 16:20:07 - main - INFO - dispatch:70 - [req:02acc776-ed4] - Request started: GET http://localhost:8000/health
+2025-12-26 16:20:07 - main - INFO - dispatch:80 - [req:02acc776-ed4] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.72ms
+2025-12-26 16:20:37 - main - INFO - dispatch:70 - [req:5566b0ae-855] - Request started: GET http://localhost:8000/health
+2025-12-26 16:20:37 - main - INFO - dispatch:80 - [req:5566b0ae-855] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-26 16:21:07 - main - INFO - dispatch:70 - [req:bf285324-b41] - Request started: GET http://localhost:8000/health
+2025-12-26 16:21:07 - main - INFO - dispatch:80 - [req:bf285324-b41] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.68ms
+2025-12-26 16:21:37 - main - INFO - dispatch:70 - [req:698515c3-78d] - Request started: GET http://localhost:8000/health
+2025-12-26 16:21:37 - main - INFO - dispatch:80 - [req:698515c3-78d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.74ms
+2025-12-26 16:22:07 - main - INFO - dispatch:70 - [req:d310e384-3ae] - Request started: GET http://localhost:8000/health
+2025-12-26 16:22:07 - main - INFO - dispatch:80 - [req:d310e384-3ae] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-26 16:22:37 - main - INFO - dispatch:70 - [req:18ee8c8b-cef] - Request started: GET http://localhost:8000/health
+2025-12-26 16:22:37 - main - INFO - dispatch:80 - [req:18ee8c8b-cef] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.53ms
+2025-12-26 16:23:07 - main - INFO - dispatch:70 - [req:6d358b14-0cd] - Request started: GET http://localhost:8000/health
+2025-12-26 16:23:07 - main - INFO - dispatch:80 - [req:6d358b14-0cd] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.55ms
+2025-12-26 16:23:37 - main - INFO - dispatch:70 - [req:fadf7db3-b73] - Request started: GET http://localhost:8000/health
+2025-12-26 16:23:37 - main - INFO - dispatch:80 - [req:fadf7db3-b73] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.5ms
+2025-12-26 16:24:08 - main - INFO - dispatch:70 - [req:2633753c-b32] - Request started: GET http://localhost:8000/health
+2025-12-26 16:24:08 - main - INFO - dispatch:80 - [req:2633753c-b32] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms

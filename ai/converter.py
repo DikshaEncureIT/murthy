@@ -467,12 +467,13 @@ async def process_excel_to_json(
 ) -> Dict[str, Any]:
     """
     Main async function to process all Excel files in the input folder and convert them to JSON.
-    Uses multi-phase parallel processing:
-    - Phase 1: Sync sheet splitting (create all temp files)
-    - Phase 1.5: Vision-based gap analysis (optional, enabled by default)
-    - Phase 1.6: Intelligent gap column removal (for single tables)
-    - Phase 2: Parallel Landing AI processing (all sheets at once)
-    - Phase 3: Parallel OpenAI processing (all tables at once)
+
+    Processing Flow:
+    - Phase 1: Sync sheet splitting (create all temp files from input folder)
+    - Phase 2: Sync iteration over temp_sheets files with async Vision processing per file
+    - Phase 3: Sync gap column removal after Vision analysis for each file
+    - Phase 4: Async batch Landing AI processing (all files at once)
+    - Phase 5: Async batch OpenAI processing (all tables at once)
 
     Args:
         enable_vision_analysis: Enable GPT-4 Vision analysis for gap detection (default: True)
@@ -552,136 +553,91 @@ async def process_excel_to_json(
         logger.info(f"\nPhase 1 Complete: Created {len(sheet_metadata)} temp sheet files")
 
         # =================================================================
-        # PHASE 1.5: VISION-BASED GAP ANALYSIS (OPTIONAL)
+        # PHASE 2: SYNCHRONOUS ITERATION WITH ASYNC VISION PROCESSING PER FILE
         # =================================================================
         vision_analyses = []
-        phase1_5_errors = 0
+        phase2_errors = 0
+        import time
 
         if enable_vision_analysis:
-            logger.info(f"\n{'='*70}\nPHASE 1.5: VISION-BASED GAP ANALYSIS\n{'='*70}\n")
+            logger.info(f"\n{'='*70}\nPHASE 2: VISION PROCESSING (One-by-One with Async Vision)\n{'='*70}\n")
 
-            # Limit sheets (max 10)
-            sheets_to_analyze = sheet_metadata[:max_sheets_for_vision]
+            # Limit files to process
+            files_to_analyze = sheet_metadata[:max_sheets_for_vision]
             if len(sheet_metadata) > max_sheets_for_vision:
                 logger.warning(
-                    f"Limiting vision analysis to first {max_sheets_for_vision} sheets "
-                    f"(file has {len(sheet_metadata)} sheets)"
+                    f"Limiting vision analysis to first {max_sheets_for_vision} files "
+                    f"(total: {len(sheet_metadata)} files)"
                 )
 
-            logger.info(f"Analyzing {len(sheets_to_analyze)} sheets with vision...")
+            logger.info(f"Processing {len(files_to_analyze)} files synchronously (one-by-one)...")
+            total_vision_start = time.time()
 
-            # Track start time for performance monitoring
-            import time
-            vision_start_time = time.time()
+            # SYNCHRONOUS ITERATION: Process each file one-by-one
+            for idx, metadata in enumerate(files_to_analyze, 1):
+                safe_name = metadata['safe_name']
+                temp_excel = metadata['temp_excel']
 
-            # Create parallel vision analysis tasks
-            vision_tasks = [
-                process_vision_analysis_async(
-                    temp_excel=metadata['temp_excel'],
-                    safe_name=metadata['safe_name'],
-                    sheet_name=metadata['sheet_name'],
-                    excel_file_name=metadata['excel_file_name'],
-                    file_index=metadata['file_index'],
-                    openai_api_key=OPENAI_API_KEY,
-                    analyze_gaps=analyze_gaps,
-                    analyze_similarity=analyze_similarity
-                )
-                for metadata in sheets_to_analyze
-            ]
+                logger.info(f"\n[{idx}/{len(files_to_analyze)}] Processing: {safe_name}")
+                file_start_time = time.time()
 
-            # Execute in parallel with error handling
-            vision_results = await asyncio.gather(*vision_tasks, return_exceptions=True)
-
-            # Process results (non-blocking - continue even on errors)
-            for idx, result in enumerate(vision_results):
-                if isinstance(result, Exception):
-                    phase1_5_errors += 1
-                    logger.error(f"  [ERROR] Vision analysis {idx+1}: {result}")
-                    continue
-
-                if result.get('error'):
-                    phase1_5_errors += 1
-                    logger.error(f"  [ERROR] {result.get('safe_name', 'Unknown')}: {result.get('error')}")
-                    continue
-
-                vision_analyses.append(result)
-                logger.info(
-                    f"  [SUCCESS] {result.get('safe_name', 'Unknown')} - "
-                    f"Gaps: {len(result.get('columns_with_gap', []))}, "
-                    f"Classification: {result.get('classification', 'unknown')}"
-                )
-
-            # Calculate processing time
-            vision_duration_ms = int((time.time() - vision_start_time) * 1000)
-
-            logger.info(f"\nPhase 1.5 Complete:")
-            logger.info(f"  Success: {len(vision_analyses)} sheets analyzed")
-            logger.info(f"  Errors: {phase1_5_errors}")
-            logger.info(f"  Processing time: {vision_duration_ms}ms ({vision_duration_ms/1000:.1f}s)")
-
-            # Save consolidated vision analysis per Excel file
-            if vision_analyses:
                 try:
-                    # Group by Excel file
-                    per_excel_vision = {}
-                    for analysis in vision_analyses:
-                        excel_name = analysis.get('excel_file', 'unknown')
-                        if excel_name not in per_excel_vision:
-                            per_excel_vision[excel_name] = []
-                        per_excel_vision[excel_name].append(analysis)
+                    # ASYNC VISION PROCESSING: Process this file with Vision LLM
+                    logger.info(f"  → Running Vision analysis asynchronously...")
+                    vision_result = await process_vision_analysis_async(
+                        temp_excel=temp_excel,
+                        safe_name=safe_name,
+                        sheet_name=metadata['sheet_name'],
+                        excel_file_name=metadata['excel_file_name'],
+                        file_index=metadata['file_index'],
+                        openai_api_key=OPENAI_API_KEY,
+                        analyze_gaps=analyze_gaps,
+                        analyze_similarity=analyze_similarity
+                    )
 
-                    # Save consolidated file for each Excel
-                    for excel_name, analyses in per_excel_vision.items():
-                        safe_excel_name = sanitize_filename(Path(excel_name).stem)
-                        consolidated_vision_file = gap_analysis_folder / f"{safe_excel_name}_all_vision.json"
+                    # Check for errors
+                    if vision_result.get('error') or vision_result.get('status') == 'failed':
+                        phase2_errors += 1
+                        logger.error(f"  ✗ Vision analysis failed: {vision_result.get('error', 'Unknown error')}")
+                        continue
 
-                        # Calculate per-Excel metrics
-                        excel_total_sheets = sum(1 for m in sheet_metadata if m['excel_file_name'] == excel_name)
-                        excel_failed = sum(1 for a in analyses if a.get('error') or a.get('status') == 'failed')
+                    # SUCCESS: Save individual gap_analysis JSON for this file
+                    gap_analysis_file = gap_analysis_folder / f"{safe_name}_gap_analysis.json"
+                    with open(gap_analysis_file, "w", encoding="utf-8") as f:
+                        json.dump(vision_result, f, indent=2, ensure_ascii=False)
 
-                        consolidated_data = {
-                            "excel_file": excel_name,
-                            "total_sheets": excel_total_sheets,
-                            "sheets_analyzed": len(analyses),
-                            "sheets_failed": excel_failed,
-                            "processing_time_ms": vision_duration_ms,
-                            "analyses": analyses
-                        }
+                    classification = vision_result.get('classification', 'unknown')
+                    columns_with_gap = vision_result.get('columns_with_gap', [])
 
-                        with open(consolidated_vision_file, "w", encoding="utf-8") as f:
-                            json.dump(consolidated_data, f, indent=2, ensure_ascii=False)
+                    file_duration_ms = int((time.time() - file_start_time) * 1000)
+                    logger.info(f"  ✓ Vision analysis complete ({file_duration_ms}ms)")
+                    logger.info(f"    - Classification: {classification}")
+                    logger.info(f"    - Gap columns: {columns_with_gap}")
+                    logger.info(f"    - Saved: {gap_analysis_file.name}")
 
-                        logger.info(f"  Consolidated vision analysis saved: {consolidated_vision_file.name}")
-
-                        # Also save lightweight format (matching direct endpoint format) for first sheet
-                        if analyses:
-                            first_analysis = analyses[0]
-                            lightweight_data = {
-                                "sheet_name": first_analysis.get("sheet_name", "Unknown"),
-                                "gap_summary": first_analysis.get("gap_summary", ""),
-                                "columns_with_data": first_analysis.get("columns_with_data", []),
-                                "columns_with_gap": first_analysis.get("columns_with_gap", []),
-                                "classification": first_analysis.get("classification", "unknown"),
-                                "reasoning": first_analysis.get("reasoning", "")
-                            }
-
-                            lightweight_file = gap_analysis_folder / f"{safe_excel_name}_lightweight_analysis.json"
-                            with open(lightweight_file, "w", encoding="utf-8") as f:
-                                json.dump(lightweight_data, f, indent=2, ensure_ascii=False)
-
-                            logger.info(f"  Lightweight analysis saved: {lightweight_file.name}")
+                    vision_analyses.append(vision_result)
 
                 except Exception as e:
-                    logger.error(f"Failed to save consolidated vision analysis: {e}", exc_info=True)
+                    phase2_errors += 1
+                    logger.error(f"  ✗ Error processing {safe_name}: {e}", exc_info=True)
+                    continue
+
+            # Calculate total processing time
+            total_vision_duration_ms = int((time.time() - total_vision_start) * 1000)
+
+            logger.info(f"\nPhase 2 Complete:")
+            logger.info(f"  Success: {len(vision_analyses)} files analyzed")
+            logger.info(f"  Errors: {phase2_errors}")
+            logger.info(f"  Total time: {total_vision_duration_ms}ms ({total_vision_duration_ms/1000:.1f}s)")
 
         else:
-            logger.info(f"\nPhase 1.5 Skipped: Vision analysis disabled")
+            logger.info(f"\nPhase 2 Skipped: Vision analysis disabled")
 
         # =================================================================
-        # PHASE 1.6: INTELLIGENT GAP COLUMN REMOVAL (FOR SINGLE TABLES)
+        # PHASE 3: SYNCHRONOUS GAP COLUMN REMOVAL
         # =================================================================
         if enable_vision_analysis and vision_analyses:
-            logger.info(f"\n{'='*70}\nPHASE 1.6: INTELLIGENT GAP COLUMN REMOVAL\n{'='*70}\n")
+            logger.info(f"\n{'='*70}\nPHASE 3: GAP COLUMN REMOVAL (Synchronous)\n{'='*70}\n")
 
             cleaned_count = 0
             skipped_count = 0
@@ -709,10 +665,12 @@ async def process_excel_to_json(
                                 break
 
                         if temp_excel_path and temp_excel_path.exists():
+                            # SYNCHRONOUS GAP REMOVAL: Direct file modification
                             remove_gap_columns_from_excel(temp_excel_path, gaps_to_remove)
                             cleaned_count += 1
+                            logger.info(f"  ✓ Gaps removed successfully")
                         else:
-                            logger.warning(f"  Temp Excel file not found for {safe_name}")
+                            logger.warning(f"  ✗ Temp Excel file not found for {safe_name}")
                     else:
                         logger.info(f"  Only 1 gap column, keeping as-is")
                         skipped_count += 1
@@ -721,14 +679,14 @@ async def process_excel_to_json(
                         logger.debug(f"Skipping {safe_name}: classification is '{classification}' (not single_table)")
                     skipped_count += 1
 
-            logger.info(f"\nPhase 1.6 Complete:")
-            logger.info(f"  Cleaned: {cleaned_count} sheets")
-            logger.info(f"  Skipped: {skipped_count} sheets")
+            logger.info(f"\nPhase 3 Complete:")
+            logger.info(f"  Cleaned: {cleaned_count} files")
+            logger.info(f"  Skipped: {skipped_count} files")
 
         # =================================================================
-        # PHASE 2: PARALLEL LANDING AI - Process ALL sheets at once
+        # PHASE 4: ASYNC BATCH LANDING AI PROCESSING
         # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 2: PARALLEL LANDING AI PROCESSING\n{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 4: LANDING AI PROCESSING (Async Batch)\n{'='*70}\n")
         logger.info(f"Processing {len(sheet_metadata)} sheets in parallel...")
 
         # Create all Landing AI tasks
@@ -741,16 +699,16 @@ async def process_excel_to_json(
             )
             tasks.append(task)
 
-        # Run Phase 2 - Wait for all Landing AI tasks to complete
+        # ASYNC BATCH PROCESSING: Wait for all Landing AI tasks to complete
         landingai_results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        # Process results and prepare for Phase 3
+        # Process results and prepare for Phase 5
         markdown_data = []  # List of (safe_name, markdown_content, sheet_name, excel_file_name, file_index)
-        phase2_errors = 0
+        phase4_errors = 0
 
         for idx, result in enumerate(landingai_results):
             if isinstance(result, Exception):
-                phase2_errors += 1
+                phase4_errors += 1
                 logger.error(f"  [ERROR] Sheet {sheet_metadata[idx]['safe_name']}: {result}")
                 continue
 
@@ -767,14 +725,14 @@ async def process_excel_to_json(
                 'file_index': metadata['file_index']
             })
 
-        logger.info(f"\nPhase 2 Complete:")
+        logger.info(f"\nPhase 4 Complete:")
         logger.info(f"  Success: {len(markdown_data)} markdown files")
-        logger.info(f"  Errors: {phase2_errors}")
+        logger.info(f"  Errors: {phase4_errors}")
 
         # =================================================================
-        # PHASE 3.1: SPLIT ALL MARKDOWN INTO TABLES
+        # PHASE 5.1: SPLIT ALL MARKDOWN INTO TABLES
         # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES\n{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 5.1: SPLITTING ALL MARKDOWN INTO TABLES\n{'='*70}\n")
 
         table_tasks = []  # List of table processing tasks
 
@@ -795,17 +753,17 @@ async def process_excel_to_json(
                         'safe_name': md_data['safe_name']
                     })
 
-        logger.info(f"\nPhase 3.1 Complete: Found {len(table_tasks)} tables total")
+        logger.info(f"\nPhase 5.1 Complete: Found {len(table_tasks)} tables total")
 
         # =================================================================
-        # PHASE 3.2: PARALLEL OPENAI - Process ALL tables at once
+        # PHASE 5.2: ASYNC BATCH OPENAI PROCESSING
         # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 3.2: PARALLEL OPENAI PROCESSING\n{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 5.2: OPENAI PROCESSING (Async Batch)\n{'='*70}\n")
         logger.info(f"Processing {len(table_tasks)} tables in parallel...")
 
-        # Run Phase 3.2
+        # Run Phase 5.2
         all_results = []
-        phase3_errors = 0
+        phase5_errors = 0
 
         if table_tasks:
             # Create all OpenAI tasks
@@ -822,12 +780,12 @@ async def process_excel_to_json(
                 )
                 tasks.append(task)
 
-            # Wait for all OpenAI tasks to complete
+            # ASYNC BATCH PROCESSING: Wait for all OpenAI tasks to complete
             openai_results = await asyncio.gather(*tasks, return_exceptions=True)
 
             for idx, result in enumerate(openai_results):
                 if isinstance(result, Exception):
-                    phase3_errors += 1
+                    phase5_errors += 1
                     logger.error(f"  [ERROR] Table {idx+1}/{len(table_tasks)}: {result}")
                     continue
 
@@ -835,9 +793,9 @@ async def process_excel_to_json(
                 if (idx + 1) % 10 == 0 or (idx + 1) == len(openai_results):
                     logger.info(f"  [PROGRESS] Processed {idx+1}/{len(table_tasks)} tables")
 
-        logger.info(f"\nPhase 3.2 Complete:")
+        logger.info(f"\nPhase 5.2 Complete:")
         logger.info(f"  Success: {len(all_results)} tables")
-        logger.info(f"  Errors: {phase3_errors}")
+        logger.info(f"  Errors: {phase5_errors}")
 
         # =================================================================
         # SAVE CONSOLIDATED RESULTS
