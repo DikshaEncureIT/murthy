@@ -699,7 +699,6 @@ async def process_excel_to_json(
                         phase2_errors += 1
                         logger.error(f"  ✗ Vision analysis failed: {vision_result.get('error', 'Unknown error')}")
                         continue
-                    break
 
                     # SUCCESS: Save individual gap_analysis JSON for this file
                     gap_analysis_file = gap_analysis_folder / f"{safe_name}_gap_analysis.json"

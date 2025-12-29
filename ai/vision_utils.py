@@ -353,6 +353,132 @@ def encode_image_to_base64(image_path: Path) -> str:
         raise RuntimeError(f"Error encoding image: {e}")
 
 
+def extract_excel_data_for_vision(
+    excel_path: Path,
+    sheet_name: str,
+    max_rows: int = 100,
+    max_cols: int = 50
+) -> str:
+    """
+    Extract Excel sheet data in CSV-like format for vision model.
+
+    Provides structured Excel data including:
+    - Raw cell values (text, numbers, dates)
+    - Merged cell information (which cells are merged)
+    - Cell formulas (where they exist)
+    - Cell coordinates (for correlation with visual image)
+
+    Args:
+        excel_path: Path to Excel file
+        sheet_name: Name of sheet to extract
+        max_rows: Maximum rows to extract (default: 100)
+        max_cols: Maximum columns to extract (default: 50)
+
+    Returns:
+        Formatted string with Excel data in CSV-like structure
+
+    Raises:
+        FileNotFoundError: If excel_path doesn't exist
+        ValueError: If sheet_name not found in workbook
+    """
+    try:
+        logger.info(f"Extracting Excel data for vision analysis: sheet '{sheet_name}'")
+
+        # Validate Excel file exists
+        if not excel_path.exists():
+            raise FileNotFoundError(f"Excel file not found: {excel_path}")
+
+        # Load workbook (data_only=False to get formulas)
+        wb = openpyxl.load_workbook(excel_path, data_only=False)
+
+        # Validate sheet exists
+        if sheet_name not in wb.sheetnames:
+            wb.close()
+            raise ValueError(f"Sheet '{sheet_name}' not found in {excel_path.name}. Available sheets: {', '.join(wb.sheetnames)}")
+
+        ws = wb[sheet_name]
+
+        # Handle empty sheet
+        if ws.max_row == 0 or ws.max_column == 0:
+            wb.close()
+            logger.info(f"Sheet '{sheet_name}' is empty")
+            return f"[EXCEL DATA - Sheet: {sheet_name}]\n[EMPTY SHEET]\n[END EXCEL DATA]"
+
+        # Limit dimensions
+        actual_rows = min(ws.max_row, max_rows)
+        actual_cols = min(ws.max_column, max_cols)
+
+        logger.info(f"Extracting {actual_rows} rows × {actual_cols} columns")
+
+        # Build merged cells lookup
+        merged_lookup = {}  # {cell_coordinate: (merged_range, top_left_coord, bottom_right_coord)}
+        for merged_range in ws.merged_cells.ranges:
+            top_left = f"{get_column_letter(merged_range.min_col)}{merged_range.min_row}"
+            bottom_right = f"{get_column_letter(merged_range.max_col)}{merged_range.max_row}"
+
+            for row in range(merged_range.min_row, merged_range.max_row + 1):
+                for col in range(merged_range.min_col, merged_range.max_col + 1):
+                    coord = f"{get_column_letter(col)}{row}"
+                    merged_lookup[coord] = (merged_range, top_left, bottom_right)
+
+        # Build output
+        lines = [f"[EXCEL DATA - Sheet: {sheet_name}]"]
+
+        for row_idx in range(1, actual_rows + 1):
+            row_parts = [f"Row {row_idx}:"]
+
+            for col_idx in range(1, actual_cols + 1):
+                cell = ws.cell(row=row_idx, column=col_idx)
+                coord = cell.coordinate
+
+                # Check if cell is part of merged range
+                if coord in merged_lookup:
+                    _, top_left, bottom_right = merged_lookup[coord]
+
+                    if coord == top_left:
+                        # Top-left of merged range - include value and merge annotation
+                        value = str(cell.value) if cell.value is not None else ""
+                        # No truncation - send full value
+                        row_parts.append(f"[{coord}→{bottom_right} MERGED] {value}")
+                    else:
+                        # Other cells in merged range - just show coordinate (empty)
+                        row_parts.append(f"[{coord}]")
+                    continue
+
+                # Check if cell has formula
+                if hasattr(cell, 'value') and isinstance(cell.value, str) and cell.value.startswith('='):
+                    formula = cell.value
+                    # For formulas, we show the formula itself
+                    row_parts.append(f"[{coord} {formula}]")
+                else:
+                    # Regular cell with value
+                    value = str(cell.value) if cell.value is not None else ""
+                    # No truncation - send full value for accurate extraction
+
+                    if value:
+                        row_parts.append(f"[{coord}] {value}")
+                    else:
+                        # Empty cell - just coordinate
+                        row_parts.append(f"[{coord}]")
+
+            lines.append("\t".join(row_parts))
+
+        lines.append("[END EXCEL DATA]")
+
+        result = "\n".join(lines)
+        wb.close()
+
+        logger.info(f"Excel data extracted: {len(result)} characters")
+        return result
+
+    except (FileNotFoundError, ValueError):
+        # Re-raise validation errors
+        raise
+    except Exception as e:
+        logger.error(f"Error extracting Excel data: {e}", exc_info=True)
+        raise RuntimeError(f"Error extracting Excel data: {e}")
+
+
 def analyze_column_usage_sequences(excel_path: Path, sheet_name: str) -> Dict[str, Any]:
     """
     Analyze Excel sheet to determine column usage patterns and sequence gaps.

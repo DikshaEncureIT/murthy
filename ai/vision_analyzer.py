@@ -15,9 +15,12 @@ from vision_utils import encode_image_to_base64
 logger = AppLogger.get_logger(__file__)
 
 
-def build_vision_prompt() -> str:
+def build_vision_prompt(excel_data: str = None) -> str:
     """
     Build ENHANCED prompt for accurate vision-based Excel analysis.
+
+    Args:
+        excel_data: Optional structured Excel data to include in prompt
 
     Focus areas:
     - Column-wise gap detection with high precision
@@ -27,7 +30,7 @@ def build_vision_prompt() -> str:
         Enhanced prompt with examples and detailed instructions
     """
     #     prompt = """You are analyzing an Excel spreadsheet image. Your goal is to provide ACCURATE, PRECISE structural analysis.
-    #     You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table’s headers and use them as keys, with all corresponding rows captured as arrays under those keys.
+    #     You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table's headers and use them as keys, with all corresponding rows captured as arrays under those keys.
 
     # ═══════════════════════════════════════════════════════════════════
     # ANALYSIS FRAMEWORK - Follow this step-by-step:
@@ -157,7 +160,22 @@ def build_vision_prompt() -> str:
     # ✓ Use HIGH confidence (0.9-1.0) only when very certain
     # ✓ Focus on STRUCTURE, ignore actual data values"""
 
-    prompt = """You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table’s headers and use them as keys, with all corresponding rows captured as arrays under those keys."""
+    prompt = """You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table's headers and use them as keys, with all corresponding rows captured as arrays under those keys.
+
+You have been provided with TWO sources of information:
+1. A VISUAL IMAGE of the Excel sheet (PNG screenshot) showing layout, colors, borders
+2. RAW EXCEL DATA showing exact cell values, formulas, and merged cell ranges
+
+IMPORTANT: Use BOTH sources together for maximum accuracy:
+- The IMAGE shows visual structure, spacing, colors, and visual separators
+- The EXCEL DATA shows precise cell values, formulas (=SUM(...)), and merged cells
+- Cross-reference between them using cell coordinates (A1, B2, C3, etc.)
+- If there's any discrepancy, trust the EXCEL DATA for values and the IMAGE for visual layout"""
+
+    # Append Excel data if provided
+    if excel_data:
+        prompt += f"\n\n{excel_data}\n"
+
     return prompt
 
 async def analyze_sheet_with_vision(
@@ -169,11 +187,13 @@ async def analyze_sheet_with_vision(
     """
     Analyze a single sheet image using vision model for lightweight analysis.
 
+    ENHANCED: Now includes raw Excel data alongside image for better accuracy.
+
     Args:
         client: AsyncOpenAI client
         image_path: Path to sheet image
         sheet_name: Name of the sheet
-        excel_path: Path to Excel file
+        excel_path: Path to Excel file (NOW ACTIVELY USED!)
 
     Returns:
         Dictionary with lightweight visual analysis results containing:
@@ -182,17 +202,42 @@ async def analyze_sheet_with_vision(
         - table_relationship: Classification of table relationships
     """
     try:
-        logger.info(f"Analyzing sheet '{sheet_name}' with vision model (lightweight analysis)")
+        logger.info(f"Analyzing sheet '{sheet_name}' with vision model (enhanced with Excel data)")
 
         # Validate image exists
         if not image_path.exists():
             raise FileNotFoundError(f"Image not found: {image_path}")
 
+        # Validate Excel file exists
+        if not excel_path.exists():
+            raise FileNotFoundError(f"Excel file not found: {excel_path}")
+
         # Encode image to base64
         base64_image = encode_image_to_base64(image_path)
 
-        # Build prompt
-        prompt = build_vision_prompt()
+        # ENHANCEMENT: Extract Excel data for vision model
+        excel_data = None
+        try:
+            from vision_utils import extract_excel_data_for_vision
+            excel_data = extract_excel_data_for_vision(
+                excel_path=excel_path,
+                sheet_name=sheet_name,
+                max_rows=100,
+                max_cols=50
+            )
+            logger.info(f"Excel data extracted: {len(excel_data)} characters")
+
+            # Safety check: truncate only if extremely large (to stay within token limits)
+            if len(excel_data) > 200000:
+                logger.warning(f"Excel data truncated from {len(excel_data)} to 200000 characters")
+                excel_data = excel_data[:200000] + "\n[DATA TRUNCATED - first 200K characters shown]"
+
+        except Exception as e:
+            logger.warning(f"Could not extract Excel data: {e}. Falling back to image-only analysis.")
+            excel_data = None
+
+        # Build prompt (now with optional Excel data)
+        prompt = build_vision_prompt(excel_data=excel_data)
 
         # Call vision API
         response = await client.chat.completions.create(
@@ -200,7 +245,7 @@ async def analyze_sheet_with_vision(
             messages=[
                 {
                     "role": "system",
-                    "content": "You are an expert at visual analysis of Excel spreadsheets. Perform detailed, accurate structural analysis focusing on column gaps and table relationships. Provide your insights naturally and include a JSON structure with your findings. Prioritize accuracy and clarity in your analysis."
+                    "content": "You are an expert at visual analysis of Excel spreadsheets. You have access to BOTH the visual image AND the raw Excel data (cell values, formulas, merged cells). Use both sources together for maximum accuracy - cross-reference cell coordinates between image and data. Perform detailed, accurate structural analysis focusing on column gaps and table relationships. Provide your insights naturally and include a JSON structure with your findings. Prioritize accuracy and clarity in your analysis."
                 },
                 {
                     "role": "user",
@@ -222,9 +267,18 @@ async def analyze_sheet_with_vision(
             temperature=0.0
         )
 
+        # Log token usage for monitoring
+        if hasattr(response, 'usage') and response.usage:
+            logger.debug(f"Token usage - Prompt: {response.usage.prompt_tokens}, "
+                        f"Completion: {response.usage.completion_tokens}, "
+                        f"Total: {response.usage.total_tokens}")
+
         # Get response
         llm_output = response.choices[0].message.content
         print(llm_output)
+
+        # Parse and save LLM output (will be done after JSON parsing below)
+
         # Log the raw output for debugging
         if llm_output:
             logger.info(f"LLM output received: {len(llm_output)} characters")
@@ -277,6 +331,38 @@ async def analyze_sheet_with_vision(
         analysis_result["image_path"] = str(image_path)
 
         logger.info(f"Vision analysis complete for sheet '{sheet_name}'")
+
+        # Save parsed LLM output to single JSON file (all Excel files in one file)
+        try:
+            output_dir = Path("llm_outputs")
+            output_dir.mkdir(exist_ok=True)
+            output_file = output_dir / "all_llm_outputs.json"
+
+            # Read existing outputs if file exists
+            all_outputs = []
+            if output_file.exists():
+                try:
+                    with open(output_file, "r", encoding="utf-8") as f:
+                        all_outputs = json.load(f)
+                except:
+                    all_outputs = []
+
+            # Add new output with only required fields
+            new_entry = {
+                "excel_file": excel_path.name,
+                "sheet_name": sheet_name,
+                "data": analysis_result
+            }
+            all_outputs.append(new_entry)
+
+            # Write back in pretty format
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(all_outputs, f, indent=2, ensure_ascii=False)
+
+            logger.info(f"Saved to {output_file} (total entries: {len(all_outputs)})")
+        except Exception as e:
+            logger.warning(f"Could not save to file: {e}")
+
         return analysis_result
 
     except Exception as e:

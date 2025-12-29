@@ -1,0 +1,507 @@
+[
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1_Key_Statements.xlsx",
+    "sheet_name": "Key Statements",
+    "data": {
+      "Sales Pitch Notes": [
+        "Seek to obtain as much information as possible conversationally",
+        "Build up rapport with the broker",
+        "They can email a current lenders application form they have one file",
+        "We can then go back and fill in the gaps"
+      ],
+      "Key Statements": [
+        "We aim to be price leader for the constraints of any given situation",
+        "We have been working with mortgage brokers for over 10 years",
+        "We deal with approximately 100 private lenders covering all commercial, development, credit impaired and urgent settlements",
+        "We charge success fees only",
+        "A credit manager will call once the transaction has been assessed to discuss the proposed terms",
+        "We pay .75- 1% of the loan amount, with no clawback",
+        "We will provide a clear non-circumvention and payment agreement for them (the broker) to sign immediately",
+        "We handle all paperwork on their behalf",
+        "We make our money by structuring difficult loans and property transaction",
+        "We're a broker however we deal only with private funders and investors"
+      ],
+      "Developments Loan": [
+        "Any development loans 1-50M",
+        "Points of Difference",
+        "Access to real money v slow, non-responsive or overly picky lenders",
+        "Low to No presales",
+        "Stretch senior debt, mezzanine and preferred equity",
+        "Established and close relationships with lenders",
+        "Re-work deals to make them happen"
+      ],
+      "Loan Details": [
+        {
+          "Type": "Development",
+          "Land LVR": "50% - 70%",
+          "TDC": "80% - 100%",
+          "GRV": "55% - 70%",
+          "Rate": "8% - 12%",
+          "Fees": "1% - 2%",
+          "Max": "20M",
+          "Presales": "0% - 70%"
+        },
+        {
+          "Type": "Commercial & Industrial",
+          "Land LVR": "50% - 75%",
+          "Rate": "6% - 12%",
+          "Fees": ".5% - 2%",
+          "Max": "25M"
+        },
+        {
+          "Type": "Landbank/Vacant Land",
+          "Land LVR": "40% - 70%",
+          "Rate": "7% - 14%",
+          "Fees": "1% - 2%",
+          "Max": "25M"
+        },
+        {
+          "Type": "Residential",
+          "Land LVR": "0.7",
+          "Rate": "6% - 10%",
+          "Fees": "1% - 2%",
+          "Max": "25M"
+        },
+        {
+          "Type": "Mezzanine",
+          "Land LVR": "0.75",
+          "GRV": "0.75",
+          "Rate": "16% - 20%",
+          "Fees": "1.75% - 2%",
+          "Max": "2M"
+        }
+      ],
+      "sheet_name": "Key Statements",
+      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Key_Statements_Key_Statements_20251229_131248.png"
+    }
+  },
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1_Borrower.xlsx",
+    "sheet_name": "Borrower ",
+    "data": {
+      "Referrer": {
+        "Name": "Richard Woodhead",
+        "Company Name": "GPS Investment Fund Limited",
+        "ACN": "",
+        "Tel": "",
+        "Email": "Richard@gpsinvest.com.au"
+      },
+      "Company Borrower": {
+        "Company Name": "GLENAURA HOLDINGS PTY LTD",
+        "ACN": "620 269 294",
+        "ABN": "56 620 269 294",
+        "Date of ABN": "2017-07-05 00:00:00",
+        "Date of GST": "2017-07-05 00:00:00",
+        "Registered Office": "QLD 4213",
+        "Director 1": "Giuseppe Augello",
+        "Director 2": "Director 2",
+        "Director 3": "Director 3",
+        "Director 4": "Director 4",
+        "Shareholder 1": "",
+        "Shareholder 2": "",
+        "Shareholder 3": "",
+        "Shareholder 4": "",
+        "Proof of Income": "",
+        "Credit History": ""
+      },
+      "Trust Borrower": {
+        "Trust Name": "Trust 1",
+        "Trust ABN": "00 123 456 789",
+        "Established Date": "",
+        "Trust Type": "",
+        "Trustee/s": "",
+        "Beneficiary 1": "",
+        "Beneficiary 2": "",
+        "Beneficiary 3": "",
+        "Beneficiary 4": ""
+      },
+      "Director / Guarantor 1": {
+        "Name": "Giuseppe Augello",
+        "Current Address": "45 Glenaura Drive TALLAI QLD 4213",
+        "Telephone Number": "0433 119 504",
+        "Email": "finance@ezyoption.com.au",
+        "Date of Birth": "1971-03-15 00:00:00",
+        "Drivers Licence #": "",
+        "Google Criminal": "Clean",
+        "Google Charged": "Clean",
+        "Google Court": "Clean",
+        "Google Fraud": "Clean",
+        "Australian Citizen": "yes",
+        "Marital Status": "",
+        "Dependants": "",
+        "Proof of Income": "",
+        "Credit History": ""
+      },
+      "sheet_name": "Borrower ",
+      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Borrower_Borrower_20251229_131319.png"
+    }
+  },
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1_AL.xlsx",
+    "sheet_name": "A&L",
+    "data": {
+      "Giuseppe Augello": {
+        "Property Address": [
+          "Investment Home 10 Carly Dr Helidon",
+          "Security 2",
+          "Security 3",
+          "Security 4",
+          "Security 5",
+          "Other property"
+        ],
+        "Value": [
+          325000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Debt": [
+          247000,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Lender": [
+          "Name",
+          "Name",
+          "Name",
+          "Name",
+          "Name",
+          "Name"
+        ],
+        "Rate/ PM Payment": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "Lease/ Rental Income PM": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "Other Assets or Liabilities": [
+          "Cash",
+          "Life Insurance",
+          "Business Value",
+          "Plant & Equipment",
+          "Credit Card",
+          "Credit Card 2",
+          "Car"
+        ],
+        "Value (Other)": [
+          0,
+          700000,
+          0,
+          0,
+          18000,
+          0,
+          0
+        ],
+        "Debt (Other)": [
+          0,
+          0,
+          0,
+          0,
+          14000,
+          0,
+          0
+        ],
+        "Total": [
+          1043000,
+          261000
+        ],
+        "Net Assets": [
+          782000
+        ]
+      },
+      "sheet_name": "A&L",
+      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_AL_AL_20251229_131403.png"
+    }
+  },
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1_Security.xlsx",
+    "sheet_name": "Security ",
+    "data": {
+      "Security 1": {
+        "Street Address": "155-163 Fryar Road Eagleby, QLD, 4207",
+        "Legal Address": "L902 SP238823",
+        "Proprietor": "CIVDEV PROJECTS (NO. 1) PTY LTD",
+        "Purchase Date": "",
+        "Purchase Price": "600000",
+        "Valuation \"as is\"": "",
+        "Property Type": "",
+        "Current Zoning": "",
+        "Loan Purpose": "",
+        "Location": "",
+        "Security Use": "",
+        "Site Land Area": "1Ha",
+        "Site Description": ""
+      },
+      "Security 2": {
+        "Street Address": "Security 2",
+        "Legal Address": "Lot 2 DP 2000",
+        "Proprietor": "",
+        "Purchase Date": "",
+        "Purchase Price": "500000",
+        "Valuation \"as is\"": "",
+        "Property Type": "",
+        "Current Zoning": "",
+        "Loan Purpose": "",
+        "Location": "",
+        "Security Use": "",
+        "Site Land Area": "",
+        "Site Description": ""
+      },
+      "Security 3": {
+        "Street Address": "Security 3",
+        "Legal Address": "Lot 3 DP 3000",
+        "Proprietor": "",
+        "Purchase Date": "",
+        "Purchase Price": "500000",
+        "Valuation \"as is\"": "",
+        "Property Type": "",
+        "Current Zoning": "",
+        "Loan Purpose": "",
+        "Location": "",
+        "Security Use": "",
+        "Site Land Area": "",
+        "Site Description": ""
+      },
+      "Security 4": {
+        "Street Address": "Security 4",
+        "Legal Address": "Lot 4 DP 4000",
+        "Proprietor": "",
+        "Purchase Date": "",
+        "Purchase Price": "500000",
+        "Valuation \"as is\"": "",
+        "Property Type": "",
+        "Current Zoning": "",
+        "Loan Purpose": "",
+        "Location": "",
+        "Security Use": "",
+        "Site Land Area": "",
+        "Site Description": ""
+      },
+      "sheet_name": "Security ",
+      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Security_Security_20251229_131454.png"
+    }
+  },
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1_Feasibility.xlsx",
+    "sheet_name": "Feasibility",
+    "data": {
+      "Lender Estab Fee (inc GST)": [
+        0.022
+      ],
+      "Rate": [
+        0.1195
+      ],
+      "Line Fee": [
+        0
+      ],
+      "Loan Term": [
+        12
+      ],
+      "Brokerage Fee (inc GST)": [
+        0.0055
+      ],
+      "LVR on site": [
+        0.5
+      ],
+      "LVR on GRV ex GST": [
+        0.65
+      ],
+      "Max Loan": [
+        300000,
+        5502900
+      ],
+      "Pass/Fail": [
+        65670.25,
+        225771.975
+      ],
+      "sheet_name": "Feasibility",
+      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Feasibility_Feasibility_20251229_131520.png"
+    }
+  },
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1_DocMerge.xlsx",
+    "sheet_name": "DocMerge",
+    "data": {
+      "Personal Information": {
+        "Rname": "Richard Woodhead",
+        "RACN": "GPS Investment Fund Limited",
+        "Rtel": "0",
+        "Remail": "Richard@gpsinvest.com.au"
+      },
+      "Company Information": {
+        "Cname": "GLENAURA HOLDINGS PTY LTD",
+        "CACN": "620 269 294",
+        "CABN": "56 620 269 294",
+        "CDABN": "2017-07-05 00:00:00",
+        "CDGST": "2017-07-05 00:00:00",
+        "Croffice": "QLD 4213"
+      },
+      "Directors": {
+        "CD1": "Giuseppe Augello",
+        "CD2": "Director 2",
+        "CD3": "Director 3",
+        "CD4": "Director 4"
+      },
+      "Company Financials": {
+        "CS1": "0",
+        "CS2": "0",
+        "CS3": "0",
+        "CS4": "0",
+        "Cpincome": "0",
+        "Cchistory": "0"
+      },
+      "Trust Information": {
+        "Tname": "Trust 1",
+        "TABN": "00 123 456 789",
+        "Tedate": "0",
+        "Ttype": "0",
+        "Ttrustee/s": "0",
+        "TB1": "0",
+        "TB2": "0",
+        "TB3": "0",
+        "TB4": "0"
+      },
+      "Guarantor 1": {
+        "G1Name": "Giuseppe Augello",
+        "G1Add": "45 Glenaura Drive TALLAI QLD 4213",
+        "G1Tel": "0433 119 504",
+        "G1email": "finance@ezyoption.com.au",
+        "G1dob": "1971-03-15 00:00:00",
+        "G1dlicence": "0",
+        "G1criminal": "Clean",
+        "G1charged": "Clean",
+        "G1court": "Clean",
+        "G1fruad": "Clean",
+        "G1aus": "yes",
+        "G1marital": "0",
+        "G1dependants": "0",
+        "G1pincome": "0",
+        "G1chistory": "0"
+      },
+      "Guarantor 2": {
+        "G2Name": "Director 2",
+        "G2Add": "Director Street 2",
+        "G2Tel": "0",
+        "G2email": "0",
+        "G2dob": "00:00:00",
+        "G2dlicence": "0",
+        "G2criminal": "0",
+        "G2charged": "0",
+        "G2court": "0",
+        "G2fruad": "0",
+        "G2aus": "0",
+        "G2marital": "0",
+        "G2dependants": "0",
+        "G2pincome": "0",
+        "G2chistory": "0"
+      },
+      "Guarantor 3": {
+        "G3Name": "Director 3",
+        "G3Add": "Director Street 3",
+        "G3Tel": "0",
+        "G3email": "0",
+        "G3dob": "0",
+        "G3dlicence": "0",
+        "G3criminal": "0",
+        "G3charged": "0",
+        "G3court": "0",
+        "G3fruad": "0",
+        "G3aus": "0",
+        "G3marital": "0",
+        "G3dependants": "0",
+        "G3pincome": "0",
+        "G3chistory": "0"
+      },
+      "Guarantor 4": {
+        "G4Name": "Director 4",
+        "G4Add": "Director Street 4",
+        "G4Tel": "0",
+        "G4email": "0",
+        "G4dob": "0",
+        "G4dlicence": "0",
+        "G4criminal": "0",
+        "G4charged": "0",
+        "G4court": "0",
+        "G4fruad": "0",
+        "G4aus": "0",
+        "G4marital": "0",
+        "G4dependants": "0",
+        "G4pincome": "0",
+        "G4chistory": "0"
+      },
+      "Property Information": {
+        "S1Address": "155-163 Fryar Road Eagleby, QLD, 4207",
+        "S1Legal": "L902 SP238823",
+        "S1Prop": "CIVDEV PROJECTS (NO. 1) PTY LTD",
+        "S1Pdate": "0",
+        "S1Pprice": "600000",
+        "S1val": "0",
+        "S1Ptype": "0",
+        "S1zone": "0",
+        "S1purpose": "0",
+        "S1location": "0"
+      },
+      "sheet_name": "DocMerge",
+      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_DocMerge_DocMerge_20251229_131620.png"
+    }
+  },
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1__SSC.xlsx",
+    "sheet_name": "_SSC",
+    "data": {
+      "Key Statements": [
+        {
+          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Borrower \",\"Guid\":\"SUU8WB\",\"Index\":2,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
+          "D": "",
+          "E": ""
+        }
+      ],
+      "Borrower": [
+        {
+          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"A&L\",\"Guid\":\"L1MQG9\",\"Index\":3,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
+          "D": "",
+          "E": ""
+        }
+      ],
+      "A&L": [
+        {
+          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Security \",\"Guid\":\"HLZIBL\",\"Index\":4,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
+          "D": "",
+          "E": ""
+        }
+      ],
+      "Security": [
+        {
+          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Feasibility\",\"Guid\":\"47PY45\",\"Index\":5,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
+          "D": "",
+          "E": ""
+        }
+      ],
+      "Feasibility": [
+        {
+          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Document List\",\"Guid\":\"3Q9Q6P\",\"Index\":6,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
+          "D": "",
+          "E": ""
+        }
+      ],
+      "Document List": [],
+      "sheet_name": "_SSC",
+      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1__SSC__SSC_20251229_131749.png"
+    }
+  }
+]
