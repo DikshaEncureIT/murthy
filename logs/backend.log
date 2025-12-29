@@ -14781,3 +14781,1274 @@ PROCESSING COMPLETE!
 2025-12-26 17:41:14 - main - INFO - dispatch:80 - [req:60f789f6-eab] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.44ms
 2025-12-26 17:41:44 - main - INFO - dispatch:70 - [req:db564cce-a08] - Request started: GET http://localhost:8000/health
 2025-12-26 17:41:44 - main - INFO - dispatch:80 - [req:db564cce-a08] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-26 17:42:15 - main - INFO - dispatch:70 - [req:7aa1b44e-736] - Request started: GET http://localhost:8000/health
+2025-12-26 17:42:15 - main - INFO - dispatch:80 - [req:7aa1b44e-736] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.58ms
+2025-12-26 17:42:45 - main - INFO - dispatch:70 - [req:4c2da405-f1b] - Request started: GET http://localhost:8000/health
+2025-12-26 17:42:45 - main - INFO - dispatch:80 - [req:4c2da405-f1b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-26 17:43:15 - main - INFO - dispatch:70 - [req:67ebd8c4-ff3] - Request started: GET http://localhost:8000/health
+2025-12-26 17:43:15 - main - INFO - dispatch:80 - [req:67ebd8c4-ff3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.41ms
+2025-12-26 17:43:45 - main - INFO - dispatch:70 - [req:83499f1a-cbb] - Request started: GET http://localhost:8000/health
+2025-12-26 17:43:45 - main - INFO - dispatch:80 - [req:83499f1a-cbb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.39ms
+2025-12-26 17:44:15 - main - INFO - dispatch:70 - [req:a032beae-162] - Request started: GET http://localhost:8000/health
+2025-12-26 17:44:15 - main - INFO - dispatch:80 - [req:a032beae-162] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.37ms
+2025-12-26 17:44:45 - main - INFO - dispatch:70 - [req:9d9e3586-6b2] - Request started: GET http://localhost:8000/health
+2025-12-26 17:44:45 - main - INFO - dispatch:80 - [req:9d9e3586-6b2] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.38ms
+2025-12-26 17:45:15 - main - INFO - dispatch:70 - [req:6ec9715b-52e] - Request started: GET http://localhost:8000/health
+2025-12-26 17:45:15 - main - INFO - dispatch:80 - [req:6ec9715b-52e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-26 17:45:45 - main - INFO - dispatch:70 - [req:97079f76-481] - Request started: GET http://localhost:8000/health
+2025-12-26 17:45:45 - main - INFO - dispatch:80 - [req:97079f76-481] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 13.65ms
+2025-12-26 17:46:15 - main - INFO - dispatch:70 - [req:52b0e197-b8c] - Request started: GET http://localhost:8000/health
+2025-12-26 17:46:15 - main - INFO - dispatch:80 - [req:52b0e197-b8c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.68ms
+2025-12-26 17:46:45 - main - INFO - dispatch:70 - [req:044b8cf8-d91] - Request started: GET http://localhost:8000/health
+2025-12-26 17:46:45 - main - INFO - dispatch:80 - [req:044b8cf8-d91] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-26 17:47:15 - main - INFO - dispatch:70 - [req:cca485ed-111] - Request started: GET http://localhost:8000/health
+2025-12-26 17:47:15 - main - INFO - dispatch:80 - [req:cca485ed-111] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.15ms
+2025-12-26 17:47:45 - main - INFO - dispatch:70 - [req:1e139094-f9d] - Request started: GET http://localhost:8000/health
+2025-12-26 17:47:45 - main - INFO - dispatch:80 - [req:1e139094-f9d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2025-12-26 17:48:15 - main - INFO - dispatch:70 - [req:a5af454c-ae0] - Request started: GET http://localhost:8000/health
+2025-12-26 17:48:15 - main - INFO - dispatch:80 - [req:a5af454c-ae0] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.23ms
+2025-12-26 17:48:45 - main - INFO - dispatch:70 - [req:ff8ccd6a-a3b] - Request started: GET http://localhost:8000/health
+2025-12-26 17:48:45 - main - INFO - dispatch:80 - [req:ff8ccd6a-a3b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.55ms
+2025-12-26 17:49:15 - main - INFO - dispatch:70 - [req:f9e86014-0d5] - Request started: GET http://localhost:8000/health
+2025-12-26 17:49:15 - main - INFO - dispatch:80 - [req:f9e86014-0d5] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-26 17:49:45 - main - INFO - dispatch:70 - [req:d1266f3a-0e5] - Request started: GET http://localhost:8000/health
+2025-12-26 17:49:45 - main - INFO - dispatch:80 - [req:d1266f3a-0e5] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.41ms
+2025-12-26 17:50:15 - main - INFO - dispatch:70 - [req:4fd2c5cf-e55] - Request started: GET http://localhost:8000/health
+2025-12-26 17:50:15 - main - INFO - dispatch:80 - [req:4fd2c5cf-e55] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.73ms
+2025-12-26 17:53:44 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-26 17:53:46 - main - INFO - dispatch:70 - [req:92bfa417-5fe] - Request started: GET http://localhost:8000/health
+2025-12-26 17:53:46 - main - INFO - dispatch:80 - [req:92bfa417-5fe] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.96ms
+2025-12-26 17:54:16 - main - INFO - dispatch:70 - [req:55b599c0-65b] - Request started: GET http://localhost:8000/health
+2025-12-26 17:54:16 - main - INFO - dispatch:80 - [req:55b599c0-65b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.54ms
+2025-12-26 17:54:46 - main - INFO - dispatch:70 - [req:840df221-496] - Request started: GET http://localhost:8000/health
+2025-12-26 17:54:46 - main - INFO - dispatch:80 - [req:840df221-496] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.97ms
+2025-12-26 17:55:17 - main - INFO - dispatch:70 - [req:7e499e65-495] - Request started: GET http://localhost:8000/health
+2025-12-26 17:55:17 - main - INFO - dispatch:80 - [req:7e499e65-495] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.93ms
+2025-12-26 17:55:47 - main - INFO - dispatch:70 - [req:e477b059-11b] - Request started: GET http://localhost:8000/health
+2025-12-26 17:55:47 - main - INFO - dispatch:80 - [req:e477b059-11b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.65ms
+2025-12-26 17:56:17 - main - INFO - dispatch:70 - [req:c1db0dae-e4b] - Request started: GET http://localhost:8000/health
+2025-12-26 17:56:17 - main - INFO - dispatch:80 - [req:c1db0dae-e4b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-26 17:56:47 - main - INFO - dispatch:70 - [req:81d4803b-48b] - Request started: GET http://localhost:8000/health
+2025-12-26 17:56:47 - main - INFO - dispatch:80 - [req:81d4803b-48b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.95ms
+2025-12-26 17:57:17 - main - INFO - dispatch:70 - [req:f995ad5c-fff] - Request started: GET http://localhost:8000/health
+2025-12-26 17:57:17 - main - INFO - dispatch:80 - [req:f995ad5c-fff] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.07ms
+2025-12-26 17:57:47 - main - INFO - dispatch:70 - [req:2d4d3577-984] - Request started: GET http://localhost:8000/health
+2025-12-26 17:57:47 - main - INFO - dispatch:80 - [req:2d4d3577-984] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.82ms
+2025-12-26 17:58:17 - main - INFO - dispatch:70 - [req:efaed573-593] - Request started: GET http://localhost:8000/health
+2025-12-26 17:58:17 - main - INFO - dispatch:80 - [req:efaed573-593] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 8.42ms
+2025-12-26 17:58:47 - main - INFO - dispatch:70 - [req:e3b8eb26-ed7] - Request started: GET http://localhost:8000/health
+2025-12-26 17:58:47 - main - INFO - dispatch:80 - [req:e3b8eb26-ed7] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-26 17:59:17 - main - INFO - dispatch:70 - [req:15b51eb8-b81] - Request started: GET http://localhost:8000/health
+2025-12-26 17:59:17 - main - INFO - dispatch:80 - [req:15b51eb8-b81] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-26 17:59:47 - main - INFO - dispatch:70 - [req:ed4fb562-726] - Request started: GET http://localhost:8000/health
+2025-12-26 17:59:47 - main - INFO - dispatch:80 - [req:ed4fb562-726] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2025-12-26 18:00:17 - main - INFO - dispatch:70 - [req:88712244-d13] - Request started: GET http://localhost:8000/health
+2025-12-26 18:00:17 - main - INFO - dispatch:80 - [req:88712244-d13] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.59ms
+2025-12-26 18:00:47 - main - INFO - dispatch:70 - [req:f8ad58db-7eb] - Request started: GET http://localhost:8000/health
+2025-12-26 18:00:47 - main - INFO - dispatch:80 - [req:f8ad58db-7eb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.65ms
+2025-12-26 18:01:17 - main - INFO - dispatch:70 - [req:c71e3ed7-bce] - Request started: GET http://localhost:8000/health
+2025-12-26 18:01:17 - main - INFO - dispatch:80 - [req:c71e3ed7-bce] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-26 18:01:47 - main - INFO - dispatch:70 - [req:a5cb299f-ce7] - Request started: GET http://localhost:8000/health
+2025-12-26 18:01:47 - main - INFO - dispatch:80 - [req:a5cb299f-ce7] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2025-12-26 18:02:17 - main - INFO - dispatch:70 - [req:0e298ba5-f3f] - Request started: GET http://localhost:8000/health
+2025-12-26 18:02:17 - main - INFO - dispatch:80 - [req:0e298ba5-f3f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-26 18:02:47 - main - INFO - dispatch:70 - [req:af278253-177] - Request started: GET http://localhost:8000/health
+2025-12-26 18:02:47 - main - INFO - dispatch:80 - [req:af278253-177] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-26 18:03:18 - main - INFO - dispatch:70 - [req:0b08f666-126] - Request started: GET http://localhost:8000/health
+2025-12-26 18:03:18 - main - INFO - dispatch:80 - [req:0b08f666-126] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2025-12-26 18:03:48 - main - INFO - dispatch:70 - [req:79a15af9-280] - Request started: GET http://localhost:8000/health
+2025-12-26 18:03:48 - main - INFO - dispatch:80 - [req:79a15af9-280] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.5ms
+2025-12-26 18:04:18 - main - INFO - dispatch:70 - [req:c58e4338-82f] - Request started: GET http://localhost:8000/health
+2025-12-26 18:04:18 - main - INFO - dispatch:80 - [req:c58e4338-82f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-26 18:04:48 - main - INFO - dispatch:70 - [req:1cdb979b-057] - Request started: GET http://localhost:8000/health
+2025-12-26 18:04:48 - main - INFO - dispatch:80 - [req:1cdb979b-057] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-26 18:05:18 - main - INFO - dispatch:70 - [req:e9c4ffc8-688] - Request started: GET http://localhost:8000/health
+2025-12-26 18:05:18 - main - INFO - dispatch:80 - [req:e9c4ffc8-688] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-26 18:05:48 - main - INFO - dispatch:70 - [req:6ff3d489-fdc] - Request started: GET http://localhost:8000/health
+2025-12-26 18:05:48 - main - INFO - dispatch:80 - [req:6ff3d489-fdc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-26 18:06:18 - main - INFO - dispatch:70 - [req:28d0e410-fae] - Request started: GET http://localhost:8000/health
+2025-12-26 18:06:18 - main - INFO - dispatch:80 - [req:28d0e410-fae] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-29 04:35:28 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-29 04:35:30 - main - INFO - dispatch:70 - [req:8941eb98-b67] - Request started: GET http://localhost:8000/health
+2025-12-29 04:35:30 - main - INFO - dispatch:80 - [req:8941eb98-b67] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.27ms
+2025-12-29 04:35:57 - main - INFO - dispatch:70 - [req:7e80e047-17a] - Request started: GET http://localhost:8000/health
+2025-12-29 04:35:57 - main - INFO - dispatch:80 - [req:7e80e047-17a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-29 04:36:27 - main - INFO - dispatch:70 - [req:6a613132-8d9] - Request started: GET http://localhost:8000/health
+2025-12-29 04:36:27 - main - INFO - dispatch:80 - [req:6a613132-8d9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.09ms
+2025-12-29 04:36:57 - main - INFO - dispatch:70 - [req:82a5987b-95f] - Request started: GET http://localhost:8000/health
+2025-12-29 04:36:57 - main - INFO - dispatch:80 - [req:82a5987b-95f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
+2025-12-29 04:37:27 - main - INFO - dispatch:70 - [req:fcc7616d-7ad] - Request started: GET http://localhost:8000/health
+2025-12-29 04:37:27 - main - INFO - dispatch:80 - [req:fcc7616d-7ad] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.79ms
+2025-12-29 04:37:57 - main - INFO - dispatch:70 - [req:d994f5cc-ff9] - Request started: GET http://localhost:8000/health
+2025-12-29 04:37:57 - main - INFO - dispatch:80 - [req:d994f5cc-ff9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.86ms
+2025-12-29 04:38:28 - main - INFO - dispatch:70 - [req:671b30ed-abf] - Request started: GET http://localhost:8000/health
+2025-12-29 04:38:28 - main - INFO - dispatch:80 - [req:671b30ed-abf] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-29 04:38:58 - main - INFO - dispatch:70 - [req:e5ab79ad-c73] - Request started: GET http://localhost:8000/health
+2025-12-29 04:38:58 - main - INFO - dispatch:80 - [req:e5ab79ad-c73] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2025-12-29 04:39:28 - main - INFO - dispatch:70 - [req:ca995f80-71b] - Request started: GET http://localhost:8000/health
+2025-12-29 04:39:28 - main - INFO - dispatch:80 - [req:ca995f80-71b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.75ms
+2025-12-29 04:39:58 - main - INFO - dispatch:70 - [req:70388e91-851] - Request started: GET http://localhost:8000/health
+2025-12-29 04:39:58 - main - INFO - dispatch:80 - [req:70388e91-851] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
+2025-12-29 04:40:28 - main - INFO - dispatch:70 - [req:091ae300-2f3] - Request started: GET http://localhost:8000/health
+2025-12-29 04:40:28 - main - INFO - dispatch:80 - [req:091ae300-2f3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.69ms
+2025-12-29 04:40:58 - main - INFO - dispatch:70 - [req:17cfa42a-a20] - Request started: GET http://localhost:8000/health
+2025-12-29 04:40:58 - main - INFO - dispatch:80 - [req:17cfa42a-a20] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-29 04:41:28 - main - INFO - dispatch:70 - [req:1e43f834-c21] - Request started: GET http://localhost:8000/health
+2025-12-29 04:41:28 - main - INFO - dispatch:80 - [req:1e43f834-c21] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.84ms
+2025-12-29 04:41:58 - main - INFO - dispatch:70 - [req:8ae2621f-a64] - Request started: GET http://localhost:8000/health
+2025-12-29 04:41:58 - main - INFO - dispatch:80 - [req:8ae2621f-a64] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.78ms
+2025-12-29 04:42:28 - main - INFO - dispatch:70 - [req:6bbea7f0-824] - Request started: GET http://localhost:8000/health
+2025-12-29 04:42:28 - main - INFO - dispatch:80 - [req:6bbea7f0-824] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.74ms
+2025-12-29 04:42:58 - main - INFO - dispatch:70 - [req:9091bae7-3ad] - Request started: GET http://localhost:8000/health
+2025-12-29 04:42:58 - main - INFO - dispatch:80 - [req:9091bae7-3ad] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.79ms
+2025-12-29 04:43:28 - main - INFO - dispatch:70 - [req:44e8f97d-cb6] - Request started: GET http://localhost:8000/health
+2025-12-29 04:43:28 - main - INFO - dispatch:80 - [req:44e8f97d-cb6] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.69ms
+2025-12-29 04:43:58 - main - INFO - dispatch:70 - [req:f4a03627-367] - Request started: GET http://localhost:8000/health
+2025-12-29 04:43:58 - main - INFO - dispatch:80 - [req:f4a03627-367] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.76ms
+2025-12-29 04:44:28 - main - INFO - dispatch:70 - [req:2fdd6747-b65] - Request started: GET http://localhost:8000/health
+2025-12-29 04:44:28 - main - INFO - dispatch:80 - [req:2fdd6747-b65] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.76ms
+2025-12-29 04:44:58 - main - INFO - dispatch:70 - [req:02131ca7-c3b] - Request started: GET http://localhost:8000/health
+2025-12-29 04:44:58 - main - INFO - dispatch:80 - [req:02131ca7-c3b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-29 04:45:29 - main - INFO - dispatch:70 - [req:efb16640-fb3] - Request started: GET http://localhost:8000/health
+2025-12-29 04:45:29 - main - INFO - dispatch:80 - [req:efb16640-fb3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.79ms
+2025-12-29 04:45:59 - main - INFO - dispatch:70 - [req:ca6f98c7-f84] - Request started: GET http://localhost:8000/health
+2025-12-29 04:45:59 - main - INFO - dispatch:80 - [req:ca6f98c7-f84] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-29 04:46:29 - main - INFO - dispatch:70 - [req:e526fa1d-c20] - Request started: GET http://localhost:8000/health
+2025-12-29 04:46:29 - main - INFO - dispatch:80 - [req:e526fa1d-c20] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-29 04:46:59 - main - INFO - dispatch:70 - [req:1ae3392a-731] - Request started: GET http://localhost:8000/health
+2025-12-29 04:46:59 - main - INFO - dispatch:80 - [req:1ae3392a-731] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.76ms
+2025-12-29 04:47:29 - main - INFO - dispatch:70 - [req:2f0b4abe-084] - Request started: GET http://localhost:8000/health
+2025-12-29 04:47:29 - main - INFO - dispatch:80 - [req:2f0b4abe-084] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.98ms
+2025-12-29 04:47:59 - main - INFO - dispatch:70 - [req:92b40d4c-d97] - Request started: GET http://localhost:8000/health
+2025-12-29 04:47:59 - main - INFO - dispatch:80 - [req:92b40d4c-d97] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.86ms
+2025-12-29 04:48:29 - main - INFO - dispatch:70 - [req:10912b43-720] - Request started: GET http://localhost:8000/health
+2025-12-29 04:48:29 - main - INFO - dispatch:80 - [req:10912b43-720] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-29 04:48:59 - main - INFO - dispatch:70 - [req:8579dc3b-e1a] - Request started: GET http://localhost:8000/health
+2025-12-29 04:48:59 - main - INFO - dispatch:80 - [req:8579dc3b-e1a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.62ms
+2025-12-29 04:49:29 - main - INFO - dispatch:70 - [req:dce30f72-29f] - Request started: GET http://localhost:8000/health
+2025-12-29 04:49:29 - main - INFO - dispatch:80 - [req:dce30f72-29f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
+2025-12-29 04:49:59 - main - INFO - dispatch:70 - [req:dbb53021-7a3] - Request started: GET http://localhost:8000/health
+2025-12-29 04:49:59 - main - INFO - dispatch:80 - [req:dbb53021-7a3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-29 04:50:29 - main - INFO - dispatch:70 - [req:c44fd081-b48] - Request started: GET http://localhost:8000/health
+2025-12-29 04:50:29 - main - INFO - dispatch:80 - [req:c44fd081-b48] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-29 04:50:59 - main - INFO - dispatch:70 - [req:59510d23-78d] - Request started: GET http://localhost:8000/health
+2025-12-29 04:50:59 - main - INFO - dispatch:80 - [req:59510d23-78d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2025-12-29 04:51:29 - main - INFO - dispatch:70 - [req:7a45f3a8-2ae] - Request started: GET http://localhost:8000/health
+2025-12-29 04:51:29 - main - INFO - dispatch:80 - [req:7a45f3a8-2ae] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-29 04:51:59 - main - INFO - dispatch:70 - [req:648211e3-20a] - Request started: GET http://localhost:8000/health
+2025-12-29 04:51:59 - main - INFO - dispatch:80 - [req:648211e3-20a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-29 04:52:29 - main - INFO - dispatch:70 - [req:91ee17ff-cbb] - Request started: GET http://localhost:8000/health
+2025-12-29 04:52:29 - main - INFO - dispatch:80 - [req:91ee17ff-cbb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-29 04:52:59 - main - INFO - dispatch:70 - [req:75765a5d-753] - Request started: GET http://localhost:8000/health
+2025-12-29 04:52:59 - main - INFO - dispatch:80 - [req:75765a5d-753] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-29 04:53:29 - main - INFO - dispatch:70 - [req:6587c8d7-e94] - Request started: GET http://localhost:8000/health
+2025-12-29 04:53:29 - main - INFO - dispatch:80 - [req:6587c8d7-e94] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2025-12-29 04:54:00 - main - INFO - dispatch:70 - [req:755e2413-431] - Request started: GET http://localhost:8000/health
+2025-12-29 04:54:00 - main - INFO - dispatch:80 - [req:755e2413-431] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-29 04:54:30 - main - INFO - dispatch:70 - [req:83223b12-68d] - Request started: GET http://localhost:8000/health
+2025-12-29 04:54:30 - main - INFO - dispatch:80 - [req:83223b12-68d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-29 04:55:00 - main - INFO - dispatch:70 - [req:c4cce6ce-ea4] - Request started: GET http://localhost:8000/health
+2025-12-29 04:55:00 - main - INFO - dispatch:80 - [req:c4cce6ce-ea4] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.64ms
+2025-12-29 04:55:30 - main - INFO - dispatch:70 - [req:55e91810-1a9] - Request started: GET http://localhost:8000/health
+2025-12-29 04:55:30 - main - INFO - dispatch:80 - [req:55e91810-1a9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-29 04:56:00 - main - INFO - dispatch:70 - [req:d8e3ad9f-203] - Request started: GET http://localhost:8000/health
+2025-12-29 04:56:00 - main - INFO - dispatch:80 - [req:d8e3ad9f-203] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-29 04:56:30 - main - INFO - dispatch:70 - [req:0399d613-996] - Request started: GET http://localhost:8000/health
+2025-12-29 04:56:30 - main - INFO - dispatch:80 - [req:0399d613-996] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.61ms
+2025-12-29 04:57:00 - main - INFO - dispatch:70 - [req:cf768859-926] - Request started: GET http://localhost:8000/health
+2025-12-29 04:57:00 - main - INFO - dispatch:80 - [req:cf768859-926] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-29 04:57:30 - main - INFO - dispatch:70 - [req:f60cbf69-fc1] - Request started: GET http://localhost:8000/health
+2025-12-29 04:57:30 - main - INFO - dispatch:80 - [req:f60cbf69-fc1] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-29 04:58:00 - main - INFO - dispatch:70 - [req:65433082-088] - Request started: GET http://localhost:8000/health
+2025-12-29 04:58:00 - main - INFO - dispatch:80 - [req:65433082-088] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2025-12-29 04:58:30 - main - INFO - dispatch:70 - [req:1b0adaf6-7c3] - Request started: GET http://localhost:8000/health
+2025-12-29 04:58:30 - main - INFO - dispatch:80 - [req:1b0adaf6-7c3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-29 04:59:00 - main - INFO - dispatch:70 - [req:8a0014f5-704] - Request started: GET http://localhost:8000/health
+2025-12-29 04:59:00 - main - INFO - dispatch:80 - [req:8a0014f5-704] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.59ms
+2025-12-29 04:59:30 - main - INFO - dispatch:70 - [req:35b13697-be6] - Request started: GET http://localhost:8000/health
+2025-12-29 04:59:30 - main - INFO - dispatch:80 - [req:35b13697-be6] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.68ms
+2025-12-29 05:00:00 - main - INFO - dispatch:70 - [req:3e4d3354-ef2] - Request started: GET http://localhost:8000/health
+2025-12-29 05:00:00 - main - INFO - dispatch:80 - [req:3e4d3354-ef2] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2025-12-29 05:00:30 - main - INFO - dispatch:70 - [req:4eb842f4-c90] - Request started: GET http://localhost:8000/health
+2025-12-29 05:00:30 - main - INFO - dispatch:80 - [req:4eb842f4-c90] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.65ms
+2025-12-29 05:01:00 - main - INFO - dispatch:70 - [req:d9c6a458-ee3] - Request started: GET http://localhost:8000/health
+2025-12-29 05:01:00 - main - INFO - dispatch:80 - [req:d9c6a458-ee3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.59ms
+2025-12-29 05:01:30 - main - INFO - dispatch:70 - [req:5ac69750-dd6] - Request started: GET http://localhost:8000/health
+2025-12-29 05:01:30 - main - INFO - dispatch:80 - [req:5ac69750-dd6] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-29 05:02:00 - main - INFO - dispatch:70 - [req:0a89cab3-2ec] - Request started: GET http://localhost:8000/health
+2025-12-29 05:02:00 - main - INFO - dispatch:80 - [req:0a89cab3-2ec] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-29 05:02:30 - main - INFO - dispatch:70 - [req:113b0f51-d37] - Request started: GET http://localhost:8000/health
+2025-12-29 05:02:30 - main - INFO - dispatch:80 - [req:113b0f51-d37] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-29 05:03:00 - main - INFO - dispatch:70 - [req:7566c539-158] - Request started: GET http://localhost:8000/health
+2025-12-29 05:03:00 - main - INFO - dispatch:80 - [req:7566c539-158] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-29 05:03:30 - main - INFO - dispatch:70 - [req:007a046a-c83] - Request started: GET http://localhost:8000/health
+2025-12-29 05:03:30 - main - INFO - dispatch:80 - [req:007a046a-c83] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.47ms
+2025-12-29 05:04:00 - main - INFO - dispatch:70 - [req:7784935f-8cb] - Request started: GET http://localhost:8000/health
+2025-12-29 05:04:00 - main - INFO - dispatch:80 - [req:7784935f-8cb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-29 05:04:31 - main - INFO - dispatch:70 - [req:50e0124d-1ff] - Request started: GET http://localhost:8000/health
+2025-12-29 05:04:31 - main - INFO - dispatch:80 - [req:50e0124d-1ff] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2025-12-29 05:05:01 - main - INFO - dispatch:70 - [req:def745b1-874] - Request started: GET http://localhost:8000/health
+2025-12-29 05:05:01 - main - INFO - dispatch:80 - [req:def745b1-874] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.53ms
+2025-12-29 05:05:31 - main - INFO - dispatch:70 - [req:b2d66cf9-864] - Request started: GET http://localhost:8000/health
+2025-12-29 05:05:31 - main - INFO - dispatch:80 - [req:b2d66cf9-864] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.63ms
+2025-12-29 05:06:01 - main - INFO - dispatch:70 - [req:46856151-47a] - Request started: GET http://localhost:8000/health
+2025-12-29 05:06:01 - main - INFO - dispatch:80 - [req:46856151-47a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-29 05:06:31 - main - INFO - dispatch:70 - [req:58bbce66-479] - Request started: GET http://localhost:8000/health
+2025-12-29 05:06:31 - main - INFO - dispatch:80 - [req:58bbce66-479] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.8ms
+2025-12-29 05:07:01 - main - INFO - dispatch:70 - [req:b15c26cd-4e8] - Request started: GET http://localhost:8000/health
+2025-12-29 05:07:01 - main - INFO - dispatch:80 - [req:b15c26cd-4e8] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-29 05:07:31 - main - INFO - dispatch:70 - [req:51277a4a-34f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:07:31 - main - INFO - dispatch:80 - [req:51277a4a-34f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.72ms
+2025-12-29 05:08:01 - main - INFO - dispatch:70 - [req:04bed910-131] - Request started: GET http://localhost:8000/health
+2025-12-29 05:08:01 - main - INFO - dispatch:80 - [req:04bed910-131] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.67ms
+2025-12-29 05:08:31 - main - INFO - dispatch:70 - [req:ff289863-e23] - Request started: GET http://localhost:8000/health
+2025-12-29 05:08:31 - main - INFO - dispatch:80 - [req:ff289863-e23] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-29 05:09:01 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-29 05:09:04 - main - INFO - dispatch:70 - [req:49bc1d3b-577] - Request started: GET http://localhost:8000/health
+2025-12-29 05:09:04 - main - INFO - dispatch:80 - [req:49bc1d3b-577] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.41ms
+2025-12-29 05:09:34 - main - INFO - dispatch:70 - [req:65d866c5-1fc] - Request started: GET http://localhost:8000/health
+2025-12-29 05:09:34 - main - INFO - dispatch:80 - [req:65d866c5-1fc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2025-12-29 05:10:04 - main - INFO - dispatch:70 - [req:692b60db-23d] - Request started: GET http://localhost:8000/health
+2025-12-29 05:10:04 - main - INFO - dispatch:80 - [req:692b60db-23d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.65ms
+2025-12-29 05:10:34 - main - INFO - dispatch:70 - [req:9f2c53bb-c0f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:10:34 - main - INFO - dispatch:80 - [req:9f2c53bb-c0f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.04ms
+2025-12-29 05:11:04 - main - INFO - dispatch:70 - [req:f6e41267-a2f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:11:04 - main - INFO - dispatch:80 - [req:f6e41267-a2f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.0ms
+2025-12-29 05:11:34 - main - INFO - dispatch:70 - [req:1a197fa3-b8b] - Request started: GET http://localhost:8000/health
+2025-12-29 05:11:34 - main - INFO - dispatch:80 - [req:1a197fa3-b8b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:12:04 - main - INFO - dispatch:70 - [req:d5380843-bda] - Request started: GET http://localhost:8000/health
+2025-12-29 05:12:04 - main - INFO - dispatch:80 - [req:d5380843-bda] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-29 05:12:20 - main - INFO - dispatch:70 - [req:442d02e7-b14] - Request started: OPTIONS http://localhost:8000/cleanup
+2025-12-29 05:12:20 - main - INFO - dispatch:80 - [req:442d02e7-b14] - Request completed: OPTIONS http://localhost:8000/cleanup - Status: 400 - Duration: 0.44ms
+2025-12-29 05:12:34 - main - INFO - dispatch:70 - [req:bb566865-b1c] - Request started: GET http://localhost:8000/health
+2025-12-29 05:12:34 - main - INFO - dispatch:80 - [req:bb566865-b1c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.18ms
+2025-12-29 05:13:04 - main - INFO - dispatch:70 - [req:8fd45623-aa0] - Request started: GET http://localhost:8000/health
+2025-12-29 05:13:04 - main - INFO - dispatch:80 - [req:8fd45623-aa0] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.69ms
+2025-12-29 05:13:12 - main - INFO - dispatch:70 - [req:79b8aca3-cdf] - Request started: OPTIONS http://localhost:8000/upload
+2025-12-29 05:13:12 - main - INFO - dispatch:80 - [req:79b8aca3-cdf] - Request completed: OPTIONS http://localhost:8000/upload - Status: 400 - Duration: 0.63ms
+2025-12-29 05:13:19 - main - INFO - dispatch:70 - [req:653b9003-8f0] - Request started: OPTIONS http://localhost:8000/cleanup
+2025-12-29 05:13:19 - main - INFO - dispatch:80 - [req:653b9003-8f0] - Request completed: OPTIONS http://localhost:8000/cleanup - Status: 400 - Duration: 0.57ms
+2025-12-29 05:13:23 - main - INFO - dispatch:70 - [req:b04f5c5a-812] - Request started: OPTIONS http://localhost:8000/upload
+2025-12-29 05:13:23 - main - INFO - dispatch:80 - [req:b04f5c5a-812] - Request completed: OPTIONS http://localhost:8000/upload - Status: 400 - Duration: 1.52ms
+2025-12-29 05:13:34 - main - INFO - dispatch:70 - [req:26df532b-50f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:13:34 - main - INFO - dispatch:80 - [req:26df532b-50f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
+2025-12-29 05:14:05 - main - INFO - dispatch:70 - [req:2b6834e0-625] - Request started: GET http://localhost:8000/health
+2025-12-29 05:14:05 - main - INFO - dispatch:80 - [req:2b6834e0-625] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.06ms
+2025-12-29 05:14:35 - main - INFO - dispatch:70 - [req:14a6b84c-354] - Request started: GET http://localhost:8000/health
+2025-12-29 05:14:35 - main - INFO - dispatch:80 - [req:14a6b84c-354] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.95ms
+2025-12-29 05:15:05 - main - INFO - dispatch:70 - [req:23a1e095-35a] - Request started: GET http://localhost:8000/health
+2025-12-29 05:15:05 - main - INFO - dispatch:80 - [req:23a1e095-35a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.53ms
+2025-12-29 05:15:33 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2025-12-29 05:15:36 - main - INFO - dispatch:70 - [req:8f4db69e-1da] - Request started: GET http://localhost:8000/health
+2025-12-29 05:15:36 - main - INFO - dispatch:80 - [req:8f4db69e-1da] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.59ms
+2025-12-29 05:15:48 - main - INFO - dispatch:70 - [req:a6cb2e56-171] - Request started: OPTIONS http://localhost:8000/cleanup
+2025-12-29 05:15:48 - main - INFO - dispatch:80 - [req:a6cb2e56-171] - Request completed: OPTIONS http://localhost:8000/cleanup - Status: 200 - Duration: 0.44ms
+2025-12-29 05:15:48 - main - INFO - dispatch:70 - [req:47c0b037-6ba] - Request started: POST http://localhost:8000/cleanup
+2025-12-29 05:15:48 - main - INFO - dispatch:80 - [req:47c0b037-6ba] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 2.95ms
+2025-12-29 05:15:51 - main - INFO - dispatch:70 - [req:6dfedd56-a6f] - Request started: POST http://localhost:8000/cleanup
+2025-12-29 05:15:51 - main - INFO - dispatch:80 - [req:6dfedd56-a6f] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 1.39ms
+2025-12-29 05:15:57 - main - INFO - dispatch:70 - [req:4ea6fddb-384] - Request started: OPTIONS http://localhost:8000/upload
+2025-12-29 05:15:57 - main - INFO - dispatch:80 - [req:4ea6fddb-384] - Request completed: OPTIONS http://localhost:8000/upload - Status: 200 - Duration: 0.81ms
+2025-12-29 05:15:57 - main - INFO - dispatch:70 - [req:9c043a8d-842] - Request started: POST http://localhost:8000/upload
+2025-12-29 05:15:57 - main - INFO - upload_file:172 - [req:9c043a8d-842] - File uploaded successfully: Loan Summary - Eagleby Merge (1).xlsx (70745 bytes)
+2025-12-29 05:15:57 - main - INFO - dispatch:80 - [req:9c043a8d-842] - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 11.27ms
+2025-12-29 05:15:57 - main - INFO - dispatch:70 - [req:f12ef750-254] - Request started: OPTIONS http://localhost:8000/convert
+2025-12-29 05:15:57 - main - INFO - dispatch:80 - [req:f12ef750-254] - Request completed: OPTIONS http://localhost:8000/convert - Status: 200 - Duration: 0.82ms
+2025-12-29 05:15:57 - main - INFO - dispatch:70 - [req:3397b1fd-c99] - Request started: POST http://localhost:8000/convert
+2025-12-29 05:15:57 - main - INFO - convert_to_json:229 - [req:3397b1fd-c99] - Starting conversion process. Found 1 Excel files
+2025-12-29 05:15:57 - converter - INFO - process_excel_to_json:572 - [req:3397b1fd-c99] - Starting new conversion - cleaning previous data...
+2025-12-29 05:15:59 - converter - WARNING - cleanup_previous_data:60 - [req:3397b1fd-c99] - Could not clean up markdown/ after 3 attempts: [Errno 16] Device or resource busy: 'markdown'
+2025-12-29 05:15:59 - converter - INFO - cleanup_previous_data:62 - [req:3397b1fd-c99] - Previous conversion data cleanup completed
+2025-12-29 05:15:59 - converter - INFO - process_excel_to_json:596 - [req:3397b1fd-c99] - Found 1 Excel file(s) in input
+2025-12-29 05:15:59 - converter - INFO - process_excel_to_json:602 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2025-12-29 05:15:59 - converter - INFO - process_excel_to_json:607 - [req:3397b1fd-c99] - Processing Excel file 1/1: Loan Summary - Eagleby Merge (1).xlsx
+2025-12-29 05:15:59 - converter - INFO - process_excel_to_json:614 - [req:3397b1fd-c99] -   Found 8 sheet(s): Key Statements, Borrower , A&L, Security , Feasibility, DocMerge, Document List, _SSC
+2025-12-29 05:16:01 - converter - INFO - process_excel_to_json:641 - [req:3397b1fd-c99] - 
+Phase 1 Complete: Created 8 temp sheet files
+2025-12-29 05:16:01 - converter - INFO - process_excel_to_json:651 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: VISION PROCESSING (One-by-One with Async Vision)
+======================================================================
+
+2025-12-29 05:16:01 - converter - INFO - process_excel_to_json:661 - [req:3397b1fd-c99] - Processing 8 files synchronously (one-by-one)...
+2025-12-29 05:16:01 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[1/8] Processing: Loan_Summary_-_Eagleby_Merge_1_Key_Statements
+2025-12-29 05:16:01 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:16:01 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1_Key_Statements.xlsx
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:16:02 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1_Key_Statements.xlsx
+2025-12-29 05:16:02 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:16:02 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Key Statements' to HIGH-QUALITY image
+2025-12-29 05:16:02 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 1351x1711 (38 rows x 9 cols)
+2025-12-29 05:16:02 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_1_Key_Statements_Key_Statements_20251229_051602.png (1351x1711)
+2025-12-29 05:16:02 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:3397b1fd-c99] - Sheet 'Key Statements' converted successfully
+2025-12-29 05:16:02 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:116 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:117 - [req:3397b1fd-c99] - Analyzing column usage for 1 sheets...
+2025-12-29 05:16:02 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:3397b1fd-c99] - Analyzing column usage for sheet 'Key Statements'
+2025-12-29 05:16:02 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:3397b1fd-c99] - Analyzing 9 columns in sheet 'Key Statements'
+2025-12-29 05:16:02 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:3397b1fd-c99] - Column analysis complete for 'Key Statements': 1 gaps, 8 columns with data
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:131 - [req:3397b1fd-c99] - Sheet 'Key Statements': 1 column gap(s) detected
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:143 - [req:3397b1fd-c99] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:148 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:149 - [req:3397b1fd-c99] - Analyzing 1 sheets with controlled concurrency...
+2025-12-29 05:16:02 - vision_processor - INFO - process_excel_with_vision:182 - [req:3397b1fd-c99] - Processing 1 sheets with max 3 concurrent requests
+2025-12-29 05:16:02 - vision_processor - INFO - analyze_with_semaphore:161 - [req:3397b1fd-c99] - Starting vision analysis for sheet: Key Statements
+2025-12-29 05:16:02 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:3397b1fd-c99] - Analyzing sheet 'Key Statements' with vision model (lightweight analysis)
+2025-12-29 05:16:06 - main - INFO - dispatch:70 - [req:2f37c8ef-f33] - Request started: GET http://localhost:8000/health
+2025-12-29 05:16:06 - main - INFO - dispatch:80 - [req:2f37c8ef-f33] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.04ms
+2025-12-29 05:16:15 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:16:15 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:3397b1fd-c99] - LLM output received: 1270 characters
+2025-12-29 05:16:15 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:3397b1fd-c99] - Vision analysis complete for sheet 'Key Statements'
+2025-12-29 05:16:15 - vision_processor - INFO - analyze_with_semaphore:169 - [req:3397b1fd-c99] - Completed vision analysis for sheet: Key Statements
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:198 - [req:3397b1fd-c99] - Vision analysis complete for Key Statements
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:200 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:201 - [req:3397b1fd-c99] -   Success: 1 sheets analyzed
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:202 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:210 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:218 - [req:3397b1fd-c99] - Aggregating column gap detection across sheets...
+2025-12-29 05:16:15 - vision_analyzer - INFO - generate_gap_report:382 - [req:3397b1fd-c99] - Generating column gap detection report
+2025-12-29 05:16:15 - vision_analyzer - INFO - generate_gap_report:418 - [req:3397b1fd-c99] - Processing deterministic Excel column usage analysis
+2025-12-29 05:16:15 - vision_analyzer - INFO - generate_gap_report:491 - [req:3397b1fd-c99] - Column gap report generated: 1 deterministic gaps, 2 vision gaps
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:225 - [req:3397b1fd-c99] - Aggregating table relationships across sheets...
+2025-12-29 05:16:15 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:3397b1fd-c99] - Aggregating table relationships across sheets
+2025-12-29 05:16:15 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:3397b1fd-c99] - Table relationship analysis complete: different_tables - 2 total tables
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:228 - [req:3397b1fd-c99] - Phase 3 Complete: Aggregation finished
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:233 - [req:3397b1fd-c99] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:284 - [req:3397b1fd-c99] - Sheet: Key Statements
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:285 - [req:3397b1fd-c99] - Columns with data: 8
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:286 - [req:3397b1fd-c99] - Columns with gaps: 1
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:287 - [req:3397b1fd-c99] - Classification: different_tables
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:289 - [req:3397b1fd-c99] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:290 - [req:3397b1fd-c99] - Total sheets analyzed: 1
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:291 - [req:3397b1fd-c99] - Processing time: 13780ms (13.8s)
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:292 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:16:15 - converter - INFO - process_excel_to_json:701 - [req:3397b1fd-c99] -   ✓ Vision analysis complete (13782ms)
+2025-12-29 05:16:15 - converter - INFO - process_excel_to_json:702 - [req:3397b1fd-c99] -     - Classification: different_tables
+2025-12-29 05:16:15 - converter - INFO - process_excel_to_json:703 - [req:3397b1fd-c99] -     - Gap columns: ['A']
+2025-12-29 05:16:15 - converter - INFO - process_excel_to_json:704 - [req:3397b1fd-c99] -     - Saved: Loan_Summary_-_Eagleby_Merge_1_Key_Statements_gap_analysis.json
+2025-12-29 05:16:15 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[2/8] Processing: Loan_Summary_-_Eagleby_Merge_1_Borrower
+2025-12-29 05:16:15 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1_Borrower.xlsx
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:16:15 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:16:15 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1_Borrower.xlsx
+2025-12-29 05:16:15 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:16:15 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Borrower ' to HIGH-QUALITY image
+2025-12-29 05:16:15 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 2101x2160 (118 rows x 14 cols)
+2025-12-29 05:16:16 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_1_Borrower_Borrower_20251229_051615.png (2101x2160)
+2025-12-29 05:16:16 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:3397b1fd-c99] - Sheet 'Borrower ' converted successfully
+2025-12-29 05:16:16 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:116 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:117 - [req:3397b1fd-c99] - Analyzing column usage for 1 sheets...
+2025-12-29 05:16:16 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:3397b1fd-c99] - Analyzing column usage for sheet 'Borrower '
+2025-12-29 05:16:16 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:3397b1fd-c99] - Analyzing 14 columns in sheet 'Borrower '
+2025-12-29 05:16:16 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:3397b1fd-c99] - Column analysis complete for 'Borrower ': 2 gaps, 3 columns with data
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:131 - [req:3397b1fd-c99] - Sheet 'Borrower ': 2 column gap(s) detected
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:143 - [req:3397b1fd-c99] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:148 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:149 - [req:3397b1fd-c99] - Analyzing 1 sheets with controlled concurrency...
+2025-12-29 05:16:16 - vision_processor - INFO - process_excel_with_vision:182 - [req:3397b1fd-c99] - Processing 1 sheets with max 3 concurrent requests
+2025-12-29 05:16:16 - vision_processor - INFO - analyze_with_semaphore:161 - [req:3397b1fd-c99] - Starting vision analysis for sheet: Borrower 
+2025-12-29 05:16:16 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:3397b1fd-c99] - Analyzing sheet 'Borrower ' with vision model (lightweight analysis)
+2025-12-29 05:16:30 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:16:30 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:3397b1fd-c99] - LLM output received: 1545 characters
+2025-12-29 05:16:30 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:3397b1fd-c99] - Vision analysis complete for sheet 'Borrower '
+2025-12-29 05:16:30 - vision_processor - INFO - analyze_with_semaphore:169 - [req:3397b1fd-c99] - Completed vision analysis for sheet: Borrower 
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:198 - [req:3397b1fd-c99] - Vision analysis complete for Borrower 
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:200 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:201 - [req:3397b1fd-c99] -   Success: 1 sheets analyzed
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:202 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:210 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:218 - [req:3397b1fd-c99] - Aggregating column gap detection across sheets...
+2025-12-29 05:16:30 - vision_analyzer - INFO - generate_gap_report:382 - [req:3397b1fd-c99] - Generating column gap detection report
+2025-12-29 05:16:30 - vision_analyzer - INFO - generate_gap_report:418 - [req:3397b1fd-c99] - Processing deterministic Excel column usage analysis
+2025-12-29 05:16:30 - vision_analyzer - INFO - generate_gap_report:491 - [req:3397b1fd-c99] - Column gap report generated: 2 deterministic gaps, 1 vision gaps
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:225 - [req:3397b1fd-c99] - Aggregating table relationships across sheets...
+2025-12-29 05:16:30 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:3397b1fd-c99] - Aggregating table relationships across sheets
+2025-12-29 05:16:30 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:3397b1fd-c99] - Table relationship analysis complete: different_tables - 4 total tables
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:228 - [req:3397b1fd-c99] - Phase 3 Complete: Aggregation finished
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:233 - [req:3397b1fd-c99] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:284 - [req:3397b1fd-c99] - Sheet: Borrower 
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:285 - [req:3397b1fd-c99] - Columns with data: 3
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:286 - [req:3397b1fd-c99] - Columns with gaps: 11
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:287 - [req:3397b1fd-c99] - Classification: different_tables
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:289 - [req:3397b1fd-c99] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:290 - [req:3397b1fd-c99] - Total sheets analyzed: 1
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:291 - [req:3397b1fd-c99] - Processing time: 14514ms (14.5s)
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:292 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:16:30 - converter - INFO - process_excel_to_json:701 - [req:3397b1fd-c99] -   ✓ Vision analysis complete (14516ms)
+2025-12-29 05:16:30 - converter - INFO - process_excel_to_json:702 - [req:3397b1fd-c99] -     - Classification: different_tables
+2025-12-29 05:16:30 - converter - INFO - process_excel_to_json:703 - [req:3397b1fd-c99] -     - Gap columns: ['A', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
+2025-12-29 05:16:30 - converter - INFO - process_excel_to_json:704 - [req:3397b1fd-c99] -     - Saved: Loan_Summary_-_Eagleby_Merge_1_Borrower_gap_analysis.json
+2025-12-29 05:16:30 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[3/8] Processing: Loan_Summary_-_Eagleby_Merge_1_AL
+2025-12-29 05:16:30 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1_AL.xlsx
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:16:30 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1_AL.xlsx
+2025-12-29 05:16:30 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:16:30 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'A&L' to HIGH-QUALITY image
+2025-12-29 05:16:30 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 1351x2160 (92 rows x 9 cols)
+2025-12-29 05:16:30 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_1_AL_AL_20251229_051630.png (1351x2160)
+2025-12-29 05:16:30 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:3397b1fd-c99] - Sheet 'A&L' converted successfully
+2025-12-29 05:16:30 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:116 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:117 - [req:3397b1fd-c99] - Analyzing column usage for 1 sheets...
+2025-12-29 05:16:30 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:3397b1fd-c99] - Analyzing column usage for sheet 'A&L'
+2025-12-29 05:16:30 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:3397b1fd-c99] - Analyzing 9 columns in sheet 'A&L'
+2025-12-29 05:16:30 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:3397b1fd-c99] - Column analysis complete for 'A&L': 2 gaps, 7 columns with data
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:131 - [req:3397b1fd-c99] - Sheet 'A&L': 2 column gap(s) detected
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:143 - [req:3397b1fd-c99] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:148 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:149 - [req:3397b1fd-c99] - Analyzing 1 sheets with controlled concurrency...
+2025-12-29 05:16:30 - vision_processor - INFO - process_excel_with_vision:182 - [req:3397b1fd-c99] - Processing 1 sheets with max 3 concurrent requests
+2025-12-29 05:16:30 - vision_processor - INFO - analyze_with_semaphore:161 - [req:3397b1fd-c99] - Starting vision analysis for sheet: A&L
+2025-12-29 05:16:30 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:3397b1fd-c99] - Analyzing sheet 'A&L' with vision model (lightweight analysis)
+2025-12-29 05:16:36 - main - INFO - dispatch:70 - [req:a35d6b01-bc3] - Request started: GET http://localhost:8000/health
+2025-12-29 05:16:36 - main - INFO - dispatch:80 - [req:a35d6b01-bc3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-29 05:16:41 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:16:41 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:3397b1fd-c99] - LLM output received: 1098 characters
+2025-12-29 05:16:41 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:3397b1fd-c99] - Vision analysis complete for sheet 'A&L'
+2025-12-29 05:16:41 - vision_processor - INFO - analyze_with_semaphore:169 - [req:3397b1fd-c99] - Completed vision analysis for sheet: A&L
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:198 - [req:3397b1fd-c99] - Vision analysis complete for A&L
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:200 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:201 - [req:3397b1fd-c99] -   Success: 1 sheets analyzed
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:202 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:210 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:218 - [req:3397b1fd-c99] - Aggregating column gap detection across sheets...
+2025-12-29 05:16:41 - vision_analyzer - INFO - generate_gap_report:382 - [req:3397b1fd-c99] - Generating column gap detection report
+2025-12-29 05:16:41 - vision_analyzer - INFO - generate_gap_report:418 - [req:3397b1fd-c99] - Processing deterministic Excel column usage analysis
+2025-12-29 05:16:41 - vision_analyzer - INFO - generate_gap_report:491 - [req:3397b1fd-c99] - Column gap report generated: 2 deterministic gaps, 1 vision gaps
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:225 - [req:3397b1fd-c99] - Aggregating table relationships across sheets...
+2025-12-29 05:16:41 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:3397b1fd-c99] - Aggregating table relationships across sheets
+2025-12-29 05:16:41 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:3397b1fd-c99] - Table relationship analysis complete: same_table_repeated - 2 total tables
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:228 - [req:3397b1fd-c99] - Phase 3 Complete: Aggregation finished
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:233 - [req:3397b1fd-c99] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:284 - [req:3397b1fd-c99] - Sheet: A&L
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:285 - [req:3397b1fd-c99] - Columns with data: 7
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:286 - [req:3397b1fd-c99] - Columns with gaps: 2
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:287 - [req:3397b1fd-c99] - Classification: single_table
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:289 - [req:3397b1fd-c99] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:290 - [req:3397b1fd-c99] - Total sheets analyzed: 1
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:291 - [req:3397b1fd-c99] - Processing time: 11066ms (11.1s)
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:292 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:16:41 - converter - INFO - process_excel_to_json:701 - [req:3397b1fd-c99] -   ✓ Vision analysis complete (11068ms)
+2025-12-29 05:16:41 - converter - INFO - process_excel_to_json:702 - [req:3397b1fd-c99] -     - Classification: single_table
+2025-12-29 05:16:41 - converter - INFO - process_excel_to_json:703 - [req:3397b1fd-c99] -     - Gap columns: ['A', 'H']
+2025-12-29 05:16:41 - converter - INFO - process_excel_to_json:704 - [req:3397b1fd-c99] -     - Saved: Loan_Summary_-_Eagleby_Merge_1_AL_gap_analysis.json
+2025-12-29 05:16:41 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[4/8] Processing: Loan_Summary_-_Eagleby_Merge_1_Security
+2025-12-29 05:16:41 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1_Security.xlsx
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:16:41 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1_Security.xlsx
+2025-12-29 05:16:41 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:16:41 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Security ' to HIGH-QUALITY image
+2025-12-29 05:16:41 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 901x2160 (75 rows x 6 cols)
+2025-12-29 05:16:41 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_1_Security_Security_20251229_051641.png (901x2160)
+2025-12-29 05:16:41 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:3397b1fd-c99] - Sheet 'Security ' converted successfully
+2025-12-29 05:16:41 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:116 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:117 - [req:3397b1fd-c99] - Analyzing column usage for 1 sheets...
+2025-12-29 05:16:41 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:3397b1fd-c99] - Analyzing column usage for sheet 'Security '
+2025-12-29 05:16:41 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:3397b1fd-c99] - Analyzing 6 columns in sheet 'Security '
+2025-12-29 05:16:41 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:3397b1fd-c99] - Column analysis complete for 'Security ': 2 gaps, 3 columns with data
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:131 - [req:3397b1fd-c99] - Sheet 'Security ': 2 column gap(s) detected
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:143 - [req:3397b1fd-c99] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:148 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:149 - [req:3397b1fd-c99] - Analyzing 1 sheets with controlled concurrency...
+2025-12-29 05:16:41 - vision_processor - INFO - process_excel_with_vision:182 - [req:3397b1fd-c99] - Processing 1 sheets with max 3 concurrent requests
+2025-12-29 05:16:41 - vision_processor - INFO - analyze_with_semaphore:161 - [req:3397b1fd-c99] - Starting vision analysis for sheet: Security 
+2025-12-29 05:16:41 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:3397b1fd-c99] - Analyzing sheet 'Security ' with vision model (lightweight analysis)
+2025-12-29 05:16:54 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:16:54 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:3397b1fd-c99] - LLM output received: 1018 characters
+2025-12-29 05:16:54 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:3397b1fd-c99] - Vision analysis complete for sheet 'Security '
+2025-12-29 05:16:54 - vision_processor - INFO - analyze_with_semaphore:169 - [req:3397b1fd-c99] - Completed vision analysis for sheet: Security 
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:198 - [req:3397b1fd-c99] - Vision analysis complete for Security 
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:200 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:201 - [req:3397b1fd-c99] -   Success: 1 sheets analyzed
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:202 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:210 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:218 - [req:3397b1fd-c99] - Aggregating column gap detection across sheets...
+2025-12-29 05:16:54 - vision_analyzer - INFO - generate_gap_report:382 - [req:3397b1fd-c99] - Generating column gap detection report
+2025-12-29 05:16:54 - vision_analyzer - INFO - generate_gap_report:418 - [req:3397b1fd-c99] - Processing deterministic Excel column usage analysis
+2025-12-29 05:16:54 - vision_analyzer - INFO - generate_gap_report:491 - [req:3397b1fd-c99] - Column gap report generated: 2 deterministic gaps, 1 vision gaps
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:225 - [req:3397b1fd-c99] - Aggregating table relationships across sheets...
+2025-12-29 05:16:54 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:3397b1fd-c99] - Aggregating table relationships across sheets
+2025-12-29 05:16:54 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:3397b1fd-c99] - Table relationship analysis complete: different_tables - 2 total tables
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:228 - [req:3397b1fd-c99] - Phase 3 Complete: Aggregation finished
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:233 - [req:3397b1fd-c99] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:284 - [req:3397b1fd-c99] - Sheet: Security 
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:285 - [req:3397b1fd-c99] - Columns with data: 3
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:286 - [req:3397b1fd-c99] - Columns with gaps: 3
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:287 - [req:3397b1fd-c99] - Classification: different_tables
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:289 - [req:3397b1fd-c99] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:290 - [req:3397b1fd-c99] - Total sheets analyzed: 1
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:291 - [req:3397b1fd-c99] - Processing time: 13610ms (13.6s)
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:292 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:16:54 - converter - INFO - process_excel_to_json:701 - [req:3397b1fd-c99] -   ✓ Vision analysis complete (13612ms)
+2025-12-29 05:16:54 - converter - INFO - process_excel_to_json:702 - [req:3397b1fd-c99] -     - Classification: different_tables
+2025-12-29 05:16:54 - converter - INFO - process_excel_to_json:703 - [req:3397b1fd-c99] -     - Gap columns: ['A', 'E', 'F']
+2025-12-29 05:16:54 - converter - INFO - process_excel_to_json:704 - [req:3397b1fd-c99] -     - Saved: Loan_Summary_-_Eagleby_Merge_1_Security_gap_analysis.json
+2025-12-29 05:16:54 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[5/8] Processing: Loan_Summary_-_Eagleby_Merge_1_Feasibility
+2025-12-29 05:16:54 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:16:54 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1_Feasibility.xlsx
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:16:55 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1_Feasibility.xlsx
+2025-12-29 05:16:55 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:16:55 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Feasibility' to HIGH-QUALITY image
+2025-12-29 05:16:55 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 2401x2160 (108 rows x 16 cols)
+2025-12-29 05:16:55 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_1_Feasibility_Feasibility_20251229_051655.png (2401x2160)
+2025-12-29 05:16:55 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:3397b1fd-c99] - Sheet 'Feasibility' converted successfully
+2025-12-29 05:16:55 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:116 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:117 - [req:3397b1fd-c99] - Analyzing column usage for 1 sheets...
+2025-12-29 05:16:55 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:3397b1fd-c99] - Analyzing column usage for sheet 'Feasibility'
+2025-12-29 05:16:55 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:3397b1fd-c99] - Analyzing 16 columns in sheet 'Feasibility'
+2025-12-29 05:16:55 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:3397b1fd-c99] - Column analysis complete for 'Feasibility': 3 gaps, 10 columns with data
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:131 - [req:3397b1fd-c99] - Sheet 'Feasibility': 3 column gap(s) detected
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:143 - [req:3397b1fd-c99] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:148 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:149 - [req:3397b1fd-c99] - Analyzing 1 sheets with controlled concurrency...
+2025-12-29 05:16:55 - vision_processor - INFO - process_excel_with_vision:182 - [req:3397b1fd-c99] - Processing 1 sheets with max 3 concurrent requests
+2025-12-29 05:16:55 - vision_processor - INFO - analyze_with_semaphore:161 - [req:3397b1fd-c99] - Starting vision analysis for sheet: Feasibility
+2025-12-29 05:16:55 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:3397b1fd-c99] - Analyzing sheet 'Feasibility' with vision model (lightweight analysis)
+2025-12-29 05:17:06 - main - INFO - dispatch:70 - [req:c1d3351c-ce2] - Request started: GET http://localhost:8000/health
+2025-12-29 05:17:06 - main - INFO - dispatch:80 - [req:c1d3351c-ce2] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.01ms
+2025-12-29 05:17:10 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:10 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:3397b1fd-c99] - LLM output received: 1499 characters
+2025-12-29 05:17:10 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:3397b1fd-c99] - Vision analysis complete for sheet 'Feasibility'
+2025-12-29 05:17:10 - vision_processor - INFO - analyze_with_semaphore:169 - [req:3397b1fd-c99] - Completed vision analysis for sheet: Feasibility
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:198 - [req:3397b1fd-c99] - Vision analysis complete for Feasibility
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:200 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:201 - [req:3397b1fd-c99] -   Success: 1 sheets analyzed
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:202 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:210 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:218 - [req:3397b1fd-c99] - Aggregating column gap detection across sheets...
+2025-12-29 05:17:10 - vision_analyzer - INFO - generate_gap_report:382 - [req:3397b1fd-c99] - Generating column gap detection report
+2025-12-29 05:17:10 - vision_analyzer - INFO - generate_gap_report:418 - [req:3397b1fd-c99] - Processing deterministic Excel column usage analysis
+2025-12-29 05:17:10 - vision_analyzer - INFO - generate_gap_report:491 - [req:3397b1fd-c99] - Column gap report generated: 3 deterministic gaps, 2 vision gaps
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:225 - [req:3397b1fd-c99] - Aggregating table relationships across sheets...
+2025-12-29 05:17:10 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:3397b1fd-c99] - Aggregating table relationships across sheets
+2025-12-29 05:17:10 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:3397b1fd-c99] - Table relationship analysis complete: different_tables - 3 total tables
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:228 - [req:3397b1fd-c99] - Phase 3 Complete: Aggregation finished
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:233 - [req:3397b1fd-c99] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:284 - [req:3397b1fd-c99] - Sheet: Feasibility
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:285 - [req:3397b1fd-c99] - Columns with data: 10
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:286 - [req:3397b1fd-c99] - Columns with gaps: 6
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:287 - [req:3397b1fd-c99] - Classification: different_tables
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:289 - [req:3397b1fd-c99] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:290 - [req:3397b1fd-c99] - Total sheets analyzed: 1
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:291 - [req:3397b1fd-c99] - Processing time: 15252ms (15.3s)
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:292 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:17:10 - converter - INFO - process_excel_to_json:701 - [req:3397b1fd-c99] -   ✓ Vision analysis complete (15255ms)
+2025-12-29 05:17:10 - converter - INFO - process_excel_to_json:702 - [req:3397b1fd-c99] -     - Classification: different_tables
+2025-12-29 05:17:10 - converter - INFO - process_excel_to_json:703 - [req:3397b1fd-c99] -     - Gap columns: ['A', 'G', 'M', 'N', 'O', 'P']
+2025-12-29 05:17:10 - converter - INFO - process_excel_to_json:704 - [req:3397b1fd-c99] -     - Saved: Loan_Summary_-_Eagleby_Merge_1_Feasibility_gap_analysis.json
+2025-12-29 05:17:10 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[6/8] Processing: Loan_Summary_-_Eagleby_Merge_1_DocMerge
+2025-12-29 05:17:10 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1_DocMerge.xlsx
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:17:10 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1_DocMerge.xlsx
+2025-12-29 05:17:10 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:17:10 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'DocMerge' to HIGH-QUALITY image
+2025-12-29 05:17:10 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 2251x2160 (200 rows x 15 cols)
+2025-12-29 05:17:10 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_1_DocMerge_DocMerge_20251229_051710.png (2251x2160)
+2025-12-29 05:17:10 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:3397b1fd-c99] - Sheet 'DocMerge' converted successfully
+2025-12-29 05:17:10 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:116 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:117 - [req:3397b1fd-c99] - Analyzing column usage for 1 sheets...
+2025-12-29 05:17:10 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:3397b1fd-c99] - Analyzing column usage for sheet 'DocMerge'
+2025-12-29 05:17:10 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:3397b1fd-c99] - Analyzing 15 columns in sheet 'DocMerge'
+2025-12-29 05:17:10 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:3397b1fd-c99] - Column analysis complete for 'DocMerge': 1 gaps, 2 columns with data
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:131 - [req:3397b1fd-c99] - Sheet 'DocMerge': 1 column gap(s) detected
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:143 - [req:3397b1fd-c99] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:148 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:149 - [req:3397b1fd-c99] - Analyzing 1 sheets with controlled concurrency...
+2025-12-29 05:17:10 - vision_processor - INFO - process_excel_with_vision:182 - [req:3397b1fd-c99] - Processing 1 sheets with max 3 concurrent requests
+2025-12-29 05:17:10 - vision_processor - INFO - analyze_with_semaphore:161 - [req:3397b1fd-c99] - Starting vision analysis for sheet: DocMerge
+2025-12-29 05:17:10 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:3397b1fd-c99] - Analyzing sheet 'DocMerge' with vision model (lightweight analysis)
+2025-12-29 05:17:22 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:22 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:3397b1fd-c99] - LLM output received: 1006 characters
+2025-12-29 05:17:22 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:3397b1fd-c99] - Vision analysis complete for sheet 'DocMerge'
+2025-12-29 05:17:22 - vision_processor - INFO - analyze_with_semaphore:169 - [req:3397b1fd-c99] - Completed vision analysis for sheet: DocMerge
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:198 - [req:3397b1fd-c99] - Vision analysis complete for DocMerge
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:200 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:201 - [req:3397b1fd-c99] -   Success: 1 sheets analyzed
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:202 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:210 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:218 - [req:3397b1fd-c99] - Aggregating column gap detection across sheets...
+2025-12-29 05:17:22 - vision_analyzer - INFO - generate_gap_report:382 - [req:3397b1fd-c99] - Generating column gap detection report
+2025-12-29 05:17:22 - vision_analyzer - INFO - generate_gap_report:418 - [req:3397b1fd-c99] - Processing deterministic Excel column usage analysis
+2025-12-29 05:17:22 - vision_analyzer - INFO - generate_gap_report:491 - [req:3397b1fd-c99] - Column gap report generated: 1 deterministic gaps, 1 vision gaps
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:225 - [req:3397b1fd-c99] - Aggregating table relationships across sheets...
+2025-12-29 05:17:22 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:3397b1fd-c99] - Aggregating table relationships across sheets
+2025-12-29 05:17:22 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:3397b1fd-c99] - Table relationship analysis complete: different_tables - 2 total tables
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:228 - [req:3397b1fd-c99] - Phase 3 Complete: Aggregation finished
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:233 - [req:3397b1fd-c99] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:284 - [req:3397b1fd-c99] - Sheet: DocMerge
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:285 - [req:3397b1fd-c99] - Columns with data: 2
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:286 - [req:3397b1fd-c99] - Columns with gaps: 13
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:287 - [req:3397b1fd-c99] - Classification: different_tables
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:289 - [req:3397b1fd-c99] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:290 - [req:3397b1fd-c99] - Total sheets analyzed: 1
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:291 - [req:3397b1fd-c99] - Processing time: 12490ms (12.5s)
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:292 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:701 - [req:3397b1fd-c99] -   ✓ Vision analysis complete (12492ms)
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:702 - [req:3397b1fd-c99] -     - Classification: different_tables
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:703 - [req:3397b1fd-c99] -     - Gap columns: ['C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:704 - [req:3397b1fd-c99] -     - Saved: Loan_Summary_-_Eagleby_Merge_1_DocMerge_gap_analysis.json
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[7/8] Processing: Loan_Summary_-_Eagleby_Merge_1_Document_List
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1_Document_List.xlsx
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:17:22 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1_Document_List.xlsx
+2025-12-29 05:17:22 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:17:22 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet 'Document List' to HIGH-QUALITY image
+2025-12-29 05:17:22 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 3001x2160 (53 rows x 20 cols)
+2025-12-29 05:17:22 - vision_utils - ERROR - convert_excel_sheet_to_image:249 - [req:none] - Error converting sheet 'Document List' to image: 'MergedCellRange' object has no attribute 'min_cell'
+Traceback (most recent call last):
+  File "/app/vision_utils.py", line 168, in convert_excel_sheet_to_image
+    if cell.coordinate == merged_range.min_cell:
+                          ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MergedCellRange' object has no attribute 'min_cell'
+2025-12-29 05:17:22 - vision_utils - ERROR - convert_all_sheets_to_images:319 - [req:3397b1fd-c99] - Failed to convert sheet 'Document List': Error converting sheet 'Document List': 'MergedCellRange' object has no attribute 'min_cell'
+2025-12-29 05:17:22 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 0 sheets converted, 1 failed
+2025-12-29 05:17:22 - vision_processor - ERROR - process_excel_with_vision:297 - [req:3397b1fd-c99] - Error in vision processing pipeline: All sheet conversions failed
+Traceback (most recent call last):
+  File "/app/vision_processor.py", line 111, in process_excel_with_vision
+    raise ValueError("All sheet conversions failed")
+ValueError: All sheet conversions failed
+2025-12-29 05:17:22 - converter - ERROR - process_vision_analysis_async:535 - [req:3397b1fd-c99] - Vision analysis failed for Loan_Summary_-_Eagleby_Merge_1_Document_List: Vision processing failed: All sheet conversions failed
+Traceback (most recent call last):
+  File "/app/vision_processor.py", line 111, in process_excel_with_vision
+    raise ValueError("All sheet conversions failed")
+ValueError: All sheet conversions failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/converter.py", line 517, in process_vision_analysis_async
+    result = await process_excel_with_vision(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/vision_processor.py", line 298, in process_excel_with_vision
+    raise RuntimeError(f"Vision processing failed: {e}")
+RuntimeError: Vision processing failed: All sheet conversions failed
+2025-12-29 05:17:22 - converter - ERROR - process_excel_to_json:689 - [req:3397b1fd-c99] -   ✗ Vision analysis failed: Vision processing failed: All sheet conversions failed
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:669 - [req:3397b1fd-c99] - 
+[8/8] Processing: Loan_Summary_-_Eagleby_Merge_1__SSC
+2025-12-29 05:17:22 - converter - INFO - process_excel_to_json:674 - [req:3397b1fd-c99] -   → Running Vision analysis asynchronously...
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:63 - [req:3397b1fd-c99] - Starting vision-based analysis for Loan_Summary_-_Eagleby_Merge_1__SSC.xlsx
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:88 - [req:3397b1fd-c99] - Lightweight analysis enabled: column_gaps, table_relationships
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:93 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1: CONVERTING SHEETS TO IMAGES
+======================================================================
+
+2025-12-29 05:17:22 - vision_utils - INFO - convert_all_sheets_to_images:270 - [req:3397b1fd-c99] - Starting HIGH-QUALITY image conversion for Loan_Summary_-_Eagleby_Merge_1__SSC.xlsx
+2025-12-29 05:17:22 - vision_utils - INFO - convert_all_sheets_to_images:281 - [req:3397b1fd-c99] - Converting 1 sheets to images
+2025-12-29 05:17:22 - vision_utils - INFO - convert_excel_sheet_to_image:54 - [req:none] - Converting sheet '_SSC' to HIGH-QUALITY image
+2025-12-29 05:17:22 - vision_utils - INFO - convert_excel_sheet_to_image:83 - [req:none] - Creating image: 751x271 (6 rows x 5 cols)
+2025-12-29 05:17:22 - vision_utils - INFO - convert_excel_sheet_to_image:233 - [req:none] - HIGH-QUALITY image saved: Loan_Summary_-_Eagleby_Merge_1__SSC__SSC_20251229_051722.png (751x271)
+2025-12-29 05:17:22 - vision_utils - INFO - convert_all_sheets_to_images:317 - [req:3397b1fd-c99] - Sheet '_SSC' converted successfully
+2025-12-29 05:17:22 - vision_utils - INFO - convert_all_sheets_to_images:327 - [req:3397b1fd-c99] - Image conversion complete: 1 sheets processed
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:108 - [req:3397b1fd-c99] - Phase 1 Complete: 1 sheets converted, 0 failed
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:116 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 1.5: EXCEL DATA ANALYSIS
+======================================================================
+
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:117 - [req:3397b1fd-c99] - Analyzing column usage for 1 sheets...
+2025-12-29 05:17:22 - vision_utils - INFO - analyze_column_usage_sequences:379 - [req:3397b1fd-c99] - Analyzing column usage for sheet '_SSC'
+2025-12-29 05:17:22 - vision_utils - INFO - analyze_column_usage_sequences:421 - [req:3397b1fd-c99] - Analyzing 5 columns in sheet '_SSC'
+2025-12-29 05:17:22 - vision_utils - INFO - analyze_column_usage_sequences:571 - [req:3397b1fd-c99] - Column analysis complete for '_SSC': 1 gaps, 3 columns with data
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:131 - [req:3397b1fd-c99] - Sheet '_SSC': 1 column gap(s) detected
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:143 - [req:3397b1fd-c99] - Phase 1.5 Complete: 1 sheets analyzed
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:148 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 2: LIGHTWEIGHT VISION ANALYSIS
+======================================================================
+
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:149 - [req:3397b1fd-c99] - Analyzing 1 sheets with controlled concurrency...
+2025-12-29 05:17:22 - vision_processor - INFO - process_excel_with_vision:182 - [req:3397b1fd-c99] - Processing 1 sheets with max 3 concurrent requests
+2025-12-29 05:17:22 - vision_processor - INFO - analyze_with_semaphore:161 - [req:3397b1fd-c99] - Starting vision analysis for sheet: _SSC
+2025-12-29 05:17:22 - vision_analyzer - INFO - analyze_sheet_with_vision:181 - [req:3397b1fd-c99] - Analyzing sheet '_SSC' with vision model (lightweight analysis)
+2025-12-29 05:17:31 - httpx - INFO - _send_single_request:1740 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:31 - vision_analyzer - INFO - analyze_sheet_with_vision:226 - [req:3397b1fd-c99] - LLM output received: 537 characters
+2025-12-29 05:17:31 - vision_analyzer - INFO - analyze_sheet_with_vision:275 - [req:3397b1fd-c99] - Vision analysis complete for sheet '_SSC'
+2025-12-29 05:17:31 - vision_processor - INFO - analyze_with_semaphore:169 - [req:3397b1fd-c99] - Completed vision analysis for sheet: _SSC
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:198 - [req:3397b1fd-c99] - Vision analysis complete for _SSC
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:200 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:201 - [req:3397b1fd-c99] -   Success: 1 sheets analyzed
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:202 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:210 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: AGGREGATE ANALYSIS
+======================================================================
+
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:218 - [req:3397b1fd-c99] - Aggregating column gap detection across sheets...
+2025-12-29 05:17:31 - vision_analyzer - INFO - generate_gap_report:382 - [req:3397b1fd-c99] - Generating column gap detection report
+2025-12-29 05:17:31 - vision_analyzer - INFO - generate_gap_report:418 - [req:3397b1fd-c99] - Processing deterministic Excel column usage analysis
+2025-12-29 05:17:31 - vision_analyzer - INFO - generate_gap_report:491 - [req:3397b1fd-c99] - Column gap report generated: 1 deterministic gaps, 0 vision gaps
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:225 - [req:3397b1fd-c99] - Aggregating table relationships across sheets...
+2025-12-29 05:17:31 - vision_analyzer - INFO - analyze_table_similarity:307 - [req:3397b1fd-c99] - Aggregating table relationships across sheets
+2025-12-29 05:17:31 - vision_analyzer - INFO - analyze_table_similarity:351 - [req:3397b1fd-c99] - Table relationship analysis complete: same_table_repeated - 1 total tables
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:228 - [req:3397b1fd-c99] - Phase 3 Complete: Aggregation finished
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:233 - [req:3397b1fd-c99] - 
+======================================================================
+GENERATING LIGHTWEIGHT ANALYSIS REPORT
+======================================================================
+
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:284 - [req:3397b1fd-c99] - Sheet: _SSC
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:285 - [req:3397b1fd-c99] - Columns with data: 3
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:286 - [req:3397b1fd-c99] - Columns with gaps: 2
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:287 - [req:3397b1fd-c99] - Classification: single_table
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:289 - [req:3397b1fd-c99] - 
+======================================================================
+LIGHTWEIGHT VISION ANALYSIS COMPLETE!
+======================================================================
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:290 - [req:3397b1fd-c99] - Total sheets analyzed: 1
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:291 - [req:3397b1fd-c99] - Processing time: 8286ms (8.3s)
+2025-12-29 05:17:31 - vision_processor - INFO - process_excel_with_vision:292 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:701 - [req:3397b1fd-c99] -   ✓ Vision analysis complete (8290ms)
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:702 - [req:3397b1fd-c99] -     - Classification: single_table
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:703 - [req:3397b1fd-c99] -     - Gap columns: ['A', 'B']
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:704 - [req:3397b1fd-c99] -     - Saved: Loan_Summary_-_Eagleby_Merge_1__SSC_gap_analysis.json
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:716 - [req:3397b1fd-c99] - 
+Phase 2 Complete:
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:717 - [req:3397b1fd-c99] -   Success: 7 files analyzed
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:718 - [req:3397b1fd-c99] -   Errors: 1
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:719 - [req:3397b1fd-c99] -   Total time: 89145ms (89.1s)
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:728 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 3: GAP COLUMN REMOVAL (Synchronous)
+======================================================================
+
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:740 - [req:3397b1fd-c99] - Processing single table: Loan_Summary_-_Eagleby_Merge_1_AL
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:741 - [req:3397b1fd-c99] -   Found 2 gap columns: ['A', 'H']
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:746 - [req:3397b1fd-c99] -   Removing gaps (keeping first): ['H']
+2025-12-29 05:17:31 - converter - INFO - remove_gap_columns_from_excel:163 - [req:3397b1fd-c99] - Removing 1 gap columns from Loan_Summary_-_Eagleby_Merge_1_AL.xlsx: ['H']
+2025-12-29 05:17:31 - converter - INFO - remove_gap_columns_from_excel:185 - [req:3397b1fd-c99] - Successfully removed gap columns from Loan_Summary_-_Eagleby_Merge_1_AL.xlsx
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:759 - [req:3397b1fd-c99] -   ✓ Gaps removed successfully
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:740 - [req:3397b1fd-c99] - Processing single table: Loan_Summary_-_Eagleby_Merge_1__SSC
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:741 - [req:3397b1fd-c99] -   Found 2 gap columns: ['A', 'B']
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:746 - [req:3397b1fd-c99] -   Removing gaps (keeping first): ['B']
+2025-12-29 05:17:31 - converter - INFO - remove_gap_columns_from_excel:163 - [req:3397b1fd-c99] - Removing 1 gap columns from Loan_Summary_-_Eagleby_Merge_1__SSC.xlsx: ['B']
+2025-12-29 05:17:31 - converter - INFO - remove_gap_columns_from_excel:185 - [req:3397b1fd-c99] - Successfully removed gap columns from Loan_Summary_-_Eagleby_Merge_1__SSC.xlsx
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:759 - [req:3397b1fd-c99] -   ✓ Gaps removed successfully
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:770 - [req:3397b1fd-c99] - 
+Phase 3 Complete:
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:771 - [req:3397b1fd-c99] -   Cleaned: 2 files
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:772 - [req:3397b1fd-c99] -   Skipped: 5 files
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:777 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 4: LANDING AI PROCESSING (Async Batch)
+======================================================================
+
+2025-12-29 05:17:31 - converter - INFO - process_excel_to_json:778 - [req:3397b1fd-c99] - Processing 8 sheets in parallel...
+2025-12-29 05:17:32 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:32 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:32 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Key_Statements (5399 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Borrower (12678 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_AL (15778 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Security (7186 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Feasibility (15990 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_DocMerge (31145 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Document_List (36774 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:806 - [req:3397b1fd-c99] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1__SSC (8712 chars)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:816 - [req:3397b1fd-c99] - 
+Phase 4 Complete:
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:817 - [req:3397b1fd-c99] -   Success: 8 markdown files
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:818 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:823 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 5.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1_Key_Statements: Found 4 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1_Borrower: Found 7 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1_AL: Found 24 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1_Security: Found 4 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1_Feasibility: Found 17 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1_DocMerge: Found 1 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1_Document_List: Found 2 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:832 - [req:3397b1fd-c99] -   Loan_Summary_-_Eagleby_Merge_1__SSC: Found 1 table(s)
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:844 - [req:3397b1fd-c99] - 
+Phase 5.1 Complete: Found 60 tables total
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:849 - [req:3397b1fd-c99] - 
+======================================================================
+PHASE 5.2: OPENAI PROCESSING (Async Batch)
+======================================================================
+
+2025-12-29 05:17:33 - converter - INFO - process_excel_to_json:850 - [req:3397b1fd-c99] - Processing 60 tables in parallel...
+2025-12-29 05:17:36 - main - INFO - dispatch:70 - [req:8dc8f173-1cc] - Request started: GET http://localhost:8000/health
+2025-12-29 05:17:36 - main - INFO - dispatch:80 - [req:8dc8f173-1cc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.75ms
+2025-12-29 05:17:40 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:40 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:41 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:41 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:41 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:41 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:42 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:42 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:42 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:43 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:45 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:46 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:46 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:48 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:48 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:50 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:51 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:52 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:52 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:53 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:53 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:53 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:53 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:53 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:53 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:58 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:59 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:59 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:59 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:17:59 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:00 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:00 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:01 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:04 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:04 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:05 - converter - WARNING - transform_table_to_key_value_format:246 - [req:3397b1fd-c99] - Empty headers or rows in table transformation
+2025-12-29 05:18:06 - main - INFO - dispatch:70 - [req:c0e04880-a97] - Request started: GET http://localhost:8000/health
+2025-12-29 05:18:06 - main - INFO - dispatch:80 - [req:c0e04880-a97] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2025-12-29 05:18:07 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:07 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:11 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:33 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:18:36 - main - INFO - dispatch:70 - [req:3f12252f-f6c] - Request started: GET http://localhost:8000/health
+2025-12-29 05:18:36 - main - INFO - dispatch:80 - [req:3f12252f-f6c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-29 05:18:59 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:19:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:882 - [req:3397b1fd-c99] -   [PROGRESS] Processed 10/60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:882 - [req:3397b1fd-c99] -   [PROGRESS] Processed 20/60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:882 - [req:3397b1fd-c99] -   [PROGRESS] Processed 30/60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:882 - [req:3397b1fd-c99] -   [PROGRESS] Processed 40/60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:882 - [req:3397b1fd-c99] -   [PROGRESS] Processed 50/60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:882 - [req:3397b1fd-c99] -   [PROGRESS] Processed 60/60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:884 - [req:3397b1fd-c99] - 
+Phase 5.2 Complete:
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:885 - [req:3397b1fd-c99] -   Success: 60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:886 - [req:3397b1fd-c99] -   Errors: 0
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:891 - [req:3397b1fd-c99] - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:902 - [req:3397b1fd-c99] - * CONSOLIDATED JSON SAVED: all_tables_consolidated.json
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:903 - [req:3397b1fd-c99] - * Total tables extracted: 60
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:904 - [req:3397b1fd-c99] - * Format: Key-Value (each row is a dictionary)
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:912 - [req:3397b1fd-c99] - 
+* Tables per Excel file:
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:914 - [req:3397b1fd-c99] -   - Loan Summary - Eagleby Merge (1).xlsx: 60 tables
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:919 - [req:3397b1fd-c99] - 
+======================================================================
+SAVING PER-EXCEL JSON FILES
+======================================================================
+
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:941 - [req:3397b1fd-c99] -   ✓ Saved: Loan_Summary_-_Eagleby_Merge_1_complete.json (60 tables)
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:943 - [req:3397b1fd-c99] - 
+* Per-Excel JSON files saved: 1
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:944 - [req:3397b1fd-c99] - * Format: Key-Value (same as consolidated)
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:946 - [req:3397b1fd-c99] - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:947 - [req:3397b1fd-c99] - Total Excel files processed: 1
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:948 - [req:3397b1fd-c99] - Total sheets processed: 8
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:949 - [req:3397b1fd-c99] - Total tables extracted: 60
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:950 - [req:3397b1fd-c99] - Output folder: /app/markdown
+2025-12-29 05:19:03 - converter - INFO - process_excel_to_json:951 - [req:3397b1fd-c99] - ======================================================================
+
+2025-12-29 05:19:04 - converter - INFO - process_excel_to_json:983 - [req:3397b1fd-c99] - Cleaned up temporary folder: screenshots/
+2025-12-29 05:19:04 - converter - INFO - process_excel_to_json:983 - [req:3397b1fd-c99] - Cleaned up temporary folder: temp_sheets/
+2025-12-29 05:19:04 - converter - INFO - process_excel_to_json:983 - [req:3397b1fd-c99] - Cleaned up temporary folder: gap_analysis/
+2025-12-29 05:19:04 - main - INFO - dispatch:80 - [req:3397b1fd-c99] - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 186491.44ms
+2025-12-29 05:19:06 - main - INFO - dispatch:70 - [req:2db99dcd-40b] - Request started: GET http://localhost:8000/health
+2025-12-29 05:19:06 - main - INFO - dispatch:80 - [req:2db99dcd-40b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2025-12-29 05:19:08 - main - INFO - dispatch:70 - [req:9e3e3166-d5f] - Request started: OPTIONS http://localhost:8000/download/excel/Loan_Summary_-_Eagleby_Merge_1_complete.json
+2025-12-29 05:19:08 - main - INFO - dispatch:80 - [req:9e3e3166-d5f] - Request completed: OPTIONS http://localhost:8000/download/excel/Loan_Summary_-_Eagleby_Merge_1_complete.json - Status: 200 - Duration: 0.67ms
+2025-12-29 05:19:08 - main - INFO - dispatch:70 - [req:3bf3e6e1-1e4] - Request started: GET http://localhost:8000/download/excel/Loan_Summary_-_Eagleby_Merge_1_complete.json
+2025-12-29 05:19:08 - main - INFO - dispatch:80 - [req:3bf3e6e1-1e4] - Request completed: GET http://localhost:8000/download/excel/Loan_Summary_-_Eagleby_Merge_1_complete.json - Status: 200 - Duration: 4.74ms
+2025-12-29 05:19:36 - main - INFO - dispatch:70 - [req:578215e2-744] - Request started: GET http://localhost:8000/health
+2025-12-29 05:19:36 - main - INFO - dispatch:80 - [req:578215e2-744] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-29 05:20:06 - main - INFO - dispatch:70 - [req:6b29e103-de2] - Request started: GET http://localhost:8000/health
+2025-12-29 05:20:06 - main - INFO - dispatch:80 - [req:6b29e103-de2] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-29 05:20:36 - main - INFO - dispatch:70 - [req:23e0a903-9e6] - Request started: GET http://localhost:8000/health
+2025-12-29 05:20:36 - main - INFO - dispatch:80 - [req:23e0a903-9e6] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-29 05:21:06 - main - INFO - dispatch:70 - [req:e1d6f0c5-548] - Request started: GET http://localhost:8000/health
+2025-12-29 05:21:06 - main - INFO - dispatch:80 - [req:e1d6f0c5-548] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
+2025-12-29 05:21:36 - main - INFO - dispatch:70 - [req:66331c47-5ab] - Request started: GET http://localhost:8000/health
+2025-12-29 05:21:36 - main - INFO - dispatch:80 - [req:66331c47-5ab] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:22:06 - main - INFO - dispatch:70 - [req:d3d2135f-b16] - Request started: GET http://localhost:8000/health
+2025-12-29 05:22:06 - main - INFO - dispatch:80 - [req:d3d2135f-b16] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.6ms
+2025-12-29 05:22:37 - main - INFO - dispatch:70 - [req:02b0d08f-2c1] - Request started: GET http://localhost:8000/health
+2025-12-29 05:22:37 - main - INFO - dispatch:80 - [req:02b0d08f-2c1] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-29 05:23:07 - main - INFO - dispatch:70 - [req:066a6f68-717] - Request started: GET http://localhost:8000/health
+2025-12-29 05:23:07 - main - INFO - dispatch:80 - [req:066a6f68-717] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.03ms
+2025-12-29 05:23:37 - main - INFO - dispatch:70 - [req:a4137409-a96] - Request started: GET http://localhost:8000/health
+2025-12-29 05:23:37 - main - INFO - dispatch:80 - [req:a4137409-a96] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-29 05:24:07 - main - INFO - dispatch:70 - [req:55552b18-ec9] - Request started: GET http://localhost:8000/health
+2025-12-29 05:24:07 - main - INFO - dispatch:80 - [req:55552b18-ec9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-29 05:24:37 - main - INFO - dispatch:70 - [req:2698d50c-533] - Request started: GET http://localhost:8000/health
+2025-12-29 05:24:37 - main - INFO - dispatch:80 - [req:2698d50c-533] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.62ms
+2025-12-29 05:25:07 - main - INFO - dispatch:70 - [req:905be6eb-9a1] - Request started: GET http://localhost:8000/health
+2025-12-29 05:25:07 - main - INFO - dispatch:80 - [req:905be6eb-9a1] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.98ms
+2025-12-29 05:25:37 - main - INFO - dispatch:70 - [req:aa621384-c66] - Request started: GET http://localhost:8000/health
+2025-12-29 05:25:37 - main - INFO - dispatch:80 - [req:aa621384-c66] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-29 05:26:07 - main - INFO - dispatch:70 - [req:f98a63be-e26] - Request started: GET http://localhost:8000/health
+2025-12-29 05:26:07 - main - INFO - dispatch:80 - [req:f98a63be-e26] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.95ms
+2025-12-29 05:26:37 - main - INFO - dispatch:70 - [req:b92c8ce3-50b] - Request started: GET http://localhost:8000/health
+2025-12-29 05:26:37 - main - INFO - dispatch:80 - [req:b92c8ce3-50b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-29 05:27:07 - main - INFO - dispatch:70 - [req:0fff0a6e-f87] - Request started: GET http://localhost:8000/health
+2025-12-29 05:27:07 - main - INFO - dispatch:80 - [req:0fff0a6e-f87] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-29 05:27:37 - main - INFO - dispatch:70 - [req:1c595b6f-c7b] - Request started: GET http://localhost:8000/health
+2025-12-29 05:27:37 - main - INFO - dispatch:80 - [req:1c595b6f-c7b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-29 05:28:07 - main - INFO - dispatch:70 - [req:7719c12e-226] - Request started: GET http://localhost:8000/health
+2025-12-29 05:28:07 - main - INFO - dispatch:80 - [req:7719c12e-226] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.22ms
+2025-12-29 05:28:37 - main - INFO - dispatch:70 - [req:e38ee0e5-86e] - Request started: GET http://localhost:8000/health
+2025-12-29 05:28:37 - main - INFO - dispatch:80 - [req:e38ee0e5-86e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-29 05:29:08 - main - INFO - dispatch:70 - [req:7e1e8380-f89] - Request started: GET http://localhost:8000/health
+2025-12-29 05:29:08 - main - INFO - dispatch:80 - [req:7e1e8380-f89] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-29 05:29:38 - main - INFO - dispatch:70 - [req:d1004dfb-02e] - Request started: GET http://localhost:8000/health
+2025-12-29 05:29:38 - main - INFO - dispatch:80 - [req:d1004dfb-02e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-29 05:30:08 - main - INFO - dispatch:70 - [req:67ae3871-0a0] - Request started: GET http://localhost:8000/health
+2025-12-29 05:30:08 - main - INFO - dispatch:80 - [req:67ae3871-0a0] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.86ms
+2025-12-29 05:30:38 - main - INFO - dispatch:70 - [req:267a91c0-9bc] - Request started: GET http://localhost:8000/health
+2025-12-29 05:30:38 - main - INFO - dispatch:80 - [req:267a91c0-9bc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.98ms
+2025-12-29 05:31:08 - main - INFO - dispatch:70 - [req:706e0dcd-1fb] - Request started: GET http://localhost:8000/health
+2025-12-29 05:31:08 - main - INFO - dispatch:80 - [req:706e0dcd-1fb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.8ms
+2025-12-29 05:31:38 - main - INFO - dispatch:70 - [req:4933ebc9-ed7] - Request started: GET http://localhost:8000/health
+2025-12-29 05:31:38 - main - INFO - dispatch:80 - [req:4933ebc9-ed7] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.95ms
+2025-12-29 05:32:08 - main - INFO - dispatch:70 - [req:286ba17d-b10] - Request started: GET http://localhost:8000/health
+2025-12-29 05:32:08 - main - INFO - dispatch:80 - [req:286ba17d-b10] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.86ms
+2025-12-29 05:32:38 - main - INFO - dispatch:70 - [req:52de7dbc-2a4] - Request started: GET http://localhost:8000/health
+2025-12-29 05:32:38 - main - INFO - dispatch:80 - [req:52de7dbc-2a4] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-29 05:33:08 - main - INFO - dispatch:70 - [req:fd5f6be6-990] - Request started: GET http://localhost:8000/health
+2025-12-29 05:33:08 - main - INFO - dispatch:80 - [req:fd5f6be6-990] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2025-12-29 05:33:38 - main - INFO - dispatch:70 - [req:ace9f697-f65] - Request started: GET http://localhost:8000/health
+2025-12-29 05:33:38 - main - INFO - dispatch:80 - [req:ace9f697-f65] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-29 05:34:08 - main - INFO - dispatch:70 - [req:694e1eb7-e8f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:34:08 - main - INFO - dispatch:80 - [req:694e1eb7-e8f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:34:38 - main - INFO - dispatch:70 - [req:e921e551-033] - Request started: GET http://localhost:8000/health
+2025-12-29 05:34:38 - main - INFO - dispatch:80 - [req:e921e551-033] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:35:08 - main - INFO - dispatch:70 - [req:c2699dfd-c4e] - Request started: GET http://localhost:8000/health
+2025-12-29 05:35:08 - main - INFO - dispatch:80 - [req:c2699dfd-c4e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-29 05:35:39 - main - INFO - dispatch:70 - [req:6c6e9e23-f17] - Request started: GET http://localhost:8000/health
+2025-12-29 05:35:39 - main - INFO - dispatch:80 - [req:6c6e9e23-f17] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.58ms
+2025-12-29 05:36:09 - main - INFO - dispatch:70 - [req:93a6ad64-95f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:36:09 - main - INFO - dispatch:80 - [req:93a6ad64-95f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2025-12-29 05:36:39 - main - INFO - dispatch:70 - [req:3c81eb6a-1d0] - Request started: GET http://localhost:8000/health
+2025-12-29 05:36:39 - main - INFO - dispatch:80 - [req:3c81eb6a-1d0] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-29 05:37:09 - main - INFO - dispatch:70 - [req:0f70d956-9f9] - Request started: GET http://localhost:8000/health
+2025-12-29 05:37:09 - main - INFO - dispatch:80 - [req:0f70d956-9f9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-29 05:37:39 - main - INFO - dispatch:70 - [req:457931c7-f17] - Request started: GET http://localhost:8000/health
+2025-12-29 05:37:39 - main - INFO - dispatch:80 - [req:457931c7-f17] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.95ms
+2025-12-29 05:38:09 - main - INFO - dispatch:70 - [req:2f561392-d9c] - Request started: GET http://localhost:8000/health
+2025-12-29 05:38:09 - main - INFO - dispatch:80 - [req:2f561392-d9c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-29 05:38:39 - main - INFO - dispatch:70 - [req:c86403aa-33f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:38:39 - main - INFO - dispatch:80 - [req:c86403aa-33f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:39:09 - main - INFO - dispatch:70 - [req:c8916204-7ec] - Request started: GET http://localhost:8000/health
+2025-12-29 05:39:09 - main - INFO - dispatch:80 - [req:c8916204-7ec] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.2ms
+2025-12-29 05:39:39 - main - INFO - dispatch:70 - [req:9adfb946-e6f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:39:39 - main - INFO - dispatch:80 - [req:9adfb946-e6f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2025-12-29 05:40:09 - main - INFO - dispatch:70 - [req:6ecc0c07-799] - Request started: GET http://localhost:8000/health
+2025-12-29 05:40:09 - main - INFO - dispatch:80 - [req:6ecc0c07-799] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-29 05:40:39 - main - INFO - dispatch:70 - [req:96de454f-1e9] - Request started: GET http://localhost:8000/health
+2025-12-29 05:40:39 - main - INFO - dispatch:80 - [req:96de454f-1e9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:41:09 - main - INFO - dispatch:70 - [req:01140871-54b] - Request started: GET http://localhost:8000/health
+2025-12-29 05:41:09 - main - INFO - dispatch:80 - [req:01140871-54b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2025-12-29 05:41:39 - main - INFO - dispatch:70 - [req:c909316c-714] - Request started: GET http://localhost:8000/health
+2025-12-29 05:41:39 - main - INFO - dispatch:80 - [req:c909316c-714] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2025-12-29 05:42:10 - main - INFO - dispatch:70 - [req:b2fe8ed9-c60] - Request started: GET http://localhost:8000/health
+2025-12-29 05:42:10 - main - INFO - dispatch:80 - [req:b2fe8ed9-c60] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.94ms
+2025-12-29 05:42:40 - main - INFO - dispatch:70 - [req:9fa003e4-c40] - Request started: GET http://localhost:8000/health
+2025-12-29 05:42:40 - main - INFO - dispatch:80 - [req:9fa003e4-c40] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.95ms
+2025-12-29 05:43:10 - main - INFO - dispatch:70 - [req:9d7be4aa-a5d] - Request started: GET http://localhost:8000/health
+2025-12-29 05:43:10 - main - INFO - dispatch:80 - [req:9d7be4aa-a5d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2025-12-29 05:43:40 - main - INFO - dispatch:70 - [req:1d37eef3-577] - Request started: GET http://localhost:8000/health
+2025-12-29 05:43:40 - main - INFO - dispatch:80 - [req:1d37eef3-577] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:44:10 - main - INFO - dispatch:70 - [req:493dc060-b25] - Request started: GET http://localhost:8000/health
+2025-12-29 05:44:10 - main - INFO - dispatch:80 - [req:493dc060-b25] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.58ms
+2025-12-29 05:44:40 - main - INFO - dispatch:70 - [req:fc9f482c-5cf] - Request started: GET http://localhost:8000/health
+2025-12-29 05:44:40 - main - INFO - dispatch:80 - [req:fc9f482c-5cf] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.71ms
+2025-12-29 05:45:10 - main - INFO - dispatch:70 - [req:8e8338b7-6d8] - Request started: GET http://localhost:8000/health
+2025-12-29 05:45:10 - main - INFO - dispatch:80 - [req:8e8338b7-6d8] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.07ms
+2025-12-29 05:45:40 - main - INFO - dispatch:70 - [req:abf3dd98-5bc] - Request started: GET http://localhost:8000/health
+2025-12-29 05:45:40 - main - INFO - dispatch:80 - [req:abf3dd98-5bc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.94ms
+2025-12-29 05:46:10 - main - INFO - dispatch:70 - [req:3af34b7e-253] - Request started: GET http://localhost:8000/health
+2025-12-29 05:46:10 - main - INFO - dispatch:80 - [req:3af34b7e-253] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-29 05:46:40 - main - INFO - dispatch:70 - [req:1540c5d4-28a] - Request started: GET http://localhost:8000/health
+2025-12-29 05:46:40 - main - INFO - dispatch:80 - [req:1540c5d4-28a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.0ms
+2025-12-29 05:47:10 - main - INFO - dispatch:70 - [req:be47125d-e3b] - Request started: GET http://localhost:8000/health
+2025-12-29 05:47:10 - main - INFO - dispatch:80 - [req:be47125d-e3b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2025-12-29 05:47:40 - main - INFO - dispatch:70 - [req:25b2e248-ed1] - Request started: GET http://localhost:8000/health
+2025-12-29 05:47:40 - main - INFO - dispatch:80 - [req:25b2e248-ed1] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.7ms
+2025-12-29 05:48:10 - main - INFO - dispatch:70 - [req:0718b58d-7bc] - Request started: GET http://localhost:8000/health
+2025-12-29 05:48:10 - main - INFO - dispatch:80 - [req:0718b58d-7bc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.65ms
+2025-12-29 05:48:40 - main - INFO - dispatch:70 - [req:f876fa4f-c8c] - Request started: GET http://localhost:8000/health
+2025-12-29 05:48:40 - main - INFO - dispatch:80 - [req:f876fa4f-c8c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.62ms
+2025-12-29 05:49:10 - main - INFO - dispatch:70 - [req:b5291f10-97e] - Request started: GET http://localhost:8000/health
+2025-12-29 05:49:10 - main - INFO - dispatch:80 - [req:b5291f10-97e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.94ms
+2025-12-29 05:49:40 - main - INFO - dispatch:70 - [req:2b50901c-148] - Request started: GET http://localhost:8000/health
+2025-12-29 05:49:40 - main - INFO - dispatch:80 - [req:2b50901c-148] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.62ms
+2025-12-29 05:50:11 - main - INFO - dispatch:70 - [req:8c7d9924-bac] - Request started: GET http://localhost:8000/health
+2025-12-29 05:50:11 - main - INFO - dispatch:80 - [req:8c7d9924-bac] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.39ms
+2025-12-29 05:50:41 - main - INFO - dispatch:70 - [req:b136556c-d1a] - Request started: GET http://localhost:8000/health
+2025-12-29 05:50:41 - main - INFO - dispatch:80 - [req:b136556c-d1a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.11ms
+2025-12-29 05:51:11 - main - INFO - dispatch:70 - [req:d6ca8500-c0a] - Request started: GET http://localhost:8000/health
+2025-12-29 05:51:11 - main - INFO - dispatch:80 - [req:d6ca8500-c0a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.63ms
+2025-12-29 05:51:41 - main - INFO - dispatch:70 - [req:8b4db103-90c] - Request started: GET http://localhost:8000/health
+2025-12-29 05:51:41 - main - INFO - dispatch:80 - [req:8b4db103-90c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-29 05:52:11 - main - INFO - dispatch:70 - [req:9156adfd-a6b] - Request started: GET http://localhost:8000/health
+2025-12-29 05:52:11 - main - INFO - dispatch:80 - [req:9156adfd-a6b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.65ms
+2025-12-29 05:52:17 - main - INFO - dispatch:70 - [req:ec827f2e-224] - Request started: OPTIONS http://localhost:8000/cleanup
+2025-12-29 05:52:17 - main - INFO - dispatch:80 - [req:ec827f2e-224] - Request completed: OPTIONS http://localhost:8000/cleanup - Status: 200 - Duration: 0.43ms
+2025-12-29 05:52:18 - main - INFO - dispatch:70 - [req:d92143ea-eb9] - Request started: POST http://localhost:8000/cleanup
+2025-12-29 05:52:18 - main - INFO - dispatch:80 - [req:d92143ea-eb9] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 1.84ms
+2025-12-29 05:52:41 - main - INFO - dispatch:70 - [req:69f2c273-16a] - Request started: GET http://localhost:8000/health
+2025-12-29 05:52:41 - main - INFO - dispatch:80 - [req:69f2c273-16a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.63ms
+2025-12-29 05:53:11 - main - INFO - dispatch:70 - [req:70ca2513-cfb] - Request started: GET http://localhost:8000/health
+2025-12-29 05:53:11 - main - INFO - dispatch:80 - [req:70ca2513-cfb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2025-12-29 05:53:41 - main - INFO - dispatch:70 - [req:2de6672d-24f] - Request started: GET http://localhost:8000/health
+2025-12-29 05:53:41 - main - INFO - dispatch:80 - [req:2de6672d-24f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:54:11 - main - INFO - dispatch:70 - [req:99a183b3-8fd] - Request started: GET http://localhost:8000/health
+2025-12-29 05:54:11 - main - INFO - dispatch:80 - [req:99a183b3-8fd] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2025-12-29 05:54:41 - main - INFO - dispatch:70 - [req:3ff66693-999] - Request started: GET http://localhost:8000/health
+2025-12-29 05:54:41 - main - INFO - dispatch:80 - [req:3ff66693-999] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2025-12-29 05:55:11 - main - INFO - dispatch:70 - [req:f83b14fd-635] - Request started: GET http://localhost:8000/health
+2025-12-29 05:55:11 - main - INFO - dispatch:80 - [req:f83b14fd-635] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.71ms
+2025-12-29 05:55:41 - main - INFO - dispatch:70 - [req:5b75a8a6-382] - Request started: GET http://localhost:8000/health
+2025-12-29 05:55:41 - main - INFO - dispatch:80 - [req:5b75a8a6-382] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.58ms
+2025-12-29 05:56:11 - main - INFO - dispatch:70 - [req:2f3ff240-079] - Request started: GET http://localhost:8000/health
+2025-12-29 05:56:11 - main - INFO - dispatch:80 - [req:2f3ff240-079] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.9ms
+2025-12-29 05:56:41 - main - INFO - dispatch:70 - [req:3f9944dd-593] - Request started: GET http://localhost:8000/health
+2025-12-29 05:56:41 - main - INFO - dispatch:80 - [req:3f9944dd-593] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.89ms
+2025-12-29 05:57:11 - main - INFO - dispatch:70 - [req:41f6314c-0b7] - Request started: GET http://localhost:8000/health
+2025-12-29 05:57:11 - main - INFO - dispatch:80 - [req:41f6314c-0b7] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.16ms
+2025-12-29 05:57:41 - main - INFO - dispatch:70 - [req:b43289b3-e8d] - Request started: GET http://localhost:8000/health
+2025-12-29 05:57:41 - main - INFO - dispatch:80 - [req:b43289b3-e8d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2025-12-29 05:58:12 - main - INFO - dispatch:70 - [req:b3899030-1bd] - Request started: GET http://localhost:8000/health
+2025-12-29 05:58:12 - main - INFO - dispatch:80 - [req:b3899030-1bd] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.72ms
+2025-12-29 05:58:42 - main - INFO - dispatch:70 - [req:0101579f-516] - Request started: GET http://localhost:8000/health
+2025-12-29 05:58:42 - main - INFO - dispatch:80 - [req:0101579f-516] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.1ms
+2025-12-29 05:59:12 - main - INFO - dispatch:70 - [req:2d2cd7a8-a2d] - Request started: GET http://localhost:8000/health
+2025-12-29 05:59:12 - main - INFO - dispatch:80 - [req:2d2cd7a8-a2d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.25ms
+2025-12-29 05:59:42 - main - INFO - dispatch:70 - [req:12db8535-a77] - Request started: GET http://localhost:8000/health
+2025-12-29 05:59:42 - main - INFO - dispatch:80 - [req:12db8535-a77] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.0ms
+2025-12-29 06:00:12 - main - INFO - dispatch:70 - [req:1e86dba7-235] - Request started: GET http://localhost:8000/health
+2025-12-29 06:00:12 - main - INFO - dispatch:80 - [req:1e86dba7-235] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.25ms
+2025-12-29 06:00:42 - main - INFO - dispatch:70 - [req:c991046d-715] - Request started: GET http://localhost:8000/health
+2025-12-29 06:00:42 - main - INFO - dispatch:80 - [req:c991046d-715] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.55ms

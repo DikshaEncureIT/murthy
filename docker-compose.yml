@@ -3,7 +3,7 @@ services:
     build:
       context: ./ai
       dockerfile: Dockerfile
-    container_name: excel_backend
+    container_name: excel_to_json_backend
     ports:
       - "8000:8000"
     volumes:
@@ -45,7 +45,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: excel_frontend
+    container_name: excel_to_json_frontend
     ports:
       - "8080:8080"
     volumes:
@@ -83,8 +83,8 @@ services:
 networks:
   excel_network:
     driver: bridge
-    name: excel_network
+    name: excel_to_json_network
 
 volumes:
   backend_pycache:
-    name: excel_backend_pycache
+    name: excel_to_json_backend_pycache

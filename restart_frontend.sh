@@ -12,7 +12,7 @@ pkill -f "npm run dev" 2>/dev/null
 sleep 2
 
 # Navigate to frontend directory
-cd /home/diksha-encureitlp43/Documents/EncureIT/murthy_project/frontend
+cd /home/diksha-encureitlp43/Documents/EncureIT/excel_to_json_conversion/frontend
 
 echo "Starting frontend..."
 echo ""
