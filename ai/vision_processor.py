@@ -164,7 +164,8 @@ async def process_excel_with_vision(
                     result = await analyze_sheet_with_vision(
                         client=client,
                         image_path=image_path,
-                        sheet_name=sheet_name
+                        sheet_name=sheet_name, 
+                        excel_path=excel_path,
                     )
                     logger.info(f"Completed vision analysis for sheet: {sheet_name}")
                     return result

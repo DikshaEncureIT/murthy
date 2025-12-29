@@ -26,142 +26,145 @@ def build_vision_prompt() -> str:
     Returns:
         Enhanced prompt with examples and detailed instructions
     """
-    prompt = """You are analyzing an Excel spreadsheet image. Your goal is to provide ACCURATE, PRECISE structural analysis.
+    #     prompt = """You are analyzing an Excel spreadsheet image. Your goal is to provide ACCURATE, PRECISE structural analysis.
+    #     You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table’s headers and use them as keys, with all corresponding rows captured as arrays under those keys.
 
-═══════════════════════════════════════════════════════════════════
-ANALYSIS FRAMEWORK - Follow this step-by-step:
-═══════════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════
+    # ANALYSIS FRAMEWORK - Follow this step-by-step:
+    # ═══════════════════════════════════════════════════════════════════
 
-STEP 1: VISUAL SCAN
-• Scan the entire spreadsheet from left to right, top to bottom
-• Identify all visible grid lines and cell boundaries
-• Note any completely empty columns (no content, no headers, blank throughout)
-• Observe color patterns, borders, and spacing patterns
+    # STEP 1: VISUAL SCAN
+    # • Scan the entire spreadsheet from left to right, top to bottom
+    # • Identify all visible grid lines and cell boundaries
+    # • Note any completely empty columns (no content, no headers, blank throughout)
+    # • Observe color patterns, borders, and spacing patterns
 
-STEP 2: COLUMN GAP DETECTION (BE VERY PRECISE)
-What is a column gap?
-- A completely EMPTY column with NO data in any row
-- Acts as a visual separator between different sections or tables
-- Usually appears as a blank vertical space
+    # STEP 2: COLUMN GAP DETECTION (BE VERY PRECISE)
+    # What is a column gap?
+    # - A completely EMPTY column with NO data in any row
+    # - Acts as a visual separator between different sections or tables
+    # - Usually appears as a blank vertical space
 
-What is NOT a column gap?
-- Regular columns with data
-- Columns with just whitespace cells that are part of a table
-- The space between cell borders (that's just normal grid)
+    # What is NOT a column gap?
+    # - Regular columns with data
+    # - Columns with just whitespace cells that are part of a table
+    # - The space between cell borders (that's just normal grid)
 
-Detection Rules:
-1. Count from left to right (A, B, C, D...)
-2. If column has ANY content in ANY row → NOT a gap
-3. If column is completely blank throughout → IS a gap
-4. Note the exact column letter (e.g., "Column D")
+    # Detection Rules:
+    # 1. Count from left to right (A, B, C, D...)
+    # 2. If column has ANY content in ANY row → NOT a gap
+    # 3. If column is completely blank throughout → IS a gap
+    # 4. Note the exact column letter (e.g., "Column D")
 
-Example Gap Pattern:
-| A: Name | B: Age | C: (empty) | D: City | E: State |
-                      ↑ This is a column gap at C
+    # Example Gap Pattern:
+    # | A: Name | B: Age | C: (empty) | D: City | E: State |
+    #                       ↑ This is a column gap at C
 
-STEP 3: TABLE IDENTIFICATION 
-Count tables by:
-1. Looking for groups of cells with similar structure
-2. Tables are separated by empty rows OR empty columns
-3. Each table has consistent column structure
-4. Headers usually appear in first row (often bold or colored)
+    # STEP 3: TABLE IDENTIFICATION 
+    # Count tables by:
+    # 1. Looking for groups of cells with similar structure
+    # 2. Tables are separated by empty rows OR empty columns
+    # 3. Each table has consistent column structure
+    # 4. Headers usually appear in first row (often bold or colored)
 
-For each table, record:
-- Starting row (where table begins)
-- Ending row (where table ends)
-- Starting column letter (leftmost column)
-- Ending column letter (rightmost column)
-- Total columns in the table
-- Total rows in the table
+    # For each table, record:
+    # - Starting row (where table begins)
+    # - Ending row (where table ends)
+    # - Starting column letter (leftmost column)
+    # - Ending column letter (rightmost column)
+    # - Total columns in the table
+    # - Total rows in the table
 
-STEP 4: TABLE RELATIONSHIP CLASSIFICATION (CRITICAL)
+    # STEP 4: TABLE RELATIONSHIP CLASSIFICATION (CRITICAL)
 
-Classification Options:
-A) "different_tables" - Use when:
-   • Tables have DIFFERENT number of columns
-   • Tables have DIFFERENT headers or structure
-   • Tables serve completely DIFFERENT purposes
-   • Example: Employee table (5 cols) + Budget summary (3 cols)
+    # Classification Options:
+    # A) "different_tables" - Use when:
+    #    • Tables have DIFFERENT number of columns
+    #    • Tables have DIFFERENT headers or structure
+    #    • Tables serve completely DIFFERENT purposes
+    #    • Example: Employee table (5 cols) + Budget summary (3 cols)
 
-B) "single_table" - Use when:
-   • Multiple tables have IDENTICAL column structure (same number of columns)
-   • Headers appear to be the SAME across tables
-   • Tables look like duplicates or continuation of same structure
-   • Example: Sales data for different regions, all with same columns
+    # B) "single_table" - Use when:
+    #    • Multiple tables have IDENTICAL column structure (same number of columns)
+    #    • Headers appear to be the SAME across tables
+    #    • Tables look like duplicates or continuation of same structure
+    #    • Example: Sales data for different regions, all with same columns
 
-Confidence Scoring:
-• 1.0 = Absolutely certain, clear visual evidence
-• 0.9 = Very confident, strong indicators
-• 0.8 = Confident, good evidence
-• 0.7 = Moderately confident, some ambiguity
-• 0.6 or less = Uncertain, conflicting signals
+    # Confidence Scoring:
+    # • 1.0 = Absolutely certain, clear visual evidence
+    # • 0.9 = Very confident, strong indicators
+    # • 0.8 = Confident, good evidence
+    # • 0.7 = Moderately confident, some ambiguity
+    # • 0.6 or less = Uncertain, conflicting signals
 
-═══════════════════════════════════════════════════════════════════
-EXAMPLES FOR REFERENCE:
-═══════════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════
+    # EXAMPLES FOR REFERENCE:
+    # ═══════════════════════════════════════════════════════════════════
 
-Example 1: Different Tables
-Visual: Employee table + separate summary table
-| EmpID | Name | Dept | Role | (gap) | Metric | Value |
-Result: "different_tables" with confidence 0.95
+    # Example 1: Different Tables
+    # Visual: Employee table + separate summary table
+    # | EmpID | Name | Dept | Role | (gap) | Metric | Value |
+    # Result: "different_tables" with confidence 0.95
 
-Example 2: Single Table
-Visual: One table spanning the entire sheet or Two tables side-by-side with identical headers
-| Product | Price | (gap) | Stock | Category |
-Result: "single_table" with confidence 1.0
+    # Example 2: Single Table
+    # Visual: One table spanning the entire sheet or Two tables side-by-side with identical headers
+    # | Product | Price | (gap) | Stock | Category |
+    # Result: "single_table" with confidence 1.0
 
-═══════════════════════════════════════════════════════════════════
-OUTPUT FORMAT:
-═══════════════════════════════════════════════════════════════════
+    # ═══════════════════════════════════════════════════════════════════
+    # OUTPUT FORMAT:
+    # ═══════════════════════════════════════════════════════════════════
 
-Return ONLY valid JSON with this EXACT structure:
+    # Return ONLY valid JSON with this EXACT structure:
 
-{
-  "column_gaps": [
-    {
-      "column_letter": "C",
-      "location": "between columns B and D",
-      "purpose": "visual separator between two tables",
-      "confidence": 0.95,
-      "type": "same table/diffrent table"
-    }
-  ],
-  "tables_detected": [
-    {
-      "table_id": 1,
-      "location": {
-        "start_row": 1,
-        "end_row": 15,
-        "start_col": "A",
-        "end_col": "D"
-      },
-      "column_count": 4,
-      "row_count": 15,
-      "visual_structure": "data table with header row"
-    }
-  ],
-  "table_relationship": {
-    "total_tables": 2,
-    "classification": "same_table_repeated",
-    "reasoning": "Both tables have identical 4-column structure with matching headers (ID, Name, Age, City). They appear to be the same table format repeated twice, possibly for different data sets.",
-    "confidence": 0.95
-  }
-}
+    # {
+    #   "column_gaps": [
+    #     {
+    #       "column_letter": "C",
+    #       "location": "between columns B and D",
+    #       "purpose": "visual separator between two tables",
+    #       "confidence": 0.95,
+    #       "type": "same table/diffrent table"
+    #     }
+    #   ],
+    #   "tables_detected": [
+    #     {
+    #       "table_id": 1,
+    #       "location": {
+    #         "start_row": 1,
+    #         "end_row": 15,
+    #         "start_col": "A",
+    #         "end_col": "D"
+    #       },
+    #       "column_count": 4,
+    #       "row_count": 15,
+    #       "visual_structure": "data table with header row"
+    #     }
+    #   ],
+    #   "table_relationship": {
+    #     "total_tables": 2,
+    #     "classification": "same_table_repeated",
+    #     "reasoning": "Both tables have identical 4-column structure with matching headers (ID, Name, Age, City). They appear to be the same table format repeated twice, possibly for different data sets.",
+    #     "confidence": 0.95
+    #   }
+    # }
 
-CRITICAL REMINDERS:
-✓ Be PRECISE with column letters and row numbers
-✓ Only report ACTUAL empty columns as gaps, not just spacing
-✓ Count ALL rows and columns ACCURATELY
-✓ Give SPECIFIC reasoning, not vague statements
-✓ Use HIGH confidence (0.9-1.0) only when very certain
-✓ Focus on STRUCTURE, ignore actual data values"""
+    # CRITICAL REMINDERS:
+    # ✓ Be PRECISE with column letters and row numbers
+    # ✓ Only report ACTUAL empty columns as gaps, not just spacing
+    # ✓ Count ALL rows and columns ACCURATELY
+    # ✓ Give SPECIFIC reasoning, not vague statements
+    # ✓ Use HIGH confidence (0.9-1.0) only when very certain
+    # ✓ Focus on STRUCTURE, ignore actual data values"""
 
+    prompt = """You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table’s headers and use them as keys, with all corresponding rows captured as arrays under those keys."""
     return prompt
 
 async def analyze_sheet_with_vision(
     client: AsyncOpenAI,
     image_path: Path,
-    sheet_name: str
+    sheet_name: str,
+    excel_path: Path,
 ) -> Dict[str, Any]:
     """
     Analyze a single sheet image using vision model for lightweight analysis.
@@ -170,6 +173,7 @@ async def analyze_sheet_with_vision(
         client: AsyncOpenAI client
         image_path: Path to sheet image
         sheet_name: Name of the sheet
+        excel_path: Path to Excel file
 
     Returns:
         Dictionary with lightweight visual analysis results containing:
@@ -220,7 +224,7 @@ async def analyze_sheet_with_vision(
 
         # Get response
         llm_output = response.choices[0].message.content
-
+        print(llm_output)
         # Log the raw output for debugging
         if llm_output:
             logger.info(f"LLM output received: {len(llm_output)} characters")

@@ -322,19 +322,28 @@ def extract_single_table_with_openai(table_markdown: str, sheet_name: str, table
 
     # Prompt for single table extraction
     user_instruction = f"""
-You will receive a single table from Excel sheet: "{sheet_name}" in Markdown format.
+You will receive one or more structured tables from an Excel sheet: "{sheet_name}" in Markdown format.
+
+OBJECTIVE:
+- Tables must be extracted with HIGH accuracy.
+- Multiple structured tables may exist on the same page.
+- Each table must be identified independently.
+- For every table, headers must be detected correctly and used as keys.
+- All rows belonging to each table must be captured completely as arrays under their respective headers.
 
 CRITICAL RULES:
-1. Return ONLY valid JSON with NO explanations, NO markdown formatting, NO additional text before or after the JSON
-2. DO NOT skip ANY rows - extract EVERY single row from the table, including:
+1. Return ONLY valid JSON with NO explanations, NO markdown formatting, NO additional text before or after the JSON.
+2. DO NOT skip ANY rows — extract EVERY single row from each table, including:
    - Header rows
    - Sub-header rows
    - Category label rows
    - Data rows
    - ALL rows without exception
-3. Preserve exact cell values - do not summarize, skip, or merge any content
+3. Preserve exact cell values — do NOT summarize, skip, infer, or merge any content.
+4. If multiple tables exist, process EACH table separately and maintain correct table boundaries.
+5. Header detection must be accurate — headers define the structure and MUST align correctly with their rows.
 
-Extract the table in this exact structure:
+Extract each table in this exact structure:
 
 {{
   "sheet_name": "{sheet_name}",
@@ -343,16 +352,17 @@ Extract the table in this exact structure:
   "headers": ["col1", "col2", ...],
   "rows": [
     ["row1_col1", "row1_col2", ...],
-    ["row2_col1", "row2_col2", ...],
+    ["row2_col1", "row2_col2", ...]
     ... (include ALL rows from the table)
   ]
 }}
 
 IMPORTANT:
-- Your response must start with {{ and end with }}
-- Do not skip intermediate header rows or category rows
-- Include EVERY row present in the markdown table
-- If a cell is empty, use empty string ""
+- Your response MUST start with {{ and end with }}.
+- Do NOT skip intermediate header rows or category rows.
+- Include EVERY row present in the markdown table.
+- If a cell is empty, use an empty string "".
+- Do NOT combine multiple tables into one.
 
 Table markdown:
 \"\"\"
@@ -360,9 +370,10 @@ Table markdown:
 \"\"\"
 """
 
+
     # OpenAI Chat Completion API
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "You are a precise table extraction assistant. Extract ALL rows from tables without skipping any content. Include headers, sub-headers, category rows, and data rows. Always respond with valid JSON only."},
             {"role": "user", "content": user_instruction}
@@ -688,6 +699,7 @@ async def process_excel_to_json(
                         phase2_errors += 1
                         logger.error(f"  ✗ Vision analysis failed: {vision_result.get('error', 'Unknown error')}")
                         continue
+                    break
 
                     # SUCCESS: Save individual gap_analysis JSON for this file
                     gap_analysis_file = gap_analysis_folder / f"{safe_name}_gap_analysis.json"
