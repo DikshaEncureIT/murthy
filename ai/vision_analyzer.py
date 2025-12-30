@@ -10,257 +10,87 @@ from pathlib import Path
 from typing import Dict, Any, List
 from openai import AsyncOpenAI
 from logger import AppLogger
-from vision_utils import encode_image_to_base64
+from vision_utils import convert_excel_to_html
 
 logger = AppLogger.get_logger(__file__)
 
 
-def build_vision_prompt(excel_data: str = None) -> str:
+def build_vision_prompt_for_html() -> str:
     """
-    Build ENHANCED prompt for accurate vision-based Excel analysis.
+    Build prompt for HTML-based Excel table analysis.
 
-    Args:
-        excel_data: Optional structured Excel data to include in prompt
-
-    Focus areas:
-    - Column-wise gap detection with high precision
-    - Table relationship understanding with clear reasoning
+    The prompt instructs the model to analyze Excel tables represented as HTML
+    with full styling, merged cells, and structure preservation.
 
     Returns:
-        Enhanced prompt with examples and detailed instructions
+        Prompt string for HTML analysis
     """
-    #     prompt = """You are analyzing an Excel spreadsheet image. Your goal is to provide ACCURATE, PRECISE structural analysis.
-    #     You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table's headers and use them as keys, with all corresponding rows captured as arrays under those keys.
-
-    # ═══════════════════════════════════════════════════════════════════
-    # ANALYSIS FRAMEWORK - Follow this step-by-step:
-    # ═══════════════════════════════════════════════════════════════════
-
-    # STEP 1: VISUAL SCAN
-    # • Scan the entire spreadsheet from left to right, top to bottom
-    # • Identify all visible grid lines and cell boundaries
-    # • Note any completely empty columns (no content, no headers, blank throughout)
-    # • Observe color patterns, borders, and spacing patterns
-
-    # STEP 2: COLUMN GAP DETECTION (BE VERY PRECISE)
-    # What is a column gap?
-    # - A completely EMPTY column with NO data in any row
-    # - Acts as a visual separator between different sections or tables
-    # - Usually appears as a blank vertical space
-
-    # What is NOT a column gap?
-    # - Regular columns with data
-    # - Columns with just whitespace cells that are part of a table
-    # - The space between cell borders (that's just normal grid)
-
-    # Detection Rules:
-    # 1. Count from left to right (A, B, C, D...)
-    # 2. If column has ANY content in ANY row → NOT a gap
-    # 3. If column is completely blank throughout → IS a gap
-    # 4. Note the exact column letter (e.g., "Column D")
-
-    # Example Gap Pattern:
-    # | A: Name | B: Age | C: (empty) | D: City | E: State |
-    #                       ↑ This is a column gap at C
-
-    # STEP 3: TABLE IDENTIFICATION 
-    # Count tables by:
-    # 1. Looking for groups of cells with similar structure
-    # 2. Tables are separated by empty rows OR empty columns
-    # 3. Each table has consistent column structure
-    # 4. Headers usually appear in first row (often bold or colored)
-
-    # For each table, record:
-    # - Starting row (where table begins)
-    # - Ending row (where table ends)
-    # - Starting column letter (leftmost column)
-    # - Ending column letter (rightmost column)
-    # - Total columns in the table
-    # - Total rows in the table
-
-    # STEP 4: TABLE RELATIONSHIP CLASSIFICATION (CRITICAL)
-
-    # Classification Options:
-    # A) "different_tables" - Use when:
-    #    • Tables have DIFFERENT number of columns
-    #    • Tables have DIFFERENT headers or structure
-    #    • Tables serve completely DIFFERENT purposes
-    #    • Example: Employee table (5 cols) + Budget summary (3 cols)
-
-    # B) "single_table" - Use when:
-    #    • Multiple tables have IDENTICAL column structure (same number of columns)
-    #    • Headers appear to be the SAME across tables
-    #    • Tables look like duplicates or continuation of same structure
-    #    • Example: Sales data for different regions, all with same columns
-
-    # Confidence Scoring:
-    # • 1.0 = Absolutely certain, clear visual evidence
-    # • 0.9 = Very confident, strong indicators
-    # • 0.8 = Confident, good evidence
-    # • 0.7 = Moderately confident, some ambiguity
-    # • 0.6 or less = Uncertain, conflicting signals
-
-    # ═══════════════════════════════════════════════════════════════════
-    # EXAMPLES FOR REFERENCE:
-    # ═══════════════════════════════════════════════════════════════════
-
-    # Example 1: Different Tables
-    # Visual: Employee table + separate summary table
-    # | EmpID | Name | Dept | Role | (gap) | Metric | Value |
-    # Result: "different_tables" with confidence 0.95
-
-    # Example 2: Single Table
-    # Visual: One table spanning the entire sheet or Two tables side-by-side with identical headers
-    # | Product | Price | (gap) | Stock | Category |
-    # Result: "single_table" with confidence 1.0
-
-    # ═══════════════════════════════════════════════════════════════════
-    # OUTPUT FORMAT:
-    # ═══════════════════════════════════════════════════════════════════
-
-    # Return ONLY valid JSON with this EXACT structure:
-
-    # {
-    #   "column_gaps": [
-    #     {
-    #       "column_letter": "C",
-    #       "location": "between columns B and D",
-    #       "purpose": "visual separator between two tables",
-    #       "confidence": 0.95,
-    #       "type": "same table/diffrent table"
-    #     }
-    #   ],
-    #   "tables_detected": [
-    #     {
-    #       "table_id": 1,
-    #       "location": {
-    #         "start_row": 1,
-    #         "end_row": 15,
-    #         "start_col": "A",
-    #         "end_col": "D"
-    #       },
-    #       "column_count": 4,
-    #       "row_count": 15,
-    #       "visual_structure": "data table with header row"
-    #     }
-    #   ],
-    #   "table_relationship": {
-    #     "total_tables": 2,
-    #     "classification": "same_table_repeated",
-    #     "reasoning": "Both tables have identical 4-column structure with matching headers (ID, Name, Age, City). They appear to be the same table format repeated twice, possibly for different data sets.",
-    #     "confidence": 0.95
-    #   }
-    # }
-
-    # CRITICAL REMINDERS:
-    # ✓ Be PRECISE with column letters and row numbers
-    # ✓ Only report ACTUAL empty columns as gaps, not just spacing
-    # ✓ Count ALL rows and columns ACCURATELY
-    # ✓ Give SPECIFIC reasoning, not vague statements
-    # ✓ Use HIGH confidence (0.9-1.0) only when very certain
-    # ✓ Focus on STRUCTURE, ignore actual data values"""
-
-    prompt = """You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table's headers and use them as keys, with all corresponding rows captured as arrays under those keys.
-
-You have been provided with TWO sources of information:
-1. A VISUAL IMAGE of the Excel sheet (PNG screenshot) showing layout, colors, borders
-2. RAW EXCEL DATA showing exact cell values, formulas, and merged cell ranges
-
-IMPORTANT: Use BOTH sources together for maximum accuracy:
-- The IMAGE shows visual structure, spacing, colors, and visual separators
-- The EXCEL DATA shows precise cell values, formulas (=SUM(...)), and merged cells
-- Cross-reference between them using cell coordinates (A1, B2, C3, etc.)
-- If there's any discrepancy, trust the EXCEL DATA for values and the IMAGE for visual layout"""
-
-    # Append Excel data if provided
-    if excel_data:
-        prompt += f"\n\n{excel_data}\n"
-
+    # prompt = """You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table's headers and use them as keys, with all corresponding rows captured as arrays under those keys."""
+    prompt="""You want the tables to be extracted accurately. Since multiple structured tables exist on the same page, the requirement is to correctly identify each table’s headers and use them as keys, with all corresponding rows captured as arrays under those keys. You have been provided with HTML data of the Excel sheet, which contains the complete structural representation of the tables, including headers, rows, merged cells, and cell values. IMPORTANT: Use the HTML data as the single source of truth for maximum accuracy. The HTML preserves table boundaries, row and column relationships, and hierarchical structure, enabling precise header detection and correct row mapping. Ensure that each table is independently identified, headers are correctly interpreted as keys, and all rows belonging to the same header are grouped accurately. If any ambiguity arises, rely strictly on the HTML structure and semantics to determine correct table organization and data relationships."""
     return prompt
 
 async def analyze_sheet_with_vision(
     client: AsyncOpenAI,
-    image_path: Path,
     sheet_name: str,
     excel_path: Path,
 ) -> Dict[str, Any]:
     """
-    Analyze a single sheet image using vision model for lightweight analysis.
+    Analyze a single Excel sheet using HTML-based analysis with GPT-4o.
 
-    ENHANCED: Now includes raw Excel data alongside image for better accuracy.
+    NEW APPROACH: Converts Excel to HTML with full formatting, then sends to GPT-4o
+    for structural analysis. This provides better accuracy than image-based analysis.
 
     Args:
         client: AsyncOpenAI client
-        image_path: Path to sheet image
         sheet_name: Name of the sheet
-        excel_path: Path to Excel file (NOW ACTIVELY USED!)
+        excel_path: Path to Excel file
 
     Returns:
-        Dictionary with lightweight visual analysis results containing:
+        Dictionary with analysis results containing:
         - column_gaps: List of detected column gaps
         - tables_detected: List of detected tables with locations
         - table_relationship: Classification of table relationships
     """
     try:
-        logger.info(f"Analyzing sheet '{sheet_name}' with vision model (enhanced with Excel data)")
-
-        # Validate image exists
-        if not image_path.exists():
-            raise FileNotFoundError(f"Image not found: {image_path}")
+        logger.info(f"Analyzing sheet '{sheet_name}' using HTML-based analysis")
 
         # Validate Excel file exists
         if not excel_path.exists():
             raise FileNotFoundError(f"Excel file not found: {excel_path}")
 
-        # Encode image to base64
-        base64_image = encode_image_to_base64(image_path)
+        # Convert Excel sheet to HTML with full styling
+        html_content = convert_excel_to_html(
+            excel_path=excel_path,
+            sheet_name=sheet_name,
+            max_rows=200,
+            max_cols=50,
+            include_styling=True
+        )
+        print("html_content",html_content)
+        logger.info(f"HTML generated: {len(html_content)} characters")
 
-        # ENHANCEMENT: Extract Excel data for vision model
-        excel_data = None
-        try:
-            from vision_utils import extract_excel_data_for_vision
-            excel_data = extract_excel_data_for_vision(
-                excel_path=excel_path,
-                sheet_name=sheet_name,
-                max_rows=100,
-                max_cols=50
-            )
-            logger.info(f"Excel data extracted: {len(excel_data)} characters")
+        # Safety check: truncate only if extremely large (to stay within token limits)
+        if len(html_content) > 300000:
+            logger.warning(f"HTML content truncated from {len(html_content)} to 300000 characters")
+            html_content = html_content[:300000] + "\n<!-- HTML TRUNCATED - first 300K characters shown -->"
 
-            # Safety check: truncate only if extremely large (to stay within token limits)
-            if len(excel_data) > 200000:
-                logger.warning(f"Excel data truncated from {len(excel_data)} to 200000 characters")
-                excel_data = excel_data[:200000] + "\n[DATA TRUNCATED - first 200K characters shown]"
+        # Build prompt for HTML analysis
+        prompt = build_vision_prompt_for_html()
 
-        except Exception as e:
-            logger.warning(f"Could not extract Excel data: {e}. Falling back to image-only analysis.")
-            excel_data = None
+        # Append HTML content to prompt
+        full_prompt = f"{prompt}\n\n═══════════════════════════════════════════════════════════════════\nEXCEL HTML TABLE:\n═══════════════════════════════════════════════════════════════════\n\n{html_content}\n\n═══════════════════════════════════════════════════════════════════\nYour JSON analysis:\n═══════════════════════════════════════════════════════════════════"
 
-        # Build prompt (now with optional Excel data)
-        prompt = build_vision_prompt(excel_data=excel_data)
-
-        # Call vision API
+        # Call GPT-4o (text-based, not vision)
         response = await client.chat.completions.create(
             model="gpt-4o",
             messages=[
                 {
                     "role": "system",
-                    "content": "You are an expert at visual analysis of Excel spreadsheets. You have access to BOTH the visual image AND the raw Excel data (cell values, formulas, merged cells). Use both sources together for maximum accuracy - cross-reference cell coordinates between image and data. Perform detailed, accurate structural analysis focusing on column gaps and table relationships. Provide your insights naturally and include a JSON structure with your findings. Prioritize accuracy and clarity in your analysis."
+                    "content": "You are an expert at analyzing Excel spreadsheets represented as HTML tables. You understand HTML table structure including rowspan, colspan, CSS styling, and data-cell attributes. Perform detailed, accurate structural analysis focusing on column gaps and table relationships. Return ONLY valid JSON as specified in the prompt."
                 },
                 {
                     "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": prompt
-                        },
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/png;base64,{base64_image}"
-                            }
-                        }
-                    ]
+                    "content": full_prompt
                 }
             ],
             max_completion_tokens=8192,
@@ -275,7 +105,7 @@ async def analyze_sheet_with_vision(
 
         # Get response
         llm_output = response.choices[0].message.content
-        print(llm_output)
+        print("108llm_output",llm_output)
 
         # Parse and save LLM output (will be done after JSON parsing below)
 
@@ -328,9 +158,10 @@ async def analyze_sheet_with_vision(
 
         # Add metadata
         analysis_result["sheet_name"] = sheet_name
-        analysis_result["image_path"] = str(image_path)
+        analysis_result["analysis_method"] = "html_based"
+        analysis_result["html_size_chars"] = len(html_content)
 
-        logger.info(f"Vision analysis complete for sheet '{sheet_name}'")
+        logger.info(f"HTML-based analysis complete for sheet '{sheet_name}'")
 
         # Save parsed LLM output to single JSON file (all Excel files in one file)
         try:

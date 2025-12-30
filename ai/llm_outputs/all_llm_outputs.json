@@ -30,10 +30,10 @@
         "Established and close relationships with lenders",
         "Re-work deals to make them happen"
       ],
-      "Loan Details": [
+      "Land LVR": [
         {
           "Type": "Development",
-          "Land LVR": "50% - 70%",
+          "LVR": "50% - 70%",
           "TDC": "80% - 100%",
           "GRV": "55% - 70%",
           "Rate": "8% - 12%",
@@ -43,28 +43,28 @@
         },
         {
           "Type": "Commercial & Industrial",
-          "Land LVR": "50% - 75%",
+          "LVR": "50% - 75%",
           "Rate": "6% - 12%",
           "Fees": ".5% - 2%",
           "Max": "25M"
         },
         {
           "Type": "Landbank/Vacant Land",
-          "Land LVR": "40% - 70%",
+          "LVR": "40% - 70%",
           "Rate": "7% - 14%",
           "Fees": "1% - 2%",
           "Max": "25M"
         },
         {
           "Type": "Residential",
-          "Land LVR": "0.7",
+          "LVR": "0.7",
           "Rate": "6% - 10%",
           "Fees": "1% - 2%",
           "Max": "25M"
         },
         {
           "Type": "Mezzanine",
-          "Land LVR": "0.75",
+          "LVR": "0.75",
           "GRV": "0.75",
           "Rate": "16% - 20%",
           "Fees": "1.75% - 2%",
@@ -72,7 +72,8 @@
         }
       ],
       "sheet_name": "Key Statements",
-      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Key_Statements_Key_Statements_20251229_131248.png"
+      "analysis_method": "html_based",
+      "html_size_chars": 29533
     }
   },
   {
@@ -132,100 +133,535 @@
         "Proof of Income": "",
         "Credit History": ""
       },
+      "Director / Guarantor 2": {
+        "Name": "Director 2",
+        "Current Address": "Director Street 2",
+        "Telephone Number": "",
+        "Email": "",
+        "Date of Birth": "",
+        "Drivers Licence #": "",
+        "Google Criminal": "",
+        "Google Charged": "",
+        "Google Court": "",
+        "Google Fraud": "",
+        "Australian Citizen": "",
+        "Marital Status": "",
+        "Dependants": "",
+        "Proof of Income": "",
+        "Credit History": ""
+      },
+      "Director / Guarantor 3": {
+        "Name": "Director 3",
+        "Current Address": "Director Street 3",
+        "Telephone Number": "",
+        "Email": "",
+        "Date of Birth": "",
+        "Drivers Licence #": "",
+        "Google Criminal": "",
+        "Google Charged": "",
+        "Google Court": "",
+        "Google Fraud": "",
+        "Australian Citizen": "",
+        "Marital Status": "",
+        "Dependants": "",
+        "Proof of Income": "",
+        "Credit History": ""
+      },
+      "Director / Guarantor 4": {
+        "Name": "Director 4",
+        "Current Address": "Director Street 4",
+        "Telephone Number": "",
+        "Email": "",
+        "Date of Birth": "",
+        "Drivers Licence #": "",
+        "Google Criminal": "",
+        "Google Charged": "",
+        "Google Court": "",
+        "Google Fraud": "",
+        "Australian Citizen": "",
+        "Marital Status": "",
+        "Dependants": "",
+        "Proof of Income": "",
+        "Credit History": ""
+      },
       "sheet_name": "Borrower ",
-      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Borrower_Borrower_20251229_131319.png"
+      "analysis_method": "html_based",
+      "html_size_chars": 138092
     }
   },
   {
     "excel_file": "Loan_Summary_-_Eagleby_Merge_1_AL.xlsx",
     "sheet_name": "A&L",
     "data": {
-      "Giuseppe Augello": {
-        "Property Address": [
-          "Investment Home 10 Carly Dr Helidon",
-          "Security 2",
-          "Security 3",
-          "Security 4",
-          "Security 5",
-          "Other property"
-        ],
-        "Value": [
-          325000,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "Debt": [
-          247000,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "Lender": [
-          "Name",
-          "Name",
-          "Name",
-          "Name",
-          "Name",
-          "Name"
-        ],
-        "Rate/ PM Payment": [
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "Lease/ Rental Income PM": [
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "Other Assets or Liabilities": [
-          "Cash",
-          "Life Insurance",
-          "Business Value",
-          "Plant & Equipment",
-          "Credit Card",
-          "Credit Card 2",
-          "Car"
-        ],
-        "Value (Other)": [
-          0,
-          700000,
-          0,
-          0,
-          18000,
-          0,
-          0
-        ],
-        "Debt (Other)": [
-          0,
-          0,
-          0,
-          0,
-          14000,
-          0,
-          0
-        ],
-        "Total": [
-          1043000,
-          261000
-        ],
-        "Net Assets": [
-          782000
-        ]
-      },
+      "tables": [
+        {
+          "header": [
+            "Property Address",
+            "Value",
+            "Debt",
+            "Lender",
+            "Rate/ PM Payment",
+            "Lease/ Rental Income PM"
+          ],
+          "rows": [
+            {
+              "Property Address": "Investment Home 10 Carly Dr Helidon",
+              "Value": "325000",
+              "Debt": "247000",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 3",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 4",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 5",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Other property",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Cash",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Life Insurance",
+              "Value": "700000",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Business Value",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Plant & Equipment",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card",
+              "Value": "18000",
+              "Debt": "14000",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Car",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            }
+          ]
+        },
+        {
+          "header": [
+            "Property Address",
+            "Value",
+            "Debt",
+            "Lender",
+            "Rate/ PM Payment",
+            "Lease/ Rental Income PM"
+          ],
+          "rows": [
+            {
+              "Property Address": "Security 1",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 3",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 4",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 5",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Other property",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Cash",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Deposits Paid",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Business Value",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Plant & Equipment",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Car",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            }
+          ]
+        },
+        {
+          "header": [
+            "Property Address",
+            "Value",
+            "Debt",
+            "Lender",
+            "Rate/ PM Payment",
+            "Lease/ Rental Income PM"
+          ],
+          "rows": [
+            {
+              "Property Address": "Security 1",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 3",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 4",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 5",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Other property",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Cash",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Deposits Paid",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Business Value",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Plant & Equipment",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Car",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            }
+          ]
+        },
+        {
+          "header": [
+            "Property Address",
+            "Value",
+            "Debt",
+            "Lender",
+            "Rate/ PM Payment",
+            "Lease/ Rental Income PM"
+          ],
+          "rows": [
+            {
+              "Property Address": "Security 1",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 3",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 4",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Security 5",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Other property",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "Name",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Cash",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Deposits Paid",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Business Value",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Plant & Equipment",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Credit Card 2",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            },
+            {
+              "Property Address": "Car",
+              "Value": "0",
+              "Debt": "0",
+              "Lender": "",
+              "Rate/ PM Payment": "",
+              "Lease/ Rental Income PM": ""
+            }
+          ]
+        }
+      ],
       "sheet_name": "A&L",
-      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_AL_AL_20251229_131403.png"
+      "analysis_method": "html_based",
+      "html_size_chars": 63863
     }
   },
   {
@@ -293,171 +729,1184 @@
         "Site Description": ""
       },
       "sheet_name": "Security ",
-      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Security_Security_20251229_131454.png"
+      "analysis_method": "html_based",
+      "html_size_chars": 41395
     }
   },
   {
     "excel_file": "Loan_Summary_-_Eagleby_Merge_1_Feasibility.xlsx",
     "sheet_name": "Feasibility",
     "data": {
-      "Lender Estab Fee (inc GST)": [
-        0.022
-      ],
-      "Rate": [
-        0.1195
-      ],
-      "Line Fee": [
-        0
-      ],
-      "Loan Term": [
-        12
-      ],
-      "Brokerage Fee (inc GST)": [
-        0.0055
-      ],
-      "LVR on site": [
-        0.5
-      ],
-      "LVR on GRV ex GST": [
-        0.65
-      ],
-      "Max Loan": [
-        300000,
-        5502900
-      ],
-      "Pass/Fail": [
-        65670.25,
-        225771.975
-      ],
+      "Feasibility": {
+        "Lender Inputs": [
+          {
+            "Lender Estab Fee (inc GST)": "0.022",
+            "Rate": "0.1195",
+            "Line Fee": "0",
+            "Loan Term": "12",
+            "Brokerage Fee (inc GST)": "0.0055"
+          }
+        ],
+        "Site Inputs": [
+          {
+            "Purchase Price of Site": "600000",
+            "\"As Is\"  Value of Site": "600000"
+          }
+        ],
+        "Pre Settlement Costs": [
+          {
+            "Property Capital Commit Fee": {
+              "Lender": "0",
+              "Borrower": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "Lender Commit Fee": {
+              "Lender": "0",
+              "Borrower": "5500",
+              "Total": "5500",
+              "Per Lot": "196.4285714285714"
+            },
+            "Valuation": {
+              "Lender": "0",
+              "Borrower": "7700",
+              "Total": "7700",
+              "Per Lot": "275"
+            },
+            "Quantity Surveyor": {
+              "Lender": "0",
+              "Borrower": "3300",
+              "Total": "3300",
+              "Per Lot": "117.8571428571429"
+            },
+            "Legal Fee": {
+              "Lender": "0",
+              "Borrower": "4400",
+              "Total": "4400",
+              "Per Lot": "157.1428571428571"
+            },
+            "Total": {
+              "Lender": "0",
+              "Borrower": "20900",
+              "Total": "20900",
+              "Per Lot": "746.4285714285714"
+            }
+          }
+        ],
+        "Presales/ Exit": [
+          {
+            "Stock Description": {
+              "1 Br": {
+                "No. Lots": "3",
+                "Gross Revenue": "795000",
+                "Per Lot": "265000"
+              },
+              "3 bed": {
+                "No. Lots": "3",
+                "Gross Revenue": "1005000",
+                "Per Lot": "335000"
+              },
+              "2 bed": {
+                "No. Lots": "11",
+                "Gross Revenue": "3289000",
+                "Per Lot": "299000"
+              },
+              "2 bed (2)": {
+                "No. Lots": "11",
+                "Gross Revenue": "3377000",
+                "Per Lot": "307000"
+              },
+              "MANAGE RIGHTS": {
+                "No. Lots": "0",
+                "Gross Revenue": "0",
+                "Per Lot": "#DIV/0!"
+              },
+              "Gross Realisation": {
+                "No. Lots": "28",
+                "Gross Revenue": "8466000",
+                "Per Lot": "302357.1428571428"
+              }
+            },
+            "Stock Destription": {
+              "1 Br": {
+                "Lots Sold": "1",
+                "Value": "0",
+                "% Sold": "0"
+              },
+              "3 bed": {
+                "Lots Sold": "0",
+                "Value": "0",
+                "% Sold": "0"
+              },
+              "2 bed": {
+                "Lots Sold": "0",
+                "Value": "0",
+                "% Sold": "0"
+              },
+              "2 bed (2)": {
+                "Lots Sold": "0",
+                "Value": "0",
+                "% Sold": "0"
+              },
+              "MANAGE RIGHTS": {
+                "Lots Sold": "0",
+                "Value": "0",
+                "% Sold": "0"
+              },
+              "Gross Realisation": {
+                "Lots Sold": "1",
+                "Value": "0",
+                "% Sold": "0"
+              }
+            }
+          }
+        ],
+        "Net Realisation": [
+          {
+            "GST": {
+              "% Site GST": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "GRV ex GST": {
+              "Total": "8466000",
+              "Per Lot": "302357.1428571428"
+            },
+            "Less Selling Costs": {
+              "Rate": "0.035",
+              "Total": "296310",
+              "Per Lot": "10582.5"
+            },
+            "Legals": {
+              "Rate": "1100",
+              "Total": "30800",
+              "Per Lot": "1100"
+            },
+            "Net Reaslisation": {
+              "Total": "8138890",
+              "Per Lot": "290674.6428571428"
+            }
+          }
+        ],
+        "Settlement Distribution": [
+          {
+            "Purchase Price": {
+              "Lender": "600000",
+              "Borrower": "0",
+              "Total": "600000",
+              "Per Lot": "21428.57142857143"
+            },
+            "GST (Borrower to claim after sett.)": {
+              "Lender": "0",
+              "Borrower": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "Stamp Duty": {
+              "Lender": "33000",
+              "Borrower": "0",
+              "Total": "33000",
+              "Per Lot": "1178.571428571429"
+            },
+            "Current Mortgage 1": {
+              "Lender": "0",
+              "Borrower": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "Current Mortgage 2": {
+              "Lender": "0",
+              "Borrower": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "Deposit Paid": {
+              "Lender": "0",
+              "Borrower": "90000",
+              "Total": "90000",
+              "Per Lot": "3214.285714285714"
+            },
+            "Lender Estab Fee inc GST": {
+              "Lender": "0",
+              "Borrower": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "Brokerage inc GST": {
+              "Lender": "0",
+              "Borrower": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "Prepaid Interest": {
+              "Lender": "0",
+              "Borrower": "0",
+              "Total": "0",
+              "Per Lot": "0"
+            },
+            "Lender Estab Fee inc GST (2)": {
+              "Lender": "121063.8",
+              "Borrower": "0",
+              "Total": "121063.8",
+              "Per Lot": "4323.707142857143"
+            },
+            "Brokerage inc GST (2)": {
+              "Lender": "30265.95",
+              "Borrower": "0",
+              "Total": "30265.95",
+              "Per Lot": "1080.926785714286"
+            },
+            "Borrower Cash In/ Out": {
+              "Lender": "0",
+              "Borrower": "460000",
+              "Total": "460000",
+              "Per Lot": "16428.57142857143"
+            },
+            "Settlement Funds (A)": {
+              "Lender": "234329.75",
+              "Borrower": "550000",
+              "Total": "1334329.75",
+              "Per Lot": "47654.63392857142"
+            }
+          }
+        ],
+        "Development Distribution": [
+          {
+            "Construction Costs ex GST": {
+              "Lender": "3640000",
+              "Borrower": "0",
+              "Total": "3640000",
+              "Per Lot": "130000"
+            },
+            "Contingency (5%)": {
+              "Lender": "182000",
+              "Borrower": "0",
+              "Total": "182000",
+              "Per Lot": "6500"
+            },
+            "Consultants": {
+              "Lender": "60000",
+              "Borrower": "0",
+              "Total": "60000",
+              "Per Lot": "2142.857142857143"
+            },
+            "Development Management": {
+              "Lender": "120000",
+              "Borrower": "0",
+              "Total": "120000",
+              "Per Lot": "4285.714285714285"
+            },
+            "Council Contributions": {
+              "Lender": "487000",
+              "Borrower": "0",
+              "Total": "487000",
+              "Per Lot": "17392.85714285714"
+            },
+            "Holding Costs": {
+              "Lender": "5000",
+              "Borrower": "0",
+              "Total": "5000",
+              "Per Lot": "178.5714285714286"
+            },
+            "Marketing": {
+              "Lender": "220000",
+              "Borrower": "0",
+              "Total": "220000",
+              "Per Lot": "7857.142857142857"
+            },
+            "Interest": {
+              "Lender": "328798.275",
+              "Borrower": "0",
+              "Total": "328798.275",
+              "Per Lot": "11742.79553571428"
+            },
+            "Development Costs (B)": {
+              "Lender": "5042798.275",
+              "Borrower": "0",
+              "Total": "5042798.275",
+              "Per Lot": "180099.9383928571"
+            }
+          }
+        ],
+        "Summary": [
+          {
+            "Total (A+B)": {
+              "Lender": "5277128.025",
+              "Borrower": "550000",
+              "Total": "5827128.025",
+              "Per Lot": "208111.7151785714"
+            },
+            "LVR - Land": "0.3905495833333333",
+            "LVR - GRV ex GST": "0.6233319188518781",
+            "Loan to Cost Ratio": "0.9056138808620049"
+          }
+        ]
+      },
       "sheet_name": "Feasibility",
-      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_Feasibility_Feasibility_20251229_131520.png"
+      "analysis_method": "html_based",
+      "html_size_chars": 142902
     }
   },
   {
     "excel_file": "Loan_Summary_-_Eagleby_Merge_1_DocMerge.xlsx",
     "sheet_name": "DocMerge",
     "data": {
-      "Personal Information": {
-        "Rname": "Richard Woodhead",
-        "RACN": "GPS Investment Fund Limited",
-        "Rtel": "0",
-        "Remail": "Richard@gpsinvest.com.au"
-      },
-      "Company Information": {
-        "Cname": "GLENAURA HOLDINGS PTY LTD",
-        "CACN": "620 269 294",
-        "CABN": "56 620 269 294",
-        "CDABN": "2017-07-05 00:00:00",
-        "CDGST": "2017-07-05 00:00:00",
-        "Croffice": "QLD 4213"
-      },
-      "Directors": {
-        "CD1": "Giuseppe Augello",
-        "CD2": "Director 2",
-        "CD3": "Director 3",
-        "CD4": "Director 4"
-      },
-      "Company Financials": {
-        "CS1": "0",
-        "CS2": "0",
-        "CS3": "0",
-        "CS4": "0",
-        "Cpincome": "0",
-        "Cchistory": "0"
-      },
-      "Trust Information": {
-        "Tname": "Trust 1",
-        "TABN": "00 123 456 789",
-        "Tedate": "0",
-        "Ttype": "0",
-        "Ttrustee/s": "0",
-        "TB1": "0",
-        "TB2": "0",
-        "TB3": "0",
-        "TB4": "0"
-      },
-      "Guarantor 1": {
-        "G1Name": "Giuseppe Augello",
-        "G1Add": "45 Glenaura Drive TALLAI QLD 4213",
-        "G1Tel": "0433 119 504",
-        "G1email": "finance@ezyoption.com.au",
-        "G1dob": "1971-03-15 00:00:00",
-        "G1dlicence": "0",
-        "G1criminal": "Clean",
-        "G1charged": "Clean",
-        "G1court": "Clean",
-        "G1fruad": "Clean",
-        "G1aus": "yes",
-        "G1marital": "0",
-        "G1dependants": "0",
-        "G1pincome": "0",
-        "G1chistory": "0"
-      },
-      "Guarantor 2": {
-        "G2Name": "Director 2",
-        "G2Add": "Director Street 2",
-        "G2Tel": "0",
-        "G2email": "0",
-        "G2dob": "00:00:00",
-        "G2dlicence": "0",
-        "G2criminal": "0",
-        "G2charged": "0",
-        "G2court": "0",
-        "G2fruad": "0",
-        "G2aus": "0",
-        "G2marital": "0",
-        "G2dependants": "0",
-        "G2pincome": "0",
-        "G2chistory": "0"
-      },
-      "Guarantor 3": {
-        "G3Name": "Director 3",
-        "G3Add": "Director Street 3",
-        "G3Tel": "0",
-        "G3email": "0",
-        "G3dob": "0",
-        "G3dlicence": "0",
-        "G3criminal": "0",
-        "G3charged": "0",
-        "G3court": "0",
-        "G3fruad": "0",
-        "G3aus": "0",
-        "G3marital": "0",
-        "G3dependants": "0",
-        "G3pincome": "0",
-        "G3chistory": "0"
-      },
-      "Guarantor 4": {
-        "G4Name": "Director 4",
-        "G4Add": "Director Street 4",
-        "G4Tel": "0",
-        "G4email": "0",
-        "G4dob": "0",
-        "G4dlicence": "0",
-        "G4criminal": "0",
-        "G4charged": "0",
-        "G4court": "0",
-        "G4fruad": "0",
-        "G4aus": "0",
-        "G4marital": "0",
-        "G4dependants": "0",
-        "G4pincome": "0",
-        "G4chistory": "0"
-      },
-      "Property Information": {
-        "S1Address": "155-163 Fryar Road Eagleby, QLD, 4207",
-        "S1Legal": "L902 SP238823",
-        "S1Prop": "CIVDEV PROJECTS (NO. 1) PTY LTD",
-        "S1Pdate": "0",
-        "S1Pprice": "600000",
-        "S1val": "0",
-        "S1Ptype": "0",
-        "S1zone": "0",
-        "S1purpose": "0",
-        "S1location": "0"
+      "DocMerge": {
+        "Rname": [
+          "Richard Woodhead"
+        ],
+        "RACN": [
+          "GPS Investment Fund Limited",
+          "0"
+        ],
+        "Rtel": [
+          "0"
+        ],
+        "Remail": [
+          "Richard@gpsinvest.com.au"
+        ],
+        "Cname": [
+          "GLENAURA HOLDINGS PTY LTD"
+        ],
+        "CACN": [
+          "620 269 294"
+        ],
+        "CABN": [
+          "56 620 269 294"
+        ],
+        "CDABN": [
+          "2017-07-05 00:00:00"
+        ],
+        "CDGST": [
+          "2017-07-05 00:00:00"
+        ],
+        "Croffice": [
+          "QLD 4213"
+        ],
+        "CD1": [
+          "Giuseppe Augello"
+        ],
+        "CD2": [
+          "Director 2"
+        ],
+        "CD3": [
+          "Director 3"
+        ],
+        "CD4": [
+          "Director 4"
+        ],
+        "CS1": [
+          "0"
+        ],
+        "CS2": [
+          "0"
+        ],
+        "CS3": [
+          "0"
+        ],
+        "CS4": [
+          "0"
+        ],
+        "Cpincome": [
+          "0"
+        ],
+        "Cchistory": [
+          "0"
+        ],
+        "Tname": [
+          "Trust 1 "
+        ],
+        "TABN": [
+          "00 123 456 789"
+        ],
+        "Tedate": [
+          "0"
+        ],
+        "Ttype": [
+          "0"
+        ],
+        "Ttrustee/s": [
+          "0"
+        ],
+        "TB1": [
+          "0"
+        ],
+        "TB2": [
+          "0"
+        ],
+        "TB3": [
+          "0"
+        ],
+        "TB4": [
+          "0"
+        ],
+        "G1Name": [
+          "Giuseppe Augello"
+        ],
+        "G1Add": [
+          "45 Glenaura Drive TALLAI QLD 4213"
+        ],
+        "G1Tel": [
+          "0433 119 504"
+        ],
+        "G1email": [
+          "finance@ezyoption.com.au"
+        ],
+        "G1dob": [
+          "1971-03-15 00:00:00"
+        ],
+        "G1dlicence": [
+          "0"
+        ],
+        "G1criminal": [
+          "Clean"
+        ],
+        "G1charged": [
+          "Clean"
+        ],
+        "G1court": [
+          "Clean"
+        ],
+        "G1fruad": [
+          "Clean"
+        ],
+        "G1aus": [
+          "yes"
+        ],
+        "G1marital": [
+          "0"
+        ],
+        "G1dependants": [
+          "0"
+        ],
+        "G1pincome": [
+          "0"
+        ],
+        "G1chistory": [
+          "0"
+        ],
+        "G2Name": [
+          "Director 2"
+        ],
+        "G2Add": [
+          "Director Street 2"
+        ],
+        "G2Tel": [
+          "0"
+        ],
+        "G2email": [
+          "0"
+        ],
+        "G2dob": [
+          "00:00:00"
+        ],
+        "G2dlicence": [
+          "0"
+        ],
+        "G2criminal": [
+          "0"
+        ],
+        "G2charged": [
+          "0"
+        ],
+        "G2court": [
+          "0"
+        ],
+        "G2fruad": [
+          "0"
+        ],
+        "G2aus": [
+          "0"
+        ],
+        "G2marital": [
+          "0"
+        ],
+        "G2dependants": [
+          "0"
+        ],
+        "G2pincome": [
+          "0"
+        ],
+        "G2chistory": [
+          "0"
+        ],
+        "G3Name": [
+          "Director 3"
+        ],
+        "G3Add": [
+          "Director Street 3 "
+        ],
+        "G3Tel": [
+          "0"
+        ],
+        "G3email": [
+          "0"
+        ],
+        "G3dob": [
+          "0"
+        ],
+        "G3dlicence": [
+          "0"
+        ],
+        "G3criminal": [
+          "0"
+        ],
+        "G3charged": [
+          "0"
+        ],
+        "G3court": [
+          "0"
+        ],
+        "G3fruad": [
+          "0"
+        ],
+        "G3aus": [
+          "0"
+        ],
+        "G3marital": [
+          "0"
+        ],
+        "G3dependants": [
+          "0"
+        ],
+        "G3pincome": [
+          "0"
+        ],
+        "G3chistory": [
+          "0"
+        ],
+        "G4Name": [
+          "Director 4"
+        ],
+        "G4Add": [
+          "Director Street 4 "
+        ],
+        "G4Tel": [
+          "0"
+        ],
+        "G4email": [
+          "0"
+        ],
+        "G4dob": [
+          "0"
+        ],
+        "G4dlicence": [
+          "0"
+        ],
+        "G4criminal": [
+          "0"
+        ],
+        "G4charged": [
+          "0"
+        ],
+        "G4court": [
+          "0"
+        ],
+        "G4fruad": [
+          "0"
+        ],
+        "G4aus": [
+          "0"
+        ],
+        "G4marital": [
+          "0"
+        ],
+        "G4dependants": [
+          "0"
+        ],
+        "G4pincome": [
+          "0"
+        ],
+        "G4chistory": [
+          "0"
+        ],
+        "S1Address": [
+          "155-163 Fryar Road Eagleby, QLD, 4207"
+        ],
+        "S1Legal": [
+          "L902 SP238823"
+        ],
+        "S1Prop": [
+          "CIVDEV PROJECTS (NO. 1) PTY LTD"
+        ],
+        "S1Pdate": [
+          "0"
+        ],
+        "S1Pprice": [
+          "600000"
+        ],
+        "S1val": [
+          "0"
+        ],
+        "S1Ptype": [
+          "0"
+        ],
+        "S1zone": [
+          "0"
+        ],
+        "S1purpose": [
+          "0"
+        ],
+        "S1location": [
+          "0"
+        ],
+        "S1use": [
+          "0"
+        ],
+        "S1area": [
+          "1Ha"
+        ],
+        "S1description": [
+          "0"
+        ],
+        "S2Address": [
+          "Security 2"
+        ],
+        "S2Legal": [
+          "Lot 2 DP 2000"
+        ],
+        "S2Prop": [
+          "0"
+        ],
+        "S2Pdate": [
+          "0"
+        ],
+        "S2Pprice": [
+          "500000"
+        ],
+        "S2val": [
+          "0"
+        ],
+        "S2Ptype": [
+          "0"
+        ],
+        "S2zone": [
+          "0"
+        ],
+        "S2purpose": [
+          "0"
+        ],
+        "S2location": [
+          "0"
+        ],
+        "S2use": [
+          "0"
+        ],
+        "S2area": [
+          "0"
+        ],
+        "S2description": [
+          "0"
+        ],
+        "S3Address": [
+          "Security 3"
+        ],
+        "S3Legal": [
+          "Lot 3 DP 3000"
+        ],
+        "S3Prop": [
+          "0"
+        ],
+        "S3Pdate": [
+          "0"
+        ],
+        "S3Pprice": [
+          "500000"
+        ],
+        "S3val": [
+          "0"
+        ],
+        "S3Ptype": [
+          "0"
+        ],
+        "S3zone": [
+          "0"
+        ],
+        "S3purpose": [
+          "0"
+        ],
+        "S3location": [
+          "0"
+        ],
+        "S3use": [
+          "0"
+        ],
+        "S3area": [
+          "0"
+        ],
+        "S3description": [
+          "0"
+        ],
+        "S4Address": [
+          "Security 4"
+        ],
+        "S4Legal": [
+          "Lot 4 DP 4000"
+        ],
+        "S4Prop": [
+          "0"
+        ],
+        "S4Pdate": [
+          "0"
+        ],
+        "S4Pprice": [
+          "500000"
+        ],
+        "S4val": [
+          "0"
+        ],
+        "S4Ptype": [
+          "0"
+        ],
+        "S4zone": [
+          "0"
+        ],
+        "S4purpose": [
+          "0"
+        ],
+        "S4location": [
+          "0"
+        ],
+        "S4use": [
+          "0"
+        ],
+        "S4area": [
+          "0"
+        ],
+        "S4description": [
+          "0"
+        ],
+        "Lestfee": [
+          "0.022"
+        ],
+        "Lrate": [
+          "0.1195"
+        ],
+        "Llinefee": [
+          "0"
+        ],
+        "Lterm": [
+          "12"
+        ],
+        "Lbfee": [
+          "0.0055"
+        ],
+        "Llvrsite": [
+          "0.5"
+        ],
+        "Llvrgrv": [
+          "0.65"
+        ],
+        "Lppprice": [
+          "600000"
+        ],
+        "Lvalue": [
+          "600000"
+        ],
+        "PSCostPCfeeL": [
+          "0"
+        ],
+        "PSCostLfeeL": [
+          "0"
+        ],
+        "PSCostvalL": [
+          "0"
+        ],
+        "PSCostQSfeeL": [
+          "0"
+        ],
+        "PSCostLfeeTo": [
+          "746.4285714285714"
+        ],
+        "PSCostPCfeeB": [
+          "0"
+        ],
+        "PSCostLfeeB": [
+          "5500"
+        ],
+        "PSCostvalB": [
+          "7700"
+        ],
+        "PSCostQSfeeB": [
+          "3300"
+        ],
+        "PSCostPCfeeT": [
+          "0"
+        ],
+        "PSCostLfeeT": [
+          "5500"
+        ],
+        "PSCostvalT": [
+          "7700"
+        ],
+        "PSCostQSfeeT": [
+          "3300"
+        ],
+        "PSCostPCfeePL": [
+          "0"
+        ],
+        "PSCostLfeePL": [
+          "157.1428571428571"
+        ],
+        "PSCostvalPL": [
+          "275"
+        ],
+        "PSCostQSfeePL": [
+          "117.8571428571429"
+        ],
+        "GRStock1": [
+          "1 Br "
+        ],
+        "GRStock2": [
+          "3 bed"
+        ],
+        "GRStock3": [
+          "2 bed"
+        ],
+        "GRStock4": [
+          "2 bed"
+        ],
+        "GRStock5": [
+          "MANAGE RIGHTS"
+        ],
+        "GRlots1": [
+          "3"
+        ],
+        "GRlots2": [
+          "3"
+        ],
+        "GRlots3": [
+          "11"
+        ],
+        "GRlots4": [
+          "11"
+        ],
+        "GRlots5": [
+          "0"
+        ],
+        "GRlotstTo": [
+          "28"
+        ],
+        "GRrev1": [
+          "795000"
+        ],
+        "GRrev2": [
+          "1005000"
+        ],
+        "GRrev3": [
+          "3289000"
+        ],
+        "GRrev4": [
+          "3377000"
+        ],
+        "GRrev5": [
+          "0"
+        ],
+        "GRrevTo": [
+          "8466000"
+        ],
+        "GRplot1": [
+          "265000"
+        ],
+        "GRplot2": [
+          "335000"
+        ],
+        "GRplot3": [
+          "299000"
+        ],
+        "GRplot4": [
+          "307000"
+        ],
+        "GRplot5": [
+          "#DIV/0!"
+        ],
+        "GRplatTo": [
+          "302357.1428571428"
+        ],
+        "NRGST": [
+          "0"
+        ],
+        "NTGRVexGST": [
+          "0"
+        ]
       },
       "sheet_name": "DocMerge",
-      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1_DocMerge_DocMerge_20251229_131620.png"
+      "analysis_method": "html_based",
+      "html_size_chars": 235848
+    }
+  },
+  {
+    "excel_file": "Loan_Summary_-_Eagleby_Merge_1_Document_List.xlsx",
+    "sheet_name": "Document List",
+    "data": {
+      "Document List": {
+        "Internal": [
+          {
+            "Document": "Development Loan Summary - Eagleby",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Email - Richard Woodhead",
+            "Date Rec'd": "2017-09-22 00:00:00"
+          },
+          {
+            "Document": "GPS Development Finance - Loan Offer - Glenaura Holdings Pty Ltd",
+            "Date Rec'd": "2017-09-22 00:00:00"
+          },
+          {
+            "Document": "Letter from Joe Augello",
+            "Date Rec'd": "2017-08-04 00:00:00"
+          }
+        ],
+        "Property Details": [
+          {
+            "Document": "COS - Acacia Waters",
+            "Date Rec'd": "2017-08-16 00:00:00"
+          },
+          {
+            "Document": "Disclosure Statement  (signed) - Eagleby",
+            "Date Rec'd": "2017-08-16 00:00:00"
+          },
+          {
+            "Document": "RP - 155-163 Fryar Road Eagleby, QLD, 4207",
+            "Date Rec'd": "2017-08-22 00:00:00"
+          }
+        ],
+        "Borrower & Guarantor Details": [
+          {
+            "Document": "ABN - Glenaura Holdings Pty Ltd",
+            "Date Rec'd": "2017-08-22 00:00:00"
+          },
+          {
+            "Document": "CV - Giuseppe Augello",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "CV - Joe Augello",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "ID CC - Giuseppe Augello",
+            "Date Rec'd": "2017-08-16 00:00:00"
+          },
+          {
+            "Document": "ID DC - Giuseppe Augello",
+            "Date Rec'd": "2017-08-16 00:00:00"
+          },
+          {
+            "Document": "ID MC - Giuseppe Augello",
+            "Date Rec'd": "2017-08-16 00:00:00"
+          },
+          {
+            "Document": "ID PP - Giuseppe Augello",
+            "Date Rec'd": "2017-08-16 00:00:00"
+          }
+        ],
+        "Project Documents": [
+          {
+            "Document": "A1-14009 - WD100 - Site Plans - BA ISSUE.14-07-31",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "A1-14009 - WD200 - Type G18 Building - BA ISSUE.14-07-31",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "A1-14009 - WD300 - Type H12 Building - BA ISSUE.14-07-31",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "A1-14009 - WD400 - Type I16 Building - BA ISSUE.14-07-31",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Fryar Rd Eagleby Construction Costs",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Approved Plans",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Development Approval",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Development Permit",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Stage 4 Feasability",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL01 - Legend",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL02 - G18 Ground Floor",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL03 - G18 Level 2",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL04 - G18 Level 3",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL05 - H12 Ground Floor",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL06 - H12 Level 2",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL07 - H12 Level 3",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL08 - I16  Ground Floor",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL09 - I16 Level 2",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "EL10 - I16 Level 3",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "F0A1 - Legend",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "F0A2 - Site Plan",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA03 - G18 Ground Floor",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA04 - G18 Level 2",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA05 - G18 Level 3",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA06 - H12 Ground Floor",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA07 - H12 Level 2",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA08 - H12 Level 3",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA09 - I16  Ground Floor",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA10 - I16 Level 2",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "FA11 - I16 Level 3",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Acid Sulphate Report",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Soil Report 1-12191R",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "A1-14009 - WD600 - Stormwater",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "A1-14009 - WD700 - Hydraulics",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "A1-16024-WD100 A - LAYOUT PLAN",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "A1-16024-WD300 BUILDING H12 Architectural 2017-09-14",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "A1-16024-WD400 BUILDING I16 Architectural 2017-09-14",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "A1-16024-WD500 Structural Drawings",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "A1-16024-WD600 Civil Drawings",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "A3-16024-WD700 Hydraulics Drawings",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          },
+          {
+            "Document": "Stage 4 Sales",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "A1-14009 - WD500 - Structural",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Cashflow - Eagleby",
+            "Date Rec'd": "2017-08-04 00:00:00"
+          },
+          {
+            "Document": "Feasibility - Eagleby Stage 5",
+            "Date Rec'd": "2017-08-04 00:00:00"
+          },
+          {
+            "Document": "Floor Plans (Altered) - 155 Fryers Road. Eagleby QLD 4207",
+            "Date Rec'd": "2017-09-26 00:00:00"
+          },
+          {
+            "Document": "Presales - Acacia Waters - Stage 4 Lots 103-114",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Presales - Acacia Waters - Stage 4 Lots 115-130",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          },
+          {
+            "Document": "Projects Completed",
+            "Date Rec'd": "2017-10-03 00:00:00"
+          }
+        ],
+        "Financial Info": [
+          {
+            "Document": "A&L - Giuseppe Augello",
+            "Date Rec'd": "2017-08-18 00:00:00"
+          }
+        ],
+        "Loan Submission": []
+      },
+      "sheet_name": "Document List",
+      "analysis_method": "html_based",
+      "html_size_chars": 83717
     }
   },
   {
@@ -466,42 +1915,488 @@
     "data": {
       "Key Statements": [
         {
-          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Borrower \",\"Guid\":\"SUU8WB\",\"Index\":2,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
-          "D": "",
-          "E": ""
+          "IsHide": false,
+          "HiddenInExcel": false,
+          "SheetId": -1,
+          "Name": "Key Statements",
+          "Guid": "1IV3HY",
+          "Index": 1,
+          "VisibleRange": "",
+          "SheetTheme": {
+            "TabColor": "",
+            "BodyColor": "",
+            "BodyImage": ""
+          }
         }
       ],
       "Borrower": [
         {
-          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"A&L\",\"Guid\":\"L1MQG9\",\"Index\":3,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
-          "D": "",
-          "E": ""
+          "IsHide": false,
+          "HiddenInExcel": false,
+          "SheetId": -1,
+          "Name": "Borrower ",
+          "Guid": "SUU8WB",
+          "Index": 2,
+          "VisibleRange": "",
+          "SheetTheme": {
+            "TabColor": "",
+            "BodyColor": "",
+            "BodyImage": ""
+          }
         }
       ],
       "A&L": [
         {
-          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Security \",\"Guid\":\"HLZIBL\",\"Index\":4,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
-          "D": "",
-          "E": ""
+          "IsHide": false,
+          "HiddenInExcel": false,
+          "SheetId": -1,
+          "Name": "A&L",
+          "Guid": "L1MQG9",
+          "Index": 3,
+          "VisibleRange": "",
+          "SheetTheme": {
+            "TabColor": "",
+            "BodyColor": "",
+            "BodyImage": ""
+          }
         }
       ],
       "Security": [
         {
-          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Feasibility\",\"Guid\":\"47PY45\",\"Index\":5,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
-          "D": "",
-          "E": ""
+          "IsHide": false,
+          "HiddenInExcel": false,
+          "SheetId": -1,
+          "Name": "Security ",
+          "Guid": "HLZIBL",
+          "Index": 4,
+          "VisibleRange": "",
+          "SheetTheme": {
+            "TabColor": "",
+            "BodyColor": "",
+            "BodyImage": ""
+          }
         }
       ],
       "Feasibility": [
         {
-          "C": "{\"IsHide\":false,\"HiddenInExcel\":false,\"SheetId\":-1,\"Name\":\"Document List\",\"Guid\":\"3Q9Q6P\",\"Index\":6,\"VisibleRange\":\"\",\"SheetTheme\":{\"TabColor\":\"\",\"BodyColor\":\"\",\"BodyImage\":\"\"}}",
-          "D": "",
-          "E": ""
+          "IsHide": false,
+          "HiddenInExcel": false,
+          "SheetId": -1,
+          "Name": "Feasibility",
+          "Guid": "47PY45",
+          "Index": 5,
+          "VisibleRange": "",
+          "SheetTheme": {
+            "TabColor": "",
+            "BodyColor": "",
+            "BodyImage": ""
+          }
         }
       ],
-      "Document List": [],
+      "Document List": [
+        {
+          "IsHide": false,
+          "HiddenInExcel": false,
+          "SheetId": -1,
+          "Name": "Document List",
+          "Guid": "3Q9Q6P",
+          "Index": 6,
+          "VisibleRange": "",
+          "SheetTheme": {
+            "TabColor": "",
+            "BodyColor": "",
+            "BodyImage": ""
+          }
+        }
+      ],
       "sheet_name": "_SSC",
-      "image_path": "screenshots/Loan_Summary_-_Eagleby_Merge_1__SSC__SSC_20251229_131749.png"
+      "analysis_method": "html_based",
+      "html_size_chars": 8029
+    }
+  },
+  {
+    "excel_file": "ocr_dummy_excel_Sheet1.xlsx",
+    "sheet_name": "Sheet1",
+    "data": {
+      "Lender Inputs": [
+        {
+          "Lender Estab Fee (inc GST)": "0.022",
+          "Rate": "11.95% pa",
+          "Line Fee": "0",
+          "Loan Term": "12 Months",
+          "Brokerage Fee (inc GST)": "0.0055",
+          "LVR on site": "0.5",
+          "LVR on GRV ex GST'": "0.65"
+        }
+      ],
+      "Site Inputs": [
+        {
+          "Purchase Price of Site": "600000",
+          "\"As Is\" Value of Site": "600000"
+        }
+      ],
+      "Pre Settlement Costs": [
+        {
+          "Property Capital Commit Fee": {
+            "Lender": "$-",
+            "Borrower": "$-",
+            "Total": "$-",
+            "Per Lot": "$-"
+          },
+          "Lender Commit Fee": {
+            "Lender": "$-",
+            "Borrower": "5500",
+            "Total": "5500",
+            "Per Lot": "196"
+          },
+          "Valuation": {
+            "Lender": "$-",
+            "Borrower": "7700",
+            "Total": "7700",
+            "Per Lot": "275"
+          },
+          "Quantity Surveyor": {
+            "Lender": "$-",
+            "Borrower": "3300",
+            "Total": "3300",
+            "Per Lot": "118"
+          },
+          "Legal Fee": {
+            "Lender": "$-",
+            "Borrower": "4400",
+            "Total": "4400",
+            "Per Lot": "157"
+          },
+          "Total": {
+            "Lender": "$-",
+            "Borrower": "20900",
+            "Total": "20900",
+            "Per Lot": "746"
+          }
+        }
+      ],
+      "Presales/ Exit": [
+        {
+          "Stock Description": {
+            "1 Br": {
+              "No. Lots": "3",
+              "Gross Revenue": "795000",
+              "Per Lot": "265000"
+            },
+            "3 bed": {
+              "No. Lots": "3",
+              "Gross Revenue": "1005000",
+              "Per Lot": "335000"
+            },
+            "2 bed": {
+              "No. Lots": "11",
+              "Gross Revenue": "3289000",
+              "Per Lot": "299000"
+            },
+            "2 bed (2)": {
+              "No. Lots": "11",
+              "Gross Revenue": "3377000",
+              "Per Lot": "307000"
+            },
+            "MANAGE RIGHTS": {
+              "No. Lots": "- _)",
+              "Gross Revenue": "$-",
+              "Per Lot": "#DIV/0!"
+            },
+            "Gross Realisation": {
+              "No. Lots": "28",
+              "Gross Revenue": "8466000",
+              "Per Lot": "302357"
+            }
+          },
+          "Stock Destription": {
+            "1 Br": {
+              "Lots Sold": "1",
+              "Value": "$-",
+              "% Sold": "0"
+            },
+            "3 bed": {
+              "Lots Sold": "- _)",
+              "Value": "$-",
+              "% Sold": "0"
+            },
+            "2 bed": {
+              "Lots Sold": "- _)",
+              "Value": "$-",
+              "% Sold": "0"
+            },
+            "2 bed (2)": {
+              "Lots Sold": "- _)",
+              "Value": "$-",
+              "% Sold": "0"
+            },
+            "MANAGE RIGHTS": {
+              "Lots Sold": "- _)",
+              "Value": "$-",
+              "% Sold": "0"
+            },
+            "Gross Realisation": {
+              "Lots Sold": "1",
+              "Value": "$-",
+              "% Sold": "0"
+            }
+          }
+        }
+      ],
+      "Settlement Distribution": [
+        {
+          "Purchase Price": {
+            "Lender": "600000",
+            "Borrower": "$-",
+            "Total": "600000",
+            "Per Lot": "21429"
+          },
+          "GST (Borrower to claim after sett.)": {
+            "Lender": "$-",
+            "Borrower": "$-",
+            "Total": "$-",
+            "Per Lot": "$-"
+          },
+          "Stamp Duty": {
+            "Lender": "33000",
+            "Borrower": "$-",
+            "Total": "33000",
+            "Per Lot": "1179"
+          },
+          "Current Mortgage 1": {
+            "Lender": "$-",
+            "Borrower": "$-",
+            "Total": "$-",
+            "Per Lot": "$-"
+          },
+          "Current Mortgage 2": {
+            "Lender": "$-",
+            "Borrower": "$-",
+            "Total": "$-",
+            "Per Lot": "$-"
+          },
+          "Deposit Paid": {
+            "Lender": "$-",
+            "Borrower": "90000",
+            "Total": "90000",
+            "Per Lot": "3214"
+          },
+          "Lender Estab Fee inc GST": {
+            "Lender": "$-",
+            "Borrower": "$-",
+            "Total": "$-",
+            "Per Lot": "$-"
+          },
+          "Brokerage inc GST": {
+            "Lender": "$-",
+            "Borrower": "$-",
+            "Total": "$-",
+            "Per Lot": "$-"
+          },
+          "Prepaid Interest": {
+            "Lender": "$-",
+            "Borrower": "$-",
+            "Total": "$-",
+            "Per Lot": "$-"
+          },
+          "Lender Estab Fee inc GST (2)": {
+            "Lender": "121064",
+            "Borrower": "$-",
+            "Total": "121064",
+            "Per Lot": "4324"
+          },
+          "Brokerage inc GST (2)": {
+            "Lender": "30266",
+            "Borrower": "$-",
+            "Total": "30266",
+            "Per Lot": "1081"
+          },
+          "Borrower Cash In/ Out": {
+            "Lender": "$-",
+            "Borrower": "460000",
+            "Total": "460000",
+            "Per Lot": "16429"
+          },
+          "Settlement Funds (A)": {
+            "Lender": "234330",
+            "Borrower": "550000",
+            "Total": "1334330",
+            "Per Lot": "47655"
+          },
+          "LVR - Land": {
+            "Lender": "0.3905",
+            "Borrower": "",
+            "Total": "",
+            "Per Lot": ""
+          }
+        }
+      ],
+      "Development Distribution": [
+        {
+          "Construction Costs ex GST": {
+            "Lender": "3640000",
+            "Borrower": "$-",
+            "Total": "3640000",
+            "Per Lot": "130000"
+          },
+          "Contingency (5%)": {
+            "Lender": "182000",
+            "Borrower": "$-",
+            "Total": "182000",
+            "Per Lot": "6500"
+          },
+          "Consultants": {
+            "Lender": "60000",
+            "Borrower": "$-",
+            "Total": "60000",
+            "Per Lot": "2143"
+          },
+          "Development Management": {
+            "Lender": "120000",
+            "Borrower": "$-",
+            "Total": "120000",
+            "Per Lot": "4286"
+          },
+          "Council Contributions": {
+            "Lender": "487000",
+            "Borrower": "$-",
+            "Total": "487000",
+            "Per Lot": "17393"
+          },
+          "Holding Costs": {
+            "Lender": "5000",
+            "Borrower": "$-",
+            "Total": "5000",
+            "Per Lot": "179"
+          },
+          "Marketing": {
+            "Lender": "220000",
+            "Borrower": "$-",
+            "Total": "220000",
+            "Per Lot": "7857"
+          },
+          "Interest": {
+            "Lender": "328798",
+            "Borrower": "$-",
+            "Total": "328798",
+            "Per Lot": "11743"
+          },
+          "Development Costs (B)": {
+            "Lender": "5042798",
+            "Borrower": "$-",
+            "Total": "5042798",
+            "Per Lot": "180100"
+          }
+        }
+      ],
+      "Summary": [
+        {
+          "Total (A+B)": {
+            "Lender": "5277128",
+            "Borrower": "550000",
+            "Total": "5827128",
+            "Per Lot": "208112"
+          },
+          "LVR - GRV ex GST": {
+            "Lender": "0.6233",
+            "Borrower": "",
+            "Total": "",
+            "Per Lot": ""
+          },
+          "Loan to Cost Ratio": {
+            "Lender": "0.9056",
+            "Borrower": "",
+            "Total": "",
+            "Per Lot": ""
+          }
+        }
+      ],
+      "sheet_name": "Sheet1",
+      "analysis_method": "html_based",
+      "html_size_chars": 75389
+    }
+  },
+  {
+    "excel_file": "Document_List_1_Sheet1.xlsx",
+    "sheet_name": "Sheet1",
+    "data": {
+      "Sheet1": {
+        "Internal": [
+          "Development Loan Summary - Eagleby",
+          "Email - Richard Woodhead",
+          "GPS Development Finance - Loan Offer - Glenaura Holdings Pty Ltd",
+          "Letter from Joe Augello"
+        ],
+        "Date Rec'd": [
+          "2017-08-18 00:00:00",
+          "2017-09-22 00:00:00",
+          "2017-09-22 00:00:00",
+          "2017-08-04 00:00:00"
+        ],
+        "Property Details": [
+          "COS - Acacia Waters",
+          "Disclosure Statement  (signed) - Eagleby",
+          "RP - 155-163 Fryar Road Eagleby, QLD, 4207",
+          ""
+        ],
+        "Date Rec'd_2": [
+          "2017-08-16 00:00:00",
+          "2017-08-16 00:00:00",
+          "2017-08-22 00:00:00",
+          "2017-08-04 00:00:00"
+        ],
+        "Borrower & Guarantor Details": [
+          "ABN - Glenaura Holdings Pty Ltd",
+          "CV - Giuseppe Augello",
+          "CV - Joe Augello",
+          "ID CC - Giuseppe Augello"
+        ],
+        "Date Rec'd_3": [
+          "2017-08-22 00:00:00",
+          "2017-10-03 00:00:00",
+          "2017-10-03 00:00:00",
+          "2017-08-16 00:00:00"
+        ],
+        "Project Documents": [
+          "A1-14009 - WD100 - Site Plans - BA ISSUE.14-07-31",
+          "A1-14009 - WD200 - Type G18 Building - BA ISSUE.14-07-31",
+          "A1-14009 - WD300 - Type H12 Building - BA ISSUE.14-07-31",
+          "A1-14009 - WD400 - Type I16 Building - BA ISSUE.14-07-31"
+        ],
+        "Date Rec'd_4": [
+          "2017-08-18 00:00:00",
+          "2017-08-18 00:00:00",
+          "2017-08-18 00:00:00",
+          "2017-08-18 00:00:00"
+        ],
+        "Financial Info": [
+          "A&L - Giuseppe Augello",
+          "",
+          "",
+          ""
+        ],
+        "Date Rec'd_5": [
+          "2017-08-24 00:00:00",
+          "",
+          "",
+          ""
+        ],
+        "Loan Submission": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "Date Rec'd_6": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      "sheet_name": "Sheet1",
+      "analysis_method": "html_based",
+      "html_size_chars": 300054
     }
   }
 ]

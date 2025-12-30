@@ -727,3 +727,250 @@ def extract_columns_with_gap(column_sequences: List[Dict]) -> List[str]:
         if not sequence.get("has_data", False):
             gap_columns.extend(sequence.get("columns", []))
     return gap_columns
+
+
+def convert_excel_to_html(
+    excel_path: Path,
+    sheet_name: str,
+    max_rows: int = 200,
+    max_cols: int = 50,
+    include_styling: bool = True
+) -> str:
+    """
+    Convert an Excel sheet to HTML with full formatting preservation.
+
+    Features:
+    - Merged cells (using rowspan/colspan attributes)
+    - Cell styling (background colors, text colors, fonts, borders)
+    - Formula results (not formulas themselves)
+    - Empty cells preservation
+    - Responsive table styling
+
+    Args:
+        excel_path: Path to Excel file
+        sheet_name: Name of sheet to convert
+        max_rows: Maximum rows to include (default: 200)
+        max_cols: Maximum columns to include (default: 50)
+        include_styling: Include CSS styling (default: True)
+
+    Returns:
+        HTML string representing the Excel sheet
+
+    Raises:
+        FileNotFoundError: If excel_path doesn't exist
+        ValueError: If sheet_name not found in workbook
+    """
+    try:
+        logger.info(f"Converting sheet '{sheet_name}' to HTML with styling")
+
+        # Validate Excel file exists
+        if not excel_path.exists():
+            raise FileNotFoundError(f"Excel file not found: {excel_path}")
+
+        # Load workbook with data_only=True to get formula results
+        wb = openpyxl.load_workbook(excel_path, data_only=True)
+
+        # Validate sheet exists
+        if sheet_name not in wb.sheetnames:
+            wb.close()
+            raise ValueError(f"Sheet '{sheet_name}' not found in {excel_path.name}. Available sheets: {', '.join(wb.sheetnames)}")
+
+        ws = wb[sheet_name]
+
+        # Handle empty sheet
+        if ws.max_row == 0 or ws.max_column == 0:
+            wb.close()
+            logger.info(f"Sheet '{sheet_name}' is empty")
+            return f"""
+            <div class="empty-sheet">
+                <h3>Empty Sheet: {sheet_name}</h3>
+                <p>This sheet contains no data.</p>
+            </div>
+            """
+
+        # Limit dimensions
+        actual_rows = min(ws.max_row, max_rows)
+        actual_cols = min(ws.max_column, max_cols)
+
+        logger.info(f"Converting {actual_rows} rows × {actual_cols} columns to HTML")
+
+        # Helper function to convert Excel color to CSS
+        def get_css_color(color) -> str:
+            """Convert openpyxl color to CSS RGB."""
+            if color is None:
+                return None
+            try:
+                if hasattr(color, 'rgb'):
+                    rgb_hex = color.rgb
+                    if rgb_hex in [None, '00000000', 'FFFFFFFF', 'FFFFFF']:
+                        return None
+                    if rgb_hex and len(rgb_hex) == 8:  # ARGB format
+                        rgb = f"#{rgb_hex[2:8]}"
+                        return rgb
+                    elif rgb_hex and len(rgb_hex) == 6:  # RGB format
+                        return f"#{rgb_hex}"
+            except:
+                pass
+            return None
+
+        # Build merged cells lookup
+        merged_lookup = {}  # {cell_coordinate: merged_range}
+        processed_merged = set()  # Track which merged cells we've already added
+
+        for merged_range in ws.merged_cells.ranges:
+            top_left = f"{get_column_letter(merged_range.min_col)}{merged_range.min_row}"
+
+            for row in range(merged_range.min_row, merged_range.max_row + 1):
+                for col in range(merged_range.min_col, merged_range.max_col + 1):
+                    coord = f"{get_column_letter(col)}{row}"
+                    merged_lookup[coord] = {
+                        'range': merged_range,
+                        'top_left': top_left,
+                        'rowspan': merged_range.max_row - merged_range.min_row + 1,
+                        'colspan': merged_range.max_col - merged_range.min_col + 1,
+                        'is_top_left': coord == top_left
+                    }
+
+        # Build HTML
+        html_parts = []
+
+        # Add CSS styling if requested
+        if include_styling:
+            html_parts.append("""
+<style>
+    .excel-table {
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        width: 100%;
+        table-layout: auto;
+    }
+    .excel-table td, .excel-table th {
+        border: 1px solid #d0d0d0;
+        padding: 6px 8px;
+        text-align: left;
+        vertical-align: middle;
+        min-width: 60px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    .excel-table th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+    .excel-table .empty-cell {
+        background-color: #fafafa;
+    }
+    .excel-table .merged-cell {
+        border: 2px solid #4a90e2;
+    }
+    .empty-sheet {
+        padding: 20px;
+        text-align: center;
+        color: #666;
+    }
+</style>
+""")
+
+        # Start table
+        html_parts.append(f'<table class="excel-table" data-sheet="{sheet_name}">')
+
+        # Build table rows
+        for row_idx in range(1, actual_rows + 1):
+            html_parts.append('<tr>')
+
+            for col_idx in range(1, actual_cols + 1):
+                cell = ws.cell(row=row_idx, column=col_idx)
+                coord = cell.coordinate
+
+                # Skip if this cell is part of a merged range but not the top-left
+                if coord in merged_lookup and not merged_lookup[coord]['is_top_left']:
+                    continue
+
+                # Build cell attributes
+                cell_attrs = []
+                cell_classes = []
+                cell_styles = []
+
+                # Handle merged cells
+                if coord in merged_lookup and merged_lookup[coord]['is_top_left']:
+                    merge_info = merged_lookup[coord]
+                    if merge_info['rowspan'] > 1:
+                        cell_attrs.append(f'rowspan="{merge_info["rowspan"]}"')
+                    if merge_info['colspan'] > 1:
+                        cell_attrs.append(f'colspan="{merge_info["colspan"]}"')
+                    cell_classes.append('merged-cell')
+
+                # Get cell value (formula results, not formulas)
+                cell_value = str(cell.value) if cell.value is not None else ""
+
+                if not cell_value.strip():
+                    cell_classes.append('empty-cell')
+                    cell_value = "&nbsp;"  # Preserve empty cells
+
+                # Apply cell styling if enabled
+                if include_styling and cell.font:
+                    # Font styling
+                    if cell.font.bold:
+                        cell_styles.append('font-weight: bold')
+                    if cell.font.italic:
+                        cell_styles.append('font-style: italic')
+                    if cell.font.size:
+                        cell_styles.append(f'font-size: {cell.font.size}pt')
+
+                    # Text color
+                    text_color = get_css_color(cell.font.color)
+                    if text_color and text_color not in ['#000000', '#FFFFFF']:
+                        cell_styles.append(f'color: {text_color}')
+
+                # Background color
+                if include_styling and cell.fill and hasattr(cell.fill, 'patternType'):
+                    if cell.fill.patternType == 'solid' and hasattr(cell.fill, 'fgColor'):
+                        bg_color = get_css_color(cell.fill.fgColor)
+                        if bg_color and bg_color not in ['#FFFFFF', '#ffffff']:
+                            cell_styles.append(f'background-color: {bg_color}')
+
+                # Text alignment
+                if include_styling and cell.alignment:
+                    if cell.alignment.horizontal:
+                        cell_styles.append(f'text-align: {cell.alignment.horizontal}')
+                    if cell.alignment.vertical:
+                        cell_styles.append(f'vertical-align: {cell.alignment.vertical}')
+
+                # Build cell tag
+                tag = 'th' if row_idx == 1 else 'td'  # First row as header
+
+                # Assemble attributes
+                attrs_str = ' '.join(cell_attrs)
+                if cell_classes:
+                    attrs_str += f' class="{" ".join(cell_classes)}"'
+                if cell_styles:
+                    attrs_str += f' style="{"; ".join(cell_styles)}"'
+
+                # Add data attribute for coordinate
+                attrs_str += f' data-cell="{coord}"'
+
+                # Write cell
+                if attrs_str:
+                    html_parts.append(f'<{tag} {attrs_str}>{cell_value}</{tag}>')
+                else:
+                    html_parts.append(f'<{tag}>{cell_value}</{tag}>')
+
+            html_parts.append('</tr>')
+
+        # Close table
+        html_parts.append('</table>')
+
+        html_output = '\n'.join(html_parts)
+
+        wb.close()
+
+        logger.info(f"HTML conversion complete: {len(html_output)} characters")
+        return html_output
+
+    except (FileNotFoundError, ValueError):
+        # Re-raise validation errors
+        raise
+    except Exception as e:
+        logger.error(f"Error converting Excel to HTML: {e}", exc_info=True)
+        raise RuntimeError(f"Error converting Excel to HTML: {e}")

@@ -1,6 +1,6 @@
 """
-Lightweight Vision Processing Pipeline
-Orchestrates lightweight visual analysis workflow:
+Lightweight HTML-Based Excel Analysis Pipeline
+Orchestrates Excel analysis workflow using HTML conversion:
 - Column gap detection
 - Table relationship understanding
 """
@@ -14,17 +14,18 @@ from datetime import datetime
 import json
 from openai import AsyncOpenAI
 from logger import AppLogger
-from vision_utils import convert_all_sheets_to_images, analyze_column_usage_sequences, extract_columns_with_gap
+from vision_utils import analyze_column_usage_sequences, extract_columns_with_gap
 from vision_analyzer import (
     analyze_sheet_with_vision,
     analyze_table_similarity,
     generate_gap_report
 )
 from request_context import get_request_id
+import openpyxl
 
 logger = AppLogger.get_logger(__file__)
 
-#* 2) we are defining the function to process the excel with vision
+#* 2) we are defining the function to process the excel with HTML-based analysis
 async def process_excel_with_vision(
     excel_path: Path,
     analyze_gaps: bool = True,
@@ -33,18 +34,22 @@ async def process_excel_with_vision(
     save_to_file: bool = True
 ) -> Dict[str, Any]:
     """
-    Lightweight vision-based Excel analysis pipeline.
+    HTML-based Excel analysis pipeline using GPT-4o.
+
+    NEW APPROACH: Converts Excel sheets to HTML with full formatting preservation,
+    then uses GPT-4o to analyze structure. More accurate than image-based analysis.
 
     Phases:
-    1. Convert all sheets to images (parallel)
-    2. Analyze each sheet with vision model (parallel)
+    1. Read sheet names from Excel file
+    1.5. Deterministic column usage analysis
+    2. Convert sheets to HTML and analyze with GPT-4o (parallel)
     3. Aggregate cross-sheet analysis (column gaps, table relationships)
     4. Generate consolidated report
 
     Focus:
-    - Column gap detection
+    - Column gap detection (deterministic + HTML-based)
     - Table relationship understanding (same vs different tables)
-    - NO data extraction or quality metrics
+    - Structure analysis without data extraction
 
     Args:
         excel_path: Path to Excel file
@@ -54,28 +59,26 @@ async def process_excel_with_vision(
         save_to_file: Save analysis to JSON file (default: True)
 
     Returns:
-        Lightweight visual analysis results
+        Analysis results with gap detection and table relationships
     """
     start_time = time.time()
     request_id = get_request_id()
 
     try:
-        logger.info(f"Starting vision-based analysis for {excel_path.name}")
+        logger.info(f"Starting HTML-based analysis for {excel_path.name}")
 
         # Validate API key
         if not openai_api_key:
-            raise ValueError("OpenAI API key is required for vision analysis")
+            raise ValueError("OpenAI API key is required for HTML-based analysis")
 
-        # Initialize OpenAI client with extended timeout for vision processing
+        # Initialize OpenAI client with extended timeout for processing
         client = AsyncOpenAI(
             api_key=openai_api_key,
-            timeout=300.0  # 5 minutes per request (handles large images better)
+            timeout=300.0  # 5 minutes per request
         )
 
         # Define output folders
-        screenshots_folder = Path("screenshots")
         gap_analysis_folder = Path("gap_analysis")
-        screenshots_folder.mkdir(parents=True, exist_ok=True)
         gap_analysis_folder.mkdir(parents=True, exist_ok=True)
 
         # Log enabled analysis types
@@ -85,40 +88,42 @@ async def process_excel_with_vision(
         if analyze_similarity:
             enabled_analyses.append('table_relationships')
 
-        logger.info(f"Lightweight analysis enabled: {', '.join(enabled_analyses) if enabled_analyses else 'none'}")
+        logger.info(f"Analysis enabled: {', '.join(enabled_analyses) if enabled_analyses else 'none'}")
 
         # =================================================================
-        # PHASE 1: CONVERT ALL SHEETS TO IMAGES (PARALLEL)
+        # PHASE 1: GET SHEET NAMES FROM EXCEL
         # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 1: CONVERTING SHEETS TO IMAGES\n{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 1: READING EXCEL SHEETS\n{'='*70}\n")
 
-        #* 3) we are converting all sheets to images
-        image_results = await convert_all_sheets_to_images(
-            excel_path=excel_path,
-            output_folder=screenshots_folder
-        )
+        # Load workbook to get sheet names
+        wb = openpyxl.load_workbook(excel_path, read_only=True)
+        sheet_names = wb.sheetnames
+        wb.close()
 
-        if not image_results:
-            raise ValueError(f"No sheets could be converted to images from {excel_path.name}")
+        if not sheet_names:
+            raise ValueError(f"No sheets found in {excel_path.name}")
 
-        # Filter out failed conversions
-        successful_images = [r for r in image_results if r.get("image_path") and not r.get("error")]
-        failed_images = [r for r in image_results if r.get("error")]
+        logger.info(f"Found {len(sheet_names)} sheet(s): {', '.join(sheet_names)}")
 
-        logger.info(f"Phase 1 Complete: {len(successful_images)} sheets converted, {len(failed_images)} failed")
+        # Build sheet metadata
+        successful_sheets = []
+        for sheet_name in sheet_names:
+            successful_sheets.append({
+                "sheet_name": sheet_name,
+                "excel_file": excel_path.name
+            })
 
-        if not successful_images:
-            raise ValueError("All sheet conversions failed")
+        logger.info(f"Phase 1 Complete: {len(successful_sheets)} sheets ready for analysis")
 
         # =================================================================
         # PHASE 1.5: EXCEL DATA ANALYSIS (DETERMINISTIC)
         # =================================================================
         logger.info(f"\n{'='*70}\nPHASE 1.5: EXCEL DATA ANALYSIS\n{'='*70}\n")
-        logger.info(f"Analyzing column usage for {len(successful_images)} sheets...")
+        logger.info(f"Analyzing column usage for {len(successful_sheets)} sheets...")
 
         excel_data_analyses = []
-        for image_result in successful_images:
-            sheet_name = image_result["sheet_name"]
+        for sheet_info in successful_sheets:
+            sheet_name = sheet_info["sheet_name"]
 
             try:
                 # Analyze column usage sequences
@@ -143,67 +148,65 @@ async def process_excel_with_vision(
         logger.info(f"Phase 1.5 Complete: {len(excel_data_analyses)} sheets analyzed")
 
         # =================================================================
-        # PHASE 2: LIGHTWEIGHT VISION ANALYSIS (PARALLEL WITH CONCURRENCY CONTROL)
+        # PHASE 2: HTML-BASED ANALYSIS (PARALLEL WITH CONCURRENCY CONTROL)
         # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 2: LIGHTWEIGHT VISION ANALYSIS\n{'='*70}\n")
-        logger.info(f"Analyzing {len(successful_images)} sheets with controlled concurrency...")
+        logger.info(f"\n{'='*70}\nPHASE 2: HTML-BASED ANALYSIS\n{'='*70}\n")
+        logger.info(f"Analyzing {len(successful_sheets)} sheets with controlled concurrency...")
 
         # Create semaphore to limit concurrent API calls (max 3 at a time)
         # This prevents overwhelming the OpenAI API and reduces timeouts
         MAX_CONCURRENT_REQUESTS = 3
         semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
 
-        async def analyze_with_semaphore(image_result):
+        async def analyze_with_semaphore(sheet_info):
             """Wrapper to limit concurrent API calls using semaphore"""
             async with semaphore:
-                sheet_name = image_result["sheet_name"]
-                image_path = Path(image_result["image_path"])
-                logger.info(f"Starting vision analysis for sheet: {sheet_name}")
+                sheet_name = sheet_info["sheet_name"]
+                logger.info(f"Starting HTML-based analysis for sheet: {sheet_name}")
 
                 try:
                     result = await analyze_sheet_with_vision(
                         client=client,
-                        image_path=image_path,
-                        sheet_name=sheet_name, 
+                        sheet_name=sheet_name,
                         excel_path=excel_path,
                     )
-                    logger.info(f"Completed vision analysis for sheet: {sheet_name}")
+                    logger.info(f"Completed HTML-based analysis for sheet: {sheet_name}")
                     return result
                 except Exception as e:
-                    logger.error(f"Vision analysis failed for {sheet_name}: {e}")
+                    logger.error(f"HTML-based analysis failed for {sheet_name}: {e}")
                     return e
 
         # Create analysis tasks for all sheets
         analysis_tasks = [
-            analyze_with_semaphore(image_result)
-            for image_result in successful_images
+            analyze_with_semaphore(sheet_info)
+            for sheet_info in successful_sheets
         ]
 
-        # Run all vision analyses with controlled concurrency
+        # Run all analyses with controlled concurrency
         logger.info(f"Processing {len(analysis_tasks)} sheets with max {MAX_CONCURRENT_REQUESTS} concurrent requests")
-        vision_analyses = await asyncio.gather(*analysis_tasks, return_exceptions=True)
+        html_analyses = await asyncio.gather(*analysis_tasks, return_exceptions=True)
 
         # Process results
         successful_analyses = []
         failed_analyses = []
 
-        for i, result in enumerate(vision_analyses):
+        for i, result in enumerate(html_analyses):
             if isinstance(result, Exception):
                 failed_analyses.append({
-                    "sheet_name": successful_images[i]["sheet_name"],
+                    "sheet_name": successful_sheets[i]["sheet_name"],
                     "error": str(result)
                 })
-                logger.error(f"Vision analysis failed for {successful_images[i]['sheet_name']}: {result}")
+                logger.error(f"HTML-based analysis failed for {successful_sheets[i]['sheet_name']}: {result}")
             else:
                 successful_analyses.append(result)
-                logger.info(f"Vision analysis complete for {result.get('sheet_name', 'Unknown')}")
+                logger.info(f"HTML-based analysis complete for {result.get('sheet_name', 'Unknown')}")
 
         logger.info(f"\nPhase 2 Complete:")
         logger.info(f"  Success: {len(successful_analyses)} sheets analyzed")
         logger.info(f"  Errors: {len(failed_analyses)}")
 
         if not successful_analyses:
-            raise ValueError("All vision analyses failed")
+            raise ValueError("All HTML-based analyses failed")
 
         # =================================================================
         # PHASE 3: AGGREGATE ANALYSIS ACROSS SHEETS
@@ -287,13 +290,14 @@ async def process_excel_with_vision(
         logger.info(f"Columns with gaps: {len(response.get('columns_with_gap', []))}")
         logger.info(f"Classification: {response.get('classification')}")
 
-        logger.info(f"\n{'='*70}\nLIGHTWEIGHT VISION ANALYSIS COMPLETE!\n{'='*70}")
+        logger.info(f"\n{'='*70}\nHTML-BASED ANALYSIS COMPLETE!\n{'='*70}")
         logger.info(f"Total sheets analyzed: {len(successful_analyses)}")
         logger.info(f"Processing time: {processing_time_ms}ms ({processing_time_ms/1000:.1f}s)")
+        logger.info(f"Analysis method: HTML-based (no image conversion)")
         logger.info(f"{'='*70}\n")
 
         return response
 
     except Exception as e:
-        logger.error(f"Error in vision processing pipeline: {e}", exc_info=True)
-        raise RuntimeError(f"Vision processing failed: {e}")
+        logger.error(f"Error in HTML-based analysis pipeline: {e}", exc_info=True)
+        raise RuntimeError(f"HTML-based analysis failed: {e}")
