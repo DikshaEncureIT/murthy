@@ -20731,3 +20731,468 @@ PROCESSING COMPLETE!
 2026-01-01 13:29:15 - main - INFO - dispatch:70 - [req:af148036-112] - Request started: GET http://localhost:8000/health
 2026-01-01 13:29:15 - main - INFO - dispatch:80 - [req:af148036-112] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.62ms
 2026-01-01 13:29:20 - main - INFO - <module>:30 - [req:none] - Backend service starting...
+2026-01-01 13:29:45 - main - INFO - dispatch:70 - [req:f27ad241-f5f] - Request started: GET http://localhost:8000/health
+2026-01-01 13:29:45 - main - INFO - dispatch:80 - [req:f27ad241-f5f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.76ms
+2026-01-01 13:30:15 - main - INFO - dispatch:70 - [req:c05af90e-e56] - Request started: GET http://localhost:8000/health
+2026-01-01 13:30:15 - main - INFO - dispatch:80 - [req:c05af90e-e56] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.26ms
+2026-01-01 13:30:45 - main - INFO - dispatch:70 - [req:2e69d01d-ece] - Request started: GET http://localhost:8000/health
+2026-01-01 13:30:45 - main - INFO - dispatch:80 - [req:2e69d01d-ece] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.17ms
+2026-01-01 13:31:15 - main - INFO - dispatch:70 - [req:845bcefc-766] - Request started: GET http://localhost:8000/health
+2026-01-01 13:31:15 - main - INFO - dispatch:80 - [req:845bcefc-766] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.78ms
+2026-01-01 13:31:45 - main - INFO - dispatch:70 - [req:35cdd8ab-735] - Request started: GET http://localhost:8000/health
+2026-01-01 13:31:45 - main - INFO - dispatch:80 - [req:35cdd8ab-735] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.82ms
+2026-01-01 13:32:15 - main - INFO - dispatch:70 - [req:a89f673a-8dd] - Request started: GET http://localhost:8000/health
+2026-01-01 13:32:15 - main - INFO - dispatch:80 - [req:a89f673a-8dd] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.81ms
+2026-01-01 13:32:46 - main - INFO - dispatch:70 - [req:49fdef95-807] - Request started: GET http://localhost:8000/health
+2026-01-01 13:32:46 - main - INFO - dispatch:80 - [req:49fdef95-807] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.83ms
+2026-01-01 13:33:16 - main - INFO - dispatch:70 - [req:2643966c-22b] - Request started: GET http://localhost:8000/health
+2026-01-01 13:33:16 - main - INFO - dispatch:80 - [req:2643966c-22b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.08ms
+2026-01-01 13:33:46 - main - INFO - dispatch:70 - [req:e85de0df-49e] - Request started: GET http://localhost:8000/health
+2026-01-01 13:33:46 - main - INFO - dispatch:80 - [req:e85de0df-49e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.53ms
+2026-01-01 13:34:16 - main - INFO - dispatch:70 - [req:ed1d71cf-492] - Request started: GET http://localhost:8000/health
+2026-01-01 13:34:16 - main - INFO - dispatch:80 - [req:ed1d71cf-492] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2026-01-01 13:34:46 - main - INFO - dispatch:70 - [req:e5f74a82-d66] - Request started: GET http://localhost:8000/health
+2026-01-01 13:34:46 - main - INFO - dispatch:80 - [req:e5f74a82-d66] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.6ms
+2026-01-01 13:35:16 - main - INFO - dispatch:70 - [req:64cef5f5-1ac] - Request started: GET http://localhost:8000/health
+2026-01-01 13:35:16 - main - INFO - dispatch:80 - [req:64cef5f5-1ac] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.77ms
+2026-01-01 13:35:46 - main - INFO - dispatch:70 - [req:5d3edc34-c46] - Request started: GET http://localhost:8000/health
+2026-01-01 13:35:46 - main - INFO - dispatch:80 - [req:5d3edc34-c46] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.71ms
+2026-01-01 13:36:16 - main - INFO - dispatch:70 - [req:02e1726d-84d] - Request started: GET http://localhost:8000/health
+2026-01-01 13:36:16 - main - INFO - dispatch:80 - [req:02e1726d-84d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.57ms
+2026-01-01 13:36:46 - main - INFO - dispatch:70 - [req:53df0b6e-fc8] - Request started: GET http://localhost:8000/health
+2026-01-01 13:36:46 - main - INFO - dispatch:80 - [req:53df0b6e-fc8] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.58ms
+2026-01-01 13:37:16 - main - INFO - dispatch:70 - [req:3ce835f1-318] - Request started: GET http://localhost:8000/health
+2026-01-01 13:37:16 - main - INFO - dispatch:80 - [req:3ce835f1-318] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2026-01-01 13:37:46 - main - INFO - dispatch:70 - [req:1a55e12c-721] - Request started: GET http://localhost:8000/health
+2026-01-01 13:37:46 - main - INFO - dispatch:80 - [req:1a55e12c-721] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2026-01-01 13:38:16 - main - INFO - dispatch:70 - [req:c631263d-983] - Request started: GET http://localhost:8000/health
+2026-01-01 13:38:16 - main - INFO - dispatch:80 - [req:c631263d-983] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.25ms
+2026-01-01 13:38:46 - main - INFO - dispatch:70 - [req:d850b7c4-48e] - Request started: GET http://localhost:8000/health
+2026-01-01 13:38:46 - main - INFO - dispatch:80 - [req:d850b7c4-48e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.92ms
+2026-01-01 13:39:17 - main - INFO - dispatch:70 - [req:8ea5db81-4ec] - Request started: GET http://localhost:8000/health
+2026-01-01 13:39:17 - main - INFO - dispatch:80 - [req:8ea5db81-4ec] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 7.09ms
+2026-01-01 13:39:47 - main - INFO - dispatch:70 - [req:6cd1e45d-7f1] - Request started: GET http://localhost:8000/health
+2026-01-01 13:39:47 - main - INFO - dispatch:80 - [req:6cd1e45d-7f1] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.05ms
+2026-01-01 13:40:17 - main - INFO - dispatch:70 - [req:bf2f9f3b-e7c] - Request started: GET http://localhost:8000/health
+2026-01-01 13:40:17 - main - INFO - dispatch:80 - [req:bf2f9f3b-e7c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2026-01-01 13:40:47 - main - INFO - dispatch:70 - [req:8cec05c3-92d] - Request started: GET http://localhost:8000/health
+2026-01-01 13:40:47 - main - INFO - dispatch:80 - [req:8cec05c3-92d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2026-01-01 13:41:17 - main - INFO - dispatch:70 - [req:dc346649-6b0] - Request started: GET http://localhost:8000/health
+2026-01-01 13:41:17 - main - INFO - dispatch:80 - [req:dc346649-6b0] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.97ms
+2026-01-01 13:41:47 - main - INFO - dispatch:70 - [req:6cc69628-c5e] - Request started: GET http://localhost:8000/health
+2026-01-01 13:41:47 - main - INFO - dispatch:80 - [req:6cc69628-c5e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2026-01-01 13:41:54 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:41:57 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:41:59 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:42:17 - main - INFO - dispatch:69 - [req:0f487def-304] - Request started: GET http://localhost:8000/health
+2026-01-01 13:42:17 - main - INFO - dispatch:79 - [req:0f487def-304] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.8ms
+2026-01-01 13:42:45 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:42:48 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:42:48 - main - INFO - dispatch:69 - [req:97d53b4c-3db] - Request started: GET http://localhost:8000/health
+2026-01-01 13:42:48 - main - INFO - dispatch:79 - [req:97d53b4c-3db] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.54ms
+2026-01-01 13:43:18 - main - INFO - dispatch:69 - [req:9eb653ae-d0d] - Request started: GET http://localhost:8000/health
+2026-01-01 13:43:18 - main - INFO - dispatch:79 - [req:9eb653ae-d0d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.74ms
+2026-01-01 13:43:30 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:43:33 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:43:48 - main - INFO - dispatch:69 - [req:c046edfe-426] - Request started: GET http://localhost:8000/health
+2026-01-01 13:43:48 - main - INFO - dispatch:79 - [req:c046edfe-426] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.17ms
+2026-01-01 13:44:18 - main - INFO - dispatch:69 - [req:4067478b-83f] - Request started: GET http://localhost:8000/health
+2026-01-01 13:44:18 - main - INFO - dispatch:79 - [req:4067478b-83f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.14ms
+2026-01-01 13:44:33 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:44:36 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:44:38 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:44:48 - main - INFO - dispatch:69 - [req:cd2c2baf-f3f] - Request started: GET http://localhost:8000/health
+2026-01-01 13:44:48 - main - INFO - dispatch:79 - [req:cd2c2baf-f3f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2.4ms
+2026-01-01 13:44:53 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:45:06 - main - INFO - dispatch:69 - [req:41fbc157-f56] - Request started: OPTIONS http://localhost:8000/cleanup
+2026-01-01 13:45:06 - main - INFO - dispatch:79 - [req:41fbc157-f56] - Request completed: OPTIONS http://localhost:8000/cleanup - Status: 200 - Duration: 0.4ms
+2026-01-01 13:45:06 - main - INFO - dispatch:69 - [req:0f7321aa-c21] - Request started: POST http://localhost:8000/cleanup
+2026-01-01 13:45:06 - main - INFO - dispatch:79 - [req:0f7321aa-c21] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 4.35ms
+2026-01-01 13:45:18 - main - INFO - dispatch:69 - [req:d81bd29a-1aa] - Request started: GET http://localhost:8000/health
+2026-01-01 13:45:18 - main - INFO - dispatch:79 - [req:d81bd29a-1aa] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.28ms
+2026-01-01 13:45:48 - main - INFO - dispatch:69 - [req:2fc0e96a-18e] - Request started: GET http://localhost:8000/health
+2026-01-01 13:45:48 - main - INFO - dispatch:79 - [req:2fc0e96a-18e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.22ms
+2026-01-01 13:46:19 - main - INFO - dispatch:69 - [req:89ec576a-ec4] - Request started: GET http://localhost:8000/health
+2026-01-01 13:46:19 - main - INFO - dispatch:79 - [req:89ec576a-ec4] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.11ms
+2026-01-01 13:46:41 - main - INFO - dispatch:69 - [req:128a14d2-d8f] - Request started: OPTIONS http://localhost:8000/upload
+2026-01-01 13:46:41 - main - INFO - dispatch:79 - [req:128a14d2-d8f] - Request completed: OPTIONS http://localhost:8000/upload - Status: 200 - Duration: 0.78ms
+2026-01-01 13:46:41 - main - INFO - dispatch:69 - [req:e4f7b4be-b3a] - Request started: POST http://localhost:8000/upload
+2026-01-01 13:46:41 - main - INFO - upload_file:169 - [req:e4f7b4be-b3a] - File uploaded successfully: Loan Summary - Eagleby Merge (1).xlsx (50117 bytes)
+2026-01-01 13:46:41 - main - INFO - dispatch:79 - [req:e4f7b4be-b3a] - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 9.05ms
+2026-01-01 13:46:41 - main - INFO - dispatch:69 - [req:44761f2f-4ad] - Request started: OPTIONS http://localhost:8000/convert
+2026-01-01 13:46:41 - main - INFO - dispatch:79 - [req:44761f2f-4ad] - Request completed: OPTIONS http://localhost:8000/convert - Status: 200 - Duration: 0.89ms
+2026-01-01 13:46:41 - main - INFO - dispatch:69 - [req:5a8dbb0c-0ad] - Request started: POST http://localhost:8000/convert
+2026-01-01 13:46:41 - main - INFO - convert_to_json:214 - [req:5a8dbb0c-0ad] - Starting conversion process. Found 1 Excel files
+2026-01-01 13:46:41 - converter - INFO - process_excel_to_json:1351 - [req:5a8dbb0c-0ad] - Starting new conversion - cleaning previous data...
+2026-01-01 13:46:43 - converter - WARNING - cleanup_previous_data:55 - [req:5a8dbb0c-0ad] - Could not clean up markdown/ after 3 attempts: [Errno 16] Device or resource busy: 'markdown'
+2026-01-01 13:46:43 - converter - INFO - cleanup_previous_data:57 - [req:5a8dbb0c-0ad] - Previous conversion data cleanup completed
+2026-01-01 13:46:43 - converter - INFO - process_excel_to_json:1368 - [req:5a8dbb0c-0ad] - Found 1 Excel file(s) in input
+2026-01-01 13:46:43 - converter - INFO - process_excel_to_json:1374 - [req:5a8dbb0c-0ad] - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2026-01-01 13:46:43 - converter - INFO - process_excel_to_json:1379 - [req:5a8dbb0c-0ad] - Processing Excel file 1/1: Loan Summary - Eagleby Merge (1).xlsx
+2026-01-01 13:46:43 - converter - INFO - process_excel_to_json:1386 - [req:5a8dbb0c-0ad] -   Found 8 sheet(s): Key Statements, Borrower , A&L, Security , Feasibility, DocMerge, Document List, _SSC
+2026-01-01 13:46:46 - converter - INFO - process_excel_to_json:1413 - [req:5a8dbb0c-0ad] - 
+Phase 1 Complete: Created 8 temp sheet files
+2026-01-01 13:46:46 - converter - INFO - process_excel_to_json:1418 - [req:5a8dbb0c-0ad] - 
+======================================================================
+PHASE 2: LANDING AI PROCESSING (Async Batch)
+======================================================================
+
+2026-01-01 13:46:46 - converter - INFO - process_excel_to_json:1419 - [req:5a8dbb0c-0ad] - Processing 8 sheets in parallel...
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Key_Statements: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Borrower: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_AL: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Security: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Feasibility: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_DocMerge: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Document_List: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - ERROR - process_excel_to_json:1441 - [req:5a8dbb0c-0ad] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1__SSC: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1457 - [req:5a8dbb0c-0ad] - 
+Phase 2 Complete:
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1458 - [req:5a8dbb0c-0ad] -   Success: 0 markdown files
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1459 - [req:5a8dbb0c-0ad] -   Errors: 8
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1464 - [req:5a8dbb0c-0ad] - 
+======================================================================
+PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1485 - [req:5a8dbb0c-0ad] - 
+Phase 3.1 Complete: Found 0 tables total
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1490 - [req:5a8dbb0c-0ad] - 
+======================================================================
+PHASE 3.2: OPENAI PROCESSING (Async Batch)
+======================================================================
+
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1491 - [req:5a8dbb0c-0ad] - Processing 0 tables in parallel...
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1525 - [req:5a8dbb0c-0ad] - 
+Phase 3.2 Complete:
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1526 - [req:5a8dbb0c-0ad] -   Success: 0 tables
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1527 - [req:5a8dbb0c-0ad] -   Errors: 0
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1532 - [req:5a8dbb0c-0ad] - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1587 - [req:5a8dbb0c-0ad] - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1588 - [req:5a8dbb0c-0ad] - Total Excel files processed: 1
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1589 - [req:5a8dbb0c-0ad] - Total sheets processed: 8
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1590 - [req:5a8dbb0c-0ad] - Total tables extracted: 0
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1591 - [req:5a8dbb0c-0ad] - Output folder: /app/markdown
+2026-01-01 13:46:47 - converter - INFO - process_excel_to_json:1592 - [req:5a8dbb0c-0ad] - ======================================================================
+
+2026-01-01 13:46:48 - converter - INFO - process_excel_to_json:1620 - [req:5a8dbb0c-0ad] - Cleaned up temporary folder: temp_sheets/
+2026-01-01 13:46:48 - main - INFO - dispatch:79 - [req:5a8dbb0c-0ad] - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 6673.2ms
+2026-01-01 13:46:49 - main - INFO - dispatch:69 - [req:0b782385-5ee] - Request started: GET http://localhost:8000/health
+2026-01-01 13:46:49 - main - INFO - dispatch:79 - [req:0b782385-5ee] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.68ms
+2026-01-01 13:47:19 - main - INFO - dispatch:69 - [req:53bb3dd5-59f] - Request started: GET http://localhost:8000/health
+2026-01-01 13:47:19 - main - INFO - dispatch:79 - [req:53bb3dd5-59f] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.79ms
+2026-01-01 13:47:49 - main - INFO - dispatch:69 - [req:301aadef-7fb] - Request started: GET http://localhost:8000/health
+2026-01-01 13:47:49 - main - INFO - dispatch:79 - [req:301aadef-7fb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.07ms
+2026-01-01 13:48:19 - main - INFO - dispatch:69 - [req:dc0a8331-470] - Request started: GET http://localhost:8000/health
+2026-01-01 13:48:19 - main - INFO - dispatch:79 - [req:dc0a8331-470] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2026-01-01 13:48:49 - main - INFO - dispatch:69 - [req:8334afcd-287] - Request started: GET http://localhost:8000/health
+2026-01-01 13:48:49 - main - INFO - dispatch:79 - [req:8334afcd-287] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.75ms
+2026-01-01 13:48:52 - main - INFO - dispatch:69 - [req:2b108507-52f] - Request started: POST http://localhost:8000/cleanup
+2026-01-01 13:48:52 - main - INFO - dispatch:79 - [req:2b108507-52f] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 0.94ms
+2026-01-01 13:48:59 - main - INFO - dispatch:69 - [req:632eed8d-946] - Request started: POST http://localhost:8000/cleanup
+2026-01-01 13:48:59 - main - INFO - dispatch:79 - [req:632eed8d-946] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 1.88ms
+2026-01-01 13:49:03 - main - INFO - dispatch:69 - [req:2db43bac-3b0] - Request started: POST http://localhost:8000/upload
+2026-01-01 13:49:03 - main - INFO - upload_file:169 - [req:2db43bac-3b0] - File uploaded successfully: Loan Summary - Eagleby Merge (1).xlsx (50117 bytes)
+2026-01-01 13:49:03 - main - INFO - dispatch:79 - [req:2db43bac-3b0] - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 9.31ms
+2026-01-01 13:49:03 - main - INFO - dispatch:69 - [req:561b40b7-b16] - Request started: POST http://localhost:8000/convert
+2026-01-01 13:49:03 - main - INFO - convert_to_json:214 - [req:561b40b7-b16] - Starting conversion process. Found 1 Excel files
+2026-01-01 13:49:03 - converter - INFO - process_excel_to_json:1351 - [req:561b40b7-b16] - Starting new conversion - cleaning previous data...
+2026-01-01 13:49:05 - converter - WARNING - cleanup_previous_data:55 - [req:561b40b7-b16] - Could not clean up markdown/ after 3 attempts: [Errno 16] Device or resource busy: 'markdown'
+2026-01-01 13:49:05 - converter - INFO - cleanup_previous_data:57 - [req:561b40b7-b16] - Previous conversion data cleanup completed
+2026-01-01 13:49:05 - converter - INFO - process_excel_to_json:1368 - [req:561b40b7-b16] - Found 1 Excel file(s) in input
+2026-01-01 13:49:05 - converter - INFO - process_excel_to_json:1374 - [req:561b40b7-b16] - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2026-01-01 13:49:05 - converter - INFO - process_excel_to_json:1379 - [req:561b40b7-b16] - Processing Excel file 1/1: Loan Summary - Eagleby Merge (1).xlsx
+2026-01-01 13:49:05 - converter - INFO - process_excel_to_json:1386 - [req:561b40b7-b16] -   Found 8 sheet(s): Key Statements, Borrower , A&L, Security , Feasibility, DocMerge, Document List, _SSC
+2026-01-01 13:49:09 - converter - INFO - process_excel_to_json:1413 - [req:561b40b7-b16] - 
+Phase 1 Complete: Created 8 temp sheet files
+2026-01-01 13:49:09 - converter - INFO - process_excel_to_json:1418 - [req:561b40b7-b16] - 
+======================================================================
+PHASE 2: LANDING AI PROCESSING (Async Batch)
+======================================================================
+
+2026-01-01 13:49:09 - converter - INFO - process_excel_to_json:1419 - [req:561b40b7-b16] - Processing 8 sheets in parallel...
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 402 Payment Required"
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Key_Statements: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Borrower: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_AL: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Security: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Feasibility: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_DocMerge: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1_Document_List: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - ERROR - process_excel_to_json:1441 - [req:561b40b7-b16] -   [ERROR] Sheet Loan_Summary_-_Eagleby_Merge_1__SSC: Error parsing with Landing AI ADE: Error code: 402 - {'error': 'Payment Required. User balance is insufficient (including pending jobs).'}
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1457 - [req:561b40b7-b16] - 
+Phase 2 Complete:
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1458 - [req:561b40b7-b16] -   Success: 0 markdown files
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1459 - [req:561b40b7-b16] -   Errors: 8
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1464 - [req:561b40b7-b16] - 
+======================================================================
+PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1485 - [req:561b40b7-b16] - 
+Phase 3.1 Complete: Found 0 tables total
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1490 - [req:561b40b7-b16] - 
+======================================================================
+PHASE 3.2: OPENAI PROCESSING (Async Batch)
+======================================================================
+
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1491 - [req:561b40b7-b16] - Processing 0 tables in parallel...
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1525 - [req:561b40b7-b16] - 
+Phase 3.2 Complete:
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1526 - [req:561b40b7-b16] -   Success: 0 tables
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1527 - [req:561b40b7-b16] -   Errors: 0
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1532 - [req:561b40b7-b16] - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1587 - [req:561b40b7-b16] - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1588 - [req:561b40b7-b16] - Total Excel files processed: 1
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1589 - [req:561b40b7-b16] - Total sheets processed: 8
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1590 - [req:561b40b7-b16] - Total tables extracted: 0
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1591 - [req:561b40b7-b16] - Output folder: /app/markdown
+2026-01-01 13:49:10 - converter - INFO - process_excel_to_json:1592 - [req:561b40b7-b16] - ======================================================================
+
+2026-01-01 13:49:11 - converter - INFO - process_excel_to_json:1620 - [req:561b40b7-b16] - Cleaned up temporary folder: temp_sheets/
+2026-01-01 13:49:11 - main - INFO - dispatch:79 - [req:561b40b7-b16] - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 7828.39ms
+2026-01-01 13:49:19 - main - INFO - dispatch:69 - [req:5b0b4b05-6dc] - Request started: GET http://localhost:8000/health
+2026-01-01 13:49:19 - main - INFO - dispatch:79 - [req:5b0b4b05-6dc] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.98ms
+2026-01-01 13:49:49 - main - INFO - dispatch:69 - [req:3fc73ea7-0a9] - Request started: GET http://localhost:8000/health
+2026-01-01 13:49:49 - main - INFO - dispatch:79 - [req:3fc73ea7-0a9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.02ms
+2026-01-01 13:50:19 - main - INFO - dispatch:69 - [req:c3fd2f29-b3b] - Request started: GET http://localhost:8000/health
+2026-01-01 13:50:19 - main - INFO - dispatch:79 - [req:c3fd2f29-b3b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.66ms
+2026-01-01 13:50:49 - main - INFO - dispatch:69 - [req:29d18d26-516] - Request started: GET http://localhost:8000/health
+2026-01-01 13:50:49 - main - INFO - dispatch:79 - [req:29d18d26-516] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.93ms
+2026-01-01 13:51:19 - main - INFO - dispatch:69 - [req:3be66cda-4a9] - Request started: GET http://localhost:8000/health
+2026-01-01 13:51:19 - main - INFO - dispatch:79 - [req:3be66cda-4a9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.38ms
+2026-01-01 13:51:49 - main - INFO - dispatch:69 - [req:43f3e110-6f4] - Request started: GET http://localhost:8000/health
+2026-01-01 13:51:49 - main - INFO - dispatch:79 - [req:43f3e110-6f4] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.91ms
+2026-01-01 13:52:19 - main - INFO - dispatch:69 - [req:e79202e0-c49] - Request started: GET http://localhost:8000/health
+2026-01-01 13:52:19 - main - INFO - dispatch:79 - [req:e79202e0-c49] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2026-01-01 13:52:32 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 13:52:34 - main - INFO - dispatch:69 - [req:09e3df5e-3ad] - Request started: POST http://localhost:8000/cleanup
+2026-01-01 13:52:34 - main - INFO - dispatch:79 - [req:09e3df5e-3ad] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 7.11ms
+2026-01-01 13:52:34 - main - INFO - dispatch:69 - [req:76c3305b-64b] - Request started: GET http://localhost:8000/health
+2026-01-01 13:52:34 - main - INFO - dispatch:79 - [req:76c3305b-64b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.41ms
+2026-01-01 13:52:40 - main - INFO - dispatch:69 - [req:edb5a732-367] - Request started: POST http://localhost:8000/upload
+2026-01-01 13:52:40 - main - INFO - upload_file:169 - [req:edb5a732-367] - File uploaded successfully: Loan Summary - Eagleby Merge (1).xlsx (50117 bytes)
+2026-01-01 13:52:40 - main - INFO - dispatch:79 - [req:edb5a732-367] - Request completed: POST http://localhost:8000/upload - Status: 200 - Duration: 11.37ms
+2026-01-01 13:52:40 - main - INFO - dispatch:69 - [req:c7de987c-a19] - Request started: POST http://localhost:8000/convert
+2026-01-01 13:52:40 - main - INFO - convert_to_json:214 - [req:c7de987c-a19] - Starting conversion process. Found 1 Excel files
+2026-01-01 13:52:40 - converter - INFO - process_excel_to_json:1351 - [req:c7de987c-a19] - Starting new conversion - cleaning previous data...
+2026-01-01 13:52:42 - converter - WARNING - cleanup_previous_data:55 - [req:c7de987c-a19] - Could not clean up markdown/ after 3 attempts: [Errno 16] Device or resource busy: 'markdown'
+2026-01-01 13:52:42 - converter - INFO - cleanup_previous_data:57 - [req:c7de987c-a19] - Previous conversion data cleanup completed
+2026-01-01 13:52:42 - converter - INFO - process_excel_to_json:1368 - [req:c7de987c-a19] - Found 1 Excel file(s) in input
+2026-01-01 13:52:42 - converter - INFO - process_excel_to_json:1374 - [req:c7de987c-a19] - 
+======================================================================
+PHASE 1: CREATING ALL TEMP SHEET FILES
+======================================================================
+
+2026-01-01 13:52:42 - converter - INFO - process_excel_to_json:1379 - [req:c7de987c-a19] - Processing Excel file 1/1: Loan Summary - Eagleby Merge (1).xlsx
+2026-01-01 13:52:42 - converter - INFO - process_excel_to_json:1386 - [req:c7de987c-a19] -   Found 8 sheet(s): Key Statements, Borrower , A&L, Security , Feasibility, DocMerge, Document List, _SSC
+2026-01-01 13:52:45 - converter - INFO - process_excel_to_json:1413 - [req:c7de987c-a19] - 
+Phase 1 Complete: Created 8 temp sheet files
+2026-01-01 13:52:45 - converter - INFO - process_excel_to_json:1418 - [req:c7de987c-a19] - 
+======================================================================
+PHASE 2: LANDING AI PROCESSING (Async Batch)
+======================================================================
+
+2026-01-01 13:52:45 - converter - INFO - process_excel_to_json:1419 - [req:c7de987c-a19] - Processing 8 sheets in parallel...
+2026-01-01 13:52:46 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:46 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:47 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.va.landing.ai/v1/ade/parse "HTTP/1.1 200 OK"
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Key_Statements (5399 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Borrower (12678 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_AL (15856 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Security (7186 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Feasibility (15958 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_DocMerge (31122 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1_Document_List (36774 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1447 - [req:c7de987c-a19] -   [SUCCESS] Loan_Summary_-_Eagleby_Merge_1__SSC (8712 chars)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1457 - [req:c7de987c-a19] - 
+Phase 2 Complete:
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1458 - [req:c7de987c-a19] -   Success: 8 markdown files
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1459 - [req:c7de987c-a19] -   Errors: 0
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1464 - [req:c7de987c-a19] - 
+======================================================================
+PHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES
+======================================================================
+
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1_Key_Statements: Found 4 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1_Borrower: Found 7 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1_AL: Found 25 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1_Security: Found 4 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1_Feasibility: Found 17 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1_DocMerge: Found 1 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1_Document_List: Found 2 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1473 - [req:c7de987c-a19] -   Loan_Summary_-_Eagleby_Merge_1__SSC: Found 1 table(s)
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1485 - [req:c7de987c-a19] - 
+Phase 3.1 Complete: Found 61 tables total
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1490 - [req:c7de987c-a19] - 
+======================================================================
+PHASE 3.2: OPENAI PROCESSING (Async Batch)
+======================================================================
+
+2026-01-01 13:52:47 - converter - INFO - process_excel_to_json:1491 - [req:c7de987c-a19] - Processing 61 tables in parallel...
+2026-01-01 13:52:55 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:55 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:55 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:56 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:52:57 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:01 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:02 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:03 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:04 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:04 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:04 - main - INFO - dispatch:69 - [req:d2ec28ab-380] - Request started: GET http://localhost:8000/health
+2026-01-01 13:53:04 - main - INFO - dispatch:79 - [req:d2ec28ab-380] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.35ms
+2026-01-01 13:53:04 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:08 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:09 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:09 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:10 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:11 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:11 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:13 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:17 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:17 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:17 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:17 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:18 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:18 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:18 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:19 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:19 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:21 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:22 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:23 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:23 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:24 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:25 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:26 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:26 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:27 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:28 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:28 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:28 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:29 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:29 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:31 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:31 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:31 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:34 - main - INFO - dispatch:69 - [req:a76de460-f0d] - Request started: GET http://localhost:8000/health
+2026-01-01 13:53:34 - main - INFO - dispatch:79 - [req:a76de460-f0d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.38ms
+2026-01-01 13:53:38 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:41 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:53:44 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:54:04 - main - INFO - dispatch:69 - [req:a60860bb-3ca] - Request started: GET http://localhost:8000/health
+2026-01-01 13:54:04 - main - INFO - dispatch:79 - [req:a60860bb-3ca] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.32ms
+2026-01-01 13:54:34 - main - INFO - dispatch:69 - [req:419fefa6-e97] - Request started: GET http://localhost:8000/health
+2026-01-01 13:54:34 - main - INFO - dispatch:79 - [req:419fefa6-e97] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.63ms
+2026-01-01 13:54:46 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:55:04 - main - INFO - dispatch:69 - [req:85b0f7e8-d0b] - Request started: GET http://localhost:8000/health
+2026-01-01 13:55:04 - main - INFO - dispatch:79 - [req:85b0f7e8-d0b] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.05ms
+2026-01-01 13:55:05 - httpx - INFO - _send_single_request:1025 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1523 - [req:c7de987c-a19] -   [PROGRESS] Processed 10/61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1523 - [req:c7de987c-a19] -   [PROGRESS] Processed 20/61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1523 - [req:c7de987c-a19] -   [PROGRESS] Processed 30/61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1523 - [req:c7de987c-a19] -   [PROGRESS] Processed 40/61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1523 - [req:c7de987c-a19] -   [PROGRESS] Processed 50/61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1523 - [req:c7de987c-a19] -   [PROGRESS] Processed 60/61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1523 - [req:c7de987c-a19] -   [PROGRESS] Processed 61/61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1525 - [req:c7de987c-a19] - 
+Phase 3.2 Complete:
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1526 - [req:c7de987c-a19] -   Success: 61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1527 - [req:c7de987c-a19] -   Errors: 0
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1532 - [req:c7de987c-a19] - 
+======================================================================
+SAVING CONSOLIDATED RESULTS
+======================================================================
+
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1543 - [req:c7de987c-a19] - * CONSOLIDATED JSON SAVED: all_tables_consolidated.json
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1544 - [req:c7de987c-a19] - * Total tables extracted: 61
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1545 - [req:c7de987c-a19] - * Format: Key-Value (each row is a dictionary)
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1553 - [req:c7de987c-a19] - 
+* Tables per Excel file:
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1555 - [req:c7de987c-a19] -   - Loan Summary - Eagleby Merge (1).xlsx: 61 tables
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1560 - [req:c7de987c-a19] - 
+======================================================================
+SAVING PER-EXCEL JSON FILES
+======================================================================
+
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1582 - [req:c7de987c-a19] -   ✓ Saved: Loan_Summary_-_Eagleby_Merge_1_complete.json (61 tables)
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1584 - [req:c7de987c-a19] - 
+* Per-Excel JSON files saved: 1
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1585 - [req:c7de987c-a19] - * Format: Key-Value (same as consolidated)
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1587 - [req:c7de987c-a19] - 
+======================================================================
+PROCESSING COMPLETE!
+======================================================================
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1588 - [req:c7de987c-a19] - Total Excel files processed: 1
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1589 - [req:c7de987c-a19] - Total sheets processed: 8
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1590 - [req:c7de987c-a19] - Total tables extracted: 61
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1591 - [req:c7de987c-a19] - Output folder: /app/markdown
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1592 - [req:c7de987c-a19] - ======================================================================
+
+2026-01-01 13:55:05 - converter - INFO - process_excel_to_json:1620 - [req:c7de987c-a19] - Cleaned up temporary folder: temp_sheets/
+2026-01-01 13:55:05 - main - INFO - dispatch:79 - [req:c7de987c-a19] - Request completed: POST http://localhost:8000/convert - Status: 200 - Duration: 145567.66ms
+2026-01-01 13:55:34 - main - INFO - dispatch:69 - [req:4c635015-d8d] - Request started: GET http://localhost:8000/health
+2026-01-01 13:55:34 - main - INFO - dispatch:79 - [req:4c635015-d8d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.69ms
+2026-01-01 13:56:05 - main - INFO - dispatch:69 - [req:9d48f3fe-fd8] - Request started: GET http://localhost:8000/health
+2026-01-01 13:56:05 - main - INFO - dispatch:79 - [req:9d48f3fe-fd8] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.95ms
+2026-01-01 13:56:35 - main - INFO - dispatch:69 - [req:b844f878-bf3] - Request started: GET http://localhost:8000/health
+2026-01-01 13:56:35 - main - INFO - dispatch:79 - [req:b844f878-bf3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2026-01-01 13:57:05 - main - INFO - dispatch:69 - [req:ed4e9933-5a9] - Request started: GET http://localhost:8000/health
+2026-01-01 13:57:05 - main - INFO - dispatch:79 - [req:ed4e9933-5a9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.54ms
+2026-01-01 13:57:35 - main - INFO - dispatch:69 - [req:b120d047-543] - Request started: GET http://localhost:8000/health
+2026-01-01 13:57:35 - main - INFO - dispatch:79 - [req:b120d047-543] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.64ms

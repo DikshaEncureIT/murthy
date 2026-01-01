@@ -11,7 +11,6 @@ from landingai_ade import LandingAIADE
 from openai import OpenAI
 import pandas as pd
 from logger import AppLogger
-# from vision_processor import process_excel_with_vision  # COMMENTED OUT - Vision model flow disabled
 
 # Load environment variables
 load_dotenv(".env")
@@ -38,8 +37,6 @@ def cleanup_previous_data():
     folders_to_clean = [
         Path("markdown"),
         Path("temp_sheets"),
-        # Path("gap_analysis"),  # COMMENTED OUT - Vision model flow disabled
-        # Path("screenshots")    # COMMENTED OUT - Vision model flow disabled
     ]
 
     for folder in folders_to_clean:
@@ -136,59 +133,6 @@ def export_sheet_to_single_excel(excel_path: Path, sheet_name: str, output_path:
         raise RuntimeError(f"Error exporting sheet '{sheet_name}': {e}")
 
 
-def remove_gap_columns_from_excel(excel_path: Path, columns_to_remove: List[str]) -> Path:
-    """
-    Remove specified gap columns from an Excel file.
-
-    Used when vision analysis identifies a single table with gap columns
-    that need to be removed for cleaner markdown extraction.
-
-    Args:
-        excel_path: Path to Excel file
-        columns_to_remove: List of column letters to remove (e.g., ["C", "F", "I"])
-
-    Returns:
-        Path to the modified Excel file (same as input)
-    """
-    try:
-        import openpyxl
-        from openpyxl.utils import column_index_from_string
-
-        if not columns_to_remove:
-            logger.debug(f"No columns to remove from {excel_path.name}")
-            return excel_path
-
-        logger.info(f"Removing {len(columns_to_remove)} gap columns from {excel_path.name}: {columns_to_remove}")
-
-        # Load workbook
-        wb = openpyxl.load_workbook(excel_path)
-        ws = wb.active
-
-        # Convert column letters to indices and sort in descending order
-        # (delete from right to left to avoid index shifting issues)
-        column_indices = sorted(
-            [column_index_from_string(col) for col in columns_to_remove],
-            reverse=True
-        )
-
-        # Delete columns
-        for col_idx in column_indices:
-            logger.debug(f"  Deleting column {openpyxl.utils.get_column_letter(col_idx)} (index {col_idx})")
-            ws.delete_cols(col_idx, 1)
-
-        # Save modified workbook
-        wb.save(excel_path)
-        wb.close()
-
-        logger.info(f"Successfully removed gap columns from {excel_path.name}")
-        return excel_path
-
-    except Exception as e:
-        logger.error(f"Error removing columns from {excel_path.name}: {e}", exc_info=True)
-        # Don't raise - just return original file if column removal fails
-        return excel_path
-
-
 def extract_markdown_with_landingai(excel_file: Path, api_key: str = None) -> str:
     """Extract markdown content from Excel file using Landing AI ADE."""
     client = LandingAIADE(apikey=api_key or LANDINGAI_API_KEY)
@@ -210,53 +154,6 @@ def extract_markdown_with_landingai(excel_file: Path, api_key: str = None) -> st
             return str(parse_response)
     except Exception as e:
         raise RuntimeError(f"Error parsing with Landing AI ADE: {e}")
-
-
-# COMMENTED OUT - LLM already returns data in the desired nested format (see prompt examples)
-# def transform_table_to_key_value_format(table_json: Dict[str, Any]) -> List[Dict[str, str]]:
-#     """
-#     Transform table JSON from headers+rows format to key-value dictionary format.
-#
-#     Input format:
-#     {
-#         "headers": ["col1", "col2", "col3"],
-#         "rows": [
-#             ["val1", "val2", "val3"],
-#             ["val4", "val5", "val6"]
-#         ]
-#     }
-#
-#     Output format:
-#     [
-#         {"col1": "val1", "col2": "val2", "col3": "val3"},
-#         {"col1": "val4", "col2": "val5", "col3": "val6"}
-#     ]
-#
-#     Args:
-#         table_json: Table data in headers+rows format
-#
-#     Returns:
-#         List of dictionaries with column names as keys
-#     """
-#     headers = table_json.get('headers', [])
-#     rows = table_json.get('rows', [])
-#
-#     if not headers or not rows:
-#         logger.warning("Empty headers or rows in table transformation")
-#         return []
-#
-#     # Transform each row into a dictionary
-#     transformed_data = []
-#     for row in rows:
-#         # Create dictionary mapping header to value
-#         row_dict = {}
-#         for idx, header in enumerate(headers):
-#             # Handle cases where row might have fewer values than headers
-#             value = row[idx] if idx < len(row) else ""
-#             row_dict[header] = value
-#         transformed_data.append(row_dict)
-#
-#     return transformed_data
 
 
 def split_markdown_tables(markdown_text: str) -> List[str]:
@@ -1311,7 +1208,7 @@ Table Markdown:
     )
 
     llm_output = response.choices[0].message.content
-    print("llm_output",llm_output)
+    logger.debug(f"LLM output: {llm_output}")
 
     # Clean markdown code blocks if present
     llm_output = llm_output.strip()
@@ -1438,92 +1335,14 @@ async def process_openai_async(
     }
 
 
-# COMMENTED OUT - Vision model flow disabled
-# async def process_vision_analysis_async(
-#     temp_excel: Path,
-#     safe_name: str,
-#     sheet_name: str,
-#     excel_file_name: str,
-#     file_index: int,
-#     openai_api_key: str,
-#     analyze_gaps: bool = True,
-#     analyze_similarity: bool = True
-# ) -> Dict[str, Any]:
-#     """
-#     Async wrapper for vision-based gap analysis of a single temp sheet.
-#
-#     Calls process_excel_with_vision() to:
-#     - Convert sheet to image
-#     - Analyze with GPT-4 Vision
-#     - Detect column gaps and table relationships
-#     - Save results to gap_analysis folder
-#
-#     Args:
-#         temp_excel: Path to temp Excel file (single sheet)
-#         safe_name: Sanitized sheet name for filenames
-#         sheet_name: Original sheet name
-#         excel_file_name: Original Excel filename
-#         file_index: Index of the Excel file being processed
-#         openai_api_key: OpenAI API key
-#         analyze_gaps: Enable column gap detection (default: True)
-#         analyze_similarity: Enable table relationship analysis (default: True)
-#
-#     Returns:
-#         Dict with vision analysis results or error information
-#     """
-#     try:
-#         # Call vision processing function
-#         # Disable file saving in pipeline - we'll save consolidated format later
-#         result = await process_excel_with_vision(
-#             excel_path=temp_excel,
-#             analyze_gaps=analyze_gaps,
-#             analyze_similarity=analyze_similarity,
-#             openai_api_key=openai_api_key,
-#             save_to_file=False
-#         )
-#
-#         # Add metadata to result
-#         result['excel_file'] = excel_file_name
-#         result['file_index'] = file_index
-#         result['safe_name'] = safe_name
-#         from datetime import datetime
-#         result['processed_at'] = datetime.now().isoformat()
-#
-#         return result
-#
-#     except Exception as e:
-#         logger.error(f"Vision analysis failed for {safe_name}: {e}", exc_info=True)
-#         return {
-#             'safe_name': safe_name,
-#             'sheet_name': sheet_name,
-#             'excel_file': excel_file_name,
-#             'file_index': file_index,
-#             'error': str(e),
-#             'status': 'failed'
-#         }
-
-
-async def process_excel_to_json(
-    enable_vision_analysis: bool = True,
-    max_sheets_for_vision: int = 10,
-    analyze_gaps: bool = True,
-    analyze_similarity: bool = True
-) -> Dict[str, Any]:
+async def process_excel_to_json() -> Dict[str, Any]:
     """
     Main async function to process all Excel files in the input folder and convert them to JSON.
 
     Processing Flow:
     - Phase 1: Sync sheet splitting (create all temp files from input folder)
-    - Phase 2: Sync iteration over temp_sheets files with async Vision processing per file
-    - Phase 3: Sync gap column removal after Vision analysis for each file
-    - Phase 4: Async batch Landing AI processing (all files at once)
-    - Phase 5: Async batch OpenAI processing (all tables at once)
-
-    Args:
-        enable_vision_analysis: Enable GPT-4 Vision analysis for gap detection (default: True)
-        max_sheets_for_vision: Maximum number of sheets to analyze with vision (default: 10)
-        analyze_gaps: Enable column gap detection (default: True)
-        analyze_similarity: Enable table relationship analysis (default: True)
+    - Phase 2: Async batch Landing AI processing (all files at once)
+    - Phase 3: Async batch OpenAI processing (all tables at once)
 
     Returns:
         Dictionary containing processing results
@@ -1540,14 +1359,6 @@ async def process_excel_to_json(
     # Create folders if they don't exist
     output_folder.mkdir(parents=True, exist_ok=True)
     temp_folder.mkdir(parents=True, exist_ok=True)
-
-    # COMMENTED OUT - Vision model flow disabled
-    # # Create vision analysis folders if enabled
-    # gap_analysis_folder = Path("gap_analysis")
-    # screenshots_folder = Path("screenshots")
-    # if enable_vision_analysis:
-    #     gap_analysis_folder.mkdir(parents=True, exist_ok=True)
-    #     screenshots_folder.mkdir(parents=True, exist_ok=True)
 
     # Get all Excel files from input folder
     excel_files = list(input_folder.glob("*.xlsx")) + list(input_folder.glob("*.xls"))
@@ -1602,144 +1413,9 @@ async def process_excel_to_json(
         logger.info(f"\nPhase 1 Complete: Created {len(sheet_metadata)} temp sheet files")
 
         # =================================================================
-        # PHASE 2: VISION PROCESSING - COMMENTED OUT
+        # PHASE 2: ASYNC BATCH LANDING AI PROCESSING
         # =================================================================
-        vision_analyses = []
-        # COMMENTED OUT - Vision model flow disabled
-        # phase2_errors = 0
-        # import time
-        #
-        # if enable_vision_analysis:
-        #     logger.info(f"\n{'='*70}\nPHASE 2: VISION PROCESSING (One-by-One with Async Vision)\n{'='*70}\n")
-        #
-        #     # Limit files to process
-        #     files_to_analyze = sheet_metadata[:max_sheets_for_vision]
-        #     if len(sheet_metadata) > max_sheets_for_vision:
-        #         logger.warning(
-        #             f"Limiting vision analysis to first {max_sheets_for_vision} files "
-        #             f"(total: {len(sheet_metadata)} files)"
-        #         )
-        #
-        #     logger.info(f"Processing {len(files_to_analyze)} files synchronously (one-by-one)...")
-        #     total_vision_start = time.time()
-        #
-        #     # SYNCHRONOUS ITERATION: Process each file one-by-one
-        #     for idx, metadata in enumerate(files_to_analyze, 1):
-        #         safe_name = metadata['safe_name']
-        #         temp_excel = metadata['temp_excel']
-        #
-        #         logger.info(f"\n[{idx}/{len(files_to_analyze)}] Processing: {safe_name}")
-        #         file_start_time = time.time()
-        #
-        #         try:
-        #             # ASYNC VISION PROCESSING: Process this file with Vision LLM
-        #             logger.info(f"  → Running Vision analysis asynchronously...")
-        #             vision_result = await process_vision_analysis_async(
-        #                 temp_excel=temp_excel,
-        #                 safe_name=safe_name,
-        #                 sheet_name=metadata['sheet_name'],
-        #                 excel_file_name=metadata['excel_file_name'],
-        #                 file_index=metadata['file_index'],
-        #                 openai_api_key=OPENAI_API_KEY,
-        #                 analyze_gaps=analyze_gaps,
-        #                 analyze_similarity=analyze_similarity
-        #             )
-        #
-        #             # Check for errors
-        #             if vision_result.get('error') or vision_result.get('status') == 'failed':
-        #                 phase2_errors += 1
-        #                 logger.error(f"  ✗ Vision analysis failed: {vision_result.get('error', 'Unknown error')}")
-        #                 continue
-        #
-        #             # SUCCESS: Save individual gap_analysis JSON for this file
-        #             gap_analysis_file = gap_analysis_folder / f"{safe_name}_gap_analysis.json"
-        #             with open(gap_analysis_file, "w", encoding="utf-8") as f:
-        #                 json.dump(vision_result, f, indent=2, ensure_ascii=False)
-        #
-        #             classification = vision_result.get('classification', 'unknown')
-        #             columns_with_gap = vision_result.get('columns_with_gap', [])
-        #
-        #             file_duration_ms = int((time.time() - file_start_time) * 1000)
-        #             logger.info(f"  ✓ Vision analysis complete ({file_duration_ms}ms)")
-        #             logger.info(f"    - Classification: {classification}")
-        #             logger.info(f"    - Gap columns: {columns_with_gap}")
-        #             logger.info(f"    - Saved: {gap_analysis_file.name}")
-        #
-        #             vision_analyses.append(vision_result)
-        #
-        #         except Exception as e:
-        #             phase2_errors += 1
-        #             logger.error(f"  ✗ Error processing {safe_name}: {e}", exc_info=True)
-        #             continue
-        #
-        #     # Calculate total processing time
-        #     total_vision_duration_ms = int((time.time() - total_vision_start) * 1000)
-        #
-        #     logger.info(f"\nPhase 2 Complete:")
-        #     logger.info(f"  Success: {len(vision_analyses)} files analyzed")
-        #     logger.info(f"  Errors: {phase2_errors}")
-        #     logger.info(f"  Total time: {total_vision_duration_ms}ms ({total_vision_duration_ms/1000:.1f}s)")
-        #
-        # else:
-        #     logger.info(f"\nPhase 2 Skipped: Vision analysis disabled")
-        logger.info(f"\nPhase 2 Skipped: Vision analysis disabled (commented out)")
-
-        # =================================================================
-        # PHASE 3: GAP COLUMN REMOVAL - COMMENTED OUT
-        # =================================================================
-        # COMMENTED OUT - Vision model flow disabled
-        # if enable_vision_analysis and vision_analyses:
-        #     logger.info(f"\n{'='*70}\nPHASE 3: GAP COLUMN REMOVAL (Synchronous)\n{'='*70}\n")
-        #
-        #     cleaned_count = 0
-        #     skipped_count = 0
-        #
-        #     for analysis in vision_analyses:
-        #         classification = analysis.get('classification', '')
-        #         columns_with_gap = analysis.get('columns_with_gap', [])
-        #         safe_name = analysis.get('safe_name', '')
-        #
-        #         # Only remove gaps for single tables
-        #         if classification == 'single_table' and columns_with_gap:
-        #             logger.info(f"Processing single table: {safe_name}")
-        #             logger.info(f"  Found {len(columns_with_gap)} gap columns: {columns_with_gap}")
-        #
-        #             # Skip first gap, remove the rest
-        #             if len(columns_with_gap) > 1:
-        #                 gaps_to_remove = columns_with_gap[1:]  # Skip first gap
-        #                 logger.info(f"  Removing gaps (keeping first): {gaps_to_remove}")
-        #
-        #                 # Find the corresponding temp Excel file
-        #                 temp_excel_path = None
-        #                 for metadata in sheet_metadata:
-        #                     if metadata['safe_name'] == safe_name:
-        #                         temp_excel_path = metadata['temp_excel']
-        #                         break
-        #
-        #                 if temp_excel_path and temp_excel_path.exists():
-        #                     # SYNCHRONOUS GAP REMOVAL: Direct file modification
-        #                     remove_gap_columns_from_excel(temp_excel_path, gaps_to_remove)
-        #                     cleaned_count += 1
-        #                     logger.info(f"  ✓ Gaps removed successfully")
-        #                 else:
-        #                     logger.warning(f"  ✗ Temp Excel file not found for {safe_name}")
-        #             else:
-        #                 logger.info(f"  Only 1 gap column, keeping as-is")
-        #                 skipped_count += 1
-        #         else:
-        #             if classification != 'single_table':
-        #                 logger.debug(f"Skipping {safe_name}: classification is '{classification}' (not single_table)")
-        #             skipped_count += 1
-        #
-        #     logger.info(f"\nPhase 3 Complete:")
-        #     logger.info(f"  Cleaned: {cleaned_count} files")
-        #     logger.info(f"  Skipped: {skipped_count} files")
-        logger.info(f"\nPhase 3 Skipped: Gap column removal disabled (commented out)")
-
-        # =================================================================
-        # PHASE 4: ASYNC BATCH LANDING AI PROCESSING
-        # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 4: LANDING AI PROCESSING (Async Batch)\n{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 2: LANDING AI PROCESSING (Async Batch)\n{'='*70}\n")
         logger.info(f"Processing {len(sheet_metadata)} sheets in parallel...")
 
         # Create all Landing AI tasks
@@ -1755,13 +1431,13 @@ async def process_excel_to_json(
         # ASYNC BATCH PROCESSING: Wait for all Landing AI tasks to complete
         landingai_results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        # Process results and prepare for Phase 5
+        # Process results and prepare for Phase 3
         markdown_data = []  # List of (safe_name, markdown_content, sheet_name, excel_file_name, file_index)
-        phase4_errors = 0
+        phase2_errors = 0
 
         for idx, result in enumerate(landingai_results):
             if isinstance(result, Exception):
-                phase4_errors += 1
+                phase2_errors += 1
                 logger.error(f"  [ERROR] Sheet {sheet_metadata[idx]['safe_name']}: {result}")
                 continue
 
@@ -1778,14 +1454,14 @@ async def process_excel_to_json(
                 'file_index': metadata['file_index']
             })
 
-        logger.info(f"\nPhase 4 Complete:")
+        logger.info(f"\nPhase 2 Complete:")
         logger.info(f"  Success: {len(markdown_data)} markdown files")
-        logger.info(f"  Errors: {phase4_errors}")
+        logger.info(f"  Errors: {phase2_errors}")
 
         # =================================================================
-        # PHASE 5.1: SPLIT ALL MARKDOWN INTO TABLES
+        # PHASE 3.1: SPLIT ALL MARKDOWN INTO TABLES
         # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 5.1: SPLITTING ALL MARKDOWN INTO TABLES\n{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 3.1: SPLITTING ALL MARKDOWN INTO TABLES\n{'='*70}\n")
 
         table_tasks = []  # List of table processing tasks
 
@@ -1806,17 +1482,17 @@ async def process_excel_to_json(
                         'safe_name': md_data['safe_name']
                     })
 
-        logger.info(f"\nPhase 5.1 Complete: Found {len(table_tasks)} tables total")
+        logger.info(f"\nPhase 3.1 Complete: Found {len(table_tasks)} tables total")
 
         # =================================================================
-        # PHASE 5.2: ASYNC BATCH OPENAI PROCESSING
+        # PHASE 3.2: ASYNC BATCH OPENAI PROCESSING
         # =================================================================
-        logger.info(f"\n{'='*70}\nPHASE 5.2: OPENAI PROCESSING (Async Batch)\n{'='*70}\n")
+        logger.info(f"\n{'='*70}\nPHASE 3.2: OPENAI PROCESSING (Async Batch)\n{'='*70}\n")
         logger.info(f"Processing {len(table_tasks)} tables in parallel...")
 
-        # Run Phase 5.2
+        # Run Phase 3.2
         all_results = []
-        phase5_errors = 0
+        phase3_errors = 0
 
         if table_tasks:
             # Create all OpenAI tasks
@@ -1838,7 +1514,7 @@ async def process_excel_to_json(
 
             for idx, result in enumerate(openai_results):
                 if isinstance(result, Exception):
-                    phase5_errors += 1
+                    phase3_errors += 1
                     logger.error(f"  [ERROR] Table {idx+1}/{len(table_tasks)}: {result}")
                     continue
 
@@ -1846,9 +1522,9 @@ async def process_excel_to_json(
                 if (idx + 1) % 10 == 0 or (idx + 1) == len(openai_results):
                     logger.info(f"  [PROGRESS] Processed {idx+1}/{len(table_tasks)} tables")
 
-        logger.info(f"\nPhase 5.2 Complete:")
+        logger.info(f"\nPhase 3.2 Complete:")
         logger.info(f"  Success: {len(all_results)} tables")
-        logger.info(f"  Errors: {phase5_errors}")
+        logger.info(f"  Errors: {phase3_errors}")
 
         # =================================================================
         # SAVE CONSOLIDATED RESULTS
@@ -1919,8 +1595,6 @@ async def process_excel_to_json(
             "files_processed": len(excel_files),
             "sheets_processed": len(sheet_metadata),
             "tables_extracted": len(all_results),
-            "vision_analyses_count": len(vision_analyses) if enable_vision_analysis else 0,
-            "vision_analyses": vision_analyses if enable_vision_analysis else [],
             "output_folder": str(output_folder.absolute()),
             "consolidated_file": "all_tables_consolidated.json",
             "per_excel_files": per_excel_files_saved,
@@ -1931,9 +1605,7 @@ async def process_excel_to_json(
         # Cleanup all temporary folders after processing
         import time
         folders_to_cleanup = [
-            # Path("screenshots"),  # COMMENTED OUT - Vision model flow disabled
             Path("temp_sheets"),
-            # Path("gap_analysis")  # COMMENTED OUT - Vision model flow disabled
         ]
 
         # Small delay to ensure all file handles are released
