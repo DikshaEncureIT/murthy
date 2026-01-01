@@ -11,7 +11,7 @@ from landingai_ade import LandingAIADE
 from openai import OpenAI
 import pandas as pd
 from logger import AppLogger
-from vision_processor import process_excel_with_vision
+# from vision_processor import process_excel_with_vision  # COMMENTED OUT - Vision model flow disabled
 
 # Load environment variables
 load_dotenv(".env")
@@ -32,16 +32,14 @@ def cleanup_previous_data():
     Removes:
     - markdown/ folder (output JSON files)
     - temp_sheets/ folder (temporary Excel files)
-    - gap_analysis/ folder (vision analysis results)
-    - screenshots/ folder (vision screenshots)
     """
     import time
 
     folders_to_clean = [
         Path("markdown"),
         Path("temp_sheets"),
-        Path("gap_analysis"),
-        Path("screenshots")
+        # Path("gap_analysis"),  # COMMENTED OUT - Vision model flow disabled
+        # Path("screenshots")    # COMMENTED OUT - Vision model flow disabled
     ]
 
     for folder in folders_to_clean:
@@ -214,50 +212,51 @@ def extract_markdown_with_landingai(excel_file: Path, api_key: str = None) -> st
         raise RuntimeError(f"Error parsing with Landing AI ADE: {e}")
 
 
-def transform_table_to_key_value_format(table_json: Dict[str, Any]) -> List[Dict[str, str]]:
-    """
-    Transform table JSON from headers+rows format to key-value dictionary format.
-
-    Input format:
-    {
-        "headers": ["col1", "col2", "col3"],
-        "rows": [
-            ["val1", "val2", "val3"],
-            ["val4", "val5", "val6"]
-        ]
-    }
-
-    Output format:
-    [
-        {"col1": "val1", "col2": "val2", "col3": "val3"},
-        {"col1": "val4", "col2": "val5", "col3": "val6"}
-    ]
-
-    Args:
-        table_json: Table data in headers+rows format
-
-    Returns:
-        List of dictionaries with column names as keys
-    """
-    headers = table_json.get('headers', [])
-    rows = table_json.get('rows', [])
-
-    if not headers or not rows:
-        logger.warning("Empty headers or rows in table transformation")
-        return []
-
-    # Transform each row into a dictionary
-    transformed_data = []
-    for row in rows:
-        # Create dictionary mapping header to value
-        row_dict = {}
-        for idx, header in enumerate(headers):
-            # Handle cases where row might have fewer values than headers
-            value = row[idx] if idx < len(row) else ""
-            row_dict[header] = value
-        transformed_data.append(row_dict)
-
-    return transformed_data
+# COMMENTED OUT - LLM already returns data in the desired nested format (see prompt examples)
+# def transform_table_to_key_value_format(table_json: Dict[str, Any]) -> List[Dict[str, str]]:
+#     """
+#     Transform table JSON from headers+rows format to key-value dictionary format.
+#
+#     Input format:
+#     {
+#         "headers": ["col1", "col2", "col3"],
+#         "rows": [
+#             ["val1", "val2", "val3"],
+#             ["val4", "val5", "val6"]
+#         ]
+#     }
+#
+#     Output format:
+#     [
+#         {"col1": "val1", "col2": "val2", "col3": "val3"},
+#         {"col1": "val4", "col2": "val5", "col3": "val6"}
+#     ]
+#
+#     Args:
+#         table_json: Table data in headers+rows format
+#
+#     Returns:
+#         List of dictionaries with column names as keys
+#     """
+#     headers = table_json.get('headers', [])
+#     rows = table_json.get('rows', [])
+#
+#     if not headers or not rows:
+#         logger.warning("Empty headers or rows in table transformation")
+#         return []
+#
+#     # Transform each row into a dictionary
+#     transformed_data = []
+#     for row in rows:
+#         # Create dictionary mapping header to value
+#         row_dict = {}
+#         for idx, header in enumerate(headers):
+#             # Handle cases where row might have fewer values than headers
+#             value = row[idx] if idx < len(row) else ""
+#             row_dict[header] = value
+#         transformed_data.append(row_dict)
+#
+#     return transformed_data
 
 
 def split_markdown_tables(markdown_text: str) -> List[str]:
@@ -320,41 +319,982 @@ def extract_single_table_with_openai(table_markdown: str, sheet_name: str, table
     """
     client = OpenAI(api_key=OPENAI_API_KEY)
 
-    # Prompt for single table extraction
     user_instruction = f"""
-You will receive a single table from Excel sheet: "{sheet_name}" in Markdown format.
+You will receive one or more tables from an Excel sheet "{sheet_name}" in Markdown format.
 
-CRITICAL RULES:
-1. Return ONLY valid JSON with NO explanations, NO markdown formatting, NO additional text before or after the JSON
-2. DO NOT skip ANY rows - extract EVERY single row from the table, including:
-   - Header rows
-   - Sub-header rows
-   - Category label rows
-   - Data rows
-   - ALL rows without exception
-3. Preserve exact cell values - do not summarize, skip, or merge any content
+TASK:
+Extract ALL tables with 100% accuracy and return ONLY valid JSON.
 
-Extract the table in this exact structure:
+RULES (STRICT):
+1. Output ONLY JSON — no explanations, no markdown, no extra text.
+2. Extract EVERY row exactly as shown:
+   - headers
+   - sub-headers
+   - category rows
+   - data rows
+3. Preserve exact cell values. Do NOT infer, merge, rename, or skip anything.
+4. Empty cells must be returned as empty strings "".
+5. If multiple tables exist, extract EACH table separately.
+6. Maintain correct table boundaries and row alignment.
+7. Headers must be detected accurately and aligned with their rows.
+8. Do NOT combine multiple tables into one.
+9. Do NOT include sheet_name or table_index in the output.
 
-{{
-  "sheet_name": "{sheet_name}",
-  "table_index": {table_index},
-  "title": "<optional table title or empty string>",
-  "headers": ["col1", "col2", ...],
-  "rows": [
-    ["row1_col1", "row1_col2", ...],
-    ["row2_col1", "row2_col2", ...],
-    ... (include ALL rows from the table)
-  ]
-}}
+OUTPUT FORMAT:
+Return a nested JSON structure that represents the table data naturally.
+
+Follow the examples below strictly.
+
+════════════════════════════════════
+EXAMPLE 1
+════════════════════════════════════
+
+INPUT (HTML/MARKDOWN):
+<a id='Borrower -B2:E6-chunk'></a>
+
+<table id='Borrower -B2:E6'>
+  <tr>
+    <td id='Borrower -B2'>Referrer</td>
+    <td id='Borrower -C2'>Name </td>
+    <td id='Borrower -D2'>Richard Woodhead</td>
+    <td id='Borrower -E2'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B3'></td>
+    <td id='Borrower -C3'>Company Name </td>
+    <td id='Borrower -D3'>GPS Investment Fund Limited</td>
+    <td id='Borrower -E3'> </td>
+  </tr>
+  <tr>
+    <td id='Borrower -B4'></td>
+    <td id='Borrower -C4'>ACN</td>
+    <td id='Borrower -D4'></td>
+    <td id='Borrower -E4'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B5'></td>
+    <td id='Borrower -C5'>Tel</td>
+    <td id='Borrower -D5'></td>
+    <td id='Borrower -E5'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B6'></td>
+    <td id='Borrower -C6'>Email </td>
+    <td id='Borrower -D6'>Richard@gpsinvest.com.au</td>
+    <td id='Borrower -E6'></td>
+  </tr>
+</table>
+
+<a id='Borrower -B9:D24-chunk'></a>
+
+<table id='Borrower -B9:D24'>
+  <tr>
+    <td id='Borrower -B9'>Company Borrower</td>
+    <td id='Borrower -C9'>Company Name </td>
+    <td id='Borrower -D9'>GLENAURA HOLDINGS PTY LTD</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B10'></td>
+    <td id='Borrower -C10'>ACN </td>
+    <td id='Borrower -D10'>620 269 294</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B11'></td>
+    <td id='Borrower -C11'>ABN</td>
+    <td id='Borrower -D11'>56 620 269 294</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B12'></td>
+    <td id='Borrower -C12'>Date of ABN</td>
+    <td id='Borrower -D12'>2017-07-05 00:00:00</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B13'></td>
+    <td id='Borrower -C13'>Date of GST </td>
+    <td id='Borrower -D13'>2017-07-05 00:00:00</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B14'></td>
+    <td id='Borrower -C14'>Registered Office</td>
+    <td id='Borrower -D14'>QLD 4213</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B15'></td>
+    <td id='Borrower -C15'>Director 1</td>
+    <td id='Borrower -D15'>Giuseppe Augello</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B16'></td>
+    <td id='Borrower -C16'>Director 2</td>
+    <td id='Borrower -D16'>Director 2</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B17'></td>
+    <td id='Borrower -C17'>Director 3</td>
+    <td id='Borrower -D17'>Director 3</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B18'></td>
+    <td id='Borrower -C18'>Director 4</td>
+    <td id='Borrower -D18'>Director 4</td>
+  </tr>
+  <tr>
+    <td id='Borrower -B19'></td>
+    <td id='Borrower -C19'>Shareholder 1</td>
+    <td id='Borrower -D19'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B20'></td>
+    <td id='Borrower -C20'>Shareholder 2</td>
+    <td id='Borrower -D20'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B21'></td>
+    <td id='Borrower -C21'>Shareholder 3</td>
+    <td id='Borrower -D21'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B22'></td>
+    <td id='Borrower -C22'>Shareholder 4</td>
+    <td id='Borrower -D22'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B23'></td>
+    <td id='Borrower -C23'>Proof of Income</td>
+    <td id='Borrower -D23'></td>
+  </tr>
+  <tr>
+    <td id='Borrower -B24'></td>
+    <td id='Borrower -C24'>Credit History </td>
+    <td id='Borrower -D24'></td>
+  </tr>
+</table>
+
+OUTPUT (JSON):
+{{{{
+  "Referrer": {{{{
+    "Name": "Richard Woodhead",
+    "Company Name": "GPS Investment Fund Limited",
+    "ACN": "",
+    "Tel": "",
+    "Email": "Richard@gpsinvest.com.au"
+  }}}},
+  "Company Borrower": {{{{
+    "Company Name": "GLENAURA HOLDINGS PTY LTD",
+    "ACN": "620 269 294",
+    "ABN": "56 620 269 294",
+    "Date of ABN": "5-Jul-17",
+    "Date of GST": "5-Jul-17",
+    "Registered Office": "QLD 4213",
+    "Director 1": "Giuseppe Augello",
+    "Director 2": "Director 2",
+    "Director 3": "Director 3",
+    "Director 4": "Director 4",
+    "Shareholder 1": "",
+    "Shareholder 2": "",
+    "Shareholder 3": "",
+    "Shareholder 4": "",
+    "Proof of Income": "",
+    "Credit History": ""
+  }}}}
+}}}}
+
+════════════════════════════════════
+EXAMPLE 2
+════════════════════════════════════
+
+INPUT (HTML/MARKDOWN):
+
+<a id='Feasibility-B34:B34-chunk'></a>
+
+<table id='Feasibility-B34:B34'>
+  <tr>
+    <td id='Feasibility-B34'>Feasibility </td>
+  </tr>
+</table>
+
+<a id='Feasibility-H36:I43-chunk'></a>
+
+<table id='Feasibility-H36:I43'>
+  <tr>
+    <td id='Feasibility-H36'>Presales/ Exit</td>
+    <td id='Feasibility-I36'></td>
+  </tr>
+  <tr>
+    <td id='Feasibility-H37'>Stock Destription </td>
+    <td id='Feasibility-I37'>Lots Sold</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-H38'>1 Br </td>
+    <td id='Feasibility-I38'>1</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-H39'>3 bed</td>
+    <td id='Feasibility-I39'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-H40'>2 bed</td>
+    <td id='Feasibility-I40'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-H41'>2 bed</td>
+    <td id='Feasibility-I41'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-H42'>MANAGE RIGHTS</td>
+    <td id='Feasibility-I42'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-H43'></td>
+    <td id='Feasibility-I43'>1</td>
+  </tr>
+</table>
+
+<a id='Feasibility-B37:F43-chunk'></a>
+
+<table id='Feasibility-B37:F43'>
+  <tr>
+    <td id='Feasibility-B37'>Stock Description </td>
+    <td id='Feasibility-C37'></td>
+    <td id='Feasibility-D37'>No. Lots </td>
+    <td id='Feasibility-E37'>Gross Revenue</td>
+    <td id='Feasibility-F37'>Per Lot </td>
+  </tr>
+  <tr>
+    <td id='Feasibility-B38'>1 Br </td>
+    <td id='Feasibility-C38'></td>
+    <td id='Feasibility-D38'>3</td>
+    <td id='Feasibility-E38'>795000</td>
+    <td id='Feasibility-F38'>265000</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-B39'>3 bed</td>
+    <td id='Feasibility-C39'></td>
+    <td id='Feasibility-D39'>3</td>
+    <td id='Feasibility-E39'>1005000</td>
+    <td id='Feasibility-F39'>335000</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-B40'>2 bed</td>
+    <td id='Feasibility-C40'></td>
+    <td id='Feasibility-D40'>11</td>
+    <td id='Feasibility-E40'>3289000</td>
+    <td id='Feasibility-F40'>299000</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-B41'>2 bed</td>
+    <td id='Feasibility-C41'></td>
+    <td id='Feasibility-D41'>11</td>
+    <td id='Feasibility-E41'>3377000</td>
+    <td id='Feasibility-F41'>307000</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-B42'>MANAGE RIGHTS</td>
+    <td id='Feasibility-C42'>1 X 202K</td>
+    <td id='Feasibility-D42'>0</td>
+    <td id='Feasibility-E42'>0</td>
+    <td id='Feasibility-F42'>#DIV/0!</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-B43'>Gross Realisation </td>
+    <td id='Feasibility-C43'></td>
+    <td id='Feasibility-D43'>28</td>
+    <td id='Feasibility-E43'>8466000</td>
+    <td id='Feasibility-F43'>302357.1428571428</td>
+  </tr>
+</table>
+
+<a id='Feasibility-K37:L43-chunk'></a>
+
+<table id='Feasibility-K37:L43'>
+  <tr>
+    <td id='Feasibility-K37'>Value </td>
+    <td id='Feasibility-L37'>% Sold</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-K38'>0</td>
+    <td id='Feasibility-L38'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-K39'>0</td>
+    <td id='Feasibility-L39'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-K40'>0</td>
+    <td id='Feasibility-L40'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-K41'>0</td>
+    <td id='Feasibility-L41'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-K42'>0</td>
+    <td id='Feasibility-L42'>0</td>
+  </tr>
+  <tr>
+    <td id='Feasibility-K43'>0</td>
+    <td id='Feasibility-L43'>0</td>
+  </tr>
+</table>
+
+
+OUTPUT (JSON):
+{{{{
+  "Feasibility": {{{{
+    "Stock Description": [
+      {{{{
+        "Type": "1 Br",
+        "No. Lots": 3,
+        "Gross Revenue": "$795,000",
+        "Per Lot": "$265,000"
+      }}}},
+      {{{{
+        "Type": "3 bed",
+        "No. Lots": 3,
+        "Gross Revenue": "$1,005,000",
+        "Per Lot": "$335,000"
+      }}}},
+      {{{{
+        "Type": "2 bed",
+        "No. Lots": 11,
+        "Gross Revenue": "$3,289,000",
+        "Per Lot": "$299,000"
+      }}}},
+      {{{{
+        "Type": "2 bed",
+        "No. Lots": 11,
+        "Gross Revenue": "$3,377,000",
+        "Per Lot": "$307,000"
+      }}}},
+      {{{{
+        "Type": "MANAGE RIGHTS",
+        "No. Lots": "1 X 202K",
+        "Gross Revenue": "$-",
+        "Per Lot": "#DIV/0!"
+      }}}}
+    ],
+    "Gross Realisation": {{{{
+      "Total Lots": 28,
+      "Total Gross Revenue": "$8,466,000",
+      "Average Per Lot": "302,357"
+    }}}}
+  }}}},
+  "Presales / Exit": {{{{
+    "Stock Description": [
+      {{{{
+        "Type": "1 Br",
+        "Lots Sold": 1,
+        "Value": "$-",
+        "% Sold": "0%"
+      }}}},
+      {{{{
+        "Type": "3 bed",
+        "Lots Sold": "-",
+        "Value": "$-",
+        "% Sold": "0%"
+      }}}},
+      {{{{
+        "Type": "2 bed",
+        "Lots Sold": "-",
+        "Value": "$-",
+        "% Sold": "0%"
+      }}}},
+      {{{{
+        "Type": "2 bed",
+        "Lots Sold": "-",
+        "Value": "$-",
+        "% Sold": "0%"
+      }}}},
+      {{{{
+        "Type": "MANAGE RIGHTS",
+        "Lots Sold": 1,
+        "Value": "$-",
+        "% Sold": "0%"
+      }}}}
+    ]
+  }}}}
+}}}}
+
+════════════════════════════════════
+EXAMPLE 3
+════════════════════════════════════
+
+INPUT (HTML/MARKDOWN):
+
+<table id='Document List-B5:S53'>
+  <tr>
+    <td id='Document List-B5' colspan='2'>Internal</td>
+    <td id='Document List-D5'>Date Rec'd</td>
+    <td id='Document List-E5' colspan='2'>Property Details</td>
+    <td id='Document List-G5'>Date Rec'd</td>
+    <td id='Document List-H5' colspan='2'>Borrower &amp; Guarantor Details</td>
+    <td id='Document List-J5'>Date Rec'd</td>
+    <td id='Document List-K5' colspan='2'>Project Documents</td>
+    <td id='Document List-M5'>Date Rec'd</td>
+    <td id='Document List-N5' colspan='2'>Financial Info</td>
+    <td id='Document List-P5'>Date Rec'd</td>
+    <td id='Document List-Q5' colspan='2'>Loan Submission</td>
+    <td id='Document List-S5'>Date Rec'd</td>
+  </tr>
+  <tr>
+    <td id='Document List-B6'>Development Loan Summary - Eagleby</td>
+    <td id='Document List-C6'></td>
+    <td id='Document List-D6'>2017-08-18 00:00:00</td>
+    <td id='Document List-E6'>COS - Acacia Waters</td>
+    <td id='Document List-F6'></td>
+    <td id='Document List-G6'>2017-08-16 00:00:00</td>
+    <td id='Document List-H6'>ABN - Glenaura Holdings Pty Ltd</td>
+    <td id='Document List-I6'></td>
+    <td id='Document List-J6'>2017-08-22 00:00:00</td>
+    <td id='Document List-K6'>A1-14009 - WD100 - Site Plans - BA ISSUE.14-07-31</td>
+    <td id='Document List-L6'></td>
+    <td id='Document List-M6'>2017-08-18 00:00:00</td>
+    <td id='Document List-N6'>A&amp;L - Giuseppe Augello</td>
+    <td id='Document List-O6'></td>
+    <td id='Document List-P6'>2017-08-24 00:00:00</td>
+    <td id='Document List-Q6'></td>
+    <td id='Document List-R6'></td>
+    <td id='Document List-S6'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B7'>Email - Richard Woodhead</td>
+    <td id='Document List-C7'></td>
+    <td id='Document List-D7'>2017-09-22 00:00:00</td>
+    <td id='Document List-E7'>Disclosure Statement  (signed) - Eagleby</td>
+    <td id='Document List-F7'></td>
+    <td id='Document List-G7'>2017-08-16 00:00:00</td>
+    <td id='Document List-H7'>CV - Giuseppe Augello</td>
+    <td id='Document List-I7'></td>
+    <td id='Document List-J7'>2017-10-03 00:00:00</td>
+    <td id='Document List-K7'>A1-14009 - WD200 - Type G18 Building - BA ISSUE.14-07-31</td>
+    <td id='Document List-L7'></td>
+    <td id='Document List-M7'>2017-08-18 00:00:00</td>
+    <td id='Document List-N7'></td>
+    <td id='Document List-O7'></td>
+    <td id='Document List-P7'></td>
+    <td id='Document List-Q7'></td>
+    <td id='Document List-R7'></td>
+    <td id='Document List-S7'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B8'>GPS Development Finance - Loan Offer - Glenaura Holdings Pty Ltd</td>
+    <td id='Document List-C8'></td>
+    <td id='Document List-D8'>2017-09-22 00:00:00</td>
+    <td id='Document List-E8'>RP - 155-163 Fryar Road Eagleby, QLD, 4207</td>
+    <td id='Document List-F8'></td>
+    <td id='Document List-G8'>2017-08-22 00:00:00</td>
+    <td id='Document List-H8'>CV - Joe Augello</td>
+    <td id='Document List-I8'></td>
+    <td id='Document List-J8'>2017-10-03 00:00:00</td>
+    <td id='Document List-K8'>A1-14009 - WD300 - Type H12 Building - BA ISSUE.14-07-31</td>
+    <td id='Document List-L8'></td>
+    <td id='Document List-M8'>2017-08-18 00:00:00</td>
+    <td id='Document List-N8'></td>
+    <td id='Document List-O8'></td>
+    <td id='Document List-P8'></td>
+    <td id='Document List-Q8'></td>
+    <td id='Document List-R8'></td>
+    <td id='Document List-S8'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B9'>Letter from Joe Augello</td>
+    <td id='Document List-C9'></td>
+    <td id='Document List-D9'>2017-08-04 00:00:00</td>
+    <td id='Document List-E9'></td>
+    <td id='Document List-F9'></td>
+    <td id='Document List-G9'></td>
+    <td id='Document List-H9'>ID CC - Giuseppe Augello</td>
+    <td id='Document List-I9'></td>
+    <td id='Document List-J9'>2017-08-16 00:00:00</td>
+    <td id='Document List-K9'>A1-14009 - WD400 - Type I16 Building - BA ISSUE.14-07-31</td>
+    <td id='Document List-L9'></td>
+    <td id='Document List-M9'>2017-08-18 00:00:00</td>
+    <td id='Document List-N9'></td>
+    <td id='Document List-O9'></td>
+    <td id='Document List-P9'></td>
+    <td id='Document List-Q9'></td>
+    <td id='Document List-R9'></td>
+    <td id='Document List-S9'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B10'></td>
+    <td id='Document List-C10'></td>
+    <td id='Document List-D10'></td>
+    <td id='Document List-E10'></td>
+    <td id='Document List-F10'></td>
+    <td id='Document List-G10'></td>
+    <td id='Document List-H10'>ID DC - Giuseppe Augello</td>
+    <td id='Document List-I10'></td>
+    <td id='Document List-J10'>2017-08-16 00:00:00</td>
+    <td id='Document List-K10'>Fryar Rd Eagleby Construction Costs</td>
+    <td id='Document List-L10'></td>
+    <td id='Document List-M10'>2017-08-18 00:00:00</td>
+    <td id='Document List-N10'></td>
+    <td id='Document List-O10'></td>
+    <td id='Document List-P10'></td>
+    <td id='Document List-Q10'></td>
+    <td id='Document List-R10'></td>
+    <td id='Document List-S10'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B11'></td>
+    <td id='Document List-C11'></td>
+    <td id='Document List-D11'></td>
+    <td id='Document List-E11'></td>
+    <td id='Document List-F11'></td>
+    <td id='Document List-G11'></td>
+    <td id='Document List-H11'>ID MC - Giuseppe Augello</td>
+    <td id='Document List-I11'></td>
+    <td id='Document List-J11'>2017-08-16 00:00:00</td>
+    <td id='Document List-K11'>Approved Plans</td>
+    <td id='Document List-L11'></td>
+    <td id='Document List-M11'>2017-08-18 00:00:00</td>
+    <td id='Document List-N11'></td>
+    <td id='Document List-O11'></td>
+    <td id='Document List-P11'></td>
+    <td id='Document List-Q11'></td>
+    <td id='Document List-R11'></td>
+    <td id='Document List-S11'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B12'></td>
+    <td id='Document List-C12'></td>
+    <td id='Document List-D12'></td>
+    <td id='Document List-E12'></td>
+    <td id='Document List-F12'></td>
+    <td id='Document List-G12'></td>
+    <td id='Document List-H12'>ID PP - Giuseppe Augello</td>
+    <td id='Document List-I12'></td>
+    <td id='Document List-J12'>2017-08-16 00:00:00</td>
+    <td id='Document List-K12'>Development Approval</td>
+    <td id='Document List-L12'></td>
+    <td id='Document List-M12'>2017-08-18 00:00:00</td>
+    <td id='Document List-N12'></td>
+    <td id='Document List-O12'></td>
+    <td id='Document List-P12'></td>
+    <td id='Document List-Q12'></td>
+    <td id='Document List-R12'></td>
+    <td id='Document List-S12'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B13'></td>
+    <td id='Document List-C13'></td>
+    <td id='Document List-D13'></td>
+    <td id='Document List-E13'></td>
+    <td id='Document List-F13'></td>
+    <td id='Document List-G13'></td>
+    <td id='Document List-H13'></td>
+    <td id='Document List-I13'></td>
+    <td id='Document List-J13'></td>
+    <td id='Document List-K13'>Development Permit</td>
+    <td id='Document List-L13'></td>
+    <td id='Document List-M13'>2017-08-18 00:00:00</td>
+    <td id='Document List-N13'></td>
+    <td id='Document List-O13'></td>
+    <td id='Document List-P13'></td>
+    <td id='Document List-Q13'></td>
+    <td id='Document List-R13'></td>
+    <td id='Document List-S13'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B14'></td>
+    <td id='Document List-C14'></td>
+    <td id='Document List-D14'></td>
+    <td id='Document List-E14'></td>
+    <td id='Document List-F14'></td>
+    <td id='Document List-G14'></td>
+    <td id='Document List-H14'></td>
+    <td id='Document List-I14'></td>
+    <td id='Document List-J14'></td>
+    <td id='Document List-K14'>Stage 4 Feasability</td>
+    <td id='Document List-L14'></td>
+    <td id='Document List-M14'>2017-08-18 00:00:00</td>
+    <td id='Document List-N14'></td>
+    <td id='Document List-O14'></td>
+    <td id='Document List-P14'></td>
+    <td id='Document List-Q14'></td>
+    <td id='Document List-R14'></td>
+    <td id='Document List-S14'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B15'></td>
+    <td id='Document List-C15'></td>
+    <td id='Document List-D15'></td>
+    <td id='Document List-E15'></td>
+    <td id='Document List-F15'></td>
+    <td id='Document List-G15'></td>
+    <td id='Document List-H15'></td>
+    <td id='Document List-I15'></td>
+    <td id='Document List-J15'></td>
+    <td id='Document List-K15'>EL01 - Legend</td>
+    <td id='Document List-L15'></td>
+    <td id='Document List-M15'>2017-08-18 00:00:00</td>
+    <td id='Document List-N15'></td>
+    <td id='Document List-O15'></td>
+    <td id='Document List-P15'></td>
+    <td id='Document List-Q15'></td>
+    <td id='Document List-R15'></td>
+    <td id='Document List-S15'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B16'></td>
+    <td id='Document List-C16'></td>
+    <td id='Document List-D16'></td>
+    <td id='Document List-E16'></td>
+    <td id='Document List-F16'></td>
+    <td id='Document List-G16'></td>
+    <td id='Document List-H16'></td>
+    <td id='Document List-I16'></td>
+    <td id='Document List-J16'></td>
+    <td id='Document List-K16'>EL02 - G18 Ground Floor</td>
+    <td id='Document List-L16'></td>
+    <td id='Document List-M16'>2017-08-18 00:00:00</td>
+    <td id='Document List-N16'></td>
+    <td id='Document List-O16'></td>
+    <td id='Document List-P16'></td>
+    <td id='Document List-Q16'></td>
+    <td id='Document List-R16'></td>
+    <td id='Document List-S16'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B17'></td>
+    <td id='Document List-C17'></td>
+    <td id='Document List-D17'></td>
+    <td id='Document List-E17'></td>
+    <td id='Document List-F17'></td>
+    <td id='Document List-G17'></td>
+    <td id='Document List-H17'></td>
+    <td id='Document List-I17'></td>
+    <td id='Document List-J17'></td>
+    <td id='Document List-K17'>EL03 - G18 Level 2</td>
+    <td id='Document List-L17'></td>
+    <td id='Document List-M17'>2017-08-18 00:00:00</td>
+    <td id='Document List-N17'></td>
+    <td id='Document List-O17'></td>
+    <td id='Document List-P17'></td>
+    <td id='Document List-Q17'></td>
+    <td id='Document List-R17'></td>
+    <td id='Document List-S17'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B18'></td>
+    <td id='Document List-C18'></td>
+    <td id='Document List-D18'></td>
+    <td id='Document List-E18'></td>
+    <td id='Document List-F18'></td>
+    <td id='Document List-G18'></td>
+    <td id='Document List-H18'></td>
+    <td id='Document List-I18'></td>
+    <td id='Document List-J18'></td>
+    <td id='Document List-K18'>EL04 - G18 Level 3</td>
+    <td id='Document List-L18'></td>
+    <td id='Document List-M18'>2017-08-18 00:00:00</td>
+    <td id='Document List-N18'></td>
+    <td id='Document List-O18'></td>
+    <td id='Document List-P18'></td>
+    <td id='Document List-Q18'></td>
+    <td id='Document List-R18'></td>
+    <td id='Document List-S18'></td>
+  </tr>
+  <tr>
+    <td id='Document List-B19'></td>
+    <td id='Document List-C19'></td>
+    <td id='Document List-D19'></td>
+    <td id='Document List-E19'></td>
+    <td id='Document List-F19'></td>
+    <td id='Document List-G19'></td>
+    <td id='Document List-H19'></td>
+    <td id='Document List-I19'></td>
+    <td id='Document List-J19'></td>
+    <td id='Document List-K19'>EL05 - H12 Ground Floor</td>
+    <td id='Document List-L19'></td>
+    <td id='Document List-M19'>2017-08-18 00:00:00</td>
+    <td id='Document List-N19'></td>
+    <td id='Document List-O19'></td>
+    <td id='Document List-P19'></td>
+    <td id='Document List-Q19'></td>
+    <td id='Document List-R19'></td>
+    <td id='Document List-S19'></td>
+  </tr>
+</table>
+
+OUTPUT (JSON):
+{{{{
+[
+  {{{{
+    "Internal": "Development Loan Summary",
+    "Date Rec'd": "8/18/2017",
+    "Property Details": "COS - Acacia Waters",
+    "Borrower & Guarantor Details": "ABN - Glenaura Holdings Pty Ltd",
+    "Project Documents": "A1-14009 - WD100 - Site Plan",
+    "Financial Info": "A&L - Giuseppe Augello",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "Email - Richard Woodhead",
+    "Date Rec'd": "9/22/2017",
+    "Property Details": "Disclosure Statement (signed)",
+    "Borrower & Guarantor Details": "CV - Giuseppe Augello",
+    "Project Documents": "A1-14009 - WD200 - Type G18",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "GPS Development Finance",
+    "Date Rec'd": "9/22/2017",
+    "Property Details": "RP - 155-163 Fryar Road Eagleby",
+    "Borrower & Guarantor Details": "CV - Joe Augello",
+    "Project Documents": "A1-14009 - WD300 - Type H12",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "Letter from Joe Augello",
+    "Date Rec'd": "8/4/2017",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "ID CC - Giuseppe Augello",
+    "Project Documents": "A1-14009 - WD400 - Type H16",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "ID DC - Giuseppe Augello",
+    "Project Documents": "Fryar Rd Eagleby Construction",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "ID MC - Giuseppe Augello",
+    "Project Documents": "Approved Plans",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "ID PP - Giuseppe Augello",
+    "Project Documents": "Development Approval",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "",
+    "Project Documents": "Development Permit",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "",
+    "Project Documents": "Stage 4 Feasibility",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "",
+    "Project Documents": "EL01 - Legend",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "",
+    "Project Documents": "EL02 - G18 Ground Floor",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "",
+    "Project Documents": "EL03 - G18 Level 2",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "",
+    "Project Documents": "EL04 - G18 Level 3",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}},
+  {{{{
+    "Internal": "",
+    "Date Rec'd": "",
+    "Property Details": "",
+    "Borrower & Guarantor Details": "",
+    "Project Documents": "EL05 - H12 Ground Floor",
+    "Financial Info": "",
+    "Loan Submission": ""
+  }}}}
+]
+}}}}
+
+════════════════════════════════════
+EXAMPLE 4
+════════════════════════════════════
+
+INPUT (HTML/MARKDOWN):
+
+<table id='Key Statements-B32:I38'>
+  <tr>
+    <td id='Key Statements-B32'></td>
+    <td id='Key Statements-C32'>Land LVR</td>
+    <td id='Key Statements-D32'>TDC</td>
+    <td id='Key Statements-E32'>GRV</td>
+    <td id='Key Statements-F32'>Rate</td>
+    <td id='Key Statements-G32'>Fees</td>
+    <td id='Key Statements-H32'>Max</td>
+    <td id='Key Statements-I32'>Presales</td>
+  </tr>
+  <tr>
+    <td id='Key Statements-B33'>Development</td>
+    <td id='Key Statements-C33'>50% - 70%</td>
+    <td id='Key Statements-D33'>80% - 100%</td>
+    <td id='Key Statements-E33'>55% - 70%</td>
+    <td id='Key Statements-F33'>8% - 12%</td>
+    <td id='Key Statements-G33'>1% - 2%</td>
+    <td id='Key Statements-H33'>20M</td>
+    <td id='Key Statements-I33'>0% - 70%</td>
+  </tr>
+  <tr>
+    <td id='Key Statements-B34'></td>
+    <td id='Key Statements-C34'>LVR</td>
+    <td id='Key Statements-D34'></td>
+    <td id='Key Statements-E34'></td>
+    <td id='Key Statements-F34'></td>
+    <td id='Key Statements-G34'></td>
+    <td id='Key Statements-H34'></td>
+    <td id='Key Statements-I34'></td>
+  </tr>
+  <tr>
+    <td id='Key Statements-B35'>Commercial &amp; Industrial</td>
+    <td id='Key Statements-C35'>50% - 75%</td>
+    <td id='Key Statements-D35'></td>
+    <td id='Key Statements-E35'></td>
+    <td id='Key Statements-F35'>6% - 12%</td>
+    <td id='Key Statements-G35'>.5% - 2%</td>
+    <td id='Key Statements-H35'>25M</td>
+    <td id='Key Statements-I35'></td>
+  </tr>
+  <tr>
+    <td id='Key Statements-B36'>Landbank/Vacant Land</td>
+    <td id='Key Statements-C36'>40% - 70%</td>
+    <td id='Key Statements-D36'></td>
+    <td id='Key Statements-E36'></td>
+    <td id='Key Statements-F36'>7% - 14%</td>
+    <td id='Key Statements-G36'>1% - 2%</td>
+    <td id='Key Statements-H36'>25M</td>
+    <td id='Key Statements-I36'></td>
+  </tr>
+  <tr>
+    <td id='Key Statements-B37'>Residential </td>
+    <td id='Key Statements-C37'>0.7</td>
+    <td id='Key Statements-D37'></td>
+    <td id='Key Statements-E37'></td>
+    <td id='Key Statements-F37'>6% - 10%</td>
+    <td id='Key Statements-G37'>1% - 2%</td>
+    <td id='Key Statements-H37'>25M</td>
+    <td id='Key Statements-I37'></td>
+  </tr>
+  <tr>
+    <td id='Key Statements-B38'>Mezzanine</td>
+    <td id='Key Statements-C38'>0.75</td>
+    <td id='Key Statements-D38'></td>
+    <td id='Key Statements-E38'>0.75</td>
+    <td id='Key Statements-F38'>16% - 20%</td>
+    <td id='Key Statements-G38'>1.75% - 2%</td>
+    <td id='Key Statements-H38'>2M</td>
+    <td id='Key Statements-I38'></td>
+  </tr>
+</table>
+
+OUTPUT (JSON):
+{{{{
+  "Development": {{{{
+    "Land_LVR": "50% - 70%",
+    "TDC": "80% - 100%",
+    "GRV": "55% - 70%",
+    "Rate": "8% - 12%",
+    "Fees": "1% - 2%",
+    "Max": "20M",
+    "Presales": "0% - 70%"
+  }}}},
+  "Blank_Row": {{{{
+    "Land_LVR": "LVR",
+    "TDC": "",
+    "GRV": "",
+    "Rate": "",
+    "Fees": "",
+    "Max": "",
+    "Presales": ""
+  }}}},
+  "Commercial_Industrial": {{{{
+    "Land_LVR": "50% - 75%",
+    "TDC": "",
+    "GRV": "",
+    "Rate": "6% - 12%",
+    "Fees": "0.5% - 2%",
+    "Max": "25M",
+    "Presales": ""
+  }}}},
+  "Landbank_Vacant_Land": {{{{
+    "Land_LVR": "40% - 70%",
+    "TDC": "",
+    "GRV": "",
+    "Rate": "7% - 14%",
+    "Fees": "1% - 2%",
+    "Max": "25M",
+    "Presales": ""
+  }}}},
+  "Residential": {{{{
+    "Land_LVR": "0.7",
+    "TDC": "",
+    "GRV": "",
+    "Rate": "6% - 10%",
+    "Fees": "1% - 2%",
+    "Max": "25M",
+    "Presales": ""
+  }}}},
+  "Mezzanine": {{{{
+    "Land_LVR": "0.75",
+    "TDC": "",
+    "GRV": "0.75",
+    "Rate": "16% - 20%",
+    "Fees": "1.75% - 2%",
+    "Max": "2M",
+    "Presales": ""
+  }}}}
+}}}}
+
+════════════════════════════════════
 
 IMPORTANT:
-- Your response must start with {{ and end with }}
-- Do not skip intermediate header rows or category rows
-- Include EVERY row present in the markdown table
-- If a cell is empty, use empty string ""
+- Response MUST start with {{ and end with }}.
+- ALL tables must be returned inside the JSON.
+- No data loss is allowed.
 
-Table markdown:
+Table Markdown:
 \"\"\"
 {table_markdown}
 \"\"\"
@@ -371,7 +1311,7 @@ Table markdown:
     )
 
     llm_output = response.choices[0].message.content
-    
+    print("llm_output",llm_output)
 
     # Clean markdown code blocks if present
     llm_output = llm_output.strip()
@@ -391,20 +1331,42 @@ Table markdown:
         logger.warning(f"JSON parsing failed at position {e.pos}. Attempting to extract valid JSON...")
 
         try:
-            # Try to find the JSON object by looking for matching braces
-            start_idx = llm_output.find('{')
-            if start_idx == -1:
-                raise ValueError("No JSON object found in output")
+            # Try to find the JSON object or array by looking for matching braces/brackets
+            start_char = None
+            start_idx = -1
 
-            # Count braces to find the end of the JSON object
-            brace_count = 0
+            # Check for both { and [ as valid JSON starts
+            obj_idx = llm_output.find('{')
+            arr_idx = llm_output.find('[')
+
+            if obj_idx == -1 and arr_idx == -1:
+                raise ValueError("No JSON object or array found in output")
+            elif obj_idx == -1:
+                start_idx = arr_idx
+                start_char = '['
+            elif arr_idx == -1:
+                start_idx = obj_idx
+                start_char = '{'
+            else:
+                # Both found, use whichever comes first
+                if obj_idx < arr_idx:
+                    start_idx = obj_idx
+                    start_char = '{'
+                else:
+                    start_idx = arr_idx
+                    start_char = '['
+
+            # Count braces/brackets to find the end of the JSON
+            close_char = '}' if start_char == '{' else ']'
+            count = 0
             end_idx = start_idx
+
             for i in range(start_idx, len(llm_output)):
-                if llm_output[i] == '{':
-                    brace_count += 1
-                elif llm_output[i] == '}':
-                    brace_count -= 1
-                    if brace_count == 0:
+                if llm_output[i] == start_char:
+                    count += 1
+                elif llm_output[i] == close_char:
+                    count -= 1
+                    if count == 0:
                         end_idx = i + 1
                         break
 
@@ -452,7 +1414,7 @@ async def process_openai_async(
 ) -> Dict[str, Any]:
     """
     Async wrapper for OpenAI table processing.
-    Returns: table data in key-value format for consolidated output
+    Returns: table data directly from LLM (already in nested dict format)
     """
     loop = asyncio.get_event_loop()
 
@@ -465,82 +1427,80 @@ async def process_openai_async(
         table_index
     )
 
-    # Transform to key-value format
-    transformed_data = transform_table_to_key_value_format(table_json)
-
-    # Return only key-value format data
+    # LLM already returns data in the desired nested format (see prompt examples)
+    # No transformation needed - use the data directly
     return {
         "excel_file": excel_file_name,
-        "file_index": file_index,
+        # "file_index": file_index,
         "sheet_name": sheet_name,
-        "table_index": table_index,
-        "title": table_json.get("title", ""),
-        "data": transformed_data
+        # "table_index": table_index,
+        "data": table_json  # Use LLM output directly
     }
 
 
-async def process_vision_analysis_async(
-    temp_excel: Path,
-    safe_name: str,
-    sheet_name: str,
-    excel_file_name: str,
-    file_index: int,
-    openai_api_key: str,
-    analyze_gaps: bool = True,
-    analyze_similarity: bool = True
-) -> Dict[str, Any]:
-    """
-    Async wrapper for vision-based gap analysis of a single temp sheet.
-
-    Calls process_excel_with_vision() to:
-    - Convert sheet to image
-    - Analyze with GPT-4 Vision
-    - Detect column gaps and table relationships
-    - Save results to gap_analysis folder
-
-    Args:
-        temp_excel: Path to temp Excel file (single sheet)
-        safe_name: Sanitized sheet name for filenames
-        sheet_name: Original sheet name
-        excel_file_name: Original Excel filename
-        file_index: Index of the Excel file being processed
-        openai_api_key: OpenAI API key
-        analyze_gaps: Enable column gap detection (default: True)
-        analyze_similarity: Enable table relationship analysis (default: True)
-
-    Returns:
-        Dict with vision analysis results or error information
-    """
-    try:
-        # Call vision processing function
-        # Disable file saving in pipeline - we'll save consolidated format later
-        result = await process_excel_with_vision(
-            excel_path=temp_excel,
-            analyze_gaps=analyze_gaps,
-            analyze_similarity=analyze_similarity,
-            openai_api_key=openai_api_key,
-            save_to_file=False
-        )
-
-        # Add metadata to result
-        result['excel_file'] = excel_file_name
-        result['file_index'] = file_index
-        result['safe_name'] = safe_name
-        from datetime import datetime
-        result['processed_at'] = datetime.now().isoformat()
-
-        return result
-
-    except Exception as e:
-        logger.error(f"Vision analysis failed for {safe_name}: {e}", exc_info=True)
-        return {
-            'safe_name': safe_name,
-            'sheet_name': sheet_name,
-            'excel_file': excel_file_name,
-            'file_index': file_index,
-            'error': str(e),
-            'status': 'failed'
-        }
+# COMMENTED OUT - Vision model flow disabled
+# async def process_vision_analysis_async(
+#     temp_excel: Path,
+#     safe_name: str,
+#     sheet_name: str,
+#     excel_file_name: str,
+#     file_index: int,
+#     openai_api_key: str,
+#     analyze_gaps: bool = True,
+#     analyze_similarity: bool = True
+# ) -> Dict[str, Any]:
+#     """
+#     Async wrapper for vision-based gap analysis of a single temp sheet.
+#
+#     Calls process_excel_with_vision() to:
+#     - Convert sheet to image
+#     - Analyze with GPT-4 Vision
+#     - Detect column gaps and table relationships
+#     - Save results to gap_analysis folder
+#
+#     Args:
+#         temp_excel: Path to temp Excel file (single sheet)
+#         safe_name: Sanitized sheet name for filenames
+#         sheet_name: Original sheet name
+#         excel_file_name: Original Excel filename
+#         file_index: Index of the Excel file being processed
+#         openai_api_key: OpenAI API key
+#         analyze_gaps: Enable column gap detection (default: True)
+#         analyze_similarity: Enable table relationship analysis (default: True)
+#
+#     Returns:
+#         Dict with vision analysis results or error information
+#     """
+#     try:
+#         # Call vision processing function
+#         # Disable file saving in pipeline - we'll save consolidated format later
+#         result = await process_excel_with_vision(
+#             excel_path=temp_excel,
+#             analyze_gaps=analyze_gaps,
+#             analyze_similarity=analyze_similarity,
+#             openai_api_key=openai_api_key,
+#             save_to_file=False
+#         )
+#
+#         # Add metadata to result
+#         result['excel_file'] = excel_file_name
+#         result['file_index'] = file_index
+#         result['safe_name'] = safe_name
+#         from datetime import datetime
+#         result['processed_at'] = datetime.now().isoformat()
+#
+#         return result
+#
+#     except Exception as e:
+#         logger.error(f"Vision analysis failed for {safe_name}: {e}", exc_info=True)
+#         return {
+#             'safe_name': safe_name,
+#             'sheet_name': sheet_name,
+#             'excel_file': excel_file_name,
+#             'file_index': file_index,
+#             'error': str(e),
+#             'status': 'failed'
+#         }
 
 
 async def process_excel_to_json(
@@ -581,12 +1541,13 @@ async def process_excel_to_json(
     output_folder.mkdir(parents=True, exist_ok=True)
     temp_folder.mkdir(parents=True, exist_ok=True)
 
-    # Create vision analysis folders if enabled
-    gap_analysis_folder = Path("gap_analysis")
-    screenshots_folder = Path("screenshots")
-    if enable_vision_analysis:
-        gap_analysis_folder.mkdir(parents=True, exist_ok=True)
-        screenshots_folder.mkdir(parents=True, exist_ok=True)
+    # COMMENTED OUT - Vision model flow disabled
+    # # Create vision analysis folders if enabled
+    # gap_analysis_folder = Path("gap_analysis")
+    # screenshots_folder = Path("screenshots")
+    # if enable_vision_analysis:
+    #     gap_analysis_folder.mkdir(parents=True, exist_ok=True)
+    #     screenshots_folder.mkdir(parents=True, exist_ok=True)
 
     # Get all Excel files from input folder
     excel_files = list(input_folder.glob("*.xlsx")) + list(input_folder.glob("*.xls"))
@@ -641,135 +1602,139 @@ async def process_excel_to_json(
         logger.info(f"\nPhase 1 Complete: Created {len(sheet_metadata)} temp sheet files")
 
         # =================================================================
-        # PHASE 2: SYNCHRONOUS ITERATION WITH ASYNC VISION PROCESSING PER FILE
+        # PHASE 2: VISION PROCESSING - COMMENTED OUT
         # =================================================================
         vision_analyses = []
-        phase2_errors = 0
-        import time
-
-        if enable_vision_analysis:
-            logger.info(f"\n{'='*70}\nPHASE 2: VISION PROCESSING (One-by-One with Async Vision)\n{'='*70}\n")
-
-            # Limit files to process
-            files_to_analyze = sheet_metadata[:max_sheets_for_vision]
-            if len(sheet_metadata) > max_sheets_for_vision:
-                logger.warning(
-                    f"Limiting vision analysis to first {max_sheets_for_vision} files "
-                    f"(total: {len(sheet_metadata)} files)"
-                )
-
-            logger.info(f"Processing {len(files_to_analyze)} files synchronously (one-by-one)...")
-            total_vision_start = time.time()
-
-            # SYNCHRONOUS ITERATION: Process each file one-by-one
-            for idx, metadata in enumerate(files_to_analyze, 1):
-                safe_name = metadata['safe_name']
-                temp_excel = metadata['temp_excel']
-
-                logger.info(f"\n[{idx}/{len(files_to_analyze)}] Processing: {safe_name}")
-                file_start_time = time.time()
-
-                try:
-                    # ASYNC VISION PROCESSING: Process this file with Vision LLM
-                    logger.info(f"  → Running Vision analysis asynchronously...")
-                    vision_result = await process_vision_analysis_async(
-                        temp_excel=temp_excel,
-                        safe_name=safe_name,
-                        sheet_name=metadata['sheet_name'],
-                        excel_file_name=metadata['excel_file_name'],
-                        file_index=metadata['file_index'],
-                        openai_api_key=OPENAI_API_KEY,
-                        analyze_gaps=analyze_gaps,
-                        analyze_similarity=analyze_similarity
-                    )
-
-                    # Check for errors
-                    if vision_result.get('error') or vision_result.get('status') == 'failed':
-                        phase2_errors += 1
-                        logger.error(f"  ✗ Vision analysis failed: {vision_result.get('error', 'Unknown error')}")
-                        continue
-
-                    # SUCCESS: Save individual gap_analysis JSON for this file
-                    gap_analysis_file = gap_analysis_folder / f"{safe_name}_gap_analysis.json"
-                    with open(gap_analysis_file, "w", encoding="utf-8") as f:
-                        json.dump(vision_result, f, indent=2, ensure_ascii=False)
-
-                    classification = vision_result.get('classification', 'unknown')
-                    columns_with_gap = vision_result.get('columns_with_gap', [])
-
-                    file_duration_ms = int((time.time() - file_start_time) * 1000)
-                    logger.info(f"  ✓ Vision analysis complete ({file_duration_ms}ms)")
-                    logger.info(f"    - Classification: {classification}")
-                    logger.info(f"    - Gap columns: {columns_with_gap}")
-                    logger.info(f"    - Saved: {gap_analysis_file.name}")
-
-                    vision_analyses.append(vision_result)
-
-                except Exception as e:
-                    phase2_errors += 1
-                    logger.error(f"  ✗ Error processing {safe_name}: {e}", exc_info=True)
-                    continue
-
-            # Calculate total processing time
-            total_vision_duration_ms = int((time.time() - total_vision_start) * 1000)
-
-            logger.info(f"\nPhase 2 Complete:")
-            logger.info(f"  Success: {len(vision_analyses)} files analyzed")
-            logger.info(f"  Errors: {phase2_errors}")
-            logger.info(f"  Total time: {total_vision_duration_ms}ms ({total_vision_duration_ms/1000:.1f}s)")
-
-        else:
-            logger.info(f"\nPhase 2 Skipped: Vision analysis disabled")
+        # COMMENTED OUT - Vision model flow disabled
+        # phase2_errors = 0
+        # import time
+        #
+        # if enable_vision_analysis:
+        #     logger.info(f"\n{'='*70}\nPHASE 2: VISION PROCESSING (One-by-One with Async Vision)\n{'='*70}\n")
+        #
+        #     # Limit files to process
+        #     files_to_analyze = sheet_metadata[:max_sheets_for_vision]
+        #     if len(sheet_metadata) > max_sheets_for_vision:
+        #         logger.warning(
+        #             f"Limiting vision analysis to first {max_sheets_for_vision} files "
+        #             f"(total: {len(sheet_metadata)} files)"
+        #         )
+        #
+        #     logger.info(f"Processing {len(files_to_analyze)} files synchronously (one-by-one)...")
+        #     total_vision_start = time.time()
+        #
+        #     # SYNCHRONOUS ITERATION: Process each file one-by-one
+        #     for idx, metadata in enumerate(files_to_analyze, 1):
+        #         safe_name = metadata['safe_name']
+        #         temp_excel = metadata['temp_excel']
+        #
+        #         logger.info(f"\n[{idx}/{len(files_to_analyze)}] Processing: {safe_name}")
+        #         file_start_time = time.time()
+        #
+        #         try:
+        #             # ASYNC VISION PROCESSING: Process this file with Vision LLM
+        #             logger.info(f"  → Running Vision analysis asynchronously...")
+        #             vision_result = await process_vision_analysis_async(
+        #                 temp_excel=temp_excel,
+        #                 safe_name=safe_name,
+        #                 sheet_name=metadata['sheet_name'],
+        #                 excel_file_name=metadata['excel_file_name'],
+        #                 file_index=metadata['file_index'],
+        #                 openai_api_key=OPENAI_API_KEY,
+        #                 analyze_gaps=analyze_gaps,
+        #                 analyze_similarity=analyze_similarity
+        #             )
+        #
+        #             # Check for errors
+        #             if vision_result.get('error') or vision_result.get('status') == 'failed':
+        #                 phase2_errors += 1
+        #                 logger.error(f"  ✗ Vision analysis failed: {vision_result.get('error', 'Unknown error')}")
+        #                 continue
+        #
+        #             # SUCCESS: Save individual gap_analysis JSON for this file
+        #             gap_analysis_file = gap_analysis_folder / f"{safe_name}_gap_analysis.json"
+        #             with open(gap_analysis_file, "w", encoding="utf-8") as f:
+        #                 json.dump(vision_result, f, indent=2, ensure_ascii=False)
+        #
+        #             classification = vision_result.get('classification', 'unknown')
+        #             columns_with_gap = vision_result.get('columns_with_gap', [])
+        #
+        #             file_duration_ms = int((time.time() - file_start_time) * 1000)
+        #             logger.info(f"  ✓ Vision analysis complete ({file_duration_ms}ms)")
+        #             logger.info(f"    - Classification: {classification}")
+        #             logger.info(f"    - Gap columns: {columns_with_gap}")
+        #             logger.info(f"    - Saved: {gap_analysis_file.name}")
+        #
+        #             vision_analyses.append(vision_result)
+        #
+        #         except Exception as e:
+        #             phase2_errors += 1
+        #             logger.error(f"  ✗ Error processing {safe_name}: {e}", exc_info=True)
+        #             continue
+        #
+        #     # Calculate total processing time
+        #     total_vision_duration_ms = int((time.time() - total_vision_start) * 1000)
+        #
+        #     logger.info(f"\nPhase 2 Complete:")
+        #     logger.info(f"  Success: {len(vision_analyses)} files analyzed")
+        #     logger.info(f"  Errors: {phase2_errors}")
+        #     logger.info(f"  Total time: {total_vision_duration_ms}ms ({total_vision_duration_ms/1000:.1f}s)")
+        #
+        # else:
+        #     logger.info(f"\nPhase 2 Skipped: Vision analysis disabled")
+        logger.info(f"\nPhase 2 Skipped: Vision analysis disabled (commented out)")
 
         # =================================================================
-        # PHASE 3: SYNCHRONOUS GAP COLUMN REMOVAL
+        # PHASE 3: GAP COLUMN REMOVAL - COMMENTED OUT
         # =================================================================
-        if enable_vision_analysis and vision_analyses:
-            logger.info(f"\n{'='*70}\nPHASE 3: GAP COLUMN REMOVAL (Synchronous)\n{'='*70}\n")
-
-            cleaned_count = 0
-            skipped_count = 0
-
-            for analysis in vision_analyses:
-                classification = analysis.get('classification', '')
-                columns_with_gap = analysis.get('columns_with_gap', [])
-                safe_name = analysis.get('safe_name', '')
-
-                # Only remove gaps for single tables
-                if classification == 'single_table' and columns_with_gap:
-                    logger.info(f"Processing single table: {safe_name}")
-                    logger.info(f"  Found {len(columns_with_gap)} gap columns: {columns_with_gap}")
-
-                    # Skip first gap, remove the rest
-                    if len(columns_with_gap) > 1:
-                        gaps_to_remove = columns_with_gap[1:]  # Skip first gap
-                        logger.info(f"  Removing gaps (keeping first): {gaps_to_remove}")
-
-                        # Find the corresponding temp Excel file
-                        temp_excel_path = None
-                        for metadata in sheet_metadata:
-                            if metadata['safe_name'] == safe_name:
-                                temp_excel_path = metadata['temp_excel']
-                                break
-
-                        if temp_excel_path and temp_excel_path.exists():
-                            # SYNCHRONOUS GAP REMOVAL: Direct file modification
-                            remove_gap_columns_from_excel(temp_excel_path, gaps_to_remove)
-                            cleaned_count += 1
-                            logger.info(f"  ✓ Gaps removed successfully")
-                        else:
-                            logger.warning(f"  ✗ Temp Excel file not found for {safe_name}")
-                    else:
-                        logger.info(f"  Only 1 gap column, keeping as-is")
-                        skipped_count += 1
-                else:
-                    if classification != 'single_table':
-                        logger.debug(f"Skipping {safe_name}: classification is '{classification}' (not single_table)")
-                    skipped_count += 1
-
-            logger.info(f"\nPhase 3 Complete:")
-            logger.info(f"  Cleaned: {cleaned_count} files")
-            logger.info(f"  Skipped: {skipped_count} files")
+        # COMMENTED OUT - Vision model flow disabled
+        # if enable_vision_analysis and vision_analyses:
+        #     logger.info(f"\n{'='*70}\nPHASE 3: GAP COLUMN REMOVAL (Synchronous)\n{'='*70}\n")
+        #
+        #     cleaned_count = 0
+        #     skipped_count = 0
+        #
+        #     for analysis in vision_analyses:
+        #         classification = analysis.get('classification', '')
+        #         columns_with_gap = analysis.get('columns_with_gap', [])
+        #         safe_name = analysis.get('safe_name', '')
+        #
+        #         # Only remove gaps for single tables
+        #         if classification == 'single_table' and columns_with_gap:
+        #             logger.info(f"Processing single table: {safe_name}")
+        #             logger.info(f"  Found {len(columns_with_gap)} gap columns: {columns_with_gap}")
+        #
+        #             # Skip first gap, remove the rest
+        #             if len(columns_with_gap) > 1:
+        #                 gaps_to_remove = columns_with_gap[1:]  # Skip first gap
+        #                 logger.info(f"  Removing gaps (keeping first): {gaps_to_remove}")
+        #
+        #                 # Find the corresponding temp Excel file
+        #                 temp_excel_path = None
+        #                 for metadata in sheet_metadata:
+        #                     if metadata['safe_name'] == safe_name:
+        #                         temp_excel_path = metadata['temp_excel']
+        #                         break
+        #
+        #                 if temp_excel_path and temp_excel_path.exists():
+        #                     # SYNCHRONOUS GAP REMOVAL: Direct file modification
+        #                     remove_gap_columns_from_excel(temp_excel_path, gaps_to_remove)
+        #                     cleaned_count += 1
+        #                     logger.info(f"  ✓ Gaps removed successfully")
+        #                 else:
+        #                     logger.warning(f"  ✗ Temp Excel file not found for {safe_name}")
+        #             else:
+        #                 logger.info(f"  Only 1 gap column, keeping as-is")
+        #                 skipped_count += 1
+        #         else:
+        #             if classification != 'single_table':
+        #                 logger.debug(f"Skipping {safe_name}: classification is '{classification}' (not single_table)")
+        #             skipped_count += 1
+        #
+        #     logger.info(f"\nPhase 3 Complete:")
+        #     logger.info(f"  Cleaned: {cleaned_count} files")
+        #     logger.info(f"  Skipped: {skipped_count} files")
+        logger.info(f"\nPhase 3 Skipped: Gap column removal disabled (commented out)")
 
         # =================================================================
         # PHASE 4: ASYNC BATCH LANDING AI PROCESSING
@@ -966,9 +1931,9 @@ async def process_excel_to_json(
         # Cleanup all temporary folders after processing
         import time
         folders_to_cleanup = [
-            Path("screenshots"),
+            # Path("screenshots"),  # COMMENTED OUT - Vision model flow disabled
             Path("temp_sheets"),
-            Path("gap_analysis")
+            # Path("gap_analysis")  # COMMENTED OUT - Vision model flow disabled
         ]
 
         # Small delay to ensure all file handles are released
