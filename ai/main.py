@@ -369,53 +369,6 @@ async def list_available_downloads():
         )
 
 
-@app.get("/download/vision/{filename}", tags=["File Operations"])
-async def download_vision_analysis(filename: str):
-    """
-    Download the vision analysis JSON file for a specific Excel file.
-
-    Args:
-        filename: Name of the Excel file (without extension) or complete JSON filename
-
-    Returns:
-        Vision analysis JSON file for download
-    """
-    try:
-        gap_analysis_folder = Path("gap_analysis")
-
-        # Handle different filename formats
-        if filename.endswith("_all_vision.json"):
-            json_filename = filename
-        elif filename.endswith(".xlsx") or filename.endswith(".xls"):
-            base_name = filename.rsplit(".", 1)[0]
-            json_filename = f"{base_name}_all_vision.json"
-        else:
-            json_filename = f"{filename}_all_vision.json"
-
-        file_path = gap_analysis_folder / json_filename
-
-        if not file_path.exists():
-            raise HTTPException(
-                status_code=404,
-                detail=f"Vision analysis file not found: {json_filename}. "
-                       f"Make sure vision analysis was enabled during conversion."
-            )
-
-        return FileResponse(
-            path=file_path,
-            media_type="application/json",
-            filename=json_filename
-        )
-
-    except HTTPException as he:
-        raise he
-    except Exception as e:
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error downloading vision analysis: {str(e)}"
-        )
-
-
 @app.get("/files", tags=["File Operations"])
 async def list_files():
     """
@@ -507,9 +460,7 @@ async def cleanup_folders():
 
         # Clean temporary folders (complete removal with retry logic)
         temp_folders = [
-            Path("temp_sheets"),
-            Path("gap_analysis"),
-            Path("screenshots")
+            Path("temp_sheets")
         ]
 
         for folder in temp_folders:

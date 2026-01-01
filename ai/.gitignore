@@ -59,8 +59,5 @@ markdown/*
 output/*
 !output/.gitkeep
 
-gap_analysis/*
-!gap_analysis/.gitkeep
-
 logs/*
 !logs/.gitkeep

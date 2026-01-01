@@ -21196,3 +21196,119 @@ PROCESSING COMPLETE!
 2026-01-01 13:57:05 - main - INFO - dispatch:79 - [req:ed4e9933-5a9] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.54ms
 2026-01-01 13:57:35 - main - INFO - dispatch:69 - [req:b120d047-543] - Request started: GET http://localhost:8000/health
 2026-01-01 13:57:35 - main - INFO - dispatch:79 - [req:b120d047-543] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.64ms
+2026-01-01 14:24:43 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 14:24:43 - main - INFO - dispatch:69 - [req:eae4c9c8-9cd] - Request started: GET http://localhost:8000/health
+2026-01-01 14:24:43 - main - INFO - dispatch:79 - [req:eae4c9c8-9cd] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.58ms
+2026-01-01 14:24:51 - main - INFO - <module>:29 - [req:none] - Backend service starting...
+2026-01-01 14:25:03 - main - INFO - dispatch:69 - [req:cf70d827-054] - Request started: OPTIONS http://localhost:8000/cleanup
+2026-01-01 14:25:03 - main - INFO - dispatch:79 - [req:cf70d827-054] - Request completed: OPTIONS http://localhost:8000/cleanup - Status: 200 - Duration: 0.43ms
+2026-01-01 14:25:03 - main - INFO - dispatch:69 - [req:f9d1a6f3-493] - Request started: POST http://localhost:8000/cleanup
+2026-01-01 14:25:03 - main - INFO - dispatch:79 - [req:f9d1a6f3-493] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 8.7ms
+2026-01-01 14:25:11 - main - INFO - dispatch:69 - [req:701ae258-dce] - Request started: POST http://localhost:8000/cleanup
+2026-01-01 14:25:11 - main - INFO - dispatch:79 - [req:701ae258-dce] - Request completed: POST http://localhost:8000/cleanup - Status: 200 - Duration: 1.0ms
+2026-01-01 14:25:13 - main - INFO - dispatch:69 - [req:bae8babb-86c] - Request started: GET http://localhost:8000/health
+2026-01-01 14:25:13 - main - INFO - dispatch:79 - [req:bae8babb-86c] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.85ms
+2026-01-01 14:25:43 - main - INFO - dispatch:69 - [req:0f1867b8-889] - Request started: GET http://localhost:8000/health
+2026-01-01 14:25:43 - main - INFO - dispatch:79 - [req:0f1867b8-889] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2026-01-01 14:26:13 - main - INFO - dispatch:69 - [req:30ea896b-b05] - Request started: GET http://localhost:8000/health
+2026-01-01 14:26:13 - main - INFO - dispatch:79 - [req:30ea896b-b05] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.68ms
+2026-01-01 14:26:43 - main - INFO - dispatch:69 - [req:476118f6-543] - Request started: GET http://localhost:8000/health
+2026-01-01 14:26:43 - main - INFO - dispatch:79 - [req:476118f6-543] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.61ms
+2026-01-01 14:27:13 - main - INFO - dispatch:69 - [req:4157573e-371] - Request started: GET http://localhost:8000/health
+2026-01-01 14:27:13 - main - INFO - dispatch:79 - [req:4157573e-371] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.51ms
+2026-01-01 14:27:43 - main - INFO - dispatch:69 - [req:5d652f85-317] - Request started: GET http://localhost:8000/health
+2026-01-01 14:27:43 - main - INFO - dispatch:79 - [req:5d652f85-317] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2026-01-01 14:28:13 - main - INFO - dispatch:69 - [req:d7dbe4fb-588] - Request started: GET http://localhost:8000/health
+2026-01-01 14:28:13 - main - INFO - dispatch:79 - [req:d7dbe4fb-588] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2026-01-01 14:28:43 - main - INFO - dispatch:69 - [req:8156a16c-137] - Request started: GET http://localhost:8000/health
+2026-01-01 14:28:43 - main - INFO - dispatch:79 - [req:8156a16c-137] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2026-01-01 14:29:19 - main - INFO - dispatch:69 - [req:f0838a74-e77] - Request started: GET http://localhost:8000/health
+2026-01-01 14:29:19 - main - INFO - dispatch:79 - [req:f0838a74-e77] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 231.86ms
+2026-01-01 14:30:05 - main - INFO - dispatch:69 - [req:4fa195ee-591] - Request started: GET http://localhost:8000/health
+2026-01-01 14:30:06 - main - INFO - dispatch:79 - [req:4fa195ee-591] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 745.54ms
+2026-01-01 14:32:45 - main - INFO - dispatch:69 - [req:607df344-de8] - Request started: GET http://localhost:8000/health
+2026-01-01 14:32:47 - main - INFO - dispatch:79 - [req:607df344-de8] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 2063.4ms
+2026-01-01 14:33:05 - main - INFO - dispatch:69 - [req:26fffc46-eaf] - Request started: GET http://localhost:8000/health
+2026-01-01 14:33:06 - main - INFO - dispatch:79 - [req:26fffc46-eaf] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1199.24ms
+2026-01-01 14:33:09 - main - INFO - dispatch:69 - [req:0e0bbc06-051] - Request started: GET http://localhost:8000/health
+2026-01-01 14:33:09 - main - INFO - dispatch:79 - [req:0e0bbc06-051] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 4.56ms
+2026-01-01 14:33:39 - main - INFO - dispatch:69 - [req:9fe2e85a-c04] - Request started: GET http://localhost:8000/health
+2026-01-01 14:33:39 - main - INFO - dispatch:79 - [req:9fe2e85a-c04] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2026-01-01 14:34:09 - main - INFO - dispatch:69 - [req:83cae5c8-21a] - Request started: GET http://localhost:8000/health
+2026-01-01 14:34:09 - main - INFO - dispatch:79 - [req:83cae5c8-21a] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.43ms
+2026-01-01 14:34:39 - main - INFO - dispatch:69 - [req:5de68a4c-515] - Request started: GET http://localhost:8000/health
+2026-01-01 14:34:39 - main - INFO - dispatch:79 - [req:5de68a4c-515] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.58ms
+2026-01-01 14:35:09 - main - INFO - dispatch:69 - [req:6d86a172-7d1] - Request started: GET http://localhost:8000/health
+2026-01-01 14:35:09 - main - INFO - dispatch:79 - [req:6d86a172-7d1] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 19.59ms
+2026-01-01 14:35:39 - main - INFO - dispatch:69 - [req:e691d58e-157] - Request started: GET http://localhost:8000/health
+2026-01-01 14:35:39 - main - INFO - dispatch:79 - [req:e691d58e-157] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.64ms
+2026-01-01 14:36:09 - main - INFO - dispatch:69 - [req:eecff4df-ec8] - Request started: GET http://localhost:8000/health
+2026-01-01 14:36:09 - main - INFO - dispatch:79 - [req:eecff4df-ec8] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.54ms
+2026-01-01 14:36:39 - main - INFO - dispatch:69 - [req:3e779b39-3cb] - Request started: GET http://localhost:8000/health
+2026-01-01 14:36:39 - main - INFO - dispatch:79 - [req:3e779b39-3cb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2026-01-01 14:37:09 - main - INFO - dispatch:69 - [req:dfa44881-248] - Request started: GET http://localhost:8000/health
+2026-01-01 14:37:09 - main - INFO - dispatch:79 - [req:dfa44881-248] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.4ms
+2026-01-01 14:37:39 - main - INFO - dispatch:69 - [req:a2f1972d-588] - Request started: GET http://localhost:8000/health
+2026-01-01 14:37:39 - main - INFO - dispatch:79 - [req:a2f1972d-588] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.56ms
+2026-01-01 14:38:09 - main - INFO - dispatch:69 - [req:3988bbce-df0] - Request started: GET http://localhost:8000/health
+2026-01-01 14:38:09 - main - INFO - dispatch:79 - [req:3988bbce-df0] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.41ms
+2026-01-01 14:38:39 - main - INFO - dispatch:69 - [req:994b9aa5-e45] - Request started: GET http://localhost:8000/health
+2026-01-01 14:38:39 - main - INFO - dispatch:79 - [req:994b9aa5-e45] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2026-01-01 14:39:09 - main - INFO - dispatch:69 - [req:51a005b5-bdb] - Request started: GET http://localhost:8000/health
+2026-01-01 14:39:09 - main - INFO - dispatch:79 - [req:51a005b5-bdb] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.87ms
+2026-01-01 14:39:40 - main - INFO - dispatch:69 - [req:b9e03f9b-fec] - Request started: GET http://localhost:8000/health
+2026-01-01 14:39:40 - main - INFO - dispatch:79 - [req:b9e03f9b-fec] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.49ms
+2026-01-01 14:40:10 - main - INFO - dispatch:69 - [req:a4991ee8-9e2] - Request started: GET http://localhost:8000/health
+2026-01-01 14:40:10 - main - INFO - dispatch:79 - [req:a4991ee8-9e2] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.03ms
+2026-01-01 14:40:40 - main - INFO - dispatch:69 - [req:926e2ae3-906] - Request started: GET http://localhost:8000/health
+2026-01-01 14:40:40 - main - INFO - dispatch:79 - [req:926e2ae3-906] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.88ms
+2026-01-01 14:41:10 - main - INFO - dispatch:69 - [req:1785e940-8f4] - Request started: GET http://localhost:8000/health
+2026-01-01 14:41:10 - main - INFO - dispatch:79 - [req:1785e940-8f4] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2026-01-01 14:41:40 - main - INFO - dispatch:69 - [req:403134d6-4e3] - Request started: GET http://localhost:8000/health
+2026-01-01 14:41:40 - main - INFO - dispatch:79 - [req:403134d6-4e3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.46ms
+2026-01-01 14:42:10 - main - INFO - dispatch:69 - [req:3a494208-a92] - Request started: GET http://localhost:8000/health
+2026-01-01 14:42:10 - main - INFO - dispatch:79 - [req:3a494208-a92] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.96ms
+2026-01-01 14:42:40 - main - INFO - dispatch:69 - [req:48fe63c0-c75] - Request started: GET http://localhost:8000/health
+2026-01-01 14:42:40 - main - INFO - dispatch:79 - [req:48fe63c0-c75] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2026-01-01 14:43:10 - main - INFO - dispatch:69 - [req:a16a6bd5-6d0] - Request started: GET http://localhost:8000/health
+2026-01-01 14:43:10 - main - INFO - dispatch:79 - [req:a16a6bd5-6d0] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.67ms
+2026-01-01 14:43:40 - main - INFO - dispatch:69 - [req:750369f0-f8e] - Request started: GET http://localhost:8000/health
+2026-01-01 14:43:40 - main - INFO - dispatch:79 - [req:750369f0-f8e] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.52ms
+2026-01-01 14:44:10 - main - INFO - dispatch:69 - [req:5b8a385c-6fa] - Request started: GET http://localhost:8000/health
+2026-01-01 14:44:10 - main - INFO - dispatch:79 - [req:5b8a385c-6fa] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.4ms
+2026-01-01 14:44:40 - main - INFO - dispatch:69 - [req:b793ca35-688] - Request started: GET http://localhost:8000/health
+2026-01-01 14:44:40 - main - INFO - dispatch:79 - [req:b793ca35-688] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.39ms
+2026-01-01 14:45:10 - main - INFO - dispatch:69 - [req:11374706-7a6] - Request started: GET http://localhost:8000/health
+2026-01-01 14:45:10 - main - INFO - dispatch:79 - [req:11374706-7a6] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.57ms
+2026-01-01 14:45:40 - main - INFO - dispatch:69 - [req:8272fbed-2f6] - Request started: GET http://localhost:8000/health
+2026-01-01 14:45:40 - main - INFO - dispatch:79 - [req:8272fbed-2f6] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.43ms
+2026-01-01 14:46:10 - main - INFO - dispatch:69 - [req:ed14ec0e-3ae] - Request started: GET http://localhost:8000/health
+2026-01-01 14:46:10 - main - INFO - dispatch:79 - [req:ed14ec0e-3ae] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.4ms
+2026-01-01 14:46:40 - main - INFO - dispatch:69 - [req:da55521f-78d] - Request started: GET http://localhost:8000/health
+2026-01-01 14:46:40 - main - INFO - dispatch:79 - [req:da55521f-78d] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.37ms
+2026-01-01 14:47:10 - main - INFO - dispatch:69 - [req:9d83bc93-d21] - Request started: GET http://localhost:8000/health
+2026-01-01 14:47:10 - main - INFO - dispatch:79 - [req:9d83bc93-d21] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.35ms
+2026-01-01 14:47:40 - main - INFO - dispatch:69 - [req:680d89c1-959] - Request started: GET http://localhost:8000/health
+2026-01-01 14:47:40 - main - INFO - dispatch:79 - [req:680d89c1-959] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms
+2026-01-01 14:48:10 - main - INFO - dispatch:69 - [req:92f8a9c1-7e3] - Request started: GET http://localhost:8000/health
+2026-01-01 14:48:10 - main - INFO - dispatch:79 - [req:92f8a9c1-7e3] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.4ms
+2026-01-01 14:48:41 - main - INFO - dispatch:69 - [req:9ea2860d-c26] - Request started: GET http://localhost:8000/health
+2026-01-01 14:48:41 - main - INFO - dispatch:79 - [req:9ea2860d-c26] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.38ms
+2026-01-01 14:49:11 - main - INFO - dispatch:69 - [req:09c375a4-688] - Request started: GET http://localhost:8000/health
+2026-01-01 14:49:11 - main - INFO - dispatch:79 - [req:09c375a4-688] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.4ms
+2026-01-01 14:49:41 - main - INFO - dispatch:69 - [req:604ed31f-8fd] - Request started: GET http://localhost:8000/health
+2026-01-01 14:49:41 - main - INFO - dispatch:79 - [req:604ed31f-8fd] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.39ms
+2026-01-01 14:50:11 - main - INFO - dispatch:69 - [req:277ab859-752] - Request started: GET http://localhost:8000/health
+2026-01-01 14:50:11 - main - INFO - dispatch:79 - [req:277ab859-752] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.39ms
+2026-01-01 14:50:41 - main - INFO - dispatch:69 - [req:25c6ecbb-e79] - Request started: GET http://localhost:8000/health
+2026-01-01 14:50:41 - main - INFO - dispatch:79 - [req:25c6ecbb-e79] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 1.77ms
+2026-01-01 14:51:11 - main - INFO - dispatch:69 - [req:9a05fee2-860] - Request started: GET http://localhost:8000/health
+2026-01-01 14:51:11 - main - INFO - dispatch:79 - [req:9a05fee2-860] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.71ms
+2026-01-01 14:51:41 - main - INFO - dispatch:69 - [req:499617e2-f97] - Request started: GET http://localhost:8000/health
+2026-01-01 14:51:41 - main - INFO - dispatch:79 - [req:499617e2-f97] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.45ms
+2026-01-01 14:52:11 - main - INFO - dispatch:69 - [req:a4ca2959-6f6] - Request started: GET http://localhost:8000/health
+2026-01-01 14:52:11 - main - INFO - dispatch:79 - [req:a4ca2959-6f6] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.37ms
+2026-01-01 14:52:41 - main - INFO - dispatch:69 - [req:cb2742bc-313] - Request started: GET http://localhost:8000/health
+2026-01-01 14:52:41 - main - INFO - dispatch:79 - [req:cb2742bc-313] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.38ms
+2026-01-01 14:53:11 - main - INFO - dispatch:69 - [req:45237927-467] - Request started: GET http://localhost:8000/health
+2026-01-01 14:53:11 - main - INFO - dispatch:79 - [req:45237927-467] - Request completed: GET http://localhost:8000/health - Status: 200 - Duration: 0.48ms

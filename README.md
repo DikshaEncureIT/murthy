@@ -4,20 +4,29 @@ An AI-powered full-stack application for converting Excel files to structured JS
 
 ## Overview
 
-The Excel to JSON Converter is a comprehensive solution that combines a modern React frontend with a FastAPI backend to intelligently extract and convert tabular data from Excel files into structured JSON format. The system uses AI models to understand table structures, headers, and data relationships, producing clean, well-formatted JSON output.
+The Excel to JSON Converter is a comprehensive AI-powered solution that transforms Excel spreadsheets into intelligently structured, nested JSON. Using a three-phase pipeline combining LandingAI's ADE DPT-2 document parsing model and OpenAI's GPT-4o-mini language model, the system analyzes table semantics to create meaningful hierarchical data structures rather than flat arrays.
+
+### How It Works
+
+1. **Phase 1: Sheet Splitting** - Each Excel sheet is exported to individual temporary files
+2. **Phase 2: Document Parsing** - LandingAI ADE DPT-2 model extracts markdown representation of tables
+3. **Phase 3: Intelligent Structuring** - OpenAI GPT-4o-mini analyzes table semantics and creates nested JSON structures
+
+This approach goes beyond simple row/column extraction by understanding the semantic meaning of your data, producing clean, application-ready JSON.
 
 ## Features
 
 ### Core Functionality
-- **Excel Upload** - Support for .xlsx and .xls file formats
-- **AI-Powered Extraction** - Uses LandingAI ADE for document parsing and markdown extraction
-- **Intelligent Conversion** - OpenAI processes markdown to extract structured table data
+- **Excel Upload** - Support for .xlsx and .xls file formats (max 5 files per batch)
+- **AI-Powered Extraction** - LandingAI ADE DPT-2 model for document parsing and markdown extraction
+- **Intelligent Structuring** - OpenAI GPT-4o-mini analyzes and structures tables into nested JSON
 - **Multiple Output Formats**:
-  - Per-table JSON files
-  - Per-Excel consolidated JSON files
-  - All-tables consolidated JSON file
+  - Per-Excel JSON files (one per uploaded Excel file)
+  - Consolidated JSON file (all tables from all files)
 - **Real-time Processing** - Live conversion status and progress tracking
 - **Download Management** - Easy access to processed files
+- **Upload Limits** - Maximum 5 Excel files per conversion batch
+- **Automatic Cleanup** - Previous conversion data automatically cleared on page load/refresh
 
 ### Technical Features
 - **Dockerized Deployment** - Complete Docker Compose setup for both services
@@ -73,8 +82,8 @@ excel-to-json-converter/
 - npm or bun
 
 ### API Keys (Required)
-- OpenAI API Key
-- LandingAI API Key (optional, may have default)
+- **OpenAI API Key** - Required for JSON structuring with GPT-4o-mini
+- **LandingAI API Key** - Required for document parsing with ADE DPT-2 model
 
 ## Quick Start with Docker
 
@@ -174,6 +183,8 @@ Frontend will be available at http://localhost:5173 (Vite default) or http://loc
 4. Wait for processing to complete
 5. Download individual or consolidated JSON files
 
+**Note:** The system supports uploading up to 5 Excel files per conversion batch. Files and results are automatically cleaned on page refresh or when starting a new conversion.
+
 ### API Usage
 
 For detailed API documentation, see [ai/API_DOCUMENTATION.md](ai/API_DOCUMENTATION.md)
@@ -234,22 +245,93 @@ For detailed request/response examples, see the [API Documentation](ai/API_DOCUM
 
 ## Output Format
 
-Each table is converted to JSON with this structure:
+The converter produces **nested, intelligently structured JSON** that reflects the semantic meaning of your Excel data, not just flat tables.
 
+### Structure Overview
+
+Each table extraction includes:
+- `excel_file`: Source Excel filename
+- `sheet_name`: Sheet name where the table was found
+- `data`: Nested JSON object representing the table's semantic structure
+
+### Example 1: Nested Key-Value Structure
+
+For a form-like table with categories and fields:
+
+**Input Excel Table:**
+```
+| Referrer | Name         | Richard Woodhead              |
+|          | Company Name | GPS Investment Fund Limited   |
+|          | Email        | Richard@gpsinvest.com.au      |
+```
+
+**Output JSON:**
 ```json
 {
-  "sheet_name": "Sheet1",
-  "table_index": 1,
-  "title": "",
-  "headers": ["Column1", "Column2", "Column3"],
-  "rows": [
-    ["value1", "value2", "value3"],
-    ["value4", "value5", "value6"]
-  ],
   "excel_file": "example.xlsx",
-  "file_index": 1
+  "sheet_name": "Borrower",
+  "data": {
+    "Referrer": {
+      "Name": "Richard Woodhead",
+      "Company Name": "GPS Investment Fund Limited",
+      "Email": "Richard@gpsinvest.com.au"
+    }
+  }
 }
 ```
+
+### Example 2: Array of Objects
+
+For tabular data with repeating records:
+
+**Input Excel Table:**
+```
+| Stock Description | No. Lots | Gross Revenue | Per Lot |
+|-------------------|----------|---------------|---------|
+| 1 Br              | 3        | 795000        | 265000  |
+| 2 bed             | 11       | 3289000       | 299000  |
+```
+
+**Output JSON:**
+```json
+{
+  "excel_file": "example.xlsx",
+  "sheet_name": "Feasibility",
+  "data": {
+    "Stock Description": [
+      {
+        "Type": "1 Br",
+        "No. Lots": 3,
+        "Gross Revenue": "$795,000",
+        "Per Lot": "$265,000"
+      },
+      {
+        "Type": "2 bed",
+        "No. Lots": 11,
+        "Gross Revenue": "$3,289,000",
+        "Per Lot": "$299,000"
+      }
+    ]
+  }
+}
+```
+
+### Output Files Generated
+
+1. **Per-Excel JSON Files**: `{excel_name}_complete.json`
+   - Contains all tables from a single Excel file
+   - Each file is an array of table objects
+
+2. **Consolidated JSON File**: `all_tables_consolidated.json`
+   - Contains all tables from all processed Excel files
+   - Useful for batch processing multiple files
+
+### Key Features
+
+- **Intelligent Structuring**: OpenAI GPT-4o-mini analyzes table semantics to create meaningful nested structures
+- **Preservation of Data**: All cells are preserved, including empty values (represented as `""`)
+- **Multiple Format Support**: Handles various Excel table layouts (forms, lists, hierarchical data)
+- **No Data Loss**: Every row and cell from the original Excel is captured
 
 ## Development
 
@@ -312,13 +394,14 @@ docker exec -it excel_frontend sh
 ### Environment Variables
 
 #### Backend (`ai/.env`)
-- `OPENAI_API_KEY` - OpenAI API key (required)
-- `LANDINGAI_API_KEY` - LandingAI API key (optional)
+- `LANDINGAI_API_KEY` - LandingAI API key (required) - Get from https://landing.ai/
+- `OPENAI_API_KEY` - OpenAI API key (required) - Get from https://platform.openai.com/
 - `LOG_FILE` - Log file path (default: `/logs/backend.log`)
 - `LOG_LEVEL` - Logging level (default: `INFO`)
 
 #### Frontend (`frontend/.env`)
-- `VITE_API_BASE_URL` - Backend API URL (default: `http://localhost:8000`)
+- `VITE_API_BASE_URL` - Backend API URL (default: `http://backend:8000` for Docker, `http://localhost:8000` for manual setup)
+- `LOG_FILE` - Log file path (default: `/logs/frontend.log`)
 
 ### Docker Configuration
 
@@ -394,9 +477,10 @@ All requests are tracked with unique request IDs. Logs include:
 ### Backend
 - **FastAPI** - Modern Python web framework
 - **Uvicorn** - ASGI server
-- **LandingAI ADE** - Document parsing and markdown extraction
-- **OpenAI GPT** - Intelligent table extraction
-- **Pandas** - Excel file processing
+- **LandingAI ADE DPT-2** - Document parsing model for markdown extraction
+- **OpenAI GPT-4o-mini** - Language model for intelligent JSON structuring
+- **Pandas** - Excel file processing and sheet manipulation
+- **openpyxl** - Excel file structure preservation (columns, formatting, merged cells)
 - **Python 3.11** - Programming language
 
 ### Frontend
